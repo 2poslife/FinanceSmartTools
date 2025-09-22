@@ -1,0 +1,7 @@
+
+npm install react-router-dom
+npm install lucide-react
+npm install jwt-decode
+
+
+npm run dev
