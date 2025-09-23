@@ -13,6 +13,7 @@ import EmployeeCostWithPension from "./pages/EmployeeCostWithPension";
 import MicroSelfEmployedCalculator from "./pages/MicroSelfEmployedCalculator";
 import MicroSelfEmployedSalariedCalculator from "./pages/MicroSelfEmployedSalariedCalculator";
 import SelfEmployedCost from "./pages/SelfEmployedCost";
+import AboutUs from "./pages/AboutUs";
 function App() {
   return (
     <Router>
@@ -24,6 +25,7 @@ function App() {
         <Route path="/AdminConsts" element={<AdminConsts />} />
         <Route path="/CalculatorsPage" element={<CalculatorsPage />} />
 
+        <Route path="/AboutUs" element={<AboutUs />} />
 
         <Route path="/simulators/employee-cost-no-pension" element={<EmployeeCostNoPension />} />
         <Route path="/simulators/employee-cost-with-pension" element={<EmployeeCostWithPension />} />
