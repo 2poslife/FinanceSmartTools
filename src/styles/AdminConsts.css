@@ -1,0 +1,338 @@
+.adminconsts-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: "Tahoma", sans-serif;
+}
+
+/* Header */
+.adminconsts-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.adminconsts-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+.adminconsts-actions {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.adminconsts-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.adminconsts-btn.danger {
+    background: #dc2626;
+}
+
+.adminconsts-btn:hover {
+    opacity: 0.9;
+}
+
+.adminconsts-subtitle {
+    text-align: center;
+    color: #475569;
+    margin-bottom: 2rem;
+}
+
+/* Cards */
+.adminconsts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.adminconsts-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.adminconsts-card:hover {
+    transform: translateY(-3px);
+}
+
+.adminconsts-card-header {
+    background: #f1f5f9;
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+}
+
+.adminconsts-card-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.adminconsts-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #fafafa;
+}
+
+.adminconsts-field-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 0.3rem;
+}
+
+.adminconsts-field-value {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.adminconsts-edit-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.adminconsts-edit-btn:hover {
+    color: #2563eb;
+}
+
+/* Modal */
+.adminconsts-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.adminconsts-modal-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.adminconsts-input {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.adminconsts-modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.adminconsts-cancel {
+    background: #e2e8f0;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.adminconsts-save {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+
+/* Special JSON field */
+.adminconsts-json-wrapper {
+    max-height: 160px;
+    /* default collapsed */
+    overflow-y: auto;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.6rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #1e293b;
+    white-space: pre-wrap;
+    line-height: 1.4;
+}
+
+/* Expanded mode */
+.adminconsts-json-wrapper.expanded {
+    max-height: 350px;
+}
+
+/* Toggle button */
+.adminconsts-toggle {
+    background: none;
+    border: none;
+    color: #2563eb;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+
+.sim-page {
+    font-family: "Tahoma", sans-serif;
+    background: #f8fafc;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* Header */
+.sim-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.sim-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #1e293b;
+    cursor: pointer;
+}
+
+.sim-actions {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.sim-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.sim-btn.home {
+    background: #2563eb;
+    color: #fff;
+}
+
+.sim-btn.logout {
+    background: #dc2626;
+    color: #fff;
+}
+
+.sim-btn:hover {
+    opacity: 0.9;
+}
+
+/* Intro */
+.sim-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.sim-intro h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+.sim-intro p {
+    color: #475569;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.sim-box {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    color: #334155;
+}
+
+/* Simulators list */
+.sim-list h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #1e293b;
+}
+
+.sim-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.sim-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.sim-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.sim-card h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 0.4rem;
+}
+
+.sim-card p {
+    color: #475569;
+    font-size: 0.95rem;
+}

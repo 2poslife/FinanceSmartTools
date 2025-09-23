@@ -1,0 +1,249 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import {
+    LogOut,
+    Home,
+    Calculator,
+    ChevronDown,
+    ChevronUp,
+    AlertTriangle,
+} from "lucide-react";
+import "../styles/MicroSelfEmployedCalculator.css";
+
+const API_BASE = "http://127.0.0.1:8000";
+
+export default function MicroSelfEmployedCalculator() {
+    const navigate = useNavigate();
+
+    const [yearlyIncome, setYearlyIncome] = useState("");
+    const [result, setResult] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [expanded, setExpanded] = useState(false);
+    const [authError, setAuthError] = useState(false);
+
+    const handleLogout = () => {
+        localStorage.removeItem("access_token");
+        navigate("/SigninForm");
+    };
+
+    const handleCalculate = async () => {
+        const token = localStorage.getItem("access_token");
+        if (!token) {
+            setAuthError(true);
+            return;
+        }
+
+        // ✅ validate input
+        if (!yearlyIncome || isNaN(yearlyIncome) || parseFloat(yearlyIncome) <= 0) {
+            alert("אנא הזן הכנסה שנתית תקינה");
+            return;
+        }
+
+        setLoading(true);
+        setAuthError(false);
+        setExpanded(false);
+
+        try {
+            const res = await fetch(
+                `${API_BASE}/micro-self-employed?token=${encodeURIComponent(token)}`,
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        yearly_income: parseFloat(yearlyIncome),
+                    }),
+                }
+            );
+
+            if (res.status === 401 || res.status === 403) {
+                setAuthError(true);
+                setResult(null);
+                return;
+            }
+
+            const data = await res.json();
+            setResult(data);
+        } catch (err) {
+            console.error("❌ Error calculating:", err);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const fmt = (n) =>
+        typeof n === "number"
+            ? n.toLocaleString("he-IL", { maximumFractionDigits: 2 })
+            : n;
+
+    return (
+        <div className="calcpage" dir="rtl">
+            {/* Header */}
+            <header className="calcpage-header">
+                <div className="calcpage-logo" onClick={() => navigate("/")}>
+                    <Calculator className="calcpage-logo-icon" />
+                    <span className="calcpage-logo-text">FinanceSmartTools</span>
+                </div>
+                <div className="calcpage-actions">
+                    <button onClick={() => navigate("/")} className="calcpage-btn home">
+                        <Home className="w-5 h-5" /> דף הבית
+                    </button>
+                    <button onClick={handleLogout} className="calcpage-btn danger">
+                        <LogOut className="w-5 h-5" /> התנתק
+                    </button>
+                </div>
+            </header>
+
+            {/* Intro */}
+            <section className="calcpage-intro">
+                <h1>מחשבון עצמאי זעיר</h1>
+                <p className="calcpage-tagline">
+                    כלי מהיר ופשוט לבדיקת תשלומי ביטוח לאומי ובריאות לעצמאי זעיר.
+                </p>
+                <div className="calcpage-hero-box">
+                    המחשבון מחשב באופן מיידי את ההפרשות על בסיס הכנסה חייבת (לפי 70% מהברוטו),
+                    ומציג לכם כמה תשלמו בחודש ובשנה — ומה נשאר נטו לאחר הניכויים.
+                </div>
+            </section>
+
+            {/* Form */}
+            <section className="calcpage-form">
+                <h2>🧮 בצעו חישוב</h2>
+                <div className="calcpage-form-grid">
+                    <div className="calcpage-input-group">
+                        <label>הכנסה שנתית (ברוטו)</label>
+                        <input
+                            type="number"
+                            min="0"
+                            value={yearlyIncome}
+                            onChange={(e) => setYearlyIncome(e.target.value)}
+                            placeholder="לדוגמה: 120000"
+                            required
+                        />
+                    </div>
+                </div>
+
+                <button
+                    onClick={handleCalculate}
+                    className="calcpage-btn submit"
+                    disabled={loading || !yearlyIncome}
+                >
+                    {loading ? "מחשב..." : "חשב"}
+                </button>
+
+                {/* Footer buttons */}
+                <div className="calcpage-form-footer">
+                    <button onClick={() => navigate(-1)} className="calcpage-btn home">
+                        🔙 חזור
+                    </button>
+                    <button
+                        onClick={() => {
+                            setYearlyIncome("");
+                            setResult(null);
+                            setExpanded(false);
+                        }}
+                        className="calcpage-btn danger"
+                    >
+                        🧹 נקה טופס
+                    </button>
+                </div>
+
+                {/* Unauthorized */}
+                {authError && (
+                    <div className="auth-error">
+                        <AlertTriangle className="w-5 h-5 text-red-600" />
+                        <span>
+                            עליך להיות מחובר כדי לבצע חישוב.{" "}
+                            <button onClick={() => navigate("/SigninForm")} className="link-btn">
+                                התחבר כאן
+                            </button>
+                        </span>
+                    </div>
+                )}
+
+                {/* Results */}
+                {result && !authError && (
+                    <div className="calcpage-result">
+                        <h3>תוצאות החישוב</h3>
+
+                        {/* Summary cards */}
+                        <div className="calcpage-summary-cards">
+                            <div className="summary-card blue">
+                                <h4>סה״כ חודשי</h4>
+                                <p>{fmt(result.summary.monthly_prepayment)} ₪</p>
+                            </div>
+                            <div className="summary-card red">
+                                <h4>סה״כ שנתי</h4>
+                                <p>{fmt(result.summary.yearly_total)} ₪</p>
+                            </div>
+                            <div className="summary-card green">
+                                <h4>נטו אחרי ניכויים</h4>
+                                <p>{fmt(result.summary.net_after_deductions)} ₪</p>
+                            </div>
+                        </div>
+
+                        {/* Expand details */}
+                        <button
+                            className="expand-btn"
+                            onClick={() => setExpanded((p) => !p)}
+                        >
+                            {expanded ? (
+                                <>
+                                    <ChevronUp className="w-4 h-4" /> הסתר פירוט
+                                </>
+                            ) : (
+                                <>
+                                    <ChevronDown className="w-4 h-4" /> הצג פירוט
+                                </>
+                            )}
+                        </button>
+
+                        {expanded && (
+                            <div className="details-box">
+                                <h4>קלט</h4>
+                                <ul>
+                                    <li>הכנסה שנתית: {fmt(result.inputs.yearly_income)} ₪</li>
+                                    <li>הכנסה חייבת (70%): {fmt(result.inputs.taxable_income)} ₪</li>
+                                </ul>
+
+                                <h4>פירוט ניכויים</h4>
+                                <ul>
+                                    <li>ביטוח לאומי: {fmt(result.breakdown.national_insurance)} ₪</li>
+                                    <li>ביטוח בריאות: {fmt(result.breakdown.health_insurance)} ₪</li>
+                                </ul>
+                            </div>
+                        )}
+                    </div>
+                )}
+            </section>
+
+            {/* Description */}
+            <section className="calcpage-description">
+                <h2>מה עושה המחשבון?</h2>
+                <p>
+                    מחשב תשלומי ביטוח לאומי ובריאות לעצמאי זעיר על בסיס ההכנסה החייבת —
+                    70% מהברוטו. התוצאה כוללת תשלום חודשי, תשלום שנתי, ונטו לאחר הניכויים.
+                </p>
+
+                <h2>למי זה מתאים?</h2>
+                <ul>
+                    <li>עוסק פטור בתחילת הדרך</li>
+                    <li>פרילנסרים עם הכנסה נמוכה-בינונית</li>
+                    <li>עצמאים שבודקים כדאיות והיערכות שנתית</li>
+                </ul>
+
+                <h2>למה להשתמש?</h2>
+                <ul>
+                    <li>✔️ חישוב מהיר ועדכני</li>
+                    <li>✔️ תצוגה ברורה של חודשי/שנתי</li>
+                    <li>✔️ עוזר לתכנון תזרים ולקבלת החלטות</li>
+                </ul>
+
+                <h2>כתב ויתור</h2>
+                <p className="disclaimer">
+                    המחשבון מספק אומדן בלבד ואינו מהווה ייעוץ מס. שיעורים משתנים לפי חוק,
+                    והחישוב אינו כולל כל התנאים האישיים. מומלץ להתייעץ עם רו״ח/יועץ מס.
+                </p>
+            </section>
+        </div>
+    );
+}

@@ -122,8 +122,12 @@ const AdminPage = () => {
                     <div className="sidebar-card" onClick={() => setShowAddUser(true)}>
                         ➕ إضافة مستخدم
                     </div>
-                    <div className="sidebar-card">⚙️ تغيير الإعدادات</div>
-                    <div className="sidebar-card">💰 إدارة التكاليف</div>
+                    <div className="sidebar-card" onClick={() => navigate("/AdminConsts")}>
+                        ⚙️ تعديل الثوابت
+                    </div>
+                    <div className="sidebar-card" onClick={() => navigate("/CalculatorsPage")}>
+                        🧮 المحاسبات والضرائب
+                    </div>
                     <div className="sidebar-card">📊 التقارير</div>
                 </aside>
 
