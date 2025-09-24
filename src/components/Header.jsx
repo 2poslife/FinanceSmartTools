@@ -110,7 +110,7 @@ const Header = () => {
                     <MapPin className="icon" />
                   </div>
                   <h3>موقعنا</h3>
-                  <p>رام الله، فلسطين<br />شارع الإرسال، مجمع الأعمال</p>
+                  <p> المغار | 📍 <br />شارع   </p>
                 </div>
 
                 <div className="contact-card">

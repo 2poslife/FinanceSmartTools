@@ -98,10 +98,11 @@ const SigninForm = () => {
                     <button
                         type="button"
                         className="back-button"
-                        onClick={() => navigate(-1)}
+                        onClick={() => navigate("/")}
                     >
                         ⬅ العودة
                     </button>
+
                 </form>
             </div>
         </div>

@@ -13,14 +13,6 @@ const UserPage = () => {
 
     return (
         <div className="user-container">
-            {/* Header */}
-            <header className="user-header">
-                <h1>مرحبا بك 👋 – صفحة المستخدم</h1>
-                <button className="logout-btn" onClick={handleLogout}>
-                    تسجيل الخروج
-                </button>
-            </header>
-
             <div className="user-body">
                 {/* Sidebar with cards */}
                 <aside className="user-sidebar">

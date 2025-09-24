@@ -93,18 +93,7 @@ export default function AdminConsts() {
 
     return (
         <div className="adminconsts-container" dir="rtl">
-            {/* Header */}
-            <header className="adminconsts-topbar">
-                <h1 className="adminconsts-title">إدارة الثوابت المالية</h1>
-                <div className="adminconsts-actions">
-                    <button onClick={() => navigate("/")} className="adminconsts-btn">
-                        <Home className="w-5 h-5" /> الصفحة الرئيسية
-                    </button>
-                    <button onClick={handleLogout} className="adminconsts-btn danger">
-                        <LogOut className="w-5 h-5" /> تسجيل الخروج
-                    </button>
-                </div>
-            </header>
+
 
             <p className="adminconsts-subtitle">
                 تعديل القيم المستخدمة في حاسبات الضرائب والمعاشات.
