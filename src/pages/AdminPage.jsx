@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../styles/AdminPage2.css";
+import "../styles/AdminPage.css";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import {
@@ -9,27 +9,32 @@ import {
     YAxis,
     Tooltip,
     ResponsiveContainer,
-    PieChart,
-    Pie,
-    Cell,
-    Legend,
 } from "recharts";
 
-const COLORS = ["#2563eb", "#f97316", "#10b981", "#e11d48"];
+// ✅ جميع الأشهر
+const ALL_MONTHS = [
+    "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
+    "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"
+];
 
-const AdminPage2 = () => {
+const AdminPage = () => {
     const navigate = useNavigate();
 
-    // DB data
-    const [stats, setStats] = useState({ users: 0, courses: 0, reports: 0 });
-    const [usersPerMonth, setUsersPerMonth] = useState([]);
-    const [courseCategories, setCourseCategories] = useState([]);
-    const [recentActivity, setRecentActivity] = useState([]);
+    // Add User states
+    const [showAddUser, setShowAddUser] = useState(false);
+    const [newUsername, setNewUsername] = useState("");
+    const [newPassword, setNewPassword] = useState("");
+    const [newRole, setNewRole] = useState("regular");
+    const [showPassword, setShowPassword] = useState(false);
+    const [message, setMessage] = useState("");
 
-    // UX
+    // Users stats states
+    const [usersPerMonth, setUsersPerMonth] = useState([]);
+    const [year, setYear] = useState(2025);
     const [loading, setLoading] = useState(true);
     const [errMsg, setErrMsg] = useState("");
 
+    // ✅ Check token on load
     useEffect(() => {
         const token = localStorage.getItem("access_token");
         if (!token) {
@@ -39,164 +44,221 @@ const AdminPage2 = () => {
 
         try {
             const decoded = jwtDecode(token);
+
             if (decoded.exp * 1000 < Date.now() || decoded.role !== "admin") {
                 localStorage.removeItem("access_token");
                 navigate("/SigninForm");
                 return;
             }
-
-            // ✅ token via query string (your backend style)
-            const url = `http://127.0.0.1:8000/admin/dashboard?token=${encodeURIComponent(
-                token
-            )}`;
-
-            setLoading(true);
-            setErrMsg("");
-
-            fetch(url)
-                .then(async (res) => {
-                    if (!res.ok) {
-                        const text = await res.text();
-                        throw new Error(text || `HTTP ${res.status}`);
-                    }
-                    return res.json();
-                })
-                .then((data) => {
-                    // Shape the data for the charts
-                    setStats(data.quick_stats || { users: 0, courses: 0, reports: 0 });
-
-                    setUsersPerMonth(
-                        (data.users_per_month || []).map((u) => ({
-                            month: u.month,
-                            count: u.new_users,
-                        }))
-                    );
-
-                    setCourseCategories(
-                        (data.courses_distribution || []).map((c) => ({
-                            name: c.category,
-                            value: c.count,
-                        }))
-                    );
-
-                    setRecentActivity(
-                        (data.recent_activity || []).map((act, i) => ({
-                            id: i,
-                            action: act.action,
-                            detail: act.details,
-                        }))
-                    );
-                })
-                .catch((err) => {
-                    console.error("❌ Dashboard fetch error:", err);
-                    setErrMsg("حدث خطأ أثناء جلب بيانات لوحة التحكم.");
-                })
-                .finally(() => setLoading(false));
-        } catch {
+        } catch (err) {
+            console.error("❌ Invalid token:", err);
             localStorage.removeItem("access_token");
             navigate("/SigninForm");
         }
     }, [navigate]);
+
+    // ✅ Fetch users stats
+    useEffect(() => {
+        const token = localStorage.getItem("access_token");
+        if (!token) return;
+
+        const url = `http://127.0.0.1:8000/admin/dashboard/users-stats?year=${year}&token=${encodeURIComponent(
+            token
+        )}`;
+
+        setLoading(true);
+        setErrMsg("");
+
+        fetch(url, { headers: { Accept: "application/json" } })
+            .then(async (res) => {
+                if (!res.ok) {
+                    const text = await res.text();
+                    throw new Error(text || `HTTP ${res.status}`);
+                }
+                return res.json();
+            })
+            .then((data) => {
+                const stats = ALL_MONTHS.map((m) => {
+                    const found = (data.users_per_month || []).find((u) => u.month === m);
+                    return { month: m, count: found ? found.new_users : 0 };
+                });
+                setUsersPerMonth(stats);
+            })
+            .catch((err) => {
+                console.error("❌ Users stats fetch error:", err);
+                setErrMsg("حدث خطأ أثناء جلب بيانات المستخدمين.");
+            })
+            .finally(() => setLoading(false));
+    }, [year]);
+
+    // Add user
+    const resetFields = () => {
+        setNewUsername("");
+        setNewPassword("");
+        setNewRole("regular");
+        setMessage("");
+    };
+
+    const handleAddUser = async (e) => {
+        e.preventDefault();
+        setMessage("");
+
+        if (newPassword.length < 6) {
+            setMessage("❌ كلمة المرور يجب أن تكون 6 أحرف على الأقل");
+            return;
+        }
+
+        try {
+            const token = localStorage.getItem("access_token");
+            const url = `http://127.0.0.1:8000/user/admin/create-user?token=${token}`;
+            const body = {
+                username: newUsername,
+                role: newRole,
+                password: newPassword,
+            };
+
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(body),
+            });
+
+            const data = await response.json();
+            if (!response.ok) {
+                throw new Error(data.detail || "فشل في إنشاء المستخدم");
+            }
+
+            setMessage("✅ تم إنشاء المستخدم بنجاح");
+            resetFields();
+            setShowAddUser(false);
+        } catch (err) {
+            console.error("❌ Error during request:", err);
+            setMessage(`❌ ${err.message}`);
+        }
+    };
 
     return (
         <div className="admin-container">
             <div className="admin-body">
                 {/* Sidebar */}
                 <aside className="admin-sidebar">
+                    <div className="sidebar-card" onClick={() => setShowAddUser(true)}>
+                        ➕ إضافة مستخدم
+                    </div>
                     <div className="sidebar-card" onClick={() => navigate("/AdminConsts")}>
                         ⚙️ تعديل الثوابت
                     </div>
                     <div className="sidebar-card" onClick={() => navigate("/CalculatorsPage")}>
                         🧮 المحاسبات والضرائب
                     </div>
-                    <div className="sidebar-card">📊 التقارير</div>
+                    {/* <div className="sidebar-card">📊 التقارير</div> */}
                 </aside>
 
                 {/* Main Content */}
                 <main className="admin-content">
                     <h2>مرحباً بك في لوحة الإدارة</h2>
-                    <p>اختر أحد الخيارات أو استعرض الإحصائيات التالية:</p>
+                    <p>اختر أحد الخيارات من القائمة على اليسار.</p>
 
-                    {loading ? (
-                        <div style={{ padding: 24 }}>⏳ جارِ تحميل البيانات…</div>
-                    ) : errMsg ? (
-                        <div style={{ padding: 24, color: "#b91c1c" }}>{errMsg}</div>
-                    ) : (
-                        <>
-                            {/* Quick Stats */}
-                            <div className="stats-grid">
-                                <div className="stat-card blue">👥 المستخدمون: {stats.users}</div>
-                                <div className="stat-card orange">📚 الدورات: {stats.courses}</div>
-                                <div className="stat-card green">🧾 التقارير: {stats.reports}</div>
+                    {/* User stats */}
+                    <section style={{ marginTop: "40px" }}>
+                        <h3>📈 إحصائيات المستخدمين</h3>
+                        <p>عدد المستخدمين الجدد لكل شهر:</p>
+
+                        <div style={{ marginBottom: "16px" }}>
+                            <label style={{ marginRight: "8px" }}>اختر السنة:</label>
+                            <select value={year} onChange={(e) => setYear(Number(e.target.value))}>
+                                <option value={2025}>2025</option>
+                                <option value={2026}>2026</option>
+                                <option value={2027}>2027</option>
+                            </select>
+                        </div>
+
+                        {loading ? (
+                            <div style={{ padding: 24 }}>⏳ جارِ تحميل البيانات…</div>
+                        ) : errMsg ? (
+                            <div style={{ padding: 24, color: "#b91c1c" }}>{errMsg}</div>
+                        ) : (
+                            <div className="chart-box" style={{ maxWidth: "600px", margin: "0 auto" }}>
+                                <ResponsiveContainer width="100%" height={200}>
+                                    <BarChart data={usersPerMonth}>
+                                        <XAxis dataKey="month" />
+                                        <YAxis allowDecimals={false} />
+                                        <Tooltip />
+                                        <Bar dataKey="count" fill="#2563eb" barSize={25} />
+                                    </BarChart>
+                                </ResponsiveContainer>
                             </div>
-
-                            {/* Charts */}
-                            <div className="charts-grid">
-                                <div className="chart-box">
-                                    <h3>📈 المستخدمون الجدد كل شهر</h3>
-                                    <ResponsiveContainer width="100%" height={250}>
-                                        <BarChart data={usersPerMonth}>
-                                            <XAxis dataKey="month" />
-                                            <YAxis />
-                                            <Tooltip />
-                                            <Bar dataKey="count" fill="#2563eb" />
-                                        </BarChart>
-                                    </ResponsiveContainer>
-                                </div>
-
-                                <div className="chart-box">
-                                    <h3>📊 توزيع الدورات حسب الفئة</h3>
-                                    <ResponsiveContainer width="100%" height={250}>
-                                        <PieChart>
-                                            <Pie
-                                                data={courseCategories}
-                                                cx="50%"
-                                                cy="50%"
-                                                labelLine={false}
-                                                outerRadius={100}
-                                                dataKey="value"
-                                                label
-                                            >
-                                                {courseCategories.map((entry, index) => (
-                                                    <Cell
-                                                        key={`cell-${index}`}
-                                                        fill={COLORS[index % COLORS.length]}
-                                                    />
-                                                ))}
-                                            </Pie>
-                                            <Tooltip />
-                                            <Legend />
-                                        </PieChart>
-                                    </ResponsiveContainer>
-                                </div>
-                            </div>
-
-                            {/* Recent Activity */}
-                            <div className="activity-box">
-                                <h3>🕒 آخر النشاطات</h3>
-                                <table className="activity-table">
-                                    <thead>
-                                        <tr>
-                                            <th>العملية</th>
-                                            <th>التفاصيل</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {recentActivity.map((act) => (
-                                            <tr key={act.id}>
-                                                <td>{act.action}</td>
-                                                <td>{act.detail}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </>
-                    )}
+                        )}
+                    </section>
                 </main>
             </div>
+
+            {/* Add User Panel */}
+            {showAddUser && (
+                <div className="overlay">
+                    <div className="panel-box">
+                        <h3>➕ إضافة مستخدم جديد</h3>
+                        <form onSubmit={handleAddUser}>
+                            <div className="form-group">
+                                <label>اسم المستخدم</label>
+                                <input
+                                    type="text"
+                                    value={newUsername}
+                                    onChange={(e) => setNewUsername(e.target.value)}
+                                    required
+                                />
+                            </div>
+
+                            <div className="form-group password-field">
+                                <label>كلمة المرور</label>
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    value={newPassword}
+                                    onChange={(e) => setNewPassword(e.target.value)}
+                                    required
+                                />
+                                <span
+                                    className="toggle-password"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                >
+                                    {showPassword ? "🙈" : "👁️"}
+                                </span>
+                            </div>
+
+                            <div className="form-group">
+                                <label>الدور</label>
+                                <select
+                                    value={newRole}
+                                    onChange={(e) => setNewRole(e.target.value)}
+                                >
+                                    <option value="regular">مستخدم</option>
+                                    <option value="admin">أدمِن</option>
+                                </select>
+                            </div>
+
+                            <div className="panel-actions">
+                                <button type="submit" className="submit-btn">إنشاء</button>
+                                <button
+                                    type="button"
+                                    className="cancel-btn"
+                                    onClick={() => {
+                                        resetFields();
+                                        setShowAddUser(false);
+                                    }}
+                                >
+                                    إلغاء
+                                </button>
+                            </div>
+                        </form>
+                        {message && <p className="message">{message}</p>}
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
 
-export default AdminPage2;
+export default AdminPage;

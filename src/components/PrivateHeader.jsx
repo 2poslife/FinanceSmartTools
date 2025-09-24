@@ -30,7 +30,7 @@ const PrivateHeader = () => {
             </div>
 
             <nav className="nav">
-                <button onClick={() => navigate("/")} className={`nav-btn ${isActive("/")}`}>
+                <button onClick={() => navigate("/UserPage")} className={`nav-btn ${isActive("/UserPage")}`}>
                     <Home className="icon" /> الرئيسية
                 </button>
                 <button onClick={() => navigate("/CalculatorsPage")} className={`nav-btn ${isActive("/CalculatorsPage")}`}>

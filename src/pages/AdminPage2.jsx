@@ -9,30 +9,29 @@ import {
     YAxis,
     Tooltip,
     ResponsiveContainer,
-    PieChart,
-    Pie,
-    Cell,
-    Legend,
 } from "recharts";
 
-const COLORS = ["#2563eb", "#f97316", "#10b981", "#e11d48"];
+// ✅ جميع الأشهر
+const ALL_MONTHS = [
+    "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
+    "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"
+];
 
 const AdminPage2 = () => {
     const navigate = useNavigate();
 
-    // ✅ States to store DB data
-    const [stats, setStats] = useState({ users: 0, courses: 0, reports: 0 });
     const [usersPerMonth, setUsersPerMonth] = useState([]);
-    const [courseCategories, setCourseCategories] = useState([]);
-    const [recentActivity, setRecentActivity] = useState([]);
+    const [year, setYear] = useState(2025); // ✅ افتراضي
+    const [loading, setLoading] = useState(true);
+    const [errMsg, setErrMsg] = useState("");
 
-    // ✅ حماية الصفحة + جلب البيانات
     useEffect(() => {
         const token = localStorage.getItem("access_token");
         if (!token) {
             navigate("/SigninForm");
             return;
         }
+
         try {
             const decoded = jwtDecode(token);
             if (decoded.exp * 1000 < Date.now() || decoded.role !== "admin") {
@@ -41,42 +40,43 @@ const AdminPage2 = () => {
                 return;
             }
 
-            // 🚀 جلب بيانات الـ dashboard
-            fetch("http://127.0.0.1:8000/admin/dashboard", {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            })
-                .then((res) => res.json())
-                .then((data) => {
-                    console.log("📊 Dashboard Data:", data);
-                    setStats(data.quick_stats || {});
-                    setUsersPerMonth(
-                        (data.users_per_month || []).map((u) => ({
-                            month: u.month,
-                            count: u.new_users,
-                        }))
-                    );
-                    setCourseCategories(
-                        (data.courses_distribution || []).map((c) => ({
-                            name: c.category,
-                            value: c.count,
-                        }))
-                    );
-                    setRecentActivity(
-                        (data.recent_activity || []).map((act, i) => ({
-                            id: i,
-                            action: act.action,
-                            detail: act.details,
-                        }))
-                    );
+            // ✅ fetch with year
+            const url = `http://127.0.0.1:8000/admin/dashboard/users-stats?year=${year}&token=${encodeURIComponent(
+                token
+            )}`;
+
+            setLoading(true);
+            setErrMsg("");
+
+            fetch(url, { headers: { Accept: "application/json" } })
+                .then(async (res) => {
+                    if (!res.ok) {
+                        const text = await res.text();
+                        throw new Error(text || `HTTP ${res.status}`);
+                    }
+                    return res.json();
                 })
-                .catch((err) => console.error("❌ Dashboard fetch error:", err));
+                .then((data) => {
+                    // دمج الأشهر مع الصفر
+                    const stats = ALL_MONTHS.map((m) => {
+                        const found = (data.users_per_month || []).find(
+                            (u) => u.month === m
+                        );
+                        return { month: m, count: found ? found.new_users : 0 };
+                    });
+                    setUsersPerMonth(stats);
+                })
+                .catch((err) => {
+                    console.error("❌ Users stats fetch error:", err);
+                    setErrMsg("حدث خطأ أثناء جلب بيانات المستخدمين.");
+                })
+                .finally(() => setLoading(false));
         } catch (err) {
+            console.error("❌ Token decode error:", err);
             localStorage.removeItem("access_token");
             navigate("/SigninForm");
         }
-    }, [navigate]);
+    }, [navigate, year]);
 
     return (
         <div className="admin-container">
@@ -94,77 +94,35 @@ const AdminPage2 = () => {
 
                 {/* Main Content */}
                 <main className="admin-content">
-                    <h2>مرحباً بك في لوحة الإدارة</h2>
-                    <p>اختر أحد الخيارات أو استعرض الإحصائيات التالية:</p>
+                    <h2>📈 إحصائيات المستخدمين</h2>
+                    <p>عدد المستخدمين الجدد لكل شهر:</p>
 
-                    {/* Quick Stats */}
-                    <div className="stats-grid">
-                        <div className="stat-card blue">👥 المستخدمون: {stats.users}</div>
-                        <div className="stat-card orange">📚 الدورات: {stats.courses}</div>
-                        <div className="stat-card green">🧾 التقارير: {stats.reports}</div>
+                    {/* Year Selector */}
+                    <div style={{ marginBottom: "16px" }}>
+                        <label style={{ marginRight: "8px" }}>اختر السنة:</label>
+                        <select value={year} onChange={(e) => setYear(Number(e.target.value))}>
+                            <option value={2025}>2025</option>
+                            <option value={2026}>2026</option>
+                            <option value={2027}>2027</option>
+                        </select>
                     </div>
 
-                    {/* Charts */}
-                    <div className="charts-grid">
-                        <div className="chart-box">
-                            <h3>📈 المستخدمون الجدد كل شهر</h3>
-                            <ResponsiveContainer width="100%" height={250}>
+                    {loading ? (
+                        <div style={{ padding: 24 }}>⏳ جارِ تحميل البيانات…</div>
+                    ) : errMsg ? (
+                        <div style={{ padding: 24, color: "#b91c1c" }}>{errMsg}</div>
+                    ) : (
+                        <div className="chart-box" style={{ maxWidth: "600px", margin: "0 auto" }}>
+                            <ResponsiveContainer width="100%" height={200}>
                                 <BarChart data={usersPerMonth}>
                                     <XAxis dataKey="month" />
-                                    <YAxis />
+                                    <YAxis allowDecimals={false} />
                                     <Tooltip />
-                                    <Bar dataKey="count" fill="#2563eb" />
+                                    <Bar dataKey="count" fill="#2563eb" barSize={25} />
                                 </BarChart>
                             </ResponsiveContainer>
                         </div>
-
-                        <div className="chart-box">
-                            <h3>📊 توزيع الدورات حسب الفئة</h3>
-                            <ResponsiveContainer width="100%" height={250}>
-                                <PieChart>
-                                    <Pie
-                                        data={courseCategories}
-                                        cx="50%"
-                                        cy="50%"
-                                        labelLine={false}
-                                        outerRadius={100}
-                                        dataKey="value"
-                                        label
-                                    >
-                                        {courseCategories.map((entry, index) => (
-                                            <Cell
-                                                key={`cell-${index}`}
-                                                fill={COLORS[index % COLORS.length]}
-                                            />
-                                        ))}
-                                    </Pie>
-                                    <Tooltip />
-                                    <Legend />
-                                </PieChart>
-                            </ResponsiveContainer>
-                        </div>
-                    </div>
-
-                    {/* Recent Activity */}
-                    <div className="activity-box">
-                        <h3>🕒 آخر النشاطات</h3>
-                        <table className="activity-table">
-                            <thead>
-                                <tr>
-                                    <th>العملية</th>
-                                    <th>التفاصيل</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {recentActivity.map((act) => (
-                                    <tr key={act.id}>
-                                        <td>{act.action}</td>
-                                        <td>{act.detail}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
+                    )}
                 </main>
             </div>
         </div>

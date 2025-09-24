@@ -39,8 +39,8 @@ export default function CalculatorsPage() {
             icon: <ShieldCheck className="sim-icon" />,
         },
         {
-            title: "מחשבון עצמאי",
-            desc: "חשב את המס והביטוח לאומי לעצמאי",
+            title: "מחשבון עצמאי - ביטוח לאומי",
+            desc: "חשב את הביטוח לאומי לעצמאי",
             link: "/simulators/self-employed",
             icon: <Briefcase className="sim-icon" />,
         },
@@ -76,7 +76,7 @@ export default function CalculatorsPage() {
                     {simulators.map((sim, idx) => (
                         <div
                             key={idx}
-                            className={`sim-card ${idx === simulators.length - 1 ? "single-row" : ""}`}
+                            className={`sim-card ${idx >= simulators.length - 2 ? "half-row" : ""}`}
                             onClick={() => handleSimulatorClick(sim.link)}
                         >
                             <div className="sim-card-header">
