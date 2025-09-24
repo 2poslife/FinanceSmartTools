@@ -9,7 +9,6 @@ import {
 } from "react-router-dom";
 
 // Pages
-import Home3 from "./pages/Home3";
 import SigninForm from "./pages/SigninForm";
 import UserPage from "./pages/UserPage";
 import AdminPage from "./pages/AdminPage";
@@ -26,9 +25,9 @@ import AdminPage2 from "./pages/AdminPage2";
 
 // Headers
 import Header from "./components/Header";
-import PrivateHeader from "./components/PrivateHeader";
+// import PrivateHeader from "./components/PrivateHeader"; // ✅ Not needed anymore
 import AdminHeader from "./components/AdminHeader";
-AdminPage
+
 // ✅ Layout wrapper to switch headers
 function Layout() {
   const location = useLocation();
@@ -44,16 +43,13 @@ function Layout() {
     }
   }
 
-  const hideHeader = location.pathname === "/SigninForm";
-
   return (
     <>
-      {!hideHeader &&
-        (token ? (
-          role === "admin" ? <AdminHeader /> : <PrivateHeader />
-        ) : (
-          <Header />
-        ))}
+      {token ? (
+        role === "admin" ? <AdminHeader /> : <Header /> // ✅ كل المستخدمين العاديين يأخذون الـ Header العام
+      ) : (
+        <Header />
+      )}
 
       <Routes>
         {/* Public routes */}

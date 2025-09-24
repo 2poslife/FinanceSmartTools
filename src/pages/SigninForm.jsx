@@ -41,7 +41,7 @@ const SigninForm = () => {
             if (decoded.role === "admin") {
                 navigate("/AdminPage");
             } else {
-                navigate("/UserPage"); // normal users go here
+                navigate("/CalculatorsPage");
             }
         } catch (err) {
             setError(err.message);
