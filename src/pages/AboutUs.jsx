@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { LogOut, Home, Calculator, Phone, Target, Users, Award } from "lucide-react";
+import { Calculator, Phone, Target, Users, Award } from "lucide-react";
 import "../styles/AboutUs.css";
 import { CheckCircle, BookOpen, Briefcase, GraduationCap, FileSpreadsheet, Settings } from "lucide-react";
 import { MapPin, Mail } from "lucide-react";
@@ -8,28 +8,8 @@ import { MapPin, Mail } from "lucide-react";
 export default function AboutUs() {
     const navigate = useNavigate();
 
-    const handleLogout = () => {
-        localStorage.removeItem("access_token");
-        navigate("/SigninForm");
-    };
-
     return (
         <div className="aboutus-page" dir="rtl">
-            {/* Header */}
-            <header className="aboutus-header">
-                <div className="aboutus-logo" onClick={() => navigate("/")}>
-                    <Calculator className="aboutus-logo-icon" />
-                    <span className="aboutus-logo-text">FinanceSmartTools</span>
-                </div>
-                <div className="aboutus-actions">
-                    <button onClick={() => navigate("/")} className="aboutus-btn home">
-                        <Home className="w-5 h-5" /> דף הבית
-                    </button>
-                    <button onClick={handleLogout} className="aboutus-btn danger">
-                        <LogOut className="w-5 h-5" /> התנתק
-                    </button>
-                </div>
-            </header>
 
             {/* First Section */}
             <section className="aboutus-hero">
@@ -74,7 +54,7 @@ export default function AboutUs() {
                 </div>
             </section>
 
-            {/* NEW Stats Section */}
+            {/* Stats Section */}
             <section className="about-stats">
                 <h2>إنجازاتنا بالأرقام</h2>
                 <p>نفتخر بما حققناه من نجاحات مع طلابنا وعملائنا</p>
@@ -99,6 +79,7 @@ export default function AboutUs() {
                 </div>
             </section>
 
+            {/* Services */}
             <section className="about-services">
                 <h2>خدماتنا المتميزة</h2>
                 <p>نقدم مجموعة شاملة من الخدمات التعليمية والتدريبية المحاسبية</p>
@@ -130,6 +111,8 @@ export default function AboutUs() {
                     </div>
                 </div>
             </section>
+
+            {/* Contact */}
             <section className="about-contact">
                 <h2>تواصل معنا</h2>
                 <p>نحن هنا لمساعدتك في رحلتك المحاسبية</p>
