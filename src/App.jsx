@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 import Home3 from "./pages/Home3";
 import SigninForm from "./pages/SigninForm";
@@ -14,27 +19,37 @@ import MicroSelfEmployedCalculator from "./pages/MicroSelfEmployedCalculator";
 import MicroSelfEmployedSalariedCalculator from "./pages/MicroSelfEmployedSalariedCalculator";
 import SelfEmployedCost from "./pages/SelfEmployedCost";
 import AboutUs from "./pages/AboutUs";
+import HomePage from "./pages/HomePage";
+import Header from "./components/Header";
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
-        <Route path="/" element={<SigninForm />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/SigninForm" element={<SigninForm />} />
         <Route path="/AdminPage" element={<AdminPage />} />
         <Route path="/UserPage" element={<UserPage />} />
         <Route path="/AdminConsts" element={<AdminConsts />} />
         <Route path="/CalculatorsPage" element={<CalculatorsPage />} />
-
         <Route path="/AboutUs" element={<AboutUs />} />
-
-        <Route path="/simulators/employee-cost-no-pension" element={<EmployeeCostNoPension />} />
-        <Route path="/simulators/employee-cost-with-pension" element={<EmployeeCostWithPension />} />
+        <Route
+          path="/simulators/employee-cost-no-pension"
+          element={<EmployeeCostNoPension />}
+        />
+        <Route
+          path="/simulators/employee-cost-with-pension"
+          element={<EmployeeCostWithPension />}
+        />
         <Route path="simulators/self-employed" element={<SelfEmployedCost />} />
-        <Route path="simulators/micro-self-employed" element={<MicroSelfEmployedCalculator />} />
-        <Route path="simulators/micro-self-employed-salaried" element={<MicroSelfEmployedSalariedCalculator />} />
-
-
-
+        <Route
+          path="simulators/micro-self-employed"
+          element={<MicroSelfEmployedCalculator />}
+        />
+        <Route
+          path="simulators/micro-self-employed-salaried"
+          element={<MicroSelfEmployedSalariedCalculator />}
+        />
       </Routes>
     </Router>
   );
