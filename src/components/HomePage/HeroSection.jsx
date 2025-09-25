@@ -18,8 +18,8 @@ function HeroSection() {
       {/* Content */}
       <div className="hero-content">
         <div className="blob">
-          <span>الآن مع آلات حاسبة تفاعلية مجانية</span>
-          <TrendingUp/>
+          <span>حاسبات تفاعلية مدمجة بالدروس — للمسجّلين فقط</span>
+          <TrendingUp />
         </div>
         <h1 className="hero-title">
           تعلم المحاسبة مع

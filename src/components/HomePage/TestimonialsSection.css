@@ -1,0 +1,181 @@
+.testimonials-slider {
+    background: #bfc7cf;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.slider-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #1e293b;
+}
+
+.slider-wrapper {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 1100px;
+    margin: 0 auto 30px auto;
+}
+
+.testimonial-card {
+    background: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    text-align: right;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+}
+
+.quote-icon {
+    font-size: 1.5rem;
+    color: #3b82f6;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    font-size: 0.95rem;
+    color: #334155;
+    margin-bottom: 15px;
+    line-height: 1.7;
+    white-space: pre-line;
+    /* يحافظ على السطور */
+}
+
+.testimonial-rating {
+    font-size: 1.1rem;
+    color: #f59e0b;
+    margin-bottom: 10px;
+}
+
+.testimonial-name {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.testimonial-role {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* زر Instagram */
+.instagram-button {
+    margin-top: 30px;
+}
+
+.instagram-button a {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.instagram-button a:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    /* كان 0.95rem */
+    color: #334155;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    /* زيادة التباعد */
+    white-space: pre-line;
+    /* يحافظ على السطور */
+}
+
+
+
+.testimonials-slider {
+    position: relative;
+    overflow: hidden;
+    /* hide blob overflow */
+}
+
+.testimonials-slider::before,
+.testimonials-slider::after {
+    content: "";
+    position: absolute;
+    inset: auto;
+    width: 520px;
+    height: 520px;
+    filter: blur(40px);
+    opacity: 0.28;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.testimonials-slider::before {
+    top: -120px;
+    right: -160px;
+    /* RTL-friendly */
+    background: radial-gradient(circle at 30% 30%, #60a5fa 0%, transparent 60%),
+        radial-gradient(circle at 70% 60%, #a78bfa 0%, transparent 55%);
+}
+
+.testimonials-slider::after {
+    bottom: -140px;
+    left: -180px;
+    background: radial-gradient(circle at 60% 40%, #f472b6 0%, transparent 60%),
+        radial-gradient(circle at 30% 70%, #34d399 0%, transparent 55%);
+}
+
+/* keep cards above background */
+.slider-wrapper,
+.slider-title,
+.instagram-button {
+    position: relative;
+    z-index: 1;
+}
+
+.testimonials-slider::after {
+    content: "";
+    position: absolute;
+    width: 520px;
+    height: 160px;
+    right: -70px;
+    top: 10px;
+    /* RTL-friendly */
+    pointer-events: none;
+    opacity: 0.25;
+    background-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 160' fill='none'>\
+    <path d='M10 80 C 90 20, 160 140, 240 80 S 390 20, 510 80' stroke='%233b82f6' stroke-width='6' stroke-linecap='round' stroke-opacity='0.8'/>\
+  </svg>");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+    .testimonials-slider .squiggle-bottom {
+        content: "";
+        position: absolute;
+        width: 440px;
+        height: 140px;
+        left: -60px;
+        bottom: 0;
+        pointer-events: none;
+        opacity: 0.22;
+        background-image: url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 160' fill='none'>\
+      <path d='M10 80 C 120 120, 200 40, 280 90 S 420 130, 510 70' stroke='%23a78bfa' stroke-width='6' stroke-linecap='round' stroke-opacity='0.8'/>\
+    </svg>");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+/* place this empty helper inside the section to trigger the ::before-like node */
