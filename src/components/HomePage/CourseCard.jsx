@@ -1,5 +1,5 @@
 import React from "react";
-
+import './CourseCard.css'
 const CourseCard = ({ course }) => {
   return (
     <div className="course-card">
