@@ -21,6 +21,7 @@ import SelfEmployedCost from "./pages/SelfEmployedCost";
 import AboutUs from "./pages/AboutUs";
 import HomePage from "./pages/HomePage";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 function App() {
   return (
     <Router>
@@ -51,6 +52,7 @@ function App() {
           element={<MicroSelfEmployedSalariedCalculator />}
         />
       </Routes>
+      <Footer />
     </Router>
   );
 }
