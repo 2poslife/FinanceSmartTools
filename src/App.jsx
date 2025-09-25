@@ -23,10 +23,10 @@ import AboutUs from "./pages/AboutUs";
 import HomePage from "./pages/HomePage";
 import AdminPage2 from "./pages/AdminPage2";
 
-// Headers
+// Headers & Footer
 import Header from "./components/Header";
-// import PrivateHeader from "./components/PrivateHeader"; // ✅ Not needed anymore
 import AdminHeader from "./components/AdminHeader";
+import Footer from "./components/Footer";
 
 // ✅ Layout wrapper to switch headers
 function Layout() {
@@ -46,7 +46,7 @@ function Layout() {
   return (
     <>
       {token ? (
-        role === "admin" ? <AdminHeader /> : <Header /> // ✅ كل المستخدمين العاديين يأخذون الـ Header العام
+        role === "admin" ? <AdminHeader /> : <Header />
       ) : (
         <Header />
       )}
@@ -85,6 +85,9 @@ function Layout() {
           element={<MicroSelfEmployedSalariedCalculator />}
         />
       </Routes>
+
+      {/* ✅ Keep Footer from your branch */}
+      <Footer />
     </>
   );
 }

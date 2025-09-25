@@ -17,7 +17,7 @@ function HeroSection() {
 
       {/* Content */}
       <div className="hero-content">
-        <div class="blob">
+        <div className="blob">
           <span>الآن مع آلات حاسبة تفاعلية مجانية</span>
           <TrendingUp/>
         </div>
