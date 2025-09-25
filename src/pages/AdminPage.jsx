@@ -2,9 +2,25 @@ import React, { useState, useEffect } from "react";
 import "../styles/AdminPage.css";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
+import {
+    BarChart,
+    Bar,
+    XAxis,
+    YAxis,
+    Tooltip,
+    ResponsiveContainer,
+} from "recharts";
+
+// ✅ جميع الأشهر
+const ALL_MONTHS = [
+    "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
+    "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"
+];
 
 const AdminPage = () => {
     const navigate = useNavigate();
+
+    // Add User states
     const [showAddUser, setShowAddUser] = useState(false);
     const [newUsername, setNewUsername] = useState("");
     const [newPassword, setNewPassword] = useState("");
@@ -12,7 +28,13 @@ const AdminPage = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [message, setMessage] = useState("");
 
-    // ✅ Check token on page load
+    // Users stats states
+    const [usersPerMonth, setUsersPerMonth] = useState([]);
+    const [year, setYear] = useState(2025);
+    const [loading, setLoading] = useState(true);
+    const [errMsg, setErrMsg] = useState("");
+
+    // ✅ Check token on load
     useEffect(() => {
         const token = localStorage.getItem("access_token");
         if (!token) {
@@ -23,15 +45,8 @@ const AdminPage = () => {
         try {
             const decoded = jwtDecode(token);
 
-            // check expiry
-            if (decoded.exp * 1000 < Date.now()) {
+            if (decoded.exp * 1000 < Date.now() || decoded.role !== "admin") {
                 localStorage.removeItem("access_token");
-                navigate("/SigninForm");
-                return;
-            }
-
-            // check role
-            if (decoded.role !== "admin") {
                 navigate("/SigninForm");
                 return;
             }
@@ -42,11 +57,41 @@ const AdminPage = () => {
         }
     }, [navigate]);
 
-    const handleLogout = () => {
-        localStorage.removeItem("access_token");
-        navigate("/SigninForm");
-    };
+    // ✅ Fetch users stats
+    useEffect(() => {
+        const token = localStorage.getItem("access_token");
+        if (!token) return;
 
+        const url = `http://127.0.0.1:8000/admin/dashboard/users-stats?year=${year}&token=${encodeURIComponent(
+            token
+        )}`;
+
+        setLoading(true);
+        setErrMsg("");
+
+        fetch(url, { headers: { Accept: "application/json" } })
+            .then(async (res) => {
+                if (!res.ok) {
+                    const text = await res.text();
+                    throw new Error(text || `HTTP ${res.status}`);
+                }
+                return res.json();
+            })
+            .then((data) => {
+                const stats = ALL_MONTHS.map((m) => {
+                    const found = (data.users_per_month || []).find((u) => u.month === m);
+                    return { month: m, count: found ? found.new_users : 0 };
+                });
+                setUsersPerMonth(stats);
+            })
+            .catch((err) => {
+                console.error("❌ Users stats fetch error:", err);
+                setErrMsg("حدث خطأ أثناء جلب بيانات المستخدمين.");
+            })
+            .finally(() => setLoading(false));
+    }, [year]);
+
+    // Add user
     const resetFields = () => {
         setNewUsername("");
         setNewPassword("");
@@ -72,15 +117,6 @@ const AdminPage = () => {
                 password: newPassword,
             };
 
-            console.log("==== Frontend Request ====");
-            console.log("URL:", url);
-            console.log("Headers:", {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            });
-            console.log("Body:", body);
-            console.log("==========================");
-
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
@@ -91,8 +127,6 @@ const AdminPage = () => {
             });
 
             const data = await response.json();
-            console.log("📥 Response:", data);
-
             if (!response.ok) {
                 throw new Error(data.detail || "فشل في إنشاء المستخدم");
             }
@@ -108,14 +142,6 @@ const AdminPage = () => {
 
     return (
         <div className="admin-container">
-            {/* Header */}
-            <header className="admin-header">
-                <h1>لوحة الإدارة – FinanceSmartTools</h1>
-                <button className="logout-btn" onClick={handleLogout}>
-                    تسجيل الخروج
-                </button>
-            </header>
-
             <div className="admin-body">
                 {/* Sidebar */}
                 <aside className="admin-sidebar">
@@ -128,13 +154,45 @@ const AdminPage = () => {
                     <div className="sidebar-card" onClick={() => navigate("/CalculatorsPage")}>
                         🧮 المحاسبات والضرائب
                     </div>
-                    <div className="sidebar-card">📊 التقارير</div>
+                    {/* <div className="sidebar-card">📊 التقارير</div> */}
                 </aside>
 
                 {/* Main Content */}
                 <main className="admin-content">
                     <h2>مرحباً بك في لوحة الإدارة</h2>
                     <p>اختر أحد الخيارات من القائمة على اليسار.</p>
+
+                    {/* User stats */}
+                    <section style={{ marginTop: "40px" }}>
+                        <h3>📈 إحصائيات المستخدمين</h3>
+                        <p>عدد المستخدمين الجدد لكل شهر:</p>
+
+                        <div style={{ marginBottom: "16px" }}>
+                            <label style={{ marginRight: "8px" }}>اختر السنة:</label>
+                            <select value={year} onChange={(e) => setYear(Number(e.target.value))}>
+                                <option value={2025}>2025</option>
+                                <option value={2026}>2026</option>
+                                <option value={2027}>2027</option>
+                            </select>
+                        </div>
+
+                        {loading ? (
+                            <div style={{ padding: 24 }}>⏳ جارِ تحميل البيانات…</div>
+                        ) : errMsg ? (
+                            <div style={{ padding: 24, color: "#b91c1c" }}>{errMsg}</div>
+                        ) : (
+                            <div className="chart-box" style={{ maxWidth: "600px", margin: "0 auto" }}>
+                                <ResponsiveContainer width="100%" height={200}>
+                                    <BarChart data={usersPerMonth}>
+                                        <XAxis dataKey="month" />
+                                        <YAxis allowDecimals={false} />
+                                        <Tooltip />
+                                        <Bar dataKey="count" fill="#2563eb" barSize={25} />
+                                    </BarChart>
+                                </ResponsiveContainer>
+                            </div>
+                        )}
+                    </section>
                 </main>
             </div>
 
@@ -182,9 +240,7 @@ const AdminPage = () => {
                             </div>
 
                             <div className="panel-actions">
-                                <button type="submit" className="submit-btn">
-                                    إنشاء
-                                </button>
+                                <button type="submit" className="submit-btn">إنشاء</button>
                                 <button
                                     type="button"
                                     className="cancel-btn"

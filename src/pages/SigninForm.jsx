@@ -41,7 +41,7 @@ const SigninForm = () => {
             if (decoded.role === "admin") {
                 navigate("/AdminPage");
             } else {
-                navigate("/UserPage"); // normal users go here
+                navigate("/CalculatorsPage");
             }
         } catch (err) {
             setError(err.message);
@@ -98,10 +98,11 @@ const SigninForm = () => {
                     <button
                         type="button"
                         className="back-button"
-                        onClick={() => navigate(-1)}
+                        onClick={() => navigate("/")}
                     >
                         ⬅ العودة
                     </button>
+
                 </form>
             </div>
         </div>

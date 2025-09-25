@@ -141,3 +141,83 @@
   align-items: center;
   justify-content: center;
 }
+
+
+
+/* Modal overlay with blur effect */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Modal content box */
+.modal-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  width: min(700px, 90%);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Smooth animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.contact-grid {
+  display: flex;
+  flex-direction: row;
+  /* ✅ align in row */
+  gap: 20px;
+  /* space between cards */
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  /* ✅ ensures responsive on small screens */
+  margin-top: 20px;
+}
+
+/* Ensure all cards have equal width */
+.contact-card {
+  flex: 1;
+  min-width: 220px;
+  /* stops cards from shrinking too much */
+  background: #1e293b;
+  /* your dark background */
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+}

@@ -80,21 +80,6 @@ export default function EmployeeCostWithPension() {
 
     return (
         <div className="calcpage" dir="rtl">
-            {/* Header */}
-            <header className="calcpage-header">
-                <div className="calcpage-logo" onClick={() => navigate("/")}>
-                    <Calculator className="calcpage-logo-icon" />
-                    <span className="calcpage-logo-text">FinanceSmartTools</span>
-                </div>
-                <div className="calcpage-actions">
-                    <button onClick={() => navigate("/")} className="calcpage-btn home">
-                        <Home className="w-5 h-5" /> דף הבית
-                    </button>
-                    <button onClick={handleLogout} className="calcpage-btn danger">
-                        <LogOut className="w-5 h-5" /> התנתק
-                    </button>
-                </div>
-            </header>
 
             {/* Introduction */}
             <section className="calcpage-intro">

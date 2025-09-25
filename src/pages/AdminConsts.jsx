@@ -8,33 +8,33 @@ const API_BASE = "http://127.0.0.1:8000";
 
 const groups = [
     {
-        title: "التأمين الوطني (صاحب العمل)",
+        title: "ביטוח לאומי (מעסיק)",
         fields: [
-            { key: "BTL_EMPLOYER_LOW", label: "تأمين وطني (صاحب عمل) – معدل منخفض" },
-            { key: "BTL_EMPLOYER_HIGH", label: "تأمين وطني (صاحب عمل) – معدل مرتفع" },
+            { key: "BTL_EMPLOYER_LOW", label: "ביטוח לאומי (מעסיק) – שיעור נמוך" },
+            { key: "BTL_EMPLOYER_HIGH", label: "ביטוח לאומי (מעסיק) – שיעור גבוה" },
         ],
     },
     {
-        title: "التأمين الوطني (موظف)",
+        title: "ביטוח לאומי (עובד)",
         fields: [
-            { key: "BTL_THRESHOLD", label: "عتبة التأمين الوطني" },
-            { key: "BTL_EMPLOYEE_LOW", label: "تأمين وطني (موظف) – معدل منخفض" },
-            { key: "BTL_EMPLOYEE_HIGH", label: "تأمين وطني (موظف) – معدل مرتفع" },
+            { key: "BTL_THRESHOLD", label: "סף ביטוח לאומי" },
+            { key: "BTL_EMPLOYEE_LOW", label: "ביטוח לאומי (עובד) – שיעור נמוך" },
+            { key: "BTL_EMPLOYEE_HIGH", label: "ביטוח לאומי (עובד) – שיעור גבוה" },
         ],
     },
     {
-        title: "ضريبة الدخل",
+        title: "מס הכנסה",
         fields: [
-            { key: "CREDIT_POINT_VALUE", label: "قيمة نقطة الائتمان" },
-            { key: "INCOME_TAX_BRACKETS", label: "مدرجات ضريبة الدخل (JSON)" },
+            { key: "CREDIT_POINT_VALUE", label: "ערך נקודת זיכוי" },
+            { key: "INCOME_TAX_BRACKETS", label: "מדרגות מס הכנסה (JSON)" },
         ],
     },
     {
-        title: "التقاعد",
+        title: "פנסיה",
         fields: [
-            { key: "PENSION_EMPLOYEE", label: "اقتطاع التقاعد (موظف)" },
-            { key: "PENSION_EMPLOYER", label: "مساهمة التقاعد (صاحب عمل)" },
-            { key: "PENSION_EMPLOYEE_TAX_CREDIT_FACTOR", label: "معامل الائتمان الضريبي للتقاعد" },
+            { key: "PENSION_EMPLOYEE", label: "ניכוי פנסיה (עובד)" },
+            { key: "PENSION_EMPLOYER", label: "הפרשת פנסיה (מעסיק)" },
+            { key: "PENSION_EMPLOYEE_TAX_CREDIT_FACTOR", label: "מקדם זיכוי מס לפנסיה" },
         ],
     },
 ];
@@ -93,18 +93,7 @@ export default function AdminConsts() {
 
     return (
         <div className="adminconsts-container" dir="rtl">
-            {/* Header */}
-            <header className="adminconsts-topbar">
-                <h1 className="adminconsts-title">إدارة الثوابت المالية</h1>
-                <div className="adminconsts-actions">
-                    <button onClick={() => navigate("/")} className="adminconsts-btn">
-                        <Home className="w-5 h-5" /> الصفحة الرئيسية
-                    </button>
-                    <button onClick={handleLogout} className="adminconsts-btn danger">
-                        <LogOut className="w-5 h-5" /> تسجيل الخروج
-                    </button>
-                </div>
-            </header>
+
 
             <p className="adminconsts-subtitle">
                 تعديل القيم المستخدمة في حاسبات الضرائب والمعاشات.
