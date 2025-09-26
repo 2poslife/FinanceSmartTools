@@ -7,6 +7,8 @@ import {
     Briefcase,
     ShieldCheck,
     FileSpreadsheet,
+    Percent, // new icon
+    CreditCard, // new icon
 } from "lucide-react";
 import "../styles/CalculatorsPage.css";
 
@@ -43,6 +45,12 @@ export default function CalculatorsPage() {
             desc: "חשב את הביטוח לאומי לעצמאי",
             link: "/simulators/self-employed",
             icon: <Briefcase className="sim-icon" />,
+        },
+        {
+            title: "מחשבון מס הכנסה",
+            desc: "חשב את מס ההכנסה עם נקודות זיכוי",
+            link: "/simulators/IncomeTaxWithPoints",
+            icon: <CreditCard className="sim-icon" />,
         },
     ];
 
