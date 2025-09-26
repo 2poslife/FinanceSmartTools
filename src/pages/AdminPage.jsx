@@ -110,7 +110,7 @@ const AdminPage = () => {
 
         try {
             const token = localStorage.getItem("access_token");
-            const url = `http://127.0.0.1:8000/user/admin/create-user?token=${token}`;
+            const url = `https://financesmarttools-backend.onrender.com/user/admin/create-user?token=${token}`;
             const body = {
                 username: newUsername,
                 role: newRole,
