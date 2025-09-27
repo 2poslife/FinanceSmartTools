@@ -62,7 +62,7 @@ const AdminPage = () => {
         const token = localStorage.getItem("access_token");
         if (!token) return;
 
-        const url = `http://127.0.0.1:8000/admin/dashboard/users-stats?year=${year}&token=${encodeURIComponent(
+        const url = `https://financesmarttools-backend.onrender.com/admin/dashboard/users-stats?year=${year}&token=${encodeURIComponent(
             token
         )}`;
 
@@ -110,7 +110,7 @@ const AdminPage = () => {
 
         try {
             const token = localStorage.getItem("access_token");
-            const url = `http://127.0.0.1:8000/user/admin/create-user?token=${token}`;
+            const url = `https://financesmarttools-backend.onrender.com/user/admin/create-user?token=${token}`;
             const body = {
                 username: newUsername,
                 role: newRole,

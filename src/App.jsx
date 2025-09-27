@@ -21,8 +21,8 @@ import MicroSelfEmployedSalariedCalculator from "./pages/MicroSelfEmployedSalari
 import SelfEmployedCost from "./pages/SelfEmployedCost";
 import AboutUs from "./pages/AboutUs";
 import HomePage from "./pages/HomePage";
-import AdminPage2 from "./pages/AdminPage2";
 
+import IncomeTaxWithPoints from "./pages/IncomeTaxWithPoints";
 // Headers & Footer
 import Header from "./components/Header";
 import AdminHeader from "./components/AdminHeader";
@@ -64,7 +64,6 @@ function Layout() {
         {/* Admin routes */}
         <Route path="/AdminPage" element={<AdminPage />} />
         <Route path="/AdminConsts" element={<AdminConsts />} />
-        <Route path="/AdminPage2" element={<AdminPage2 />} />
 
         {/* Simulators */}
         <Route
@@ -83,6 +82,13 @@ function Layout() {
         <Route
           path="/simulators/micro-self-employed-salaried"
           element={<MicroSelfEmployedSalariedCalculator />}
+        />
+
+
+
+        <Route
+          path="/simulators/IncomeTaxWithPoints"
+          element={<IncomeTaxWithPoints />}
         />
       </Routes>
 

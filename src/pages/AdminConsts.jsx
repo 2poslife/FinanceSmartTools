@@ -4,7 +4,7 @@ import { jwtDecode } from "jwt-decode";
 import { Pencil, Save, Loader2, LogOut, Home, ChevronDown, ChevronUp } from "lucide-react";
 import "../styles/AdminConsts.css";
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "https://financesmarttools-backend.onrender.com";
 
 const groups = [
     {

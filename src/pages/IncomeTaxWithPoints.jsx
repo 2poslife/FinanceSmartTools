@@ -1,18 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-    LogOut,
-    Home,
-    Calculator,
     ChevronDown,
     ChevronUp,
     AlertTriangle,
 } from "lucide-react";
-import "../styles/EmployeeCostWithPension.css";
+import "../styles/IncomeTaxWithPoints.css";
 
 const API_BASE = "https://financesmarttools-backend.onrender.com";
 
-export default function EmployeeCostWithPension() {
+export default function IncomeTaxWithPoints() {
     const navigate = useNavigate();
 
     const [grossSalary, setGrossSalary] = useState("");
@@ -22,11 +19,6 @@ export default function EmployeeCostWithPension() {
     const [expanded, setExpanded] = useState(false);
     const [authError, setAuthError] = useState(false);
 
-    const handleLogout = () => {
-        localStorage.removeItem("access_token");
-        navigate("/SigninForm");
-    };
-
     const handleCalculate = async () => {
         const token = localStorage.getItem("access_token");
         if (!token) {
@@ -34,14 +26,9 @@ export default function EmployeeCostWithPension() {
             return;
         }
 
-        // validate inputs
         if (
-            !grossSalary ||
-            isNaN(grossSalary) ||
-            parseFloat(grossSalary) <= 0 ||
-            !creditPoints ||
-            isNaN(creditPoints) ||
-            parseFloat(creditPoints) < 0
+            !grossSalary || isNaN(grossSalary) || parseFloat(grossSalary) <= 0 ||
+            !creditPoints || isNaN(creditPoints) || parseFloat(creditPoints) < 0
         ) {
             alert("אנא הזן שכר ברוטו ונקודות זיכוי תקינות");
             return;
@@ -52,7 +39,7 @@ export default function EmployeeCostWithPension() {
 
         try {
             const res = await fetch(
-                `${API_BASE}/employee-cost-with-pension/with-pension?token=${encodeURIComponent(token)}`,
+                `${API_BASE}/cost/income-tax-with-points?token=${encodeURIComponent(token)}`,
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -78,22 +65,29 @@ export default function EmployeeCostWithPension() {
         }
     };
 
+    const formatNumber = (num) => {
+        return Number(num).toLocaleString(undefined, {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        });
+    };
+
     return (
         <div className="calcpage" dir="rtl">
-
-            {/* Introduction */}
+            {/* Intro */}
             <section className="calcpage-intro">
-                <h1>מחשבון עלות עובד כולל פנסיה</h1>
+                <h1>מחשבון מס הכנסה עם נקודות זיכוי</h1>
                 <p className="calcpage-tagline">
-                    רוצים לדעת כמה באמת עולה לכם להעסיק עובד? זה המחשבון בשבילכם.
+                    מחשבון זה מציג את חבות מס ההכנסה החודשית והשנתית,
+                    כולל התחשבות בנקודות זיכוי אישיות.
                 </p>
                 <div className="calcpage-hero-box">
-                    המחשבון הזה מחשב את כלל העלויות – מס הכנסה, ביטוח לאומי והפרשות פנסיוניות.
-                    כך תוכלו לקבל תמונה מלאה של עלות העובד מול הנטו שהוא מקבל.
+                    הזן שכר ברוטו ונקודות זיכוי,
+                    ותקבל את חבות המס לפני ואחרי נקודות זיכוי.
                 </div>
             </section>
 
-            {/* Calculation Form */}
+            {/* Form */}
             <section className="calcpage-form">
                 <h2>🧮 בצעו חישוב</h2>
                 <div className="calcpage-form-grid">
@@ -114,7 +108,7 @@ export default function EmployeeCostWithPension() {
                         <input
                             type="number"
                             min="0"
-                            step="0.5"
+                            step="0.25"
                             value={creditPoints}
                             onChange={(e) => setCreditPoints(e.target.value)}
                             placeholder="מספר נקודות זיכוי..."
@@ -127,27 +121,19 @@ export default function EmployeeCostWithPension() {
                     className="calcpage-btn submit"
                     disabled={
                         loading ||
-                        !grossSalary ||
-                        isNaN(grossSalary) ||
-                        parseFloat(grossSalary) <= 0 ||
-                        !creditPoints ||
-                        isNaN(creditPoints) ||
-                        parseFloat(creditPoints) < 0
+                        !grossSalary || isNaN(grossSalary) || parseFloat(grossSalary) <= 0 ||
+                        !creditPoints || isNaN(creditPoints) || parseFloat(creditPoints) < 0
                     }
                 >
                     {loading ? "מחשב..." : "חשב"}
                 </button>
 
-                {/* Unauthorized Message */}
                 {authError && (
                     <div className="auth-error">
                         <AlertTriangle className="w-5 h-5 text-red-600" />
                         <span>
                             עליך להיות מחובר כמשתמש מורשה כדי לבצע חישוב.{" "}
-                            <button
-                                onClick={() => navigate("/SigninForm")}
-                                className="link-btn"
-                            >
+                            <button onClick={() => navigate("/SigninForm")} className="link-btn">
                                 התחבר כאן
                             </button>
                         </span>
@@ -155,27 +141,29 @@ export default function EmployeeCostWithPension() {
                 )}
 
                 {/* Results */}
-                {result && !authError && (
+                {result?.income_tax && !authError && (
                     <div className="calcpage-result">
                         <h3>תוצאות החישוב</h3>
 
-                        {/* Summary cards */}
                         <div className="calcpage-summary-cards">
                             <div className="summary-card blue">
-                                <h4>נטו לעובד</h4>
-                                <p>{result.summary.employee_part.toLocaleString()} ₪</p>
+                                <h4>לפני זיכוי</h4>
+                                <p>{formatNumber(result.income_tax.before_credit)} ₪</p>
                             </div>
-                            <div className="summary-card red">
-                                <h4>חלק המעסיק</h4>
-                                <p>{result.summary.employer_part.toLocaleString()} ₪</p>
+                            <div className="summary-card orange">
+                                <h4>שווי נקודות זיכוי</h4>
+                                <p>{formatNumber(result.income_tax.credit_points_value)} ₪</p>
                             </div>
                             <div className="summary-card green">
-                                <h4>עלות כוללת</h4>
-                                <p>{result.summary.total_cost.toLocaleString()} ₪</p>
+                                <h4>אחרי זיכוי</h4>
+                                <p>{formatNumber(result.income_tax.after_credit)} ₪</p>
+                            </div>
+                            <div className="summary-card red">
+                                <h4>מס שנתי</h4>
+                                <p>{formatNumber(result.income_tax.yearly_total)} ₪</p>
                             </div>
                         </div>
 
-                        {/* Expand details */}
                         <button
                             className="expand-btn"
                             onClick={() => setExpanded((prev) => !prev)}
@@ -193,41 +181,23 @@ export default function EmployeeCostWithPension() {
 
                         {expanded && (
                             <div className="details-box">
-                                <h4>מס הכנסה</h4>
+                                <h4>מדרגות מס</h4>
                                 <ul>
-                                    <li>לפני זיכוי: {result.income_tax.before_credit} ₪</li>
-                                    <li>ערך נקודות זיכוי: {result.income_tax.credit_points_value} ₪</li>
-                                    <li>זיכוי הפקדת עובד לפנסיה: {result.income_tax.pension_employee_tax_credit} ₪</li>
-                                    <li>אחרי זיכוי: {result.income_tax.after_credit} ₪</li>
-                                </ul>
-
-                                <h4>ביטוח לאומי</h4>
-                                <ul>
-                                    <li>עובד – חלק נמוך: {result.national_insurance.employee_low} ₪</li>
-                                    <li>עובד – חלק גבוה: {result.national_insurance.employee_high} ₪</li>
-                                    <li>סה"כ עובד: {result.national_insurance.employee_total} ₪</li>
-                                    <li>מעסיק – חלק נמוך: {result.national_insurance.employer_low} ₪</li>
-                                    <li>מעסיק – חלק גבוה: {result.national_insurance.employer_high} ₪</li>
-                                    <li>סה"כ מעסיק: {result.national_insurance.employer_total} ₪</li>
-                                    <li>סה"כ כולל: {result.national_insurance.total} ₪</li>
-                                </ul>
-
-                                <h4>פנסיה</h4>
-                                <ul>
-                                    <li>הפקדת עובד: {result.pension.employee} ₪</li>
-                                    <li>הפקדת מעסיק: {result.pension.employer} ₪</li>
-                                    <li>סה"כ פנסיה: {result.pension.total} ₪</li>
+                                    {result.brackets.map((b, i) => (
+                                        <li key={i}>
+                                            טווח {b.range} ({(b.rate * 100).toFixed(0)}%):{" "}
+                                            חייב {formatNumber(b.taxable)} ₪ → {formatNumber(b.amount)} ₪
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         )}
                     </div>
                 )}
+
                 {/* Footer Buttons */}
                 <div className="calcpage-form-footer">
-                    <button
-                        onClick={() => navigate(-1)}
-                        className="calcpage-btn home"
-                    >
+                    <button onClick={() => navigate(-1)} className="calcpage-btn home">
                         🔙 חזור
                     </button>
                     <button
@@ -241,47 +211,34 @@ export default function EmployeeCostWithPension() {
                         🧹 נקה טופס
                     </button>
                 </div>
-
             </section>
 
-            {/* Description Section */}
+            {/* Description */}
             <section className="calcpage-description">
                 <h2>מה זה בעצם המחשבון?</h2>
                 <p>
-                    המחשבון נועד להציג את העלות המלאה של העסקת עובד, כולל כל החלקים הנלווים –
-                    מס הכנסה, ביטוח לאומי והפרשות לפנסיה. כך תוכלו להבין לא רק כמה נטו יקבל העובד,
-                    אלא גם כמה כסף המעסיק מוציא בפועל על כל עובד.
+                    מחשבון זה נועד להציג את חבות מס ההכנסה החודשית והשנתית,
+                    תוך התחשבות בנקודות זיכוי המגיעות לנישום.
                 </p>
 
                 <h2>למי זה מתאים?</h2>
                 <ul>
-                    <li>מעסיקים שרוצים לדעת את העלות הכוללת של העסקת עובדים</li>
-                    <li>מנהלי כספים שמכינים תקציב או חישובי שכר</li>
-                    <li>עובדים שמעוניינים להבין את ההבדל בין עלות המעסיק לשכר הנטו</li>
-                    <li>יזמים וחברות סטארטאפ בתחילת הדרך</li>
+                    <li>שכירים ועצמאים עם נקודות זיכוי אישיות</li>
+                    <li>יועצי מס ורואי חשבון</li>
+                    <li>יזמים ועסקים קטנים בתחילת הדרך</li>
                 </ul>
 
                 <h2>למה כדאי להשתמש?</h2>
                 <ul>
-                    <li>✔️ מספק תמונה מלאה של עלות ההעסקה</li>
-                    <li>✔️ כולל חישוב פנסיה עדכני לפי החוק</li>
-                    <li>✔️ מראה בצורה ברורה את ההבדל בין ברוטו, נטו ועלות מעסיק</li>
-                    <li>✔️ עוזר בתכנון תקציבי ובניהול משאבי אנוש</li>
-                </ul>
-
-                <h2>מה תוכלו לגלות?</h2>
-                <ul>
-                    <li>כמה יקבל העובד נטו לאחר מס והפרשות</li>
-                    <li>מה חלקו של המעסיק בביטוח לאומי ובפנסיה</li>
-                    <li>כמה כסף מועבר לפנסיה ולחיסכון ארוך טווח</li>
-                    <li>מהי העלות הכוללת של העובד עבור העסק</li>
+                    <li>✔️ תואם את מדרגות מס ההכנסה המעודכנות</li>
+                    <li>✔️ מציג מס לפני ואחרי נקודות זיכוי</li>
+                    <li>✔️ נותן שקיפות מלאה על אופן החישוב</li>
                 </ul>
 
                 <h2>כתב ויתור</h2>
                 <p className="disclaimer">
                     המחשבון נותן אומדן בלבד ואינו מהווה ייעוץ מס או תחליף לליווי מקצועי.
-                    הנתונים מבוססים על מדרגות מס והפרשות עדכניות, אך ייתכנו הבדלים בהתאם לנסיבות האישיות.
-                    לקבלת ייעוץ מותאם – פנו לרואה חשבון מוסמך.
+                    הנתונים מבוססים על מדרגות המס הקיימות, אך ייתכנו הבדלים בהתאם לנסיבות האישיות.
                 </p>
             </section>
         </div>
