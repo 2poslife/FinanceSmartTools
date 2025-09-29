@@ -21,6 +21,7 @@ import MicroSelfEmployedSalariedCalculator from "./pages/MicroSelfEmployedSalari
 import SelfEmployedCost from "./pages/SelfEmployedCost";
 import AboutUs from "./pages/AboutUs";
 import HomePage from "./pages/HomePage";
+import './theme.css'
 
 import IncomeTaxWithPoints from "./pages/IncomeTaxWithPoints";
 // Headers & Footer

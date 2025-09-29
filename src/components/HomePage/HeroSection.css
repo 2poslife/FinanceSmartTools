@@ -27,9 +27,12 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right,
-      rgba(59, 130, 246, 0.1),
-      rgba(96, 165, 250, 0.9));
+  background: linear-gradient(
+    90deg,
+    var(--color-primary-dark),
+    var(--color-primary)
+  );
+  z-index: -10;
 }
 
 .hero-content {
@@ -54,7 +57,7 @@
 }
 
 .highlight {
-  background: linear-gradient(to right, #1d4ed8, #2563eb);
+  background: var(--color-secondary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -99,12 +102,12 @@
 }
 
 .btn-secondary {
-  background-color: #2563eb;
+  background-color: var(--color-primary-dark);
   color: white;
 }
 
 .btn-secondary:hover {
-  background-color: #1d4ed8;
+  background-color: var(--color-secondary);
 }
 
 .btn-outline {
@@ -130,5 +133,4 @@
   justify-content: center;
   gap: 8px;
   width: 30%;
-
 }

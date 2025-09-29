@@ -1,11 +1,10 @@
 .hero-section {
-  background: #2563eb;
+  background: var(--color-primary-dark);
   color: #fff;
   text-align: center;
   padding: 80px 20px;
   direction: rtl; /* force Arabic right-to-left */
   border-radius: 12px;
-  margin-bottom: 44px;
 }
 
 .hero-title {
@@ -29,7 +28,7 @@
 
 .hero-btn {
   background: #fff;
-  color: #2563eb;
+  color: var(--color-primary-dark);
   border: none;
   border-radius: 8px;
   padding: 12px 24px;

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #ffffff;
+  background:var(--color-bg);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -15,7 +15,7 @@
 }
 
 .course-card-header {
-  background: #2563eb; /* blue top */
+  background: var(--color-primary-dark); /* blue top */
   color: #fff;
   padding: 16px;
   display: flex;
@@ -55,7 +55,7 @@
 .course-price {
   font-size: 20px;
   font-weight: bold;
-  color: #2563eb;
+  color: var(--color-primary-dark);
 }
 
 .course-duration {
@@ -70,7 +70,7 @@
 
 .course-btn {
   width: 100%;
-  background: linear-gradient(90deg, #f59e0b, #f97316);
+  background: var(--color-secondary);
   border: none;
   color: #fff;
   font-weight: bold;

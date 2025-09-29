@@ -1,5 +1,4 @@
 .testimonials-slider {
-    background: #bfc7cf;
     padding: 60px 20px;
     text-align: center;
 }
@@ -8,7 +7,7 @@
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 40px;
-    color: #1e293b;
+    color: var(--color-dark-text);
 }
 
 .slider-wrapper {
@@ -34,13 +33,12 @@
 
 .quote-icon {
     font-size: 1.5rem;
-    color: #3b82f6;
+    color: var(--color-primary-dark);
     margin-bottom: 15px;
 }
 
 .testimonial-text {
     font-size: 0.95rem;
-    color: #334155;
     margin-bottom: 15px;
     line-height: 1.7;
     white-space: pre-line;
@@ -49,7 +47,7 @@
 
 .testimonial-rating {
     font-size: 1.1rem;
-    color: #f59e0b;
+    color: var(--color-primary-dark);
     margin-bottom: 10px;
 }
 
@@ -74,7 +72,7 @@
     font-size: 1rem;
     font-weight: 600;
     color: #fff;
-    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+    background: linear-gradient(45deg, var(--color-primary-dark), var(--color-primary), var(--color-primary-dark), var(--color-primary));
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -122,16 +120,11 @@
     top: -120px;
     right: -160px;
     /* RTL-friendly */
-    background: radial-gradient(circle at 30% 30%, #60a5fa 0%, transparent 60%),
-        radial-gradient(circle at 70% 60%, #a78bfa 0%, transparent 55%);
+    background: radial-gradient(circle at 30% 30%, var(--color-primary-dark) 0%, transparent 60%),
+        radial-gradient(circle at 70% 60%, var(--color-primary) 0%, transparent 55%);
 }
 
-.testimonials-slider::after {
-    bottom: -140px;
-    left: -180px;
-    background: radial-gradient(circle at 60% 40%, #f472b6 0%, transparent 60%),
-        radial-gradient(circle at 30% 70%, #34d399 0%, transparent 55%);
-}
+
 
 /* keep cards above background */
 .slider-wrapper,
