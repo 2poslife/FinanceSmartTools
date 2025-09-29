@@ -12,7 +12,7 @@ import {
   Mail,
 } from "lucide-react";
 import "./Styles/Header.css";
-
+import Logo from '../assets/logo.png'
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -25,9 +25,9 @@ const Header = () => {
       <header className="header">
         {/* Logo */}
         <div className="logo" onClick={() => navigate("/")}>
-          <BookOpen className="logo-icon" />
+          <img className="logo-img" src={Logo} alt="logo" />
           <div className="logo-texts">
-            <span className="logo-title">مكتب المحاسبة المتقدم</span>
+            <span className="logo-title">مكتب زيدان</span>
             <span className="logo-subtitle">دورات محاسبة احترافية</span>
           </div>
         </div>
@@ -96,7 +96,10 @@ const Header = () => {
             className="modal-content"
             onClick={(e) => e.stopPropagation()} // ✅ prevents closing when clicking inside the modal
           >
-            <button className="modal-close" onClick={() => setShowContact(false)}>
+            <button
+              className="modal-close"
+              onClick={() => setShowContact(false)}
+            >
               ✖
             </button>
 
@@ -110,7 +113,11 @@ const Header = () => {
                     <MapPin className="icon" />
                   </div>
                   <h3>موقعنا</h3>
-                  <p> المغار | 📍 <br />شارع   </p>
+                  <p>
+                    {" "}
+                    المغار | 📍 <br />
+                    شارع{" "}
+                  </p>
                 </div>
 
                 <div className="contact-card">
@@ -119,7 +126,8 @@ const Header = () => {
                   </div>
                   <h3>راسلنا</h3>
                   <p>
-                    info@accounting-office.com<br />
+                    info@accounting-office.com
+                    <br />
                     training@accounting-office.com
                   </p>
                 </div>
@@ -130,7 +138,8 @@ const Header = () => {
                   </div>
                   <h3>اتصل بنا</h3>
                   <p>
-                    +970 599 123 456<br />
+                    +970 599 123 456
+                    <br />
                     +970 567 890 123
                   </p>
                 </div>
@@ -139,7 +148,6 @@ const Header = () => {
           </div>
         </div>
       )}
-
     </>
   );
 };
