@@ -18,19 +18,3 @@ h6 {
   font-family: "Roboto", sans-serif;
   font-weight: 700; /* bold for headings */
 }
-html,
-body {
-  height: 100%;
-  margin: 0;
-  scroll-behavior: smooth; /* nice smooth scroll */
-  scroll-snap-type: y mandatory; /* snap on vertical scroll */
-  overflow-y: scroll;
-}
-
-
-
-footer {
-  height: 300px; /* smaller than viewport */
-
-  scroll-snap-align: none;
-}

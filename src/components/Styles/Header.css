@@ -94,7 +94,11 @@
   margin-left: 6px;
 }
 
-
+.nav-btn.active span {
+  opacity: 1;
+  max-width: 200px;
+  margin-left: 6px;
+}
 /* Icons */
 .icon {
   width: 20px;
@@ -144,7 +148,7 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -197,6 +201,12 @@
   color: #fff;
 }
 
-.icon-wrapper.green { background: #4caf50; }
-.icon-wrapper.blue { background: #2196f3; }
-.icon-wrapper.orange { background: #ff9800; }
+.icon-wrapper.green {
+  background: #4caf50;
+}
+.icon-wrapper.blue {
+  background: #2196f3;
+}
+.icon-wrapper.orange {
+  background: #ff9800;
+}

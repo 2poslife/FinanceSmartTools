@@ -13,9 +13,7 @@
   width: 100%;
   max-width: 450px;
   object-fit: cover;
-  position: relative;
-  z-index: 2000;
-  margin-top: -112px;
+
 }
 
 .aboutus-hero-content h1 {
