@@ -1,0 +1,93 @@
+.aboutus-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 4rem 2rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.aboutus-hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.aboutus-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1e293b;
+  text-align: center;
+}
+
+.aboutus-hero p {
+  max-width: 600px;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #475569;
+  text-align: center;
+}
+
+.aboutus-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.aboutus-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.aboutus-btn.primary {
+  background: var(--color-primary-dark);
+  color: #fff;
+}
+
+.aboutus-btn.primary:hover {
+  background: var(--color-secondary);
+}
+
+.aboutus-btn.secondary {
+  background: white;
+  border: 2px solid var(--color-primary-dark);
+  color: var(--color-primary-dark);
+}
+
+.aboutus-btn.secondary:hover {
+  background:var(--color-primary-dark);
+  color: #fff;
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .aboutus-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .aboutus-hero img {
+    max-width: 400px;
+    margin: 0 auto 2rem auto;
+  }
+
+  .aboutus-hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .aboutus-buttons {
+    justify-content: center;
+  }
+}
