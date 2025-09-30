@@ -1,28 +1,32 @@
 .aboutus-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
   align-items: center;
-  padding: 4rem 2rem;
+  justify-items: center;
+  gap: 2rem;
+  padding: 2rem;
   border-radius: 0 0 1.5rem 1.5rem;
+  background: #fff;
 }
 
-.aboutus-hero img {
+.aboutus-hero-image img {
   width: 100%;
-  height: auto;
-  border-radius: 1rem;
+  max-width: 450px;
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2000;
+  margin-top: -112px;
 }
 
-.aboutus-hero h1 {
+.aboutus-hero-content h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #1e293b;
-  text-align: center;
+    text-align: center;
+
 }
 
-.aboutus-hero p {
+.aboutus-hero-content p {
   max-width: 600px;
   margin-bottom: 2rem;
   font-size: 1.1rem;
@@ -35,6 +39,7 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
 }
 
@@ -66,7 +71,7 @@
 }
 
 .aboutus-btn.secondary:hover {
-  background:var(--color-primary-dark);
+  background: var(--color-primary-dark);
   color: #fff;
 }
 
@@ -77,14 +82,9 @@
     text-align: center;
   }
 
-  .aboutus-hero img {
-    max-width: 400px;
+  .aboutus-hero-image img {
+    max-width: 300px;
     margin: 0 auto 2rem auto;
-  }
-
-  .aboutus-hero p {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .aboutus-buttons {

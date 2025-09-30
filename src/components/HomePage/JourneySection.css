@@ -5,6 +5,7 @@
   padding: 80px 20px;
   direction: rtl; /* force Arabic right-to-left */
   border-radius: 12px;
+  flex-direction: column;
 }
 
 .hero-title {
