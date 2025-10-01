@@ -4,6 +4,8 @@
     max-width: 1300px;
     margin: 0 auto;
     padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
 }
 
 /* Header */
@@ -67,24 +69,27 @@
 .sim-intro {
     text-align: center;
     margin: 2.5rem auto;
-    background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+    background: linear-gradient(135deg, #b29053 0%, #d4af37 50%, #b29053 100%);
     padding: 2rem 1rem;
     border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 25px rgba(178, 144, 83, 0.3);
+    border: 2px solid rgba(178, 144, 83, 0.4);
 }
 
 .sim-intro h1 {
     font-size: 2.3rem;
-    font-weight: bold;
-    color: #1e3a8a;
+    font-weight: 900;
+    color: white;
     margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .sim-tagline {
     font-size: 1.2rem;
-    font-weight: 500;
-    color: #2563eb;
+    font-weight: 700;
+    color: white;
     margin-bottom: 1.2rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .sim-box {
@@ -103,18 +108,32 @@
 /* Section title */
 .sim-section-title {
     font-size: 1.8rem;
-    font-weight: bold;
+    font-weight: 900;
     margin-bottom: 1.5rem;
-    color: #1e293b;
+    color: white;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    background: linear-gradient(135deg, #b29053 0%, #d4af37 50%, #b29053 100%);
+    padding: 15px 30px;
+    border-radius: 25px;
+    border: 2px solid #b29053;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(178, 144, 83, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    flex-direction: row;
+}
+
+.sim-section-title span {
+    order: 1;
 }
 
 .inline-icon {
     width: 24px;
     height: 24px;
-    color: #2563eb;
+    color: #000;
+    order: 2;
 }
 
 /* Grid: fixed 2 + 2 + 1 layout */
@@ -126,31 +145,44 @@
 
 /* Each card */
 .sim-card {
-    background: #fff;
-    border: 1px solid #e2e8f0;
+    background: linear-gradient(145deg, #fafafa 0%, #f0f0f0 100%);
+    border: 2px solid #b29053;
     border-radius: 14px;
     padding: 1.5rem;
     cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 8px 25px rgba(178, 144, 83, 0.2),
+        0 4px 10px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    position: relative;
 }
 
 .sim-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px);
+    box-shadow: 
+        0 15px 35px rgba(178, 144, 83, 0.3),
+        0 8px 20px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border-color: #d4af37;
 }
 
 .sim-card h3 {
     font-size: 1.3rem;
-    font-weight: bold;
+    font-weight: 900;
     margin-bottom: 0.6rem;
-    color: #1e3a8a;
+    color: #333;
+    background: linear-gradient(135deg, #b29053 0%, #d4af37 50%, #b29053 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .sim-card p {
     font-size: 1rem;
-    color: #475569;
+    color: #333;
     line-height: 1.5;
+    font-weight: 700;
 }
 
 /* Last card spans both columns and centers itself */
@@ -171,7 +203,7 @@
 .sim-icon {
     width: 28px;
     height: 28px;
-    color: #2563eb;
+    color: #b29053;
     flex-shrink: 0;
 }
 

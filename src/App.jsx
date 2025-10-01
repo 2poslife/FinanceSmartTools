@@ -21,14 +21,17 @@ import MicroSelfEmployedSalariedCalculator from "./pages/MicroSelfEmployedSalari
 import SelfEmployedCost from "./pages/SelfEmployedCost";
 import AboutUs from "./pages/AboutUs";
 import HomePage from "./pages/HomePage";
-import "./theme.css";
+import HomePage1 from "./pages/HomePage1";
+import HomePage2 from "./pages/HomePage2";
+import HomePage3 from "./pages/HomePage3";
+import ArticlesPage from "./pages/ArticlesPage";
+import './theme.css'
 
 import IncomeTaxWithPoints from "./pages/IncomeTaxWithPoints";
 // Headers & Footer
 import Header from "./components/Header";
 import AdminHeader from "./components/AdminHeader";
 import Footer from "./components/Footer";
-import CoursesPage from "./pages/CoursesPage";
 
 // ✅ Layout wrapper to switch headers
 function Layout() {
@@ -47,14 +50,21 @@ function Layout() {
 
   return (
     <>
-      {token ? role === "admin" ? <AdminHeader /> : <Header /> : <Header />}
+      {token ? (
+        role === "admin" ? <AdminHeader /> : <Header />
+      ) : (
+        <Header />
+      )}
 
       <Routes>
         {/* Public routes */}
         <Route path="/" element={<HomePage />} />
+        <Route path="/homepage1" element={<HomePage1 />} />
+        <Route path="/homepage2" element={<HomePage2 />} />
+        <Route path="/homepage3" element={<HomePage3 />} />
         <Route path="/SigninForm" element={<SigninForm />} />
         <Route path="/AboutUs" element={<AboutUs />} />
-        <Route path="/Courses" element={<CoursesPage />} />
+        <Route path="/articles" element={<ArticlesPage />} />
 
         {/* User routes */}
         <Route path="/UserPage" element={<UserPage />} />
@@ -73,10 +83,7 @@ function Layout() {
           path="/simulators/employee-cost-with-pension"
           element={<EmployeeCostWithPension />}
         />
-        <Route
-          path="/simulators/self-employed"
-          element={<SelfEmployedCost />}
-        />
+        <Route path="/simulators/self-employed" element={<SelfEmployedCost />} />
         <Route
           path="/simulators/micro-self-employed"
           element={<MicroSelfEmployedCalculator />}
@@ -85,6 +92,8 @@ function Layout() {
           path="/simulators/micro-self-employed-salaried"
           element={<MicroSelfEmployedSalariedCalculator />}
         />
+
+
 
         <Route
           path="/simulators/IncomeTaxWithPoints"

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./FAQSection.css";
-import faqImg from "../../assets/faqImage.jpg";
+import faqImg from "../../assets/faq.jpg";
 
 const faqs = [
   {

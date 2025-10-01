@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./TestimonialsSection.css";
 import { FaQuoteLeft } from "react-icons/fa";
 
@@ -38,21 +38,53 @@ const testimonials = [
 ];
 
 function TestimonialsSection() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [animationDirection, setAnimationDirection] = useState('');
+
+    const currentTestimonial = testimonials[currentIndex];
+
+    const goToPrevious = () => {
+        setAnimationDirection('slide-right');
+        setTimeout(() => {
+            setCurrentIndex((prevIndex) => 
+                prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+            );
+        }, 150);
+    };
+
+    const goToNext = () => {
+        setAnimationDirection('slide-left');
+        setTimeout(() => {
+            setCurrentIndex((prevIndex) => 
+                prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+            );
+        }, 150);
+    };
+
     return (
         <section className="testimonials-slider" dir="rtl">
             <h2 className="slider-title">ماذا يقول طلابنا؟</h2>
-            <div className="slider-wrapper">
-                {testimonials.map((t, i) => (
-                    <div key={i} className="testimonial-card">
-                        <FaQuoteLeft className="quote-icon" />
-                        <p className="testimonial-text">{t.text}</p>
+            <div className="animated-quote-container">
+                <div className="quote-content">
+                    <div className={`testimonial-card animated ${animationDirection}`}>
+                        <div className="quote-mark quote-top-right">"</div>
+                        <p className="testimonial-text">{currentTestimonial.text}</p>
+                        <div className="quote-mark quote-bottom-left">"</div>
                         <div className="testimonial-rating">
-                            {"★".repeat(t.rating)}{"☆".repeat(5 - t.rating)}
+                            {"★".repeat(currentTestimonial.rating)}{"☆".repeat(5 - currentTestimonial.rating)}
                         </div>
-                        <h4 className="testimonial-name">{t.name}</h4>
-                        <span className="testimonial-role">{t.role}</span>
+                        <h4 className="testimonial-name">{currentTestimonial.name}</h4>
+                        <span className="testimonial-role">{currentTestimonial.role}</span>
                     </div>
-                ))}
+                </div>
+                
+                {/* Navigation Arrows */}
+                <button className="nav-arrow nav-left" onClick={goToPrevious}>
+                    ←
+                </button>
+                <button className="nav-arrow nav-right" onClick={goToNext}>
+                    →
+                </button>
             </div>
 
             {/* زر Instagram */}

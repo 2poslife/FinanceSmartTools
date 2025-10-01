@@ -58,14 +58,24 @@ const SigninForm = () => {
                     preserveAspectRatio="none"
                 >
                     <path
-                        fill="#1a73e8"
-                        fillOpacity="0.15"
+                        fill="#b29053"
+                        fillOpacity="0.2"
+                        stroke="#000000"
+                        strokeWidth="2"
                         d="M0,256L48,240C96,224,192,192,288,192C384,192,480,224,576,208C672,192,768,128,864,128C960,128,1056,192,1152,197.3C1248,203,1344,149,1392,122.7L1440,96L1440,0L0,0Z"
                     ></path>
                 </svg>
             </div>
 
+            <div className="info-message">
+                <h3>تسجيل الدخول للمستخدمين المسجلين</h3>
+                <p>مرحباً بك في منصة الحاسبات المالية الذكية. للوصول إلى جميع الميزات المتقدمة، يرجى تسجيل الدخول باستخدام بياناتك المسجلة.</p>
+            </div>
+
             <div className="login-box">
+                <div className="login-logo">
+                    <img src="/src/assets/logo.png" alt="Logo" className="logo-image" />
+                </div>
                 <h2>تسجيل الدخول</h2>
                 {error && <p className="error-message">{error}</p>}
 

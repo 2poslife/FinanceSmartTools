@@ -1,7 +1,7 @@
 import React from "react";
 import { MapPin, Mail, Phone } from "lucide-react";
-import "./ContactComponent.css";
-export default function ContactComponent() {
+import './AboutContact.css'
+export default function AboutContact() {
   return (
     <section className="about-contact">
       <h2>تواصل معنا</h2>

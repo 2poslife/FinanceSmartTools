@@ -1,22 +1,19 @@
 import React from "react";
 import { Phone } from "lucide-react";
 import "./AboutHero.css";
-import AboutHeroImage from "../../assets/aboutImage.jpg";
+import AboutHeroImage from '../../assets/aboutImage.jpg'
 export default function AboutHero() {
   return (
     <section className="aboutus-hero">
-      <div className="aboutus-hero-image">
-        <img src={AboutHeroImage} alt="عن مكتب المحاسبة" />
+      <div>
+        <img src={AboutHeroImage} alt="" />
       </div>
-      <div className="aboutus-hero-content">
-        <h1>حول مكتب زيدان</h1>
+      <div>
+        <h1>حول مكتب المحاسبة المتقدم</h1>
         <p>
-          منذ تأسيس مكتب زيدان، لم يقتصر دورنا على تقديم الخدمات، بل أخذنا على
-          عاتقنا مرافقة الأشخاص ودعمهم، سواء في حقوقهم كموظفين، فهمهم لعالم
-          الضرائب، أو شرح القوانين الجديدة بشكل مبسّط. إذا كنت تعرف صفحتنا في
-          الإنستغرام، فأنت بالتأكيد تعرف حجم المعلومات التي قدّمناها على مدار
-          السنوات. وإذا لم تتعرف عليها بعد — حان الوقت لتزورنا
-          وتتعرف علينا أكثر:
+          نحن مكتب محاسبة رائد متخصص في تقديم التدريب المحاسبي عالي الجودة
+          والأدوات التفاعلية التي تساعد المحاسبين على تطوير مهاراتهم وتحقيق
+          النجاح المهني.
         </p>
         <div className="aboutus-buttons">
           <button className="aboutus-btn primary">

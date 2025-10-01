@@ -1,6 +1,7 @@
 .faq-section {
   padding: 60px 20px;
   background: white;
+  border-bottom: 3px solid #000000;
 }
 
 .faq-container {
@@ -60,7 +61,7 @@
 .faq-image {
   position: relative;
   width: 100%;
-  height: 300px; /* adjust to your layout */
+  height: 500px; /* increased to make it full */
   overflow: hidden;
   border-radius: var(--radius-lg); /* from theme.css if available */
   box-shadow: var(--shadow-md);
@@ -73,7 +74,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transform: scaleX(-1);
+  transform: none;
 }
 
 /* The overlay with your theme color */
@@ -82,6 +83,7 @@
   inset: 0;
   background: rgba(176, 147, 91, 0.7); /* #b0935b with opacity */
   mix-blend-mode: multiply; /* gives a nice color blend with image */
+  z-index: 1;
 }
 
 /* Optional: place content on top */
@@ -94,6 +96,7 @@
     rgba(0, 0, 0, 0.2),
     rgba(0, 0, 0, 0.6)
   );
+  z-index: 2;
 }
 .faq-content {
   flex: 0.8;

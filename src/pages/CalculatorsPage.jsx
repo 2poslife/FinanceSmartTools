@@ -77,7 +77,8 @@ export default function CalculatorsPage() {
             {/* Simulators */}
             <section className="sim-list">
                 <h2 className="sim-section-title">
-                    <Calculator className="inline-icon" /> מיסוי ועבודה
+                    <span>מיסוי ועבודה</span>
+                    <Calculator className="inline-icon" />
                 </h2>
 
                 <div className="sim-grid">

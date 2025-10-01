@@ -6,9 +6,10 @@ import CoursesSection from "../components/HomePage/CoursesSection";
 import JourneySection from "../components/HomePage/JourneySection";
 import FAQSection from "../components/HomePage/FAQSection";
 import TestimonialsSection from "../components/HomePage/TestimonialsSection";
+import SuccessSection from "../components/HomePage/SuccessSection";
 import ArticlesSection from "../components/HomePage/ArticlesSection";
 
-function HomePage() {
+function HomePage3() {
   return (
     <div>
       <HeroSection />
@@ -18,9 +19,11 @@ function HomePage() {
       <JourneySection />
       <FAQSection />
       <TestimonialsSection />
+      <SuccessSection />
       <ArticlesSection />
     </div>
   );
 }
 
-export default HomePage;
+export default HomePage3;
+

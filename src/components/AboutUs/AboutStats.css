@@ -44,7 +44,3 @@
   color: var(--color-primary-dark);
   margin-bottom: 0.5rem;
 }
-
-.stat-card .stat-icon{
-  color: var(--color-dark-text);
-}

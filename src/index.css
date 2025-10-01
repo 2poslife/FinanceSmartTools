@@ -2,19 +2,14 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400; /* default weight */
   line-height: 1.6; /* optional for readability */
   color: #333; /* optional text color */
   margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Roboto", sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
   font-weight: 700; /* bold for headings */
 }
