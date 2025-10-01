@@ -62,40 +62,42 @@ function AboutUs() {
       </div>
 
       {/* Courses Section */}
-      <section className="courses-section">
-        <div className="container">
-          <h2 className="section-title">دورات للأفراد والشركات</h2>
-          <p className="section-intro">
+      <section className="about-courses-section">
+        <div className="about-container">
+          <h2 className="about-section-title">دورات للأفراد والشركات</h2>
+          <p className="about-section-intro">
             نحن نقدم كورسات مصممة لتناسب احتياجات المحاسبين في التعامل مع:
           </p>
           
-          <div className="courses-grid">
-            <div className="course-card">
-              <div className="course-icon">
-                <div className="icon-circle">
+          <div className="about-courses-grid">
+            <div className="about-course-card">
+              <div className="about-course-icon">
+                <div className="about-icon-circle">
                   <div className="icon-users"></div>
                 </div>
               </div>
-              <h3 className="course-title">الأفراد - أجيرين ومستقلين</h3>
-              <p className="course-description">
+              <h3 className="about-course-title">الأفراد - أجيرين ومستقلين</h3>
+              <p className="about-course-description">
+                <br></br>
+
                 كورسات متخصصة لمساعدة الأفراد على فهم حقوقهم وواجباتهم الضريبية والمالية.
               </p>
             </div>
             
-            <div className="course-card">
-              <div className="course-icon">
-                <div className="icon-circle">
+            <div className="about-course-card">
+              <div className="about-course-icon">
+                <div className="about-icon-circle">
                   <div className="icon-document"></div>
                 </div>
               </div>
-              <h3 className="course-title">الشركات - تقارير مالية، إدارة حسابات وتدقيق تقارير</h3>
-              <p className="course-description">
+              <h3 className="about-course-title">الشركات - تقارير مالية، إدارة حسابات وتدقيق تقارير</h3>
+              <p className="about-course-description">
                 دورات متقدمة للمحاسبين في الشركات لتطوير مهاراتهم في إعداد التقارير وإدارة الحسابات.
               </p>
             </div>
           </div>
           
-          <p className="courses-conclusion">
+          <p className="about-courses-conclusion">
             كل مجال له أدواته، لغته، وتقنياته - وهنا ستجد كورسات متخصصة لكل مجال لتكون محاسبا أكثر احتراقا وأكثر ثقة.
           </p>
         </div>

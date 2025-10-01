@@ -24,45 +24,45 @@ function WhySection() {
           <li
             className="feature-card"
             role="article"
-            aria-label="التعليم اولاً"
+            aria-label="سرعة في الإنجاز"
           >
             <div className="icon-wrapper">
               <Book />
             </div>
-            <h3>التعليم اولاً</h3>
-            <p>محتوى تعليمي متكامل يغطي جميع جوانب المحاسبة.</p>
+            <h3>سرعة في الإنجاز</h3>
+            <p>معالجة الملفات وتقديم التقارير خلال وقت قياسي، دون المساس بالجودة أو الدقة.</p>
           </li>
 
-          <li className="feature-card" role="article" aria-label="مدربين خبراء">
+          <li className="feature-card" role="article" aria-label="دقة وجودة العمل">
             <div className="icon-wrapper">
               <CircleCheckBig />
             </div>
-            <h3>دقة وموثوقية</h3>
-            <p>فريق من المحاسبين والمدققين ذوي الخبرة العملية.</p>
+            <h3>دقة وجودة العمل</h3>
+            <p>نقدّم خدماتنا بأعلى مستويات الدقة والاحتراف لضمان نتائج صحيحة وخالية من الأخطاء.</p>
           </li>
 
           <li
             className="feature-card"
             role="article"
-            aria-label="أدوات تفاعلية"
+            aria-label="دعم ومرافقة شخصية"
           >
             <div className="icon-wrapper">
               <Users />
             </div>
-            <h3>أدوات تفاعلية</h3>
-            <p>آلات حاسبة متخصصة لحل المسائل المحاسبية.</p>
+            <h3>دعم ومرافقة شخصية</h3>
+            <p>مرافقة مستمرة وخدمة عملاء شخصية — نرافقك خطوة بخطوة، ونجيب على جميع أسئلتك.</p>
           </li>
 
           <li
             className="feature-card"
             role="article"
-            aria-label="شهادات معتمدة"
+            aria-label="مصداقية وأمان تام"
           >
             <div className="icon-wrapper">
               <Award />
             </div>
-            <h3>شهادات معتمدة</h3>
-            <p>احصل على شهادة معتمدة بعد إنهاء الدورة بنجاح.</p>
+            <h3>مصداقية وأمان تام</h3>
+            <p>جميع بياناتك المالية محفوظة بسرية تامة، ونعمل وفق أعلى معايير المصداقية والخصوصية.</p>
           </li>
         </ul>
       </div>
