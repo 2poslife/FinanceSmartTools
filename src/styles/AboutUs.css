@@ -685,6 +685,15 @@
   border-top: 2px solid #000;
 }
 
+.values-section .section-title {
+  font-size: 48px;
+  font-weight: 900;
+  color: #000000;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Arial Black", Arial, sans-serif;
+}
+
 .values-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -741,6 +750,13 @@
 
 .value-icon {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.value-icon .icon-circle {
+  margin: 0 auto;
 }
 
 .value-title {
