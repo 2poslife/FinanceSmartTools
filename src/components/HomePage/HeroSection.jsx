@@ -14,7 +14,7 @@ function HeroSection() {
       {/* Content */}
       <div className="hero-content">
         <div className="hero-logo">
-          <img src="/src/assets/logo.png" alt="Logo" />
+          <img src="/logo.png" alt="Logo" />
         </div>
         <div className="hero-text-container">
           <h2 className="hero-office-name">זידאן משרד ראיית חשבון</h2>

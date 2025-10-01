@@ -9,7 +9,7 @@ function ArticlesSection() {
             description: "تعلم المبادئ الأساسية للمحاسبة المالية وكيفية تطبيقها في الأعمال التجارية الصغيرة والكبيرة",
             date: "15 ديسمبر 2024",
             author: "د. أحمد زيدان",
-            image: "/src/assets/herosection.png",
+            image: "/herosection.png",
             category: "محاسبة"
         },
         {
@@ -18,7 +18,7 @@ function ArticlesSection() {
             description: "نصائح عملية لإدارة التدفق النقدي في شركتك وتجنب المشاكل المالية الشائعة",
             date: "12 ديسمبر 2024",
             author: "د. أحمد زيدان",
-            image: "/src/assets/aboutImage.jpg",
+            image: "/aboutImage.jpg",
             category: "إدارة مالية"
         },
         {
@@ -27,7 +27,7 @@ function ArticlesSection() {
             description: "دليل شامل للضرائب والالتزامات القانونية التي يجب على كل صاحب عمل معرفتها",
             date: "10 ديسمبر 2024",
             author: "د. أحمد زيدان",
-            image: "/src/assets/faqImage.jpg",
+            image: "/faqImage.jpg",
             category: "ضرائب"
         }
     ];

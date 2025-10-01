@@ -74,7 +74,7 @@ const SigninForm = () => {
 
             <div className="login-box">
                 <div className="login-logo">
-                    <img src="/src/assets/logo.png" alt="Logo" className="logo-image" />
+                    <img src="/logo.png" alt="Logo" className="logo-image" />
                 </div>
                 <h2>تسجيل الدخول</h2>
                 {error && <p className="error-message">{error}</p>}

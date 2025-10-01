@@ -11,7 +11,7 @@ function ArticlesPage() {
             description: "تعلم المبادئ الأساسية للمحاسبة المالية وكيفية تطبيقها في الأعمال التجارية الصغيرة والكبيرة",
             date: "15 ديسمبر 2024",
             author: "د. أحمد زيدان",
-            image: "/src/assets/herosection.png",
+            image: "/herosection.png",
             category: "محاسبة",
             readTime: "8 دقائق"
         },
@@ -21,7 +21,7 @@ function ArticlesPage() {
             description: "نصائح عملية لإدارة التدفق النقدي في شركتك وتجنب المشاكل المالية الشائعة",
             date: "12 ديسمبر 2024",
             author: "د. أحمد زيدان",
-            image: "/src/assets/aboutImage.jpg",
+            image: "/aboutImage.jpg",
             category: "إدارة مالية",
             readTime: "6 دقائق"
         },
@@ -31,7 +31,7 @@ function ArticlesPage() {
             description: "دليل شامل للضرائب والالتزامات القانونية التي يجب على كل صاحب عمل معرفتها",
             date: "10 ديسمبر 2024",
             author: "د. أحمد زيدان",
-            image: "/src/assets/faqImage.jpg",
+            image: "/faqImage.jpg",
             category: "ضرائب",
             readTime: "10 دقائق"
         },
@@ -41,7 +41,7 @@ function ArticlesPage() {
             description: "كيفية تحليل البيانات المالية لاتخاذ قرارات استراتيجية صحيحة في عملك",
             date: "8 ديسمبر 2024",
             author: "د. أحمد زيدان",
-            image: "/src/assets/qutoe.png",
+            image: "/qutoe.png",
             category: "تحليل مالي",
             readTime: "12 دقائق"
         },
@@ -51,7 +51,7 @@ function ArticlesPage() {
             description: "تعمق في المبادئ المحاسبية المتقدمة وتطبيقاتها في الشركات الكبيرة",
             date: "5 ديسمبر 2024",
             author: "د. أحمد زيدان",
-            image: "/src/assets/herosection.png",
+            image: "/herosection.png",
             category: "محاسبة",
             readTime: "15 دقائق"
         },
@@ -61,7 +61,7 @@ function ArticlesPage() {
             description: "استراتيجيات إدارة المخاطر المالية وحماية استثماراتك",
             date: "3 ديسمبر 2024",
             author: "د. أحمد زيدان",
-            image: "/src/assets/aboutImage.jpg",
+            image: "/aboutImage.jpg",
             category: "إدارة مالية",
             readTime: "9 دقائق"
         }
