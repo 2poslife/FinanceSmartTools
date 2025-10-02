@@ -47,10 +47,15 @@ function AboutUs() {
                 وإذا لم تتعرف عليها بعد - حان الوقت لتزورنا وتتعرف علينا أكثر:
               </p>
               
-              <div className="instagram-link">
+              <a 
+                href="https://www.instagram.com/cpa.zedan" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="instagram-link"
+              >
                 <div className="instagram-icon"></div>
                 <span className="instagram-text">cpa.zedan</span>
-              </div>
+              </a>
               
               <p className="final-message">
                 وكما عودناكم دائمًا، مستمرون في مساعدتكم لتصبحوا محاسبين مستقلين ناجحين بأعمالكم. 
@@ -64,9 +69,15 @@ function AboutUs() {
       {/* Courses Section */}
       <section className="about-courses-section">
         <div className="about-container">
+          <p className="about-section-subtitle">
+            اكتسب المهارات العملية التي يستخدمها المحاسبون لإدارة ملفات الأفراد والشركات.
+            من التقارير المالية، فتح الملفات، التعامل مع الضرائب، تأمين وطني، استرجاع ضرائب، تدقيق تقارير الشركات وغيرها..
+          </p>
+          
           <h2 className="about-section-title">دورات للأفراد والشركات</h2>
+          
           <p className="about-section-intro">
-            نحن نقدم كورسات مصممة لتناسب احتياجات المحاسبين في التعامل مع:
+            دورات مصممة لتناسب احتياجات المحاسبين في التعامل مع:
           </p>
           
           <div className="about-courses-grid">
@@ -76,11 +87,9 @@ function AboutUs() {
                   <div className="icon-users"></div>
                 </div>
               </div>
-              <h3 className="about-course-title">الأفراد - أجيرين ومستقلين</h3>
+              <h3 className="about-course-title">الأفراد</h3>
               <p className="about-course-description">
-                <br></br>
-
-                كورسات متخصصة لمساعدة الأفراد على فهم حقوقهم وواجباتهم الضريبية والمالية.
+                دورات متخصصة تهدف إلى تمكين المحاسبين من إدارة ملفات المستقلين بشكل شامل، من الألف إلى الياء، باحترافية ووفق المعايير المهنية.
               </p>
             </div>
             
@@ -110,52 +119,59 @@ function AboutUs() {
           
           <div className="values-grid">
             <div className="value-card">
-              <div className="value-icon">
-                <div className="icon-circle">
-                  <div className="icon-education"></div>
-                </div>
-              </div>
-              <h3 className="value-title">التعليم أولاً</h3>
+              <h3 className="value-title">الشفافية</h3>
               <p className="value-description">
-                تؤمن بأن التعليم المحاسبي الجيد يبني أساساً قوياً للنجاح المهني.
+                نؤمن بأن الزبون يجب أن يعرف كل التفاصيل بوضوح، ومن دون أي مفاجآت.
               </p>
             </div>
             
             <div className="value-card">
-              <div className="value-icon">
-                <div className="icon-circle">
-                  <div className="icon-check"></div>
-                </div>
-              </div>
-              <h3 className="value-title">دقة وموثوقية</h3>
+              <h3 className="value-title">الاحترافية والدقة</h3>
               <p className="value-description">
-                نلتزم بأعلى معايير الدقة والشفافية في جميع خدماتنا.
+                نلتزم بأعلى معايير المهنة والدقة في كل خدمة نقدمها.
               </p>
             </div>
             
             <div className="value-card">
-              <div className="value-icon">
-                <div className="icon-circle">
-                  <div className="icon-team"></div>
-                </div>
-              </div>
-              <h3 className="value-title">فريق متميز</h3>
+              <h3 className="value-title">المسؤولية</h3>
               <p className="value-description">
-                مجموعة من أفضل المحاسبين والمدققين المعتمدين.
+                نتعامل مع كل ملف، وكل معاملة، وكل زبون وكأنه الوحيد، ونمنحه الخدمة على أتم وجه.
               </p>
             </div>
             
             <div className="value-card">
-              <div className="value-icon">
-                <div className="icon-circle">
-                  <div className="icon-experience"></div>
-                </div>
-              </div>
-              <h3 className="value-title">الخبرة والاحترافية</h3>
+              <h3 className="value-title">الابتكار</h3>
               <p className="value-description">
-                أكثر من 15 عاماً من الخبرة في مجال المحاسبة والتدقيق.
+                نواكب التغييرات في القوانين والتكنولوجيا لنقدم حلولًا ذكية وعملية.
               </p>
             </div>
+            
+            <div className="value-logo-wrapper">
+              <img src="/logo.png" alt="Logo" className="values-logo" />
+            </div>
+            
+            <div className="value-card">
+              <h3 className="value-title">الثقة</h3>
+              <p className="value-description">
+                هدفنا أن نبني علاقة طويلة المدى قائمة على الصدق والالتزام.
+              </p>
+            </div>
+          </div>
+          
+          <div className="values-conclusion-card">
+            <svg className="conclusion-decoration-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+              <line x1="0" y1="10" x2="80" y2="10" stroke="rgba(0,0,0,0.2)" strokeWidth="2"/>
+              <line x1="0" y1="30" x2="60" y2="30" stroke="rgba(0,0,0,0.15)" strokeWidth="2"/>
+              <line x1="0" y1="50" x2="70" y2="50" stroke="rgba(0,0,0,0.1)" strokeWidth="2"/>
+            </svg>
+            <svg className="conclusion-decoration-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+              <line x1="20" y1="10" x2="100" y2="10" stroke="rgba(0,0,0,0.2)" strokeWidth="2"/>
+              <line x1="40" y1="30" x2="100" y2="30" stroke="rgba(0,0,0,0.15)" strokeWidth="2"/>
+              <line x1="30" y1="50" x2="100" y2="50" stroke="rgba(0,0,0,0.1)" strokeWidth="2"/>
+            </svg>
+            <p className="values-conclusion-text">
+              في مكتبنا، نعمل على أساس قيم واضحة: الشفافية مع عملائنا، الاحترافية في كل خدمة، المسؤولية الكاملة عن النتائج، والابتكار في الحلول.
+            </p>
           </div>
         </div>
       </section>

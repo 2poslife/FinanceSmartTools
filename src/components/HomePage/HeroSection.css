@@ -104,12 +104,11 @@
   inset: 0;
   z-index: 0;
   background-image: url('/herosection.png');
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 1;
   filter: none;
-  animation: float 8s ease-in-out infinite;
 }
 
 .hero-overlay {
