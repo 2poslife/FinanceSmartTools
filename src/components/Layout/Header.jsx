@@ -11,8 +11,8 @@ import {
   MapPin,
   Mail,
 } from "lucide-react";
-import "./Styles/Header.css";
-import Logo from '../assets/logo.png'
+import "./Header.css";
+import Logo from '../../assets/logo.png'
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();

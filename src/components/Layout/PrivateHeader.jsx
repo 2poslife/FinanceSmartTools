@@ -6,7 +6,7 @@ import {
     User,
     LogOut,
 } from "lucide-react";
-import "./Styles/Header.css";
+import "./Header.css";
 
 const PrivateHeader = () => {
     const navigate = useNavigate();

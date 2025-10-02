@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Home, Settings, LogOut, Users, BarChart } from "lucide-react";
-import "./Styles/Header.css";
+import "./Header.css";
 
 const AdminHeader = () => {
     const navigate = useNavigate();

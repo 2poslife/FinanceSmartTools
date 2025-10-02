@@ -10,7 +10,7 @@ import {
     Percent, // new icon
     CreditCard, // new icon
 } from "lucide-react";
-import "../styles/CalculatorsPage.css";
+import "./CalculatorsPage.css";
 
 export default function CalculatorsPage() {
     const navigate = useNavigate();

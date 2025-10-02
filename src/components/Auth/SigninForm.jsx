@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/SigninForm.css";
+import "./SigninForm.css";
 import { jwtDecode } from "jwt-decode";
 
 const SigninForm = () => {

@@ -9,29 +9,26 @@ import {
 } from "react-router-dom";
 
 // Pages
-import SigninForm from "./pages/SigninForm";
+import SigninForm from "./components/Auth/SigninForm";
 import UserPage from "./pages/UserPage";
-import AdminPage from "./pages/AdminPage";
-import AdminConsts from "./pages/AdminConsts";
+import AdminPage from "./components/Admin/AdminPage";
+import AdminConsts from "./components/Admin/AdminConsts";
 import CalculatorsPage from "./pages/CalculatorsPage";
-import EmployeeCostNoPension from "./pages/EmployeeCostNoPension";
-import EmployeeCostWithPension from "./pages/EmployeeCostWithPension";
-import MicroSelfEmployedCalculator from "./pages/MicroSelfEmployedCalculator";
-import MicroSelfEmployedSalariedCalculator from "./pages/MicroSelfEmployedSalariedCalculator";
-import SelfEmployedCost from "./pages/SelfEmployedCost";
+import EmployeeCostNoPension from "./components/Calculators/EmployeeCostNoPension";
+import EmployeeCostWithPension from "./components/Calculators/EmployeeCostWithPension";
+import MicroSelfEmployedCalculator from "./components/Calculators/MicroSelfEmployedCalculator";
+import MicroSelfEmployedSalariedCalculator from "./components/Calculators/MicroSelfEmployedSalariedCalculator";
+import SelfEmployedCost from "./components/Calculators/SelfEmployedCost";
 import AboutUs from "./pages/AboutUs";
 import HomePage from "./pages/HomePage";
-import HomePage1 from "./pages/HomePage1";
-import HomePage2 from "./pages/HomePage2";
-import HomePage3 from "./pages/HomePage3";
-import ArticlesPage from "./pages/ArticlesPage";
+import ArticlesPage from "./components/ArticlesPage/ArticlesPage";
 import './theme.css'
 
-import IncomeTaxWithPoints from "./pages/IncomeTaxWithPoints";
+import IncomeTaxWithPoints from "./components/Calculators/IncomeTaxWithPoints";
 // Headers & Footer
-import Header from "./components/Header";
-import AdminHeader from "./components/AdminHeader";
-import Footer from "./components/Footer";
+import Header from "./components/Layout/Header";
+import AdminHeader from "./components/Layout/AdminHeader";
+import Footer from "./components/Layout/Footer";
 
 // ✅ Layout wrapper to switch headers
 function Layout() {
@@ -59,9 +56,6 @@ function Layout() {
       <Routes>
         {/* Public routes */}
         <Route path="/" element={<HomePage />} />
-        <Route path="/homepage1" element={<HomePage1 />} />
-        <Route path="/homepage2" element={<HomePage2 />} />
-        <Route path="/homepage3" element={<HomePage3 />} />
         <Route path="/SigninForm" element={<SigninForm />} />
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/articles" element={<ArticlesPage />} />
