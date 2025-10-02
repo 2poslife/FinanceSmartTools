@@ -5,7 +5,7 @@
 }
 
 .courses-container {
-    max-width: 1200px;
+    max-width: 1080px;
     margin: 0 auto;
 }
 
@@ -24,7 +24,7 @@
 .courses-intro {
     text-align: center;
     margin-bottom: 50px;
-    max-width: 900px;
+    max-width: 810px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -52,7 +52,7 @@
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
     display: inline-block;
     width: 100%;
-    max-width: 600px;
+    max-width: 540px;
     position: relative;
     direction: rtl;
     unicode-bidi: plaintext;
@@ -86,7 +86,7 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
-    max-width: 380px;
+    max-width: 340px;
 }
 
 .course-card:hover {

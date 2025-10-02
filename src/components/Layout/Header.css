@@ -153,7 +153,7 @@
   background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
   border-radius: 20px;
   padding: 40px;
-  max-width: 900px;
+  max-width: 810px;
   width: 90%;
   max-height: 90vh;
   overflow-y: auto;
@@ -321,7 +321,7 @@
 .contact-card p {
   font-size: 16px;
   font-weight: 700;
- color: #aaa;
+  color: #aaa;
   line-height: 1.6;
   margin: 0;
   direction: rtl;

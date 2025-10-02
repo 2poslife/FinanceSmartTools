@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  max-width: 1200px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
@@ -126,5 +126,5 @@
 }
 
 .faq-image img {
-  max-width: 550px;
+  max-width: 495px;
 }

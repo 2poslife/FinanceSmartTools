@@ -25,6 +25,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 per row */
   gap: 24px;
-  max-width: 1200px;
+  max-width: 1080px;
   margin: 0 auto;
 }

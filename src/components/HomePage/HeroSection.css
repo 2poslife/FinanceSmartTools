@@ -124,7 +124,7 @@
 
 .hero-content {
   position: relative;
-  max-width: 800px;
+  max-width: 720px;
   margin: 0 auto;
   margin-top: -25vh;
   z-index: 2;
@@ -146,8 +146,8 @@
 }
 
 .hero-logo img {
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 270px;
+  max-height: 270px;
   width: auto;
   height: auto;
   border-radius: 20px;
@@ -236,7 +236,7 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
   opacity: 0.95;
-  max-width: 600px;
+  max-width: 540px;
   margin-left: auto;
   margin-right: auto;
   animation: slideInUp 1.4s ease-out 0.4s both;
@@ -315,7 +315,7 @@
   justify-content: center;
   gap: 8px;
   width: auto;
-  max-width: 400px;
+  max-width: 360px;
   border: 2px solid rgba(212, 175, 55, 0.4);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
