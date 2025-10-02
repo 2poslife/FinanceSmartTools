@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HeroSection from "../components/HomePage/HeroSection";
 import ServicesSection from "../components/HomePage/ServicesSection";
 import WhySection from "../components/HomePage/WhySection";
@@ -10,6 +10,10 @@ import TestimonialsSection from "../components/HomePage/TestimonialsSection";
 import ArticlesSection from "../components/HomePage/ArticlesSection";
 
 function HomePage() {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <HeroSection />

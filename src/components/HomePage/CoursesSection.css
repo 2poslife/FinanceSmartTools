@@ -5,7 +5,7 @@
 }
 
 .courses-container {
-    max-width: 1080px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -24,7 +24,7 @@
 .courses-intro {
     text-align: center;
     margin-bottom: 50px;
-    max-width: 810px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -41,18 +41,18 @@
 .intro-point {
     font-size: 1.4rem;
     font-weight: 800;
-    color: #000000;
+    color: #000000 !important;
     margin-bottom: 20px;
     font-family: "Arial Black", Arial, sans-serif;
     text-align: center;
     padding: 15px 25px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    background: #ffffff !important;
     border-radius: 12px;
-    border: 2px solid #d4af37;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+    border: 3px solid #d4af37 !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     display: inline-block;
     width: 100%;
-    max-width: 540px;
+    max-width: 600px;
     position: relative;
     direction: rtl;
     unicode-bidi: plaintext;
@@ -86,7 +86,7 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
-    max-width: 340px;
+    max-width: 380px;
 }
 
 .course-card:hover {
@@ -95,33 +95,34 @@
     border-color: #b89453;
 }
 
-.course-image {
+.course-card .course-image {
     position: relative;
     height: 200px;
     overflow: hidden;
-    background: linear-gradient(135deg, #d4af37 0%, #b89453 100%);
-    display: flex;
+    background: linear-gradient(135deg, #d4af37 0%, #b89453 100%) !important;
+    display: flex !important;
     align-items: center;
     justify-content: center;
+    border-bottom: 3px solid #d4af37;
 }
 
-.course-image-bg {
+.course-card .course-image-bg {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover !important;
     transition: transform 0.3s ease;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
-    background: white;
+    display: block !important;
 }
 
 .course-card:hover .course-image-bg {
     transform: scale(1.05);
 }
 
-.course-category {
+.course-card .course-category {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -240,4 +241,3 @@
         font-size: 0.95rem;
     }
 }
-

@@ -22,6 +22,8 @@ import SelfEmployedCost from "./components/Calculators/SelfEmployedCost";
 import AboutUs from "./pages/AboutUs";
 import HomePage from "./pages/HomePage";
 import ArticlesPage from "./components/ArticlesPage/ArticlesPage";
+import CoursesPage from "./pages/CoursesPage";
+import CourseDetailPage from "./pages/CourseDetailPage";
 import './theme.css'
 
 import IncomeTaxWithPoints from "./components/Calculators/IncomeTaxWithPoints";
@@ -59,6 +61,8 @@ function Layout() {
         <Route path="/SigninForm" element={<SigninForm />} />
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/articles" element={<ArticlesPage />} />
+        <Route path="/courses" element={<CoursesPage />} />
+        <Route path="/course/:id" element={<CourseDetailPage />} />
 
         {/* User routes */}
         <Route path="/UserPage" element={<UserPage />} />

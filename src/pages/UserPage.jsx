@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./UserPage.css";
 
 const UserPage = () => {
     const navigate = useNavigate();
     const [selectedTool, setSelectedTool] = useState(null);
+
+    // Scroll to top when component mounts
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const handleLogout = () => {
         localStorage.removeItem("access_token");
