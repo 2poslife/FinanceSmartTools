@@ -112,11 +112,11 @@ const Header = () => {
                     <MapPin className="icon" />
                   </div>
                   <h3>موقعنا</h3>
-                  <p>
-                    {" "}
-                    المغار | 📍 <br />
-                    شارع{" "}
-                  </p>
+                  <p dir="rtl">
+                  <strong>📍 المغار</strong>
+                  <br />
+                </p>
+
                 </div>
 
                 <div className="contact-card">
@@ -125,9 +125,8 @@ const Header = () => {
                   </div>
                   <h3>راسلنا</h3>
                   <p>
-                    info@accounting-office.com
-                    <br />
-                    training@accounting-office.com
+                  <strong>zedan.cpa@gmail.com</strong>
+                  <br />
                   </p>
                 </div>
 
@@ -136,10 +135,8 @@ const Header = () => {
                     <Phone className="icon" />
                   </div>
                   <h3>اتصل بنا</h3>
-                  <p>
-                    +970 599 123 456
-                    <br />
-                    +970 567 890 123
+                  <p dir="rtl">
+                    <strong>0528092596</strong> 
                   </p>
                 </div>
               </div>

@@ -4,14 +4,6 @@ import "./Footer.css";
 function Footer() {
   return (
     <footer className="footer">
-      {/* Geometric Background Shapes */}
-      <div className="footer-bg-shapes">
-        <div className="shape shape-1"></div>
-        <div className="shape shape-2"></div>
-        <div className="shape shape-3"></div>
-        <div className="shape shape-4"></div>
-      </div>
-
       <div className="footer-content">
         {/* Left Section */}
         <div className="footer-left">
