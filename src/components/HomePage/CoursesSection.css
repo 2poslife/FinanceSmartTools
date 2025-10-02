@@ -52,10 +52,13 @@
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     display: inline-block;
     width: 100%;
-    max-width: 600px;
+    max-width: 1200px;
     position: relative;
     direction: rtl;
     unicode-bidi: plaintext;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
 }
 
 .intro-point::before {
