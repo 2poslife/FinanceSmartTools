@@ -9,6 +9,11 @@ import {
     YAxis,
     Tooltip,
     ResponsiveContainer,
+    LineChart,
+    Line,
+    PieChart,
+    Pie,
+    Cell,
 } from "recharts";
 
 // ✅ جميع الأشهر
@@ -33,6 +38,28 @@ const AdminPage = () => {
     const [year, setYear] = useState(2025);
     const [loading, setLoading] = useState(true);
     const [errMsg, setErrMsg] = useState("");
+
+    // Dashboard stats
+    const [dashboardStats, setDashboardStats] = useState({
+        totalUsers: 0,
+        activeUsers: 0,
+        newUsersToday: 0,
+        totalCalculations: 0
+    });
+
+    // Mock data for demonstration
+    const pieData = [
+        { name: 'مستخدمين عاديين', value: 85, color: '#3B82F6' },
+        { name: 'مدراء', value: 15, color: '#10B981' }
+    ];
+
+    const recentActivity = [
+        { id: 1, action: 'مستخدم جديد', user: 'أحمد محمد', time: 'منذ 5 دقائق', type: 'user' },
+        { id: 2, action: 'حساب ضريبي', user: 'فاطمة علي', time: 'منذ 12 دقيقة', type: 'calculation' },
+        { id: 3, action: 'تسجيل دخول', user: 'محمد حسن', time: 'منذ 25 دقيقة', type: 'login' },
+        { id: 4, action: 'مستخدم جديد', user: 'سارة أحمد', time: 'منذ ساعة', type: 'user' },
+        { id: 5, action: 'حساب راتب', user: 'علي محمود', time: 'منذ ساعتين', type: 'calculation' }
+    ];
 
     // ✅ Check token on load
     useEffect(() => {
@@ -83,10 +110,26 @@ const AdminPage = () => {
                     return { month: m, count: found ? found.new_users : 0 };
                 });
                 setUsersPerMonth(stats);
+                
+                // Update dashboard stats with mock data for demonstration
+                setDashboardStats({
+                    totalUsers: 1247,
+                    activeUsers: 892,
+                    newUsersToday: 23,
+                    totalCalculations: 15678
+                });
             })
             .catch((err) => {
                 console.error("❌ Users stats fetch error:", err);
                 setErrMsg("حدث خطأ أثناء جلب بيانات المستخدمين.");
+                
+                // Set mock data on error for demonstration
+                setDashboardStats({
+                    totalUsers: 1247,
+                    activeUsers: 892,
+                    newUsersToday: 23,
+                    totalCalculations: 15678
+                });
             })
             .finally(() => setLoading(false));
     }, [year]);
@@ -143,56 +186,73 @@ const AdminPage = () => {
     return (
         <div className="admin-container">
             <div className="admin-body">
-                {/* Sidebar */}
+                {/* Left Sidebar */}
                 <aside className="admin-sidebar">
-                    <div className="sidebar-card" onClick={() => setShowAddUser(true)}>
-                        ➕ إضافة مستخدم
+                    <div className="sidebar-header">
+                        <h3>لوحة الإدارة</h3>
                     </div>
-                    <div className="sidebar-card" onClick={() => navigate("/AdminConsts")}>
-                        ⚙️ تعديل الثوابت
-                    </div>
-                    <div className="sidebar-card" onClick={() => navigate("/CalculatorsPage")}>
-                        🧮 المحاسبات والضرائب
-                    </div>
-                    {/* <div className="sidebar-card">📊 التقارير</div> */}
+                    
+                    <nav className="sidebar-nav">
+                        <div className="nav-item active" onClick={() => window.location.reload()}>
+                            <span className="nav-icon">📊</span>
+                            <span className="nav-text">لوحة التحكم</span>
+                        </div>
+                        <div className="nav-item" onClick={() => setShowAddUser(true)}>
+                            <span className="nav-icon">👥</span>
+                            <span className="nav-text">إضافة مستخدم</span>
+                        </div>
+                        <div className="nav-item" onClick={() => navigate("/AdminConsts")}>
+                            <span className="nav-icon">⚙️</span>
+                            <span className="nav-text">تعديل الثوابت</span>
+                        </div>
+                        <div className="nav-item" onClick={() => navigate("/CalculatorsPage")}>
+                            <span className="nav-icon">🧮</span>
+                            <span className="nav-text">إدارة الحاسبات</span>
+                        </div>
+                    </nav>
                 </aside>
 
                 {/* Main Content */}
                 <main className="admin-content">
-                    <h2>مرحباً بك في لوحة الإدارة</h2>
-                    <p>اختر أحد الخيارات من القائمة على اليسار.</p>
+                    <div className="content-header">
+                        <h1>لوحة الإدارة</h1>
+                    </div>
 
-                    {/* User stats */}
-                    <section style={{ marginTop: "40px" }}>
-                        <h3>📈 إحصائيات المستخدمين</h3>
-                        <p>عدد المستخدمين الجدد لكل شهر:</p>
+                    {/* Simple Stats */}
+                    <div className="simple-stats">
+                        <div className="stat-item">
+                            <h3>{dashboardStats.totalUsers}</h3>
+                            <p>إجمالي المستخدمين</p>
+                        </div>
+                    </div>
 
-                        <div style={{ marginBottom: "16px" }}>
-                            <label style={{ marginRight: "8px" }}>اختر السنة:</label>
+                    {/* Simple Chart */}
+                    <div className="simple-chart">
+                        <div className="year-selector">
                             <select value={year} onChange={(e) => setYear(Number(e.target.value))}>
                                 <option value={2025}>2025</option>
                                 <option value={2026}>2026</option>
                                 <option value={2027}>2027</option>
                             </select>
                         </div>
-
+                        
                         {loading ? (
-                            <div style={{ padding: 24 }}>⏳ جارِ تحميل البيانات…</div>
+                            <div className="loading">جاري التحميل...</div>
                         ) : errMsg ? (
-                            <div style={{ padding: 24, color: "#b91c1c" }}>{errMsg}</div>
+                            <div className="error">{errMsg}</div>
                         ) : (
-                            <div className="chart-box" style={{ maxWidth: "600px", margin: "0 auto" }}>
-                                <ResponsiveContainer width="100%" height={200}>
+                            <div className="chart">
+                                <ResponsiveContainer width="100%" height={400}>
                                     <BarChart data={usersPerMonth}>
                                         <XAxis dataKey="month" />
                                         <YAxis allowDecimals={false} />
                                         <Tooltip />
-                                        <Bar dataKey="count" fill="#2563eb" barSize={25} />
+                                        <Bar dataKey="count" fill="#2563eb" />
                                     </BarChart>
                                 </ResponsiveContainer>
                             </div>
                         )}
-                    </section>
+                    </div>
                 </main>
             </div>
 

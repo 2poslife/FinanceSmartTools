@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Home, Settings, LogOut, Users, BarChart } from "lucide-react";
+import { Home, Settings, LogOut, Users, BarChart, Calculator, Info, FileText, BookOpen } from "lucide-react";
 import "./Header.css";
 
 const AdminHeader = () => {
@@ -26,18 +26,35 @@ const AdminHeader = () => {
 
             <nav className="nav">
                 <button
-                    onClick={() => navigate("/AdminPage")}
-                    className={`nav-btn ${isActive("/AdminPage")}`}
+                    onClick={() => navigate("/")}
+                    className={`nav-btn ${isActive("/")}`}
                 >
-                    <Home className="icon" /> الصفحة الرئيسية
+                    <Home className="icon" /> الرئيسية
                 </button>
                 <button
-                    onClick={() => navigate("/AdminConsts")}
-                    className={`nav-btn ${isActive("/AdminConsts")}`}
+                    onClick={() => navigate("/courses")}
+                    className={`nav-btn ${isActive("/courses")}`}
                 >
-                    <BarChart className="icon" /> الثوابت
+                    <BookOpen className="icon" /> الدورات
                 </button>
-
+                <button
+                    onClick={() => navigate("/articles")}
+                    className={`nav-btn ${isActive("/articles")}`}
+                >
+                    <FileText className="icon" /> المقالات
+                </button>
+                <button
+                    onClick={() => navigate("/CalculatorsPage")}
+                    className={`nav-btn ${isActive("/CalculatorsPage")}`}
+                >
+                    <Calculator className="icon" /> الآلات الحاسبة
+                </button>
+                <button
+                    onClick={() => navigate("/AboutUs")}
+                    className={`nav-btn ${isActive("/AboutUs")}`}
+                >
+                    <Info className="icon" /> حول المكتب
+                </button>
             </nav>
 
             <button className="cta-btn danger" onClick={handleLogout}>

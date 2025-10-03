@@ -28,13 +28,10 @@
 .logo-img {
   width: 3rem;
   height: 3rem;
-  background-color: var(--color-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  border-radius: 100px;
-  padding: 1px;
 }
 
 .logo-texts {
@@ -328,6 +325,41 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    padding: 8px 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .logo {
+    order: 1;
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .logo-title {
+    font-size: 20px;
+  }
+  
+  .nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .nav-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  
+  .cta-btn {
+    order: 2;
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -339,5 +371,41 @@
   
   .about-contact h2 {
     font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 6px 12px;
+  }
+  
+  .logo-img {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  .logo-title {
+    font-size: 16px;
+  }
+  
+  .nav {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .nav-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+    justify-content: center;
+  }
+  
+  .cta-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  
+  .icon {
+    width: 12px;
+    height: 12px;
   }
 }

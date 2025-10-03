@@ -18,6 +18,38 @@
   border-bottom: 3px solid #000000;
 }
 
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+    min-height: 60vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1.5rem 0.5rem;
+    min-height: 50vh;
+  }
+  
+  .hero-content {
+    margin-top: -15vh;
+  }
+  
+  .hero-logo img {
+    max-width: 200px;
+    max-height: 200px;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
 /* Enhanced Animations */
 @keyframes fadeIn {
   from {

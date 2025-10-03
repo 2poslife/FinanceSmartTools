@@ -8,9 +8,11 @@ import {
   Info,
   Phone,
   LogIn,
+  LogOut,
   MapPin,
   Mail,
 } from "lucide-react";
+import { jwtDecode } from "jwt-decode";
 import "./Header.css";
 import Logo from '../../assets/logo.png'
 const Header = () => {
@@ -19,6 +21,27 @@ const Header = () => {
   const [showContact, setShowContact] = useState(false);
 
   const isActive = (path) => (location.pathname === path ? "active" : "");
+
+  // Check if user is logged in
+  const token = localStorage.getItem("access_token");
+  let isLoggedIn = false;
+  let userRole = null;
+
+  if (token) {
+    try {
+      const decoded = jwtDecode(token);
+      isLoggedIn = decoded.exp * 1000 > Date.now();
+      userRole = decoded.role;
+    } catch (err) {
+      console.error("❌ Invalid token:", err);
+      localStorage.removeItem("access_token");
+    }
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem("access_token");
+    navigate("/");
+  };
 
   return (
     <>
@@ -73,13 +96,23 @@ const Header = () => {
             حول المكتب
           </button>
 
-          <button
-            onClick={() => navigate("/SigninForm")}
-            className={`nav-btn ${isActive("/SigninForm")}`}
-          >
-            <LogIn className="icon" />
-            تسجيل دخول
-          </button>
+          {isLoggedIn ? (
+            <button
+              onClick={handleLogout}
+              className="nav-btn"
+            >
+              <LogOut className="icon" />
+              تسجيل خروج
+            </button>
+          ) : (
+            <button
+              onClick={() => navigate("/SigninForm")}
+              className={`nav-btn ${isActive("/SigninForm")}`}
+            >
+              <LogIn className="icon" />
+              تسجيل دخول
+            </button>
+          )}
         </nav>
 
         {/* CTA Button */}
