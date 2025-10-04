@@ -11,6 +11,7 @@ import {
 import HomePage from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
 import ArticlesPage from "./components/ArticlesPage/ArticlesPage";
+import ArticleDetailPage from "./pages/ArticleDetailPage";
 import CoursesPage from "./pages/CoursesPage";
 import CourseDetailPage from "./pages/CourseDetailPage";
 import CalculatorsPage from "./pages/CalculatorsPage";
@@ -99,6 +100,7 @@ function Layout() {
         <Route path="/SigninForm" element={<SigninForm />} />
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/articles" element={<ArticlesPage />} />
+        <Route path="/article/:id" element={<ArticleDetailPage />} />
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/course/:id" element={<CourseDetailPage />} />
         <Route path="/CalculatorsPage" element={<CalculatorsPage />} />

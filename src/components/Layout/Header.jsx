@@ -11,6 +11,7 @@ import {
   LogOut,
   MapPin,
   Mail,
+  Monitor,
 } from "lucide-react";
 import { jwtDecode } from "jwt-decode";
 import "./Header.css";
@@ -56,6 +57,16 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="nav">
+          {isLoggedIn && userRole === "admin" && (
+            <button
+              onClick={() => navigate("/AdminPage")}
+              className={`nav-btn control-panel-btn ${isActive("/AdminPage")}`}
+            >
+              <Monitor className="icon" />
+              لوحة التحكم
+            </button>
+          )}
+
           <button
             onClick={() => navigate("/")}
             className={`nav-btn ${isActive("/")}`}

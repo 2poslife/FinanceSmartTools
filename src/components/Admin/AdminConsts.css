@@ -559,24 +559,32 @@
 }
 
 .sim-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2.5rem !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
 }
 
 .sim-card {
     background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 1.2rem;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
+    border: 5px solid #b29053 !important;
+    border-radius: 18px !important;
+    padding: 2.5rem !important;
+    box-shadow: 0 8px 25px rgba(178, 144, 83, 0.2) !important;
+    transition: all 0.3s ease !important;
     cursor: pointer;
+    min-height: 220px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
 }
 
 .sim-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px) !important;
+    box-shadow: 0 15px 35px rgba(178, 144, 83, 0.3) !important;
+    border-color: #d4af37 !important;
+    border-width: 7px !important;
 }
 
 .sim-card h3 {
@@ -588,5 +596,7 @@
 
 .sim-card p {
     color: #475569;
-    font-size: 0.95rem;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    line-height: 1.6 !important;
 }

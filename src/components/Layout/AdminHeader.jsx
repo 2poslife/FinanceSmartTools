@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Home, Settings, LogOut, Users, BarChart, Calculator, Info, FileText, BookOpen } from "lucide-react";
+import { Home, Settings, LogOut, Users, BarChart, Calculator, Info, FileText, BookOpen, Monitor } from "lucide-react";
 import "./Header.css";
 
 const AdminHeader = () => {
@@ -25,6 +25,19 @@ const AdminHeader = () => {
             </div>
 
             <nav className="nav">
+                <button
+                    onClick={() => navigate("/AdminPage")}
+                    className={`nav-btn control-panel-btn ${isActive("/AdminPage")}`}
+                    style={{
+                        background: 'linear-gradient(135deg, #ff6b35 0%, #f7931e 100%)',
+                        color: '#ffffff',
+                        fontWeight: '600',
+                        border: '2px solid #ff6b35',
+                        boxShadow: '0 4px 12px rgba(255, 107, 53, 0.3)'
+                    }}
+                >
+                    <Monitor className="icon" /> لوحة التحكم
+                </button>
                 <button
                     onClick={() => navigate("/")}
                     className={`nav-btn ${isActive("/")}`}

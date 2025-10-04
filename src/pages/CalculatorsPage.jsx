@@ -90,7 +90,7 @@ export default function CalculatorsPage() {
                     {simulators.map((sim, idx) => (
                         <div
                             key={idx}
-                            className={`sim-card ${idx >= simulators.length - 2 ? "half-row" : ""}`}
+                            className="sim-card"
                             onClick={() => handleSimulatorClick(sim.link)}
                         >
                             <div className="sim-card-header">
