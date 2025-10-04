@@ -1,7 +1,12 @@
 import React from "react";
 import "./HeroSection.css";
 import { Link } from "react-router-dom";
-import { ArrowBigLeft, ArrowBigLeftDashIcon, Calculator, TrendingUp } from "lucide-react";
+import {
+  ArrowBigLeft,
+  ArrowBigLeftDashIcon,
+  Calculator,
+  TrendingUp,
+} from "lucide-react";
 
 function HeroSection() {
   return (
@@ -19,7 +24,7 @@ function HeroSection() {
         <div className="hero-text-container">
           <h2 className="hero-office-name">זידאן משרד ראיית חשבון</h2>
           <div className="hero-separator"></div>
-          <p className="hero-services">────── ויועץ כלכלי • עסקי • פיננסי ──────</p>
+          <p className="hero-services">יועץ כלכלי | עסקי | פיננסי</p>
         </div>
       </div>
     </section>

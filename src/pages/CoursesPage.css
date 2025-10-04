@@ -55,7 +55,7 @@
 }
 
 .intro-point {
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 800;
   color: #fff;
   margin-bottom: 15px;
@@ -74,14 +74,7 @@
   unicode-bidi: plaintext;
 }
 
-.intro-point::before {
-  content: "•";
-  color: #d4af37;
-  font-weight: 900;
-  font-size: 1.6rem;
-  margin-left: 10px;
-  margin-right: 10px;
-}
+
 
 /* Courses Content */
 .courses-content {
