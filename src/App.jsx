@@ -10,7 +10,7 @@ import {
 // Pages
 import HomePage from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
-import ArticlesPage from "./components/ArticlesPage/ArticlesPage";
+import ArticlesPage from "./pages/ArticlesPage";
 import ArticleDetailPage from "./pages/ArticleDetailPage";
 import CoursesPage from "./pages/CoursesPage";
 import CourseDetailPage from "./pages/CourseDetailPage";

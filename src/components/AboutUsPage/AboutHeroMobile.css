@@ -1,0 +1,135 @@
+/* Mobile Hero Section - Completely Different Design */
+.mobile-hero-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 40px 20px;
+  border-bottom: 3px solid #b29053;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #b29053, #d4af37, #b29053);
+}
+
+.mobile-hero-content {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.mobile-hero-text {
+  text-align: center;
+  order: 1;
+}
+
+.mobile-main-title {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-title-highlight {
+  font-size: 36px;
+  font-weight: 900;
+  color: #333;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.mobile-title-subtitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #b29053 0%, #d4af37 50%, #b29053 100%);
+  padding: 8px 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(176, 147, 91, 0.3);
+  display: inline-block;
+}
+
+.mobile-hero-description {
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+  line-height: 1.6;
+  text-align: center;
+  direction: rtl;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.mobile-vision-box {
+  order: 2;
+  background: linear-gradient(135deg, #b29053 0%, #d4af37 50%, #b29053 100%);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  direction: rtl;
+  box-shadow: 0 8px 25px rgba(176, 147, 91, 0.3);
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.mobile-vision-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 8px 0;
+}
+
+.mobile-vision-principle {
+  font-size: 14px;
+  font-weight: 800;
+  color: #000;
+  margin: 0;
+}
+
+/* Mobile-specific animations */
+@keyframes mobile-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.mobile-hero-section {
+  animation: mobile-float 6s ease-in-out infinite;
+}
+
+/* Responsive adjustments for very small screens */
+@media (max-width: 480px) {
+  .mobile-title-highlight {
+    font-size: 28px;
+  }
+  
+  .mobile-title-subtitle {
+    font-size: 16px;
+    padding: 6px 16px;
+  }
+  
+  .mobile-vision-box {
+    max-width: 280px;
+    padding: 15px;
+  }
+  
+  .mobile-hero-description {
+    font-size: 14px;
+  }
+  
+  .mobile-vision-text {
+    font-size: 14px;
+  }
+  
+  .mobile-vision-principle {
+    font-size: 12px;
+  }
+}

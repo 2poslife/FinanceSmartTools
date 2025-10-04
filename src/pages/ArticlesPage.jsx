@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { articles, getCategoriesWithCounts } from "../../assets/data/articlesData";
-import "./ArticlesPageUnique.css";
+import { articles, getCategoriesWithCounts } from "../assets/data/articlesData";
+import "./ArticlesPage.css";
 
 function ArticlesPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");

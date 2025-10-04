@@ -277,59 +277,67 @@
 
 @media (max-width: 768px) {
     .sim-page {
-        padding: 1rem;
+        padding: 0.5rem;
     }
     
     .sim-intro {
-        margin: 1.5rem auto;
+        margin: 1rem auto;
         padding: 1.5rem 1rem;
     }
     
     .sim-intro h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
     
     .sim-tagline {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     .sim-section-title {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         padding: 12px 20px;
     }
     
     .sim-grid {
         grid-template-columns: 1fr !important;
-        gap: 1rem !important;
+        gap: 1.5rem !important;
         max-width: 100% !important;
-        padding: 0 0.5rem;
+        padding: 0;
     }
     
     .sim-card {
         padding: 1.5rem;
-        min-height: 160px;
+        min-height: auto;
         border-width: 3px;
+        width: 100%;
+        display: block;
     }
     
     .sim-card h3 {
-        font-size: 1.4rem;
-        padding: 0.3rem 0.6rem;
-        margin-bottom: 0.8rem;
+        font-size: 1.3rem;
+        padding: 0.4rem 0.8rem;
+        margin-bottom: 1rem;
+        white-space: normal;
+        word-wrap: break-word;
     }
     
     .sim-card p {
         font-size: 1rem;
-        line-height: 1.5;
+        line-height: 1.6;
+        white-space: normal;
+        word-wrap: break-word;
     }
     
     .sim-card-header {
-        gap: 0.6rem;
-        margin-bottom: 0.8rem;
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+        align-items: flex-start;
     }
     
     .sim-icon {
         width: 28px;
         height: 28px;
+        flex-shrink: 0;
     }
     
     .sim-card:hover {
@@ -341,56 +349,64 @@
 /* Extra small phones */
 @media (max-width: 480px) {
     .sim-page {
-        padding: 0.5rem;
+        padding: 0.25rem;
     }
     
     .sim-intro {
-        margin: 1rem auto;
-        padding: 1rem 0.5rem;
+        margin: 0.5rem auto;
+        padding: 1rem 0.75rem;
     }
     
     .sim-intro h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     
     .sim-tagline {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     
     .sim-section-title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         padding: 10px 15px;
     }
     
     .sim-grid {
-        gap: 0.8rem !important;
+        gap: 1rem !important;
         padding: 0;
     }
     
     .sim-card {
-        padding: 1rem;
-        min-height: 140px;
+        padding: 1.2rem;
+        min-height: auto;
         border-width: 2px;
+        width: 100%;
+        display: block;
     }
     
     .sim-card h3 {
-        font-size: 1.2rem;
-        padding: 0.2rem 0.4rem;
-        margin-bottom: 0.6rem;
+        font-size: 1.1rem;
+        padding: 0.3rem 0.6rem;
+        margin-bottom: 0.8rem;
+        white-space: normal;
+        word-wrap: break-word;
     }
     
     .sim-card p {
         font-size: 0.9rem;
-        line-height: 1.4;
+        line-height: 1.5;
+        white-space: normal;
+        word-wrap: break-word;
     }
     
     .sim-card-header {
-        gap: 0.4rem;
-        margin-bottom: 0.6rem;
+        gap: 0.6rem;
+        margin-bottom: 0.8rem;
+        align-items: flex-start;
     }
     
     .sim-icon {
         width: 24px;
         height: 24px;
+        flex-shrink: 0;
     }
 }
