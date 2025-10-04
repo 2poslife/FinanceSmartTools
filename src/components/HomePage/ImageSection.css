@@ -1,0 +1,32 @@
+.image-section {
+    padding: 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-bottom: 3px solid #000000;
+}
+
+.image-container {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+.section-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .image-section {
+        padding: 0;
+    }
+    
+    .section-image {
+        border-radius: 0;
+    }
+}
+

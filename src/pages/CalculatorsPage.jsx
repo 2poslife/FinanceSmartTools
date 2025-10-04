@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
     Calculator,
@@ -10,10 +10,15 @@ import {
     Percent, // new icon
     CreditCard, // new icon
 } from "lucide-react";
-import "../styles/CalculatorsPage.css";
+import "./CalculatorsPage.css";
 
 export default function CalculatorsPage() {
     const navigate = useNavigate();
+
+    // Scroll to top when component mounts
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const simulators = [
         {
@@ -77,7 +82,8 @@ export default function CalculatorsPage() {
             {/* Simulators */}
             <section className="sim-list">
                 <h2 className="sim-section-title">
-                    <Calculator className="inline-icon" /> מיסוי ועבודה
+                    <span>מיסוי ועבודה</span>
+                    <Calculator className="inline-icon" />
                 </h2>
 
                 <div className="sim-grid">
