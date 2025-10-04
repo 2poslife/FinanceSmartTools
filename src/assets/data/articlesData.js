@@ -7,7 +7,7 @@ export const articles = [
         date: "15 ديسمبر 2024",
         author: "د. أحمد زيدان",
         image: "/herosection.png",
-        category: "محاسبة",
+        category: "ضرائبimage.png",
         readTime: "8 دقائق",
         content: `
             <div class="article-intro">
@@ -88,8 +88,8 @@ export const articles = [
 
             <div class="content-section">
                 <h3>أنواع الضرائب الأساسية</h3>
-                <div class="tax-grid">
-                    <div class="tax-card">
+                <div class="article-detail-tax-grid">
+                    <div class="article-detail-tax-card">
                         <h4>ضريبة الدخل (מס הכנסה)</h4>
                         <ul>
                             <li>ضريبة على الأرباح السنوية للشركات</li>
@@ -98,7 +98,7 @@ export const articles = [
                             <li>إمكانية الحصول على إعفاءات ضريبية</li>
                         </ul>
                     </div>
-                    <div class="tax-card">
+                    <div class="article-detail-tax-card">
                         <h4>ضريبة القيمة المضافة (מע״מ)</h4>
                         <ul>
                             <li>ضريبة على المبيعات والخدمات</li>
@@ -107,7 +107,7 @@ export const articles = [
                             <li>تسجيل إجباري عند تجاوز حد معين</li>
                         </ul>
                     </div>
-                    <div class="tax-card">
+                    <div class="article-detail-tax-card">
                         <h4>التأمين الوطني (ביטוח לאומי)</h4>
                         <ul>
                             <li>مساهمات للضمان الاجتماعي</li>
@@ -121,31 +121,31 @@ export const articles = [
 
             <div class="content-section">
                 <h3>الالتزامات القانونية الأساسية</h3>
-                <div class="legal-checklist">
-                    <div class="checklist-item">
-                        <div class="check-icon">✓</div>
-                        <div class="check-content">
+                <div class="article-detail-legal-checklist">
+                    <div class="article-detail-checklist-item">
+                        <div class="article-detail-check-icon">✓</div>
+                        <div class="article-detail-check-content">
                             <h4>تسجيل الشركة</h4>
                             <p>تسجيل رسمي في سجل الشركات مع الحصول على رقم هوية ضريبي</p>
                         </div>
                     </div>
-                    <div class="checklist-item">
-                        <div class="check-icon">✓</div>
-                        <div class="check-content">
+                    <div class="article-detail-checklist-item">
+                        <div class="article-detail-check-icon">✓</div>
+                        <div class="article-detail-check-content">
                             <h4>فتح حسابات بنكية</h4>
                             <p>حساب جاري للشركة منفصل عن الحسابات الشخصية</p>
                         </div>
                     </div>
-                    <div class="checklist-item">
-                        <div class="check-icon">✓</div>
-                        <div class="check-content">
+                    <div class="article-detail-checklist-item">
+                        <div class="article-detail-check-icon">✓</div>
+                        <div class="article-detail-check-content">
                             <h4>نظام محاسبي</h4>
                             <p>نظام محاسبي منظم مع حفظ جميع المستندات المالية</p>
                         </div>
                     </div>
-                    <div class="checklist-item">
-                        <div class="check-icon">✓</div>
-                        <div class="check-content">
+                    <div class="article-detail-checklist-item">
+                        <div class="article-detail-check-icon">✓</div>
+                        <div class="article-detail-check-content">
                             <h4>التقارير الدورية</h4>
                             <p>تقديم التقارير الضريبية في المواعيد المحددة</p>
                         </div>
@@ -155,31 +155,31 @@ export const articles = [
 
             <div class="content-section">
                 <h3>الجدول الزمني للالتزامات</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">شهرياً</div>
-                        <div class="timeline-content">
+                <div class="article-detail-timeline">
+                    <div class="article-detail-timeline-item">
+                        <div class="article-detail-timeline-date">شهرياً</div>
+                        <div class="article-detail-timeline-content">
                             <h4>تسديد ضريبة القيمة المضافة</h4>
                             <p>تقديم تقرير מע״מ وتسديد المبلغ المستحق</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">شهرياً</div>
-                        <div class="timeline-content">
+                    <div class="article-detail-timeline-item">
+                        <div class="article-detail-timeline-date">شهرياً</div>
+                        <div class="article-detail-timeline-content">
                             <h4>مساهمات التأمين الوطني</h4>
                             <p>تسديد مساهمات العمال والشركة</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">ربع سنوي</div>
-                        <div class="timeline-content">
+                    <div class="article-detail-timeline-item">
+                        <div class="article-detail-timeline-date">ربع سنوي</div>
+                        <div class="article-detail-timeline-content">
                             <h4>تسديدات ضريبة الدخل</h4>
                             <p>تسديدات مقدمة على ضريبة الدخل</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">سنوياً</div>
-                        <div class="timeline-content">
+                    <div class="article-detail-timeline-item">
+                        <div class="article-detail-timeline-date">سنوياً</div>
+                        <div class="article-detail-timeline-content">
                             <h4>التقرير السنوي</h4>
                             <p>تقديم التقرير السنوي الشامل</p>
                         </div>
@@ -189,33 +189,33 @@ export const articles = [
 
             <div class="content-section">
                 <h3>نصائح عملية مهمة</h3>
-                <div class="tips-grid">
-                    <div class="tip-card">
-                        <div class="tip-icon">📋</div>
+                <div class="article-detail-tips-grid">
+                    <div class="article-detail-tip-card">
+                        <div class="article-detail-tip-icon">📋</div>
                         <h4>تنظيم المستندات</h4>
                         <p>احتفظ بجميع الفواتير والإيصالات منظمة رقمياً وورقياً</p>
                     </div>
-                    <div class="tip-card">
-                        <div class="tip-icon">⏰</div>
+                    <div class="article-detail-tip-card">
+                        <div class="article-detail-tip-icon">⏰</div>
                         <h4>المواعيد النهائية</h4>
                         <p>ضع تذكيرات للمواعيد النهائية لتجنب الغرامات</p>
                     </div>
-                    <div class="tip-card">
-                        <div class="tip-icon">🤝</div>
+                    <div class="article-detail-tip-card">
+                        <div class="article-detail-tip-icon">🤝</div>
                         <h4>استشارة محاسب</h4>
                         <p>استعن بمحاسب مختص للمساعدة في الأمور المعقدة</p>
                     </div>
-                    <div class="tip-card">
-                        <div class="tip-icon">📊</div>
+                    <div class="article-detail-tip-card">
+                        <div class="article-detail-tip-icon">📊</div>
                         <h4>مراقبة التدفق النقدي</h4>
                         <p>راقب التدفق النقدي لتجنب مشاكل السيولة</p>
                     </div>
                 </div>
             </div>
 
-            <div class="content-section warning-section">
+            <div class="content-section article-detail-warning-section">
                 <h3>تحذيرات مهمة</h3>
-                <div class="warning-box">
+                <div class="article-detail-warning-box">
                     <p><strong>تجنب هذه الأخطاء الشائعة:</strong></p>
                     <ul>
                         <li>عدم تقديم التقارير في المواعيد المحددة</li>
