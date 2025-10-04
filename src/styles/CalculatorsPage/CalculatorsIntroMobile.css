@@ -1,0 +1,44 @@
+/* Mobile Intro Section */
+.calculators-intro {
+    text-align: center;
+    margin: 1rem auto;
+    background: linear-gradient(135deg, #b29053 0%, #d4af37 50%, #b29053 100%);
+    padding: 1.5rem 1rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(178, 144, 83, 0.3);
+    border: 2px solid rgba(178, 144, 83, 0.4);
+    width: 100%;
+    max-width: 100%;
+}
+
+.calculators-intro h1 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.calculators-tagline {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #666;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+    .calculators-intro {
+        margin: 0.5rem auto;
+        padding: 1rem 0.75rem;
+    }
+    
+    .calculators-intro h1 {
+        font-size: 1.4rem;
+    }
+    
+    .calculators-tagline {
+        font-size: 0.8rem;
+    }
+}
