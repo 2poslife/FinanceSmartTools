@@ -86,7 +86,7 @@ function Layout() {
   // Determine which header to show
   const renderHeader = () => {
     if (role === "admin") return <AdminHeader />;
-    if (isMobile) return <MobileHeader />;
+    if (isMobile && role !== "admin") return <MobileHeader />;
     return <Header />;
   };
 

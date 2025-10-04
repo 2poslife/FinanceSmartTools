@@ -276,28 +276,121 @@
 }
 
 @media (max-width: 768px) {
+    .sim-page {
+        padding: 1rem;
+    }
+    
+    .sim-intro {
+        margin: 1.5rem auto;
+        padding: 1.5rem 1rem;
+    }
+    
+    .sim-intro h1 {
+        font-size: 1.8rem;
+    }
+    
+    .sim-tagline {
+        font-size: 1rem;
+    }
+    
+    .sim-section-title {
+        font-size: 1.4rem;
+        padding: 12px 20px;
+    }
+    
     .sim-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        max-width: 500px;
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        max-width: 100% !important;
+        padding: 0 0.5rem;
     }
     
     .sim-card {
-        padding: 2rem;
-        min-height: 200px;
+        padding: 1.5rem;
+        min-height: 160px;
+        border-width: 3px;
     }
     
     .sim-card h3 {
-        font-size: 1.8rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 1.4rem;
+        padding: 0.3rem 0.6rem;
+        margin-bottom: 0.8rem;
     }
     
     .sim-card p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .sim-card-header {
+        gap: 0.6rem;
+        margin-bottom: 0.8rem;
     }
     
     .sim-icon {
-        width: 32px;
-        height: 32px;
+        width: 28px;
+        height: 28px;
+    }
+    
+    .sim-card:hover {
+        transform: translateY(-3px);
+        border-width: 4px;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+    .sim-page {
+        padding: 0.5rem;
+    }
+    
+    .sim-intro {
+        margin: 1rem auto;
+        padding: 1rem 0.5rem;
+    }
+    
+    .sim-intro h1 {
+        font-size: 1.5rem;
+    }
+    
+    .sim-tagline {
+        font-size: 0.9rem;
+    }
+    
+    .sim-section-title {
+        font-size: 1.2rem;
+        padding: 10px 15px;
+    }
+    
+    .sim-grid {
+        gap: 0.8rem !important;
+        padding: 0;
+    }
+    
+    .sim-card {
+        padding: 1rem;
+        min-height: 140px;
+        border-width: 2px;
+    }
+    
+    .sim-card h3 {
+        font-size: 1.2rem;
+        padding: 0.2rem 0.4rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .sim-card p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    .sim-card-header {
+        gap: 0.4rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .sim-icon {
+        width: 24px;
+        height: 24px;
     }
 }
