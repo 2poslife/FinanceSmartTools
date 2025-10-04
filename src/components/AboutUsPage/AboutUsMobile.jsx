@@ -1,5 +1,5 @@
 import React from "react";
-import "./AboutUsMobile.css";
+import "../../styles/AboutUsPage/AboutUsMobile.css";
 import AboutHeroMobile from "./AboutHeroMobile";
 import AboutContentMobile from "./AboutContentMobile";
 import AboutCoursesMobile from "./AboutCoursesMobile";

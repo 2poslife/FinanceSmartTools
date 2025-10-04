@@ -1,0 +1,23 @@
+/* Main Courses Page */
+.courses-page-main {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  min-height: 100vh;
+  direction: rtl;
+}
+
+/* Courses Page Content */
+.courses-page-content {
+  padding: 80px 40px;
+}
+
+.courses-page-container {
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .courses-page-content {
+    padding: 40px 20px;
+  }
+}

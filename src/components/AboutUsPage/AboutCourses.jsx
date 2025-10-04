@@ -1,5 +1,5 @@
 import React from "react";
-import "./AboutCourses.css";
+import "../../styles/AboutUsPage/AboutCourses.css";
 
 function AboutCourses() {
   return (

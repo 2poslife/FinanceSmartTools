@@ -147,7 +147,7 @@
 
 /* Buttons */
 .login-button,
-.back-button {
+.signin-back-button {
     width: 100%;
     padding: 0.9rem;
     border: none;
@@ -161,24 +161,28 @@
 }
 
 .login-button {
-    background: linear-gradient(135deg, #b0935b 0%, #b0935b 50%, #b0935b 100%);
+    background: #b0935b;
     color: white;
     border: 2px solid #b0935b;
 }
 
 .login-button:hover {
-    background: linear-gradient(135deg, #d4af37 0%, #b29053 50%, #d4af37 100%);
+    background: linear-gradient(135deg, #d4af37 0%, #b29053 100%);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(178, 144, 83, 0.3);
 }
 
-.back-button {
+.signin-back-button {
     background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
     color: #333;
     border: 2px solid #b0935b;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.back-button:hover {
+.signin-back-button:hover {
     background: linear-gradient(145deg, #e9ecef 0%, #dee2e6 100%);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./SigninForm.css";
+import "../../styles/Auth/SigninForm.css";
 import { jwtDecode } from "jwt-decode";
 
 const SigninForm = () => {
@@ -116,7 +116,7 @@ const SigninForm = () => {
           {/* Back button */}
           <button
             type="button"
-            className="back-button"
+            className="signin-back-button"
             onClick={() => navigate("/")}
           >
             ⬅ العودة

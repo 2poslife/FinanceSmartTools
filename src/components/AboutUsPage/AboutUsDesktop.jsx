@@ -1,5 +1,5 @@
 import React from "react";
-import "./AboutUsDesktop.css";
+import "../../styles/AboutUsPage/AboutUsDesktop.css";
 import AboutHero from "./AboutHero";
 import AboutContent from "./AboutContent";
 import AboutCourses from "./AboutCourses";

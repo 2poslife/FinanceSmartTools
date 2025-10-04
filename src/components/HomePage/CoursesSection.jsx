@@ -29,6 +29,12 @@ function CoursesSection() {
             <CourseCard key={course.id} course={course} />
           ))}
         </div>
+
+        <div className="courses-conclusion">
+          <p className="courses-conclusion-text">
+            في مكتبنا، نعمل على أساس قيم واضحة: الشفافية مع عملائنا، الاحترافية في كل خدمة، المسؤولية الكاملة عن النتائج، والابتكار في الحلول.
+          </p>
+        </div>
       </div>
     </section>
   );

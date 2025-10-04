@@ -1,5 +1,5 @@
 import React from "react";
-import "./AboutCoursesMobile.css";
+import "../../styles/AboutUsPage/AboutCoursesMobile.css";
 
 function AboutCoursesMobile() {
   return (
