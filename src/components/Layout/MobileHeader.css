@@ -140,6 +140,25 @@
   border-color: #dc2626;
 }
 
+.mobile-nav-btn.control-panel-btn {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) !important;
+  color: #ffffff !important;
+  border: 2px solid #ff6b35 !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3) !important;
+}
+
+.mobile-nav-btn.control-panel-btn:hover,
+.mobile-nav-btn.control-panel-btn.active {
+  background: linear-gradient(135deg, #e55a2b 0%, #e8821a 100%) !important;
+  border-color: #d4af37 !important;
+  box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4) !important;
+}
+
+.mobile-nav-btn.control-panel-btn .mobile-icon {
+  color: #ffffff !important;
+}
+
 /* Icons */
 .mobile-icon {
   width: 24px;

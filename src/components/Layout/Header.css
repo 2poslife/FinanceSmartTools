@@ -354,6 +354,13 @@
     padding: 8px 12px;
   }
   
+  .control-panel-btn {
+    font-size: 14px !important;
+    padding: 8px 12px !important;
+    min-width: auto !important;
+    white-space: nowrap !important;
+  }
+  
   .cta-btn {
     order: 2;
     font-size: 14px;
@@ -397,6 +404,15 @@
     font-size: 12px;
     padding: 6px 10px;
     justify-content: center;
+  }
+  
+  .control-panel-btn {
+    font-size: 12px !important;
+    padding: 6px 10px !important;
+    order: -1 !important;
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) !important;
+    color: #ffffff !important;
+    border: 2px solid #ff6b35 !important;
   }
   
   .cta-btn {

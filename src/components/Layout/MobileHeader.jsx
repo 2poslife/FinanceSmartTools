@@ -13,6 +13,7 @@ import {
   Mail,
   Menu,
   X,
+  Monitor,
 } from "lucide-react";
 import { jwtDecode } from "jwt-decode";
 import "./MobileHeader.css";
@@ -86,6 +87,22 @@ const MobileHeader = () => {
             <Home className="mobile-icon" />
             <span>الرئيسية</span>
           </button>
+
+          {isLoggedIn && userRole === "admin" && (
+            <button
+              onClick={() => handleNavigate("/AdminPage")}
+              className={`mobile-nav-btn control-panel-btn ${isActive("/AdminPage")}`}
+              style={{
+                background: 'linear-gradient(135deg, #ff6b35 0%, #f7931e 100%)',
+                color: '#ffffff',
+                fontWeight: '600',
+                border: '2px solid #ff6b35'
+              }}
+            >
+              <Monitor className="mobile-icon" />
+              <span>لوحة التحكم</span>
+            </button>
+          )}
 
           <button
             onClick={() => handleNavigate("/courses")}
