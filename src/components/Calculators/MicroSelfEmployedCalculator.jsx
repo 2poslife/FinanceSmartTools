@@ -8,7 +8,7 @@ import {
     ChevronUp,
     AlertTriangle,
 } from "lucide-react";
-import "./MicroSelfEmployedCalculator.css";
+import "../../styles/Calculators/MicroSelfEmployedCalculator.css";
 
 const API_BASE = "https://financesmarttools-backend.onrender.com";
 

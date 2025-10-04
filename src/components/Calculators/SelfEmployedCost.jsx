@@ -8,7 +8,7 @@ import {
     ChevronUp,
     AlertTriangle,
 } from "lucide-react";
-import "./SelfEmployedCost.css";
+import "../../styles/Calculators/SelfEmployedCost.css";
 
 const API_BASE = "https://financesmarttools-backend.onrender.com";
 

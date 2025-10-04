@@ -1,5 +1,5 @@
 import React from "react";
-import "./WhySection.css";
+import "../../styles/HomePage/WhySection.css";
 import {
   Award,
   BookOpen,

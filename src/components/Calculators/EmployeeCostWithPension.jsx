@@ -8,7 +8,7 @@ import {
     ChevronUp,
     AlertTriangle,
 } from "lucide-react";
-import "./EmployeeCostWithPension.css";
+import "../../styles/Calculators/EmployeeCostWithPension.css";
 
 const API_BASE = "https://financesmarttools-backend.onrender.com";
 

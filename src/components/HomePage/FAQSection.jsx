@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./FAQSection.css";
+import "../../styles/HomePage/FAQSection.css";
 import faqImg from "../../assets/faq.jpg";
 
 const faqs = [

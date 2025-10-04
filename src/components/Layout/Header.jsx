@@ -14,7 +14,7 @@ import {
   Monitor,
 } from "lucide-react";
 import { jwtDecode } from "jwt-decode";
-import "./Header.css";
+import "../../styles/Layout/Header.css";
 import Logo from '../../assets/logo.png'
 const Header = () => {
   const navigate = useNavigate();

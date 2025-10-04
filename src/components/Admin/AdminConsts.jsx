@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import { Pencil, Save, Loader2, LogOut, Home, ChevronDown, ChevronUp } from "lucide-react";
-import "./AdminConsts.css";
+import "../../styles/Admin/AdminConsts.css";
 
 const API_BASE = "https://financesmarttools-backend.onrender.com";
 
@@ -95,50 +95,50 @@ export default function AdminConsts() {
     };
 
     return (
-        <div className="adminconsts-container" dir="rtl">
+        <div className="admin-consts-container" dir="rtl">
 
 
-            <p className="adminconsts-subtitle">
+            <p className="admin-consts-subtitle">
                 تعديل القيم المستخدمة في حاسبات الضرائب والمعاشات.
             </p>
 
             {loading ? (
-                <p className="adminconsts-loading">⏳ جاري التحميل...</p>
+                <p className="admin-consts-loading">⏳ جاري التحميل...</p>
             ) : (
-                <div className="adminconsts-grid">
+                <div className="admin-consts-grid">
                     {groups.map((group) => (
                         <div
                             key={group.title}
-                            className={`adminconsts-card ${group.fields.some((f) => f.key === "INCOME_TAX_BRACKETS") ? "json-card" : ""
+                            className={`admin-consts-card ${group.fields.some((f) => f.key === "INCOME_TAX_BRACKETS") ? "admin-consts-json-card" : ""
                                 }`}
                         >
-                            <div className="adminconsts-card-header">{group.title}</div>
-                            <div className="adminconsts-card-body">
+                            <div className="admin-consts-card-header">{group.title}</div>
+                            <div className="admin-consts-card-body">
                                 {group.fields.map((f) => (
-                                    <div key={f.key} className="adminconsts-field">
-                                        <div className="adminconsts-field-info">
-                                            <p className="adminconsts-field-label">{f.label}</p>
+                                    <div key={f.key} className="admin-consts-field">
+                                        <div className="admin-consts-field-info">
+                                            <p className="admin-consts-field-label">{f.label}</p>
                                             {f.key === "INCOME_TAX_BRACKETS" ? (
                                                 <div>
                                                     <pre
-                                                        className={`adminconsts-json-wrapper ${expanded ? "expanded" : ""}`}
+                                                        className={`admin-consts-json-wrapper ${expanded ? "admin-consts-expanded" : ""}`}
                                                     >
                                                         {JSON.stringify(consts[f.key], null, 2)}
                                                     </pre>
                                                     <button
-                                                        className="adminconsts-toggle"
+                                                        className="admin-consts-toggle"
                                                         onClick={() => setExpanded((prev) => !prev)}
                                                     >
                                                         {expanded ? "إخفاء" : "عرض المزيد"}
                                                     </button>
                                                 </div>
                                             ) : (
-                                                <p className="adminconsts-field-value">{String(consts[f.key])}</p>
+                                                <p className="admin-consts-field-value">{String(consts[f.key])}</p>
                                             )}
 
                                         </div>
                                         <button
-                                            className="adminconsts-edit-btn"
+                                            className="admin-consts-edit-btn"
                                             onClick={() =>
                                                 setEditing({
                                                     key: f.key,
@@ -162,21 +162,21 @@ export default function AdminConsts() {
 
             {/* Modal */}
             {editing && (
-                <div className="adminconsts-modal">
-                    <div className="adminconsts-modal-box">
+                <div className="admin-consts-modal">
+                    <div className="admin-consts-modal-box">
                         <h2>{editing.label}</h2>
                         <textarea
                             value={editing.value}
                             onChange={(e) => setEditing({ ...editing, value: e.target.value })}
-                            className="adminconsts-input"
+                            className="admin-consts-input"
                             rows={6}
                         />
-                        <div className="adminconsts-modal-actions">
-                            <button className="adminconsts-cancel" onClick={() => setEditing(null)}>
+                        <div className="admin-consts-modal-actions">
+                            <button className="admin-consts-cancel" onClick={() => setEditing(null)}>
                                 إلغاء
                             </button>
                             <button
-                                className="adminconsts-save"
+                                className="admin-consts-save"
                                 onClick={handleSave}
                                 disabled={saving}
                             >

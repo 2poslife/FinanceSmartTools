@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { articles } from '../../assets/data/articlesData';
-import './ArticlesSection.css';
+import '../../styles/HomePage/ArticlesSection.css';
 
 function ArticlesSection() {
     const navigate = useNavigate();

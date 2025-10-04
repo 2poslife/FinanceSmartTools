@@ -5,7 +5,7 @@ import {
     ChevronUp,
     AlertTriangle,
 } from "lucide-react";
-import "./IncomeTaxWithPoints.css";
+import "../../styles/Calculators/IncomeTaxWithPoints.css";
 
 const API_BASE = "https://financesmarttools-backend.onrender.com";
 

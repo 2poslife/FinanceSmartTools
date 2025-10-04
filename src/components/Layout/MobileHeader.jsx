@@ -16,7 +16,7 @@ import {
   Monitor,
 } from "lucide-react";
 import { jwtDecode } from "jwt-decode";
-import "./MobileHeader.css";
+import "../../styles/Layout/MobileHeader.css";
 import Logo from "../../assets/logo.png";
 
 const MobileHeader = () => {

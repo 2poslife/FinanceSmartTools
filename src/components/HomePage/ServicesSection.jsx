@@ -1,5 +1,5 @@
 import React from 'react';
-import './ServicesSection.css';
+import '../../styles/HomePage/ServicesSection.css';
 
 function ServicesSection() {
     const services = [

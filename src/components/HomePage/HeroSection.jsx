@@ -1,5 +1,5 @@
 import React from "react";
-import "./HeroSection.css";
+import "../../styles/HomePage/HeroSection.css";
 import { Link } from "react-router-dom";
 import {
   ArrowBigLeft,

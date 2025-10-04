@@ -1,5 +1,5 @@
 import React from "react";
-import "./JourneySection.css";
+import "../../styles/HomePage/JourneySection.css";
 import { BookOpen, Calculator } from "lucide-react";
 
 function JourneySection() {

@@ -1,7 +1,7 @@
 import React from "react";
 import { courses } from "../../assets/data/courseMock";
 import CourseCard from "./CourseCard";
-import "./CoursesSection.css";
+import "../../styles/HomePage/CoursesSection.css";
 
 function CoursesSection() {
   const topCourses = [...courses]

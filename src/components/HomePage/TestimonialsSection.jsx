@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./TestimonialsSection.css";
+import "../../styles/HomePage/TestimonialsSection.css";
 import { FaQuoteLeft } from "react-icons/fa";
 
 const testimonials = [
