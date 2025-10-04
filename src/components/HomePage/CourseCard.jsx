@@ -11,7 +11,7 @@ const CourseCard = ({ course }) => {
   return (
     <div className="course-card" onClick={handleCourseClick} style={{cursor: 'pointer'}}>
       <div className="course-image">
-        <img src={`/course${course.id}.png?v=${Date.now()}`} alt="Course" className="course-image-bg" />
+        <img src={`${course.image}?v=${Date.now()}`} alt="Course" className="course-image-bg" />
         <div className="course-category">{course.level}</div>
       </div>
       

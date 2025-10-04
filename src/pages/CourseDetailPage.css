@@ -147,6 +147,158 @@
   white-space: pre-line;
 }
 
+.course-goal {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(178, 144, 83, 0.1) 100%);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 25px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-goal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #d4af37 0%, #b29053 100%);
+}
+
+.goal-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #d4af37;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  direction: rtl;
+}
+
+.goal-title::after {
+  content: '🎯';
+  font-size: 24px;
+}
+
+.goal-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+  text-align: justify;
+}
+
+/* Chapters Container */
+.chapters-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.chapter-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
+  border: 2px solid rgba(212, 175, 55, 0.2);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.chapter-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #d4af37 0%, #b29053 100%);
+}
+
+.chapter-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.chapter-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+}
+
+.chapter-number {
+  background: linear-gradient(135deg, #d4af37 0%, #b29053 100%);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.chapter-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #d4af37;
+  margin: 0;
+  flex: 1;
+}
+
+.chapter-topics {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.show-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.show-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #d4af37 0%, #b29053 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.show-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  background: linear-gradient(135deg, #b29053 0%, #d4af37 100%);
+}
+
+.show-more-icon {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.show-more-btn:hover .show-more-icon {
+  transform: scale(1.1);
+}
+
 /* Topics List */
 .topics-list {
   list-style: none;
@@ -321,6 +473,49 @@
 .price-highlight {
   color: #d4af37;
   font-size: 20px;
+}
+
+.price-row {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
+.original-price {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+  font-weight: 500;
+  position: relative;
+}
+
+.original-price::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  right: -5px;
+  height: 2px;
+  background: #999;
+  transform: translateY(-50%);
+}
+
+.price-row .info-value {
+  font-size: 18px;
+  font-weight: 800;
+  color: #d4af37;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(178, 144, 83, 0.1) 100%);
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .sidebar-cta-btn {
