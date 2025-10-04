@@ -51,7 +51,6 @@
 /* Main Content Layout */
 .about-main-content {
   display: flex;
-  min-height: calc(100vh - 80px);
   border-top: 2px solid #000;
   gap: 20px;
 }
@@ -68,17 +67,15 @@
 }
 
 .whatsapp-image-background {
-  width: 80%;
+  width: 100%;
   height: 80%;
-  background-image: url('../assets/WhatsApp Image 2025-09-30 at 13.15.08.jpeg');
+  max-width: 500px; /* optional, for large screens */
+  background-image: url("../assets/WhatsApp Image 2025-09-30 at 13.15.08.jpeg");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  position: relative;
-  margin: 10% auto;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  overflow: visible;
 }
 
 /* WhatsApp Image Background Styles */
@@ -88,21 +85,30 @@
 
 /* Floating Background Elements */
 .about-us-page::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 20%;
   right: 10%;
   width: 100px;
   height: 100px;
-  background: radial-gradient(circle, rgba(178, 144, 83, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(178, 144, 83, 0.1) 0%,
+    transparent 70%
+  );
   border-radius: 50%;
   animation: floatRight 8s ease-in-out infinite;
   z-index: 0;
 }
 
 @keyframes floatRight {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-20px, -20px) scale(1.2); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-20px, -20px) scale(1.2);
+  }
 }
 
 /* Decorative Circles in Corners */
@@ -114,8 +120,13 @@
 }
 
 @keyframes circleFloat {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(5px, -5px) rotate(180deg); }
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(5px, -5px) rotate(180deg);
+  }
 }
 
 .circle-1 {
@@ -146,12 +157,14 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
-
-
-
 
 /* Vision Overlay Box */
 .vision-overlay {
@@ -162,10 +175,8 @@
   padding: 30px;
   border-radius: 20px 0 0 0;
   max-width: 340px;
-  box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.15),
-    0 10px 25px rgba(176, 147, 91, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15),
+    0 10px 25px rgba(176, 147, 91, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.8);
   z-index: 10;
   border: 2px solid rgba(176, 147, 91, 0.4);
   backdrop-filter: blur(15px);
@@ -173,7 +184,7 @@
 }
 
 .vision-overlay::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -10px;
   left: -10px;
@@ -186,10 +197,8 @@
 
 .vision-overlay:hover {
   transform: translateY(-5px);
-  box-shadow: 
-    0 25px 50px rgba(0, 0, 0, 0.2),
-    0 15px 35px rgba(178, 144, 83, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2),
+    0 15px 35px rgba(178, 144, 83, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .overlay-content {
@@ -240,7 +249,7 @@
 }
 
 .content-wrapper::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 10px;
   left: 10px;
@@ -329,9 +338,7 @@
   border-radius: 25px;
   margin-top: 5px;
   margin-bottom: 30px;
-  box-shadow: 
-    0 8px 25px rgba(176, 147, 91, 0.4),
-    0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px rgba(176, 147, 91, 0.4), 0 4px 10px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
   position: relative;
   transition: all 0.3s ease;
@@ -339,9 +346,7 @@
 
 .title-subtitle:hover {
   transform: scale(1.05);
-  box-shadow: 
-    0 12px 35px rgba(176, 147, 91, 0.5),
-    0 6px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 35px rgba(176, 147, 91, 0.5), 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Content Body */
@@ -385,7 +390,7 @@
 }
 
 .instagram-link::after {
-  content: '→';
+  content: "→";
   position: absolute;
   right: 10px;
   opacity: 0;
@@ -395,7 +400,7 @@
 }
 
 .instagram-link::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -426,7 +431,14 @@
 .instagram-icon {
   width: 24px;
   height: 24px;
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
   border-radius: 6px;
   position: relative;
   display: flex;
@@ -436,7 +448,7 @@
 }
 
 .instagram-icon::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -449,7 +461,7 @@
 }
 
 .instagram-icon::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -502,32 +514,45 @@
 }
 
 .about-courses-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50px;
   right: -50px;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(176, 147, 91, 0.08) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(176, 147, 91, 0.08) 0%,
+    transparent 70%
+  );
   border-radius: 50%;
   animation: float-slow 8s ease-in-out infinite;
 }
 
 .about-courses-section::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -50px;
   left: -50px;
   width: 250px;
   height: 250px;
-  background: radial-gradient(circle, rgba(176, 147, 91, 0.05) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(176, 147, 91, 0.05) 0%,
+    transparent 70%
+  );
   border-radius: 50%;
   animation: float-slow 10s ease-in-out infinite reverse;
 }
 
 @keyframes float-slow {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(30px, 30px); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, 30px);
+  }
 }
 
 .about-container {
@@ -555,7 +580,7 @@
 }
 
 .about-section-subtitle::before {
-  content: '✦';
+  content: "✦";
   position: absolute;
   top: 10px;
   right: 10px;
@@ -565,7 +590,7 @@
 }
 
 .about-section-subtitle::after {
-  content: '✦';
+  content: "✦";
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -585,27 +610,36 @@
   text-align: center;
   display: inline-block;
   border: 3px solid #b0935b;
-  box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1),
     inset 0 2px 0 rgba(255, 255, 255, 0.8);
   position: relative;
   overflow: hidden;
 }
 
 .about-section-title::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(176, 147, 91, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(176, 147, 91, 0.2),
+    transparent
+  );
   animation: shine 3s infinite;
 }
 
 @keyframes shine {
-  0% { left: -100%; }
-  50%, 100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
 }
 
 .about-section-intro {
@@ -651,9 +685,8 @@
   justify-content: flex-start;
 }
 
-
 .about-course-card::before {
-  content: '◆';
+  content: "◆";
   position: absolute;
   top: 15px;
   right: 15px;
@@ -693,7 +726,7 @@
 }
 
 .about-icon-circle::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -5px;
   left: -5px;
@@ -704,12 +737,22 @@
 }
 
 @keyframes icon-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 /* Simple Icons */
-.icon-users, .icon-document, .icon-education, .icon-check, .icon-team, .icon-experience {
+.icon-users,
+.icon-document,
+.icon-education,
+.icon-check,
+.icon-team,
+.icon-experience {
   width: 45px;
   height: 45px;
   background: white;
@@ -723,27 +766,27 @@
 }
 
 .icon-users::before {
-  content: '👥';
+  content: "👥";
 }
 
 .icon-document::before {
-  content: '📊';
+  content: "📊";
 }
 
 .icon-education::before {
-  content: '📚';
+  content: "📚";
 }
 
 .icon-check::before {
-  content: '✓';
+  content: "✓";
 }
 
 .icon-team::before {
-  content: '👨‍💼';
+  content: "👨‍💼";
 }
 
 .icon-experience::before {
-  content: '⭐';
+  content: "⭐";
 }
 
 .about-course-title {
@@ -779,7 +822,11 @@
   max-width: 720px;
   margin: 40px auto 0;
   padding: 25px 35px;
-  background: linear-gradient(135deg, rgba(176, 147, 91, 0.08) 0%, rgba(192, 164, 107, 0.08) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(176, 147, 91, 0.08) 0%,
+    rgba(192, 164, 107, 0.08) 100%
+  );
   border-radius: 15px;
   border-right: 4px solid #b0935b;
   position: relative;
@@ -794,15 +841,15 @@
     gap: 30px;
     max-width: 540px;
   }
-  
+
   .about-course-card {
     padding: 40px 30px;
   }
-  
+
   .about-course-title {
     font-size: 1.75rem;
   }
-  
+
   .about-course-description {
     font-size: 1.15rem;
   }
@@ -813,15 +860,15 @@
     font-size: 36px;
     padding: 15px 30px;
   }
-  
+
   .about-section-intro {
     font-size: 20px;
   }
-  
+
   .about-course-title {
     font-size: 1.5rem;
   }
-  
+
   .about-course-description {
     font-size: 1rem;
   }
@@ -838,18 +885,23 @@
 }
 
 .values-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(176, 147, 91, 0.2) 50%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(176, 147, 91, 0.2) 50%,
+    transparent 100%
+  );
   transform: translateY(-50%);
 }
 
 .values-section::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 20%;
   right: 5%;
@@ -861,8 +913,15 @@
 }
 
 @keyframes pulse-border {
-  0%, 100% { transform: scale(1); opacity: 0.3; }
-  50% { transform: scale(1.2); opacity: 0.1; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.1;
+  }
 }
 
 .values-section .section-title {
@@ -878,18 +937,23 @@
 }
 
 .values-section .section-title::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
   width: 60%;
   height: 4px;
-  background: linear-gradient(90deg, transparent 0%, #b0935b 50%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #b0935b 50%,
+    transparent 100%
+  );
 }
 
 .values-section .section-title::after {
-  content: '◆';
+  content: "◆";
   position: absolute;
   bottom: -18px;
   left: 50%;
@@ -908,6 +972,16 @@
   margin-right: auto;
   margin-bottom: 40px;
 }
+@media (max-width: 768px) {
+  .values-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* adjust spacing for stacked items */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0 20px; /* optional padding */
+  }
+}
 
 .value-logo-wrapper {
   grid-column: 2;
@@ -916,19 +990,21 @@
   align-items: center;
   justify-content: center;
   padding: 30px 20px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(248, 250, 252, 0.95) 100%
+  );
   border-radius: 12px;
   border: 3px solid #b29053;
-  box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.1),
-    0 0 0 1px rgba(176, 147, 91, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(176, 147, 91, 0.2);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
 }
 
 .value-logo-wrapper::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -940,13 +1016,17 @@
 }
 
 .value-logo-wrapper::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   width: 0;
   height: 0;
-  background: radial-gradient(circle, rgba(176, 147, 91, 0.15) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(176, 147, 91, 0.15) 0%,
+    transparent 70%
+  );
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.4s ease;
@@ -954,9 +1034,7 @@
 
 .value-logo-wrapper:hover {
   transform: translateY(-12px) scale(1.03);
-  box-shadow: 
-    0 15px 35px rgba(176, 147, 91, 0.3),
-    0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 35px rgba(176, 147, 91, 0.3), 0 5px 15px rgba(0, 0, 0, 0.1);
   border-color: #c0a46b;
 }
 
@@ -988,13 +1066,15 @@
 }
 
 .value-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(248, 250, 252, 0.95) 100%
+  );
   padding: 30px 20px;
   border-radius: 12px;
   border: 3px solid #b0935b;
-  box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.1),
-    0 0 0 1px rgba(176, 147, 91, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(176, 147, 91, 0.2);
   text-align: center;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
@@ -1002,7 +1082,7 @@
 }
 
 .value-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1014,13 +1094,17 @@
 }
 
 .value-card::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   width: 0;
   height: 0;
-  background: radial-gradient(circle, rgba(176, 147, 91, 0.15) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(176, 147, 91, 0.15) 0%,
+    transparent 70%
+  );
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.4s ease;
@@ -1028,9 +1112,7 @@
 
 .value-card:hover {
   transform: translateY(-12px) scale(1.03);
-  box-shadow: 
-    0 15px 35px rgba(176, 147, 91, 0.3),
-    0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 35px rgba(176, 147, 91, 0.3), 0 5px 15px rgba(0, 0, 0, 0.1);
   border-color: #c0a46b;
 }
 
@@ -1056,7 +1138,7 @@
 }
 
 .value-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -1081,9 +1163,7 @@
   background: linear-gradient(135deg, #b29053 0%, #d4af37 50%, #b29053 100%);
   padding: 30px 45px;
   border-radius: 20px;
-  box-shadow: 
-    0 10px 30px rgba(176, 147, 91, 0.4),
-    0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(176, 147, 91, 0.4), 0 5px 15px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
   max-width: 675px;
@@ -1091,7 +1171,7 @@
 }
 
 .values-conclusion-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 15px;
   left: 15px;
@@ -1103,13 +1183,18 @@
 }
 
 .values-conclusion-card::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    transparent 100%
+  );
 }
 
 .conclusion-decoration-left,
@@ -1149,36 +1234,45 @@
   .about-main-content {
     flex-direction: column;
   }
-  
+
   .about-left-section {
-    flex: none;
-    min-height: 400px;
+    flex: 0 0 auto; /* allow content to define height */
+    width: 100%;
+    min-height: 300px; /* enough space for the background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
   }
-  
+  .whatsapp-image-background {
+    width: 90%; /* full width with padding */
+    height: 300px; /* fixed height for mobile */
+    margin: 0 auto;
+  }
   .about-right-section {
     padding: 40px 20px;
   }
-  
+
   .header-content {
     padding: 15px 20px;
   }
-  
+
   .header-nav {
     gap: 15px;
   }
-  
+
   .nav-link {
     font-size: 14px;
   }
-  
+
   .think-different-text {
     font-size: 36px;
   }
-  
+
   .title-highlight {
     font-size: 28px;
   }
-  
+
   .title-subtitle {
     font-size: 22px;
     text-align: right;
@@ -1189,21 +1283,21 @@
   .lightbulbs-container {
     gap: 10px;
   }
-  
+
   .lightbulb {
     width: 20px;
     height: 30px;
   }
-  
+
   .think-different-text {
     font-size: 28px;
   }
-  
+
   .desk-surface {
     height: 150px;
     padding: 15px;
   }
-  
+
   .vision-overlay {
     bottom: 10px;
     left: 10px;

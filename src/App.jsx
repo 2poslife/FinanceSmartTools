@@ -43,18 +43,18 @@ import "./theme.css";
 // Custom hook for authentication
 const useAuth = () => {
   const token = localStorage.getItem("access_token");
-  
+
   if (!token) return { isAuthenticated: false, role: null };
 
   try {
     const decoded = jwtDecode(token);
     const isExpired = decoded.exp * 1000 < Date.now();
-    
+
     if (isExpired) {
       localStorage.removeItem("access_token");
       return { isAuthenticated: false, role: null };
     }
-    
+
     return { isAuthenticated: true, role: decoded.role };
   } catch (err) {
     console.error("❌ Invalid token:", err);
@@ -69,7 +69,7 @@ const useResponsive = () => {
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);

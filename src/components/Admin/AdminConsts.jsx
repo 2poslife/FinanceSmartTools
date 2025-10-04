@@ -40,6 +40,9 @@ const groups = [
 ];
 
 export default function AdminConsts() {
+      useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     const navigate = useNavigate();
     const [consts, setConsts] = useState({});
     const [loading, setLoading] = useState(true);
