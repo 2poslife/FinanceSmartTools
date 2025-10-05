@@ -1,7 +1,7 @@
 .footer {
   position: relative;
-  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%) !important;
+  color: #fff !important;
   direction: rtl;
   font-family: "Tajawal", sans-serif;
   padding: 30px 25px 20px;

@@ -1,31 +1,35 @@
-import React, { useEffect } from "react";
-import HeroSection from "../components/HomePage/HeroSection";
-import ServicesSection from "../components/HomePage/ServicesSection";
-import WhySection from "../components/HomePage/WhySection";
-import CoursesSection from "../components/HomePage/CoursesSection";
-import ImageSection from "../components/HomePage/ImageSection";
-import JourneySection from "../components/HomePage/JourneySection";
-import FAQSection from "../components/HomePage/FAQSection";
-import TestimonialsSection from "../components/HomePage/TestimonialsSection";
-import ArticlesSection from "../components/HomePage/ArticlesSection";
+import React, { useEffect, useState } from "react";
+import HomePageDesktop from "../components/HomePage/HomePageDesktop";
+import HomePageMobile from "../components/HomePage/HomePageMobile";
 
 function HomePage() {
+  const [isMobile, setIsMobile] = useState(false);
+
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Check screen size and update mobile state
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Check on mount
+    checkScreenSize();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', checkScreenSize);
+
+    // Cleanup event listener
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
   return (
-    <div>
-      <HeroSection />
-      <ServicesSection />
-      <WhySection />
-      <CoursesSection />
-      <ImageSection />
-      <JourneySection />
-      <FAQSection />
-      <TestimonialsSection />
-      <ArticlesSection />
-    </div>
+    <>
+      {isMobile ? <HomePageMobile /> : <HomePageDesktop />}
+    </>
   );
 }
 

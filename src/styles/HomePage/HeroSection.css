@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
 /* Hero Section - Base Styles */
-.hero {
+.homepage-hero-section {
   position: relative;
   overflow: hidden;
   color: white;
@@ -51,7 +51,7 @@
 }
 
 /* Background */
-.hero-bg {
+.homepage-hero-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -63,7 +63,7 @@
   filter: none;
 }
 
-.hero-overlay {
+.homepage-hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -75,7 +75,7 @@
 }
 
 /* Hero Content */
-.hero-content {
+.homepage-hero-content {
   position: relative;
   max-width: 720px;
   width: 100%;
@@ -93,7 +93,7 @@
 }
 
 /* Logo */
-.hero-logo {
+.homepage-hero-logo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,7 +101,7 @@
   margin-bottom: 1.5rem;
 }
 
-.hero-logo img {
+.homepage-hero-logo img {
   max-width: 270px;
   max-height: 270px;
   width: 100%;
@@ -111,7 +111,7 @@
 }
 
 /* Text Container */
-.hero-text-container {
+.homepage-hero-text-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -122,7 +122,7 @@
   width: 100%;
 }
 
-.hero-office-name {
+.homepage-hero-office-name {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 900;
   margin-bottom: 10px;
@@ -131,7 +131,7 @@
   font-family: "Arial Black", Arial, sans-serif;
 }
 
-.hero-separator {
+.homepage-hero-separator {
   width: 60%;
   max-width: 300px;
   height: 2px;
@@ -139,7 +139,7 @@
   margin: 10px 0;
 }
 
-.hero-services {
+.homepage-hero-services {
   font-size: clamp(1rem, 3vw, 1.5rem);
   font-weight: 900;
   color: #000000;
@@ -156,7 +156,7 @@
   max-width: 90%;
 }
 
-.hero-title {
+.homepage-hero-title {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 900;
   margin-bottom: 1rem;
@@ -187,7 +187,7 @@
   animation: slideInUp 0.8s ease-out 0.5s both;
 }
 
-.hero-subtitle {
+.homepage-hero-subtitle {
   font-size: clamp(0.9rem, 2.5vw, 1rem);
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -202,7 +202,7 @@
 }
 
 /* Buttons */
-.hero-buttons {
+.homepage-hero-buttons {
   display: flex;
   flex-direction: row-reverse;
   gap: 1rem;
@@ -298,22 +298,22 @@
     min-height: 60vh;
   }
 
-  .hero-content {
+  .homepage-hero-content {
     margin-top: -20vh;
     padding: 0 0.5rem;
   }
 
-  .hero-logo img {
+  .homepage-hero-logo img {
     max-width: 220px;
     max-height: 220px;
   }
 
-  .hero-services {
+  .homepage-hero-services {
     padding: 12px 20px;
     letter-spacing: 0.5px;
   }
 
-  .hero-buttons {
+  .homepage-hero-buttons {
     gap: 0.75rem;
   }
 
@@ -334,49 +334,49 @@
     min-height: 50vh;
   }
 
-  .hero-content {
+  .homepage-hero-content {
     margin-top: -15vh;
     padding: 0 0.5rem;
   }
 
-  .hero-logo {
+  .homepage-hero-logo {
     margin-bottom: 1rem;
   }
 
-  .hero-logo img {
+  .homepage-hero-logo img {
     max-width: 180px;
     max-height: 180px;
     border-radius: 15px;
   }
 
-  .hero-text-container {
+  .homepage-hero-text-container {
     margin-top: 15px;
   }
 
-  .hero-office-name {
+  .homepage-hero-office-name {
     margin-bottom: 8px;
   }
 
-  .hero-separator {
+  .homepage-hero-separator {
     width: 70%;
     margin: 8px 0;
   }
 
-  .hero-services {
+  .homepage-hero-services {
     padding: 10px 18px;
     border-radius: 8px;
     letter-spacing: 0px;
   }
 
-  .hero-title {
+  .homepage-hero-title {
     margin-bottom: 0.75rem;
   }
 
-  .hero-subtitle {
+  .homepage-hero-subtitle {
     margin-bottom: 1.25rem;
   }
 
-  .hero-buttons {
+  .homepage-hero-buttons {
     flex-direction: column;
     gap: 0.65rem;
     width: 100%;
@@ -405,17 +405,17 @@
     min-height: 45vh;
   }
 
-  .hero-content {
+  .homepage-hero-content {
     margin-top: -12vh;
   }
 
-  .hero-logo img {
+  .homepage-hero-logo img {
     max-width: 150px;
     max-height: 150px;
     border-radius: 12px;
   }
 
-  .hero-services {
+  .homepage-hero-services {
     padding: 8px 15px;
   }
 

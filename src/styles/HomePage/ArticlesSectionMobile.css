@@ -1,0 +1,128 @@
+/* Mobile Articles Section */
+.articles-section-mobile {
+  padding: 60px 20px;
+  background: white;
+}
+
+.articles-container-mobile {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.articles-header-mobile {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.articles-title-mobile {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #2d3748;
+  margin-bottom: 15px;
+  font-family: "Arial Black", Arial, sans-serif;
+}
+
+.articles-subtitle-mobile {
+  font-size: 1.1rem;
+  color: #718096;
+  font-weight: 600;
+  margin: 0;
+}
+
+.articles-grid-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.article-card-mobile {
+  background: white;
+  padding: 25px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.article-card-mobile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.article-category-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.category-badge-mobile {
+  background: linear-gradient(135deg, #d4af37 0%, #b89453 100%);
+  color: white;
+  padding: 6px 15px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.read-time-mobile {
+  font-size: 0.9rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+.article-title-mobile {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #2d3748;
+  margin-bottom: 15px;
+  font-family: "Arial Black", Arial, sans-serif;
+  line-height: 1.4;
+}
+
+.article-excerpt-mobile {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.read-more-btn-mobile {
+  background: transparent;
+  color: #d4af37;
+  border: 2px solid #d4af37;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.read-more-btn-mobile:hover {
+  background: #d4af37;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.articles-cta-mobile {
+  text-align: center;
+}
+
+.view-all-btn-mobile {
+  background: linear-gradient(135deg, #d4af37 0%, #b89453 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+}
+
+.view-all-btn-mobile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}

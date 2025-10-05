@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   Home,
@@ -53,6 +53,20 @@ const MobileHeader = () => {
     navigate(path);
     setShowMenu(false);
   };
+
+  // Listen for custom event to open contact modal
+  useEffect(() => {
+    const handleOpenContactModal = () => {
+      console.log('MobileHeader received openContactModal event');
+      setShowContact(true);
+    };
+
+    window.addEventListener('openContactModal', handleOpenContactModal);
+
+    return () => {
+      window.removeEventListener('openContactModal', handleOpenContactModal);
+    };
+  }, []);
 
   return (
     <>

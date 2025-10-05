@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   Home,
@@ -43,6 +43,20 @@ const Header = () => {
     localStorage.removeItem("access_token");
     navigate("/");
   };
+
+  // Listen for custom event to open contact modal
+  useEffect(() => {
+    const handleOpenContactModal = () => {
+      console.log('Header received openContactModal event');
+      setShowContact(true);
+    };
+
+    window.addEventListener('openContactModal', handleOpenContactModal);
+
+    return () => {
+      window.removeEventListener('openContactModal', handleOpenContactModal);
+    };
+  }, []);
 
   return (
     <>
