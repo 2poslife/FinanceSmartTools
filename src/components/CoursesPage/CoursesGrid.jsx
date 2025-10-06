@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Clock, BarChart, Star } from "lucide-react";
+import { Clock, BarChart } from "lucide-react";
 import { homePageCourses } from "../../assets/data/courseMock";
 import "../../styles/CoursesPage/CoursesGrid.css";
 
@@ -25,10 +25,6 @@ function CoursesGrid() {
               <img src={course.image} alt={course.title} className="courses-grid-image" />
               <div className="courses-grid-card-header">
                 <div className="courses-grid-badge">{course.level}</div>
-                <div className="courses-grid-rating">
-                  <Star size={16} fill="#d4af37" color="#d4af37" />
-                  <span>{course.rating}</span>
-                </div>
               </div>
             </div>
 

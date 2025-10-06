@@ -4,9 +4,7 @@ import CourseCard from "./CourseCard";
 import "../../styles/HomePage/CoursesSection.css";
 
 function CoursesSection() {
-  const topCourses = [...courses]
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, 3);
+  const topCourses = [...courses].slice(0, 3);
 
   return (
     <section className="courses-section">

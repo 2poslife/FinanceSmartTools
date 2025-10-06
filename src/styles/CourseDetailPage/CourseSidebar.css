@@ -32,22 +32,25 @@
 
 .course-detail-info-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 12px;
   background: #ffffff;
   border-radius: 8px;
   border: 1px solid #e9ecef;
+  gap: 12px;
 }
 
 .course-detail-info-label {
   font-weight: 600;
   color: #666;
+  text-align: center;
 }
 
 .course-detail-info-value {
   font-weight: 700;
   color: #000;
+  text-align: center;
 }
 
 .course-detail-price-highlight {

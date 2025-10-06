@@ -11,7 +11,7 @@ function CourseChapters({ course }) {
       <div className="course-detail-chapters-container">
         {course.chapters ? (
           <>
-            {course.chapters.slice(0, showAllChapters ? course.chapters.length : 2).map((chapter, index) => (
+            {course.chapters.slice(0, showAllChapters ? course.chapters.length : 3).map((chapter, index) => (
               <div key={chapter.id} className="course-detail-chapter-card">
                 <div className="course-detail-chapter-header">
                   <div className="course-detail-chapter-number">{chapter.id}</div>
@@ -28,7 +28,7 @@ function CourseChapters({ course }) {
               </div>
             ))}
             
-            {course.chapters.length > 2 && (
+            {course.chapters.length > 3 && (
               <div className="course-detail-show-more-container">
                 <button 
                   className="course-detail-show-more-btn"
@@ -42,7 +42,7 @@ function CourseChapters({ course }) {
                   ) : (
                     <>
                       <ChevronDown className="course-detail-show-more-icon" />
-                      عرض المزيد من الفصول ({course.chapters.length - 2} فصول إضافية)
+                      عرض المزيد من الفصول ({course.chapters.length - 3} فصول إضافية)
                     </>
                   )}
                 </button>

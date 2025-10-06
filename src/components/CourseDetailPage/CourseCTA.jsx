@@ -6,8 +6,8 @@ function CourseCTA({ course }) {
   return (
     <section className="course-detail-cta-section">
       <div className="course-detail-cta-card">
-        <h3>هل أنت مستعد لبدء رحلتك المحاسبية؟</h3>
-        <p>انضم للدورة الآن واحصل على شهادة معتمدة</p>
+        <h3>{course.ctaText || course.goal}</h3>
+        <p>ابدأ رحلتك نحو الإتقان المهني واكتسب المهارات التي تفتح لك أبواب النجاح</p>
         <a
           href={course.courseLink}
           target="_blank"

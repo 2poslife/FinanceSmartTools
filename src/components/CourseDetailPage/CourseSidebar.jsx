@@ -15,10 +15,6 @@ function CourseSidebar({ course }) {
             <span className="course-detail-info-label">المستوى:</span>
             <span className="course-detail-info-value">{course.level}</span>
           </div>
-          <div className="course-detail-info-row">
-            <span className="course-detail-info-label">التقييم:</span>
-            <span className="course-detail-info-value">⭐ {course.rating}</span>
-          </div>
           <div className="course-detail-info-row course-detail-price-row">
             <span className="course-detail-info-label">السعر:</span>
             <div className="course-detail-price-container">
