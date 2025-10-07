@@ -24,6 +24,31 @@ export default function EmployeeCostWithPension() {
     const [authError, setAuthError] = useState(false);
     const [calculatedGrossSalary, setCalculatedGrossSalary] = useState(0);
 
+    // Log SVG dimensions
+    React.useEffect(() => {
+        const guideImg = document.querySelector('.guide-icon');
+        if (guideImg) {
+            const logDimensions = () => {
+                console.log('📏 Guide_1.svg Dimensions:');
+                console.log('  - Width:', guideImg.offsetWidth + 'px');
+                console.log('  - Height:', guideImg.offsetHeight + 'px');
+                console.log('  - Computed Width:', window.getComputedStyle(guideImg).width);
+                console.log('  - Computed Height:', window.getComputedStyle(guideImg).height);
+            };
+            
+            // Log immediately
+            logDimensions();
+            
+            // Log after image loads
+            guideImg.addEventListener('load', logDimensions);
+            
+            // Log after a short delay to ensure rendering is complete
+            setTimeout(logDimensions, 100);
+            
+            return () => guideImg.removeEventListener('load', logDimensions);
+        }
+    }, []);
+
     const handleLogout = () => {
         localStorage.removeItem("access_token");
         navigate("/SigninForm");
@@ -65,46 +90,12 @@ export default function EmployeeCostWithPension() {
             }
 
             const data = await res.json();
+            console.log("🔍 Backend Response:", data);
             setResult(data);
             setCalculatedGrossSalary(parseFloat(grossSalary));
         } catch (err) {
             console.error("❌ Error calculating:", err);
-            // Fallback calculation if API fails
-            const gross = parseFloat(grossSalary);
-            const credits = parseFloat(creditPoints);
-            
-            // Simplified Israeli tax calculation
-            const incomeTax = gross * 0.15;
-            const nationalInsurance = gross * 0.12;
-            const pension = gross * 0.18;
-            
-            const employeePart = incomeTax + nationalInsurance + pension;
-            const employerPart = nationalInsurance + pension;
-            const totalCost = gross + employerPart;
-
-            const mockResult = {
-                summary: {
-                    employee_part: employeePart,
-                    employer_part: employerPart,
-                    total_cost: totalCost
-                },
-                income_tax: {
-                    after_credit: incomeTax
-                },
-                national_insurance: {
-                    employee_total: nationalInsurance,
-                    employer_total: nationalInsurance,
-                    total: nationalInsurance * 2
-                },
-                pension: {
-                    employee: pension,
-                    employer: pension,
-                    total: pension * 2
-                }
-            };
-
-            setResult(mockResult);
-            setCalculatedGrossSalary(gross);
+            alert("שגיאה בחישוב. אנא נסה שוב.");
         } finally {
             setLoading(false);
         }
@@ -212,7 +203,9 @@ export default function EmployeeCostWithPension() {
                             <div className="details-box">
                                 <div className="detail-item single">
                                     <span className="detail-label">מס הכנסה:</span>
-                                    <span className="detail-value">{result.income_tax.after_credit} ₪</span>
+                                    <span className="detail-value">
+                                        {(result.income_tax.before_credit - result.income_tax.credit_points_value).toFixed(1)} ₪
+                                    </span>
                                 </div>
 
                                 <div className="detail-section">
@@ -273,6 +266,13 @@ export default function EmployeeCostWithPension() {
 
             </section>
 
+            {/* Course Connection */}
+            <section className="calcpage-course-connection">
+                <div className="guide-icon-wrapper">
+                    <img src="/Guide_1.svg" alt="Guide" className="guide-icon" />
+                </div>
+            </section>
+
             {/* Description Section */}
             <section className="calcpage-description">
                 <h2>מה זה מחשבון עלות עובד כולל פנסיה?</h2>
@@ -282,7 +282,7 @@ export default function EmployeeCostWithPension() {
                 </p>
                 <ul>
                     <li>הפרשות לפנסיה (פנסיה חובה)</li>
-                    <li>פיצויי פיטורים (עד 8.33%)</li>
+                    <li>פיצויי פיטורים </li>
                     <li>דמי ביטוח לאומי מעביד (תשלום למוסד לביטוח לאומי)</li>
                 </ul>
                 <p>

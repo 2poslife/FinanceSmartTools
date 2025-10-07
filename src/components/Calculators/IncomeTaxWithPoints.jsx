@@ -3,38 +3,12 @@ import { useNavigate } from "react-router-dom";
 import {
     AlertTriangle,
 } from "lucide-react";
-import GuideIcon from "../../assets/Guide.svg";
 import "../../styles/Calculators/IncomeTaxWithPoints.css";
 
 const API_BASE = "https://financesmarttools-backend.onrender.com";
 
 export default function IncomeTaxWithPoints() {
     const navigate = useNavigate();
-    
-    // Log page width and Guide SVG dimensions
-    React.useEffect(() => {
-        console.log('Page width:', window.innerWidth + 'px');
-        console.log('Document width:', document.documentElement.clientWidth + 'px');
-        
-        // Log Guide SVG dimensions after it loads
-        const guideImg = document.querySelector('.guide-icon');
-        if (guideImg) {
-            console.log('Guide SVG width:', guideImg.offsetWidth + 'px');
-            console.log('Guide SVG height:', guideImg.offsetHeight + 'px');
-            console.log('Guide SVG natural width:', guideImg.naturalWidth + 'px');
-            console.log('Guide SVG natural height:', guideImg.naturalHeight + 'px');
-        }
-        
-        // Also log when the image loads
-        const handleImageLoad = () => {
-            console.log('Guide SVG loaded - width:', guideImg.offsetWidth + 'px', 'height:', guideImg.offsetHeight + 'px');
-        };
-        
-        if (guideImg) {
-            guideImg.addEventListener('load', handleImageLoad);
-            return () => guideImg.removeEventListener('load', handleImageLoad);
-        }
-    }, []);
 
     const [grossSalary, setGrossSalary] = useState("");
     const [creditPoints, setCreditPoints] = useState("");
@@ -197,13 +171,6 @@ export default function IncomeTaxWithPoints() {
                     >
                         🧹 נקה טופס
                     </button>
-                </div>
-            </section>
-
-            {/* Course Connection */}
-            <section className="calcpage-course-connection">
-                <div className="guide-icon-wrapper">
-                    <img src={GuideIcon} alt="Guide" className="guide-icon" />
                 </div>
             </section>
 
