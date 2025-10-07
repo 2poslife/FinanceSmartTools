@@ -203,9 +203,7 @@ export default function EmployeeCostWithPension() {
                             <div className="details-box">
                                 <div className="detail-item single">
                                     <span className="detail-label">מס הכנסה:</span>
-                                    <span className="detail-value">
-                                        {(result.income_tax.before_credit - result.income_tax.credit_points_value).toFixed(1)} ₪
-                                    </span>
+                                    <span className="detail-value">{result.income_tax.after_credit} ₪</span>
                                 </div>
 
                                 <div className="detail-section">
