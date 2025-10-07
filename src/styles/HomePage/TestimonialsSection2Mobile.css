@@ -1,0 +1,284 @@
+/* Testimonials Section 2 Mobile - Clean Modern Design */
+.testimonials-section-2-mobile {
+  background: #ffffff;
+  padding: 3rem 1rem;
+  position: relative;
+}
+
+.testimonials-container-2-mobile {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Header */
+.testimonials-header-2-mobile {
+  margin-bottom: 2rem;
+}
+
+.testimonials-label-2-mobile {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.testimonials-title-2-mobile {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1e293b;
+  margin-bottom: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Testimonial Cards */
+.testimonials-cards-2-mobile {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* Main Testimonial Card */
+.testimonial-card-main-2-mobile {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid #f1f5f9;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.testimonial-avatar-2-mobile {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.testimonial-avatar-2-mobile::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 76px;
+  height: 76px;
+  background: #14b8a6;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.avatar-image-2-mobile {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-content-2-mobile {
+  text-align: center;
+}
+
+.testimonial-text-2-mobile {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #374151;
+  margin-bottom: 1.25rem;
+  font-style: normal;
+  text-align: left;
+}
+
+.testimonial-author-2-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.author-name-2-mobile {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.author-location-2-mobile {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+/* Additional Card */
+.testimonial-card-additional-2-mobile {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f5f9;
+  text-align: center;
+}
+
+.additional-content-2-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.additional-name-2-mobile {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.additional-role-2-mobile {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+/* Navigation Controls */
+.testimonials-controls-2-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Navigation Dots */
+.testimonials-dots-2-mobile {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.testimonial-dot-2-mobile {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testimonial-dot-2-mobile.active {
+  background: #1e293b;
+  transform: scale(1.2);
+}
+
+.testimonial-dot-2-mobile:hover {
+  background: #9ca3af;
+  transform: scale(1.1);
+}
+
+/* Navigation Arrows */
+.testimonials-arrows-2-mobile {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.arrow-btn-2-mobile {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #6b7280;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.arrow-btn-2-mobile:hover {
+  background: #f8fafc;
+  border-color: #d1d5db;
+  color: #374151;
+  transform: scale(1.05);
+}
+
+.arrow-btn-2-mobile:active {
+  transform: scale(0.95);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .testimonials-section-2-mobile {
+    padding: 2.5rem 1rem;
+  }
+  
+  .testimonials-title-2-mobile {
+    font-size: 1.75rem;
+  }
+  
+  .testimonial-card-main-2-mobile {
+    padding: 1.5rem 1rem;
+  }
+  
+  .testimonial-text-2-mobile {
+    font-size: 0.95rem;
+  }
+  
+  .avatar-image-2-mobile {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .testimonials-controls-2-mobile {
+    gap: 1.25rem;
+  }
+  
+  .arrow-btn-2-mobile {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Animation classes */
+.testimonial-card-animating-mobile {
+  opacity: 0.7;
+  transform: translateY(10px) scale(0.98);
+  transition: all 0.3s ease;
+}
+
+.avatar-image-animating-mobile {
+  opacity: 0.6;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+}
+
+.testimonial-content-animating-mobile {
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+/* Subtle animations */
+.testimonial-card-main-2-mobile {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.testimonial-card-main-2-mobile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.avatar-image-2-mobile {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.testimonial-content-2-mobile {
+  transition: opacity 0.3s ease;
+}

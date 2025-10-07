@@ -31,11 +31,12 @@ const CalculatorsGrid = () => {
             icon: <ShieldCheck className="calculators-desktop-sim-icon" />,
         },
         {
-            title: "מחשבון מס הכנסה",
-            desc: "חשב את מס ההכנסה עם נקודות זיכוי",
+            title: "מחשבון מס הכנסה ע״פ נקודות הזיכוי",
+            desc: "احسب ضريبة الدخل الشهرية والسنوية بسهولة – مع أخذ نقاط الاستحقاق بعين الاعتبار",
             link: "/simulators/IncomeTaxWithPoints",
             icon: <CreditCard className="calculators-desktop-sim-icon" />,
-        },
+        }
+        ,
         // Second row - Self-employed calculators
         {
             title: "מחשבון עצמאי זעיר",

@@ -1,22 +1,45 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-    ChevronDown,
-    ChevronUp,
     AlertTriangle,
 } from "lucide-react";
+import GuideIcon from "../../assets/Guide.svg";
 import "../../styles/Calculators/IncomeTaxWithPoints.css";
 
 const API_BASE = "https://financesmarttools-backend.onrender.com";
 
 export default function IncomeTaxWithPoints() {
     const navigate = useNavigate();
+    
+    // Log page width and Guide SVG dimensions
+    React.useEffect(() => {
+        console.log('Page width:', window.innerWidth + 'px');
+        console.log('Document width:', document.documentElement.clientWidth + 'px');
+        
+        // Log Guide SVG dimensions after it loads
+        const guideImg = document.querySelector('.guide-icon');
+        if (guideImg) {
+            console.log('Guide SVG width:', guideImg.offsetWidth + 'px');
+            console.log('Guide SVG height:', guideImg.offsetHeight + 'px');
+            console.log('Guide SVG natural width:', guideImg.naturalWidth + 'px');
+            console.log('Guide SVG natural height:', guideImg.naturalHeight + 'px');
+        }
+        
+        // Also log when the image loads
+        const handleImageLoad = () => {
+            console.log('Guide SVG loaded - width:', guideImg.offsetWidth + 'px', 'height:', guideImg.offsetHeight + 'px');
+        };
+        
+        if (guideImg) {
+            guideImg.addEventListener('load', handleImageLoad);
+            return () => guideImg.removeEventListener('load', handleImageLoad);
+        }
+    }, []);
 
     const [grossSalary, setGrossSalary] = useState("");
     const [creditPoints, setCreditPoints] = useState("");
     const [result, setResult] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [expanded, setExpanded] = useState(false);
     const [authError, setAuthError] = useState(false);
 
     const handleCalculate = async () => {
@@ -76,7 +99,7 @@ export default function IncomeTaxWithPoints() {
         <div className="calcpage" dir="rtl">
             {/* Intro */}
             <section className="calcpage-intro">
-                <h1>מחשבון מס הכנסה עם נקודות זיכוי</h1>
+                <h1>מחשבון מס הכנסה ע״פ נקודות הזיכוי</h1>
                 <p className="calcpage-tagline">
                     מחשבון זה מציג את חבות מס ההכנסה החודשית והשנתית,
                     כולל התחשבות בנקודות זיכוי אישיות.
@@ -146,16 +169,8 @@ export default function IncomeTaxWithPoints() {
                         <h3>תוצאות החישוב</h3>
 
                         <div className="calcpage-summary-cards">
-                            <div className="summary-card blue">
-                                <h4>לפני זיכוי</h4>
-                                <p>{formatNumber(result.income_tax.before_credit)} ₪</p>
-                            </div>
-                            <div className="summary-card orange">
-                                <h4>שווי נקודות זיכוי</h4>
-                                <p>{formatNumber(result.income_tax.credit_points_value)} ₪</p>
-                            </div>
                             <div className="summary-card green">
-                                <h4>אחרי זיכוי</h4>
+                                <h4>מס חודשי</h4>
                                 <p>{formatNumber(result.income_tax.after_credit)} ₪</p>
                             </div>
                             <div className="summary-card red">
@@ -164,34 +179,6 @@ export default function IncomeTaxWithPoints() {
                             </div>
                         </div>
 
-                        <button
-                            className="expand-btn"
-                            onClick={() => setExpanded((prev) => !prev)}
-                        >
-                            {expanded ? (
-                                <>
-                                    <ChevronUp className="w-4 h-4" /> הסתר פירוט
-                                </>
-                            ) : (
-                                <>
-                                    <ChevronDown className="w-4 h-4" /> הצג פירוט
-                                </>
-                            )}
-                        </button>
-
-                        {expanded && (
-                            <div className="details-box">
-                                <h4>מדרגות מס</h4>
-                                <ul>
-                                    {result.brackets.map((b, i) => (
-                                        <li key={i}>
-                                            טווח {b.range} ({(b.rate * 100).toFixed(0)}%):{" "}
-                                            חייב {formatNumber(b.taxable)} ₪ → {formatNumber(b.amount)} ₪
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
                     </div>
                 )}
 
@@ -210,6 +197,13 @@ export default function IncomeTaxWithPoints() {
                     >
                         🧹 נקה טופס
                     </button>
+                </div>
+            </section>
+
+            {/* Course Connection */}
+            <section className="calcpage-course-connection">
+                <div className="guide-icon-wrapper">
+                    <img src={GuideIcon} alt="Guide" className="guide-icon" />
                 </div>
             </section>
 

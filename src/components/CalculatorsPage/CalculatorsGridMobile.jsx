@@ -46,8 +46,8 @@ const CalculatorsGridMobile = () => {
             icon: <Briefcase className="calculators-sim-icon" />,
         },
         {
-            title: "מחשבון מס הכנסה",
-            desc: "חשב את מס ההכנסה עם נקודות זיכוי",
+            title: "מחשבון מס הכנסה ע״פ נקודות הזיכוי",
+            desc: "חשב את מס ההכנסה ע״פ נקודות הזיכוי",
             link: "/simulators/IncomeTaxWithPoints",
             icon: <CreditCard className="calculators-sim-icon" />,
         },
