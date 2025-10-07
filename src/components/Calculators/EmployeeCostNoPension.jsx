@@ -7,6 +7,7 @@ import {
     ChevronDown,
     ChevronUp,
     AlertTriangle,
+    Lightbulb,
 } from "lucide-react";
 import "../../styles/Calculators/EmployeeCostNoPension.css";
 
@@ -21,6 +22,7 @@ export default function EmployeeCostNoPension() {
     const [loading, setLoading] = useState(false);
     const [expanded, setExpanded] = useState(false);
     const [authError, setAuthError] = useState(false);
+    const [calculatedGrossSalary, setCalculatedGrossSalary] = useState(0);
 
     const handleLogout = () => {
         localStorage.removeItem("access_token");
@@ -71,6 +73,7 @@ export default function EmployeeCostNoPension() {
 
             const data = await res.json();
             setResult(data);
+            setCalculatedGrossSalary(parseFloat(grossSalary));
         } catch (err) {
             console.error("❌ Error calculating:", err);
         } finally {
@@ -162,7 +165,7 @@ export default function EmployeeCostNoPension() {
                         <div className="calcpage-summary-cards">
                             <div className="summary-card blue">
                                 <h4>נטו לעובד</h4>
-                                <p>{(parseFloat(grossSalary) - result.summary.employee_part).toLocaleString()} ₪</p>
+                                <p>{(calculatedGrossSalary - result.summary.employee_part).toLocaleString()} ₪</p>
                             </div>
                             <div className="summary-card red">
                                 <h4>חלק המעסיק</h4>
@@ -187,6 +190,7 @@ export default function EmployeeCostNoPension() {
                             setGrossSalary("");
                             setCreditPoints("");
                             setResult(null);
+                            setCalculatedGrossSalary(0);
                         }}
                         className="calcpage-btn danger"
                     >
@@ -226,7 +230,14 @@ export default function EmployeeCostNoPension() {
                     את חלק המעסיק, ואת העלות הכוללת של ההעסקה.
                 </p>
 
-                <h2> כתב ויתור 💡</h2>
+                <div className="notice-box">
+                    <p>
+                        המחשבון מחשב את עלות העובד למעסיק מבחינה מיסויית בלבד על בסיס השכר הברוטו,
+                        החישוב אינו כולל רכיבים נוספים כגון דמי הבראה, חופשה שנתית, ימי חג, ימי מחלה, בונוסים או הוצאות רכב.
+                    </p>
+                </div>
+
+                <h2> כתב ויתור </h2>
                 <p className="disclaimer">
                     בדיקת עלות עובד (רק מיסים ללא פנסיה) נותנת אומדן בלבד ואינה מהווה ייעוץ מס או תחליף לליווי מקצועי.
                     הנתונים מבוססים על מדרגות מס והפרשות עדכניות, אך ייתכנו הבדלים בהתאם לנסיבות האישיות.

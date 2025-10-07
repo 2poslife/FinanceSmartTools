@@ -35,9 +35,11 @@ const CalculatorsGridMobile = () => {
         },
         {
             title: "בדיקת עלות עובד (כולל פנסיה)",
-            desc: "חשב את עלות העובד עם פנסיה מלאה",
+            desc: "חשב את עלות העובד למעסיק",
             link: "/simulators/employee-cost-with-pension",
             icon: <ShieldCheck className="calculators-sim-icon" />,
+            isFree: true,
+            freeNote: "🔥 ניתן להשתמש בחינם!"
         },
         {
             title: "מחשבון עצמאי - ביטוח לאומי",
@@ -55,7 +57,11 @@ const CalculatorsGridMobile = () => {
 
     const handleSimulatorClick = (link) => {
         const token = localStorage.getItem("access_token");
-        if (!token) {
+        
+        // Allow access to employee-cost-with-pension without login
+        if (link === "/simulators/employee-cost-with-pension") {
+            navigate(link);
+        } else if (!token) {
             alert("עליך להתחבר כדי להשתמש במחשבון");
             navigate("/SigninForm");
         } else {
@@ -74,14 +80,20 @@ const CalculatorsGridMobile = () => {
                 {simulators.map((sim, idx) => (
                     <div
                         key={idx}
-                        className="calculators-card"
+                        className={`calculators-card ${sim.isFree ? 'free-calculator' : ''}`}
                         onClick={() => handleSimulatorClick(sim.link)}
                     >
+                        {sim.isFree && (
+                            <div className="free-badge">🔥 בחינם</div>
+                        )}
                         <div className="calculators-card-header">
                             {sim.icon}
                             <h3>{sim.title}</h3>
                         </div>
                         <p>{sim.desc}</p>
+                        {sim.isFree && (
+                            <div className="free-note">{sim.freeNote}</div>
+                        )}
                     </div>
                 ))}
             </div>

@@ -26,9 +26,11 @@ const CalculatorsGrid = () => {
         {
             title: "בדיקת עלות עובד",
             titleSecondLine: "(כולל פנסיה)",
-            desc: "חשב את עלות העובד עם פנסיה מלאה",
+            desc: "חשב את עלות העובד למעסיק",
             link: "/simulators/employee-cost-with-pension",
             icon: <ShieldCheck className="calculators-desktop-sim-icon" />,
+            isFree: true,
+            freeNote: "🔥 ניתן להשתמש בחינם!"
         },
         {
             title: "מחשבון מס הכנסה ע״פ נקודות הזיכוי",
@@ -60,7 +62,11 @@ const CalculatorsGrid = () => {
 
     const handleSimulatorClick = (link) => {
         const token = localStorage.getItem("access_token");
-        if (!token) {
+        
+        // Allow access to employee-cost-with-pension without login
+        if (link === "/simulators/employee-cost-with-pension") {
+            navigate(link);
+        } else if (!token) {
             alert("עליך להתחבר כדי להשתמש במחשבון");
             navigate("/SigninForm");
         } else {
@@ -79,9 +85,12 @@ const CalculatorsGrid = () => {
                 {simulators.map((sim, idx) => (
                     <div
                         key={idx}
-                        className="calculators-desktop-card"
+                        className={`calculators-desktop-card ${sim.isFree ? 'free-calculator' : ''}`}
                         onClick={() => handleSimulatorClick(sim.link)}
                     >
+                        {sim.isFree && (
+                            <div className="free-badge">🔥 בחינם</div>
+                        )}
                         <div className="calculators-desktop-card-header">
                             {sim.icon}
                                    <h3>
@@ -90,6 +99,9 @@ const CalculatorsGrid = () => {
                                    </h3>
                         </div>
                         <p>{sim.desc}</p>
+                        {sim.isFree && (
+                            <div className="free-note">{sim.freeNote}</div>
+                        )}
                     </div>
                 ))}
             </div>
