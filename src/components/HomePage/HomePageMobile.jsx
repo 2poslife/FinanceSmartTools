@@ -3,6 +3,7 @@ import HeroSectionMobile from "./HeroSectionMobile";
 import ServicesSectionMobile from "./ServicesSectionMobile";
 import ServicesSection2Mobile from "./ServicesSection2Mobile";
 import FeaturesSectionMobile from "./FeaturesSectionMobile";
+import FixedBackgroundSectionMobile from "./FixedBackgroundSectionMobile";
 import WhySectionMobile from "./WhySectionMobile";
 import CoursesSectionMobile from "./CoursesSectionMobile";
 import ImageSectionMobile from "./ImageSectionMobile";
@@ -19,6 +20,7 @@ function HomePageMobile() {
       <ServicesSectionMobile />
       <ServicesSection2Mobile />
       <FeaturesSectionMobile />
+      <FixedBackgroundSectionMobile />
       <WhySectionMobile />
       <CoursesSectionMobile />
       <ImageSectionMobile />

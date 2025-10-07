@@ -3,6 +3,7 @@ import HeroSection from "./HeroSection";
 import ServicesSection from "./ServicesSection";
 import ServicesSection2 from "./ServicesSection2";
 import FeaturesSection from "./FeaturesSection";
+import FixedBackgroundSection from "./FixedBackgroundSection";
 import WhySection from "./WhySection";
 import CoursesSection from "./CoursesSection";
 import ImageSection from "./ImageSection";
@@ -20,6 +21,7 @@ function HomePageDesktop() {
       <ServicesSection />
       <ServicesSection2 />
       <FeaturesSection />
+      <FixedBackgroundSection />
       <WhySection />
       <CoursesSection />
       <ImageSection />

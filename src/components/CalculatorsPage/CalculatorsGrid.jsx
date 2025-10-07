@@ -19,7 +19,7 @@ const CalculatorsGrid = () => {
         {
             title: "בדיקת עלות עובד",
             titleSecondLine: "(רק מיסים ללא פנסיה)",
-            desc: "חשב את עלות העובד רק מיסים ללא פנסיה",
+            desc: "חשב עלות העובד ״המיסויית״ למעסיק",
             link: "/simulators/employee-cost-no-pension",
             icon: <FileSpreadsheet className="calculators-desktop-sim-icon" />,
         },

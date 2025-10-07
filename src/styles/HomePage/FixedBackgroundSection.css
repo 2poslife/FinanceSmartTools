@@ -1,0 +1,207 @@
+.fixed-bg-section {
+    background-image: url("/herosection.png");
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* Center content with Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    direction: rtl;
+    position: relative;
+}
+
+.fixed-bg-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.fixed-bg-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.fixed-bg-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 0 0 60px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fixed-bg-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.fixed-bg-service {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px 25px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fixed-bg-service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.fixed-bg-service-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.fixed-bg-service-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 15px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.3;
+}
+
+.fixed-bg-service-description {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    flex-grow: 1;
+}
+
+.fixed-bg-service-button {
+    background: linear-gradient(135deg, #d4af37, #b89453);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.fixed-bg-service-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    background: linear-gradient(135deg, #b89453, #d4af37);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .fixed-bg-title {
+        font-size: 2.2rem;
+    }
+    
+    .fixed-bg-services {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fixed-bg-section {
+        min-height: 80vh;
+    }
+    
+    .fixed-bg-content {
+        padding: 0 15px;
+    }
+    
+    .fixed-bg-title {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+    
+    .fixed-bg-services {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .fixed-bg-service {
+        padding: 25px 20px;
+    }
+    
+    .fixed-bg-service-icon {
+        font-size: 2.5rem;
+    }
+    
+    .fixed-bg-service-title {
+        font-size: 1.2rem;
+    }
+    
+    .fixed-bg-service-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .fixed-bg-section {
+        min-height: 70vh;
+    }
+    
+    .fixed-bg-content {
+        padding: 0 10px;
+    }
+    
+    .fixed-bg-title {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+    
+    .fixed-bg-service {
+        padding: 20px 15px;
+    }
+    
+    .fixed-bg-service-icon {
+        font-size: 2rem;
+    }
+    
+    .fixed-bg-service-title {
+        font-size: 1.1rem;
+    }
+    
+    .fixed-bg-service-description {
+        font-size: 0.85rem;
+    }
+    
+    .fixed-bg-service-button {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+}
