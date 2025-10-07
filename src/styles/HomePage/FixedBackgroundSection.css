@@ -1,5 +1,5 @@
 .fixed-bg-section {
-    background-image: url("/herosection.png");
+    background-image: url("/Gray and Black Minimal Website Animated Presentation Video.svg");
     min-height: 100vh;
     background-attachment: fixed;
     background-position: center;
@@ -30,7 +30,7 @@
 .fixed-bg-content {
     position: relative;
     z-index: 2;
-    max-width: 1200px;
+    max-width: 1080px;
     padding: 0 20px;
 }
 
@@ -42,7 +42,7 @@
     line-height: 1.2;
     letter-spacing: -0.5px;
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    max-width: 1000px;
+    max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
 }

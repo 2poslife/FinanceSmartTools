@@ -5,7 +5,7 @@ function HeroSectionMobile() {
   return (
     <section className="hero-mobile">
       <div className="hero-bg-mobile">
-        <img src="/herosection.png" alt="Hero Background" />
+        <img src="/Gray and Black Minimal Website Animated Presentation Video.svg" alt="Hero Background" />
       </div>
       <div className="hero-overlay-mobile"></div>
       <div className="hero-content-mobile">
