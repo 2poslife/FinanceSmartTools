@@ -15,7 +15,6 @@ import ArticleDetailPage from "./pages/ArticleDetailPage";
 import CoursesPage from "./pages/CoursesPage";
 import CourseDetailPage from "./pages/CourseDetailPage";
 import CalculatorsPage from "./pages/CalculatorsPage";
-import UserPage from "./pages/UserPage";
 
 // Auth
 import SigninForm from "./components/Auth/SigninForm";
@@ -132,7 +131,6 @@ function Layout() {
         />
 
         {/* User Routes */}
-        <Route path="/UserPage" element={<UserPage />} />
 
         {/* Admin Routes */}
         <Route path="/AdminPage" element={<AdminPage />} />

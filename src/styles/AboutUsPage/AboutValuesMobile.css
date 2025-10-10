@@ -60,14 +60,16 @@
 
 .mobile-values-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 15px;
   margin-bottom: 30px;
+  align-items: stretch;
 }
 
 .mobile-value-trust {
-  grid-column: 2;
-  grid-row: 3;
+  grid-column: 3;
+  grid-row: 2;
 }
 
 .mobile-value-item {
@@ -80,6 +82,11 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .mobile-value-item::before {
@@ -169,6 +176,29 @@
 
 
 /* Responsive adjustments */
+@media (max-width: 768px) {
+  .mobile-values-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .mobile-value-item {
+    padding: 15px 10px;
+    min-height: 120px;
+  }
+  
+  .mobile-value-title {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+  }
+  
+  .mobile-value-description {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}
+
 @media (max-width: 480px) {
   .mobile-values-section {
     padding: 30px 15px;
@@ -179,21 +209,24 @@
   }
   
   .mobile-values-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
   }
   
   .mobile-value-item {
-    padding: 15px 12px;
+    padding: 12px 8px;
+    min-height: 100px;
   }
-  
   
   .mobile-value-title {
     font-size: 14px;
+    margin: 0 0 8px 0;
   }
   
   .mobile-value-description {
-    font-size: 12px;
+    font-size: 11px;
+    line-height: 1.3;
   }
   
   .mobile-logo-image {
