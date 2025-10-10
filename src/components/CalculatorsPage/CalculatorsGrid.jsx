@@ -53,7 +53,7 @@ const CalculatorsGrid = () => {
             icon: <Users className="calculators-desktop-sim-icon" />,
         },
         {
-            title: "מחשבון עצמאי - ביטוח לאומי",
+            title: "מחשבון מקדמות – ביטוח לאומי לעצמאי",
             desc: "חשב את הביטוח לאומי לעצמאי",
             link: "/simulators/self-employed",
             icon: <Briefcase className="calculators-desktop-sim-icon" />,

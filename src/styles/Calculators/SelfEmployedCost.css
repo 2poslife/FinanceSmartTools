@@ -286,25 +286,80 @@
 }
 
 .calcpage-description h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #b29053;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.calcpage-description h3 {
     font-size: 1.4rem;
     font-weight: bold;
     color: #000000;
-    margin: 1.2rem 0 0.6rem;
-}
-
-.calcpage-description ul {
-    list-style: "✔️ ";
-    margin: 0.6rem 0 1.2rem;
-    padding-right: 1.5rem;
-}
-
-.calcpage-description ul li {
-    color: #000000;
-    font-weight: 500;
+    margin: 1.8rem 0 0.8rem;
 }
 
 .calcpage-description p {
-    color: #000000;
+    color: #334155;
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.calcpage-description ul,
+.calcpage-description ol {
+    margin: 0.8rem 0 1.5rem;
+    padding-right: 2rem;
+}
+
+.calcpage-description ul li,
+.calcpage-description ol li {
+    color: #334155;
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+    font-size: 1.05rem;
+}
+
+.self-employed-note {
+    background: #fffbeb;
+    border: 2px solid #fbbf24;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.self-employed-note-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #b45309;
+    margin: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.self-employed-note-text {
+    color: #78350f;
+    font-size: 1rem;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    line-height: 1.5;
+}
+
+.calcpage-summary {
+    background: #f0f9ff;
+    border: 2px solid #0ea5e9;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    font-size: 1.05rem;
+    color: #0c4a6e;
+    font-weight: 500;
+    text-align: center;
 }
 
 .disclaimer {

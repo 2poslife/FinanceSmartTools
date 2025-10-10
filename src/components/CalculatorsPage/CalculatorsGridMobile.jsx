@@ -42,7 +42,7 @@ const CalculatorsGridMobile = () => {
             freeNote: "🔥 ניתן להשתמש בחינם!"
         },
         {
-            title: "מחשבון עצמאי - ביטוח לאומי",
+            title: "מחשבון מקדמות – ביטוח לאומי לעצמאי",
             desc: "חשב את הביטוח לאומי לעצמאי",
             link: "/simulators/self-employed",
             icon: <Briefcase className="calculators-sim-icon" />,

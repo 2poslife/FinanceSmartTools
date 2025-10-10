@@ -307,6 +307,35 @@
     color: #000000;
 }
 
+.micro-self-employed-note {
+    background: #fffbeb;
+    border: 2px solid #fbbf24;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.micro-self-employed-note-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #b45309;
+    margin: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.micro-self-employed-note-text {
+    color: #78350f;
+    font-size: 1rem;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    line-height: 1.5;
+}
+
 .disclaimer {
     background: #fff3cd;
     border: 2px solid #000000;
