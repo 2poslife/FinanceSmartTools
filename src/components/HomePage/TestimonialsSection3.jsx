@@ -3,22 +3,22 @@ import "../../styles/HomePage/TestimonialsSection3.css";
 
 const testimonials = [
   {
-    name: "Mike Taylor",
-    location: "Lahore, Pakistan",
-    text: "On the Windows talking painted pasture yet its express parties use. Sure last upon he same as knew next. Of believed or diverted no.",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+    name: "بانا",
+    location: "מתמחה - مدققة حسابات",
+    text: "يعطيكوا ألف عافية، عهيك كورس مرتب مفيد متكتك 👏 كتير المعلومات اللي فيه فادتني وخَلتني يكون عندي ثقة بنفسي إنه صح هيك الإشي معناه وهيك بنعمل ✨💪😍",
+    avatar: "/logo.png"
   },
   {
-    name: "Sarah Johnson",
-    location: "New York, USA",
-    text: "Absolutely amazing service! The team went above and beyond to help us achieve our goals. Highly recommended for anyone looking for professional excellence.",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
+    name: "ليث",
+    location: "مدقق حسابات",
+    text: "زيدان، من لا يشكر الناس لا يشكر الله. بِسلم إيديك يا رب، ما بعتقد في كورسات متعوب عليها مثل هذا الكورس. المتابعة تبعتك بتخدم كثير، وما بتخلي الواحد يعلق على شغلة معينة مثلاً 🙏",
+    avatar: "/logo.png"
   },
   {
-    name: "Ahmed Hassan",
-    location: "Cairo, Egypt",
-    text: "The quality of work and attention to detail is outstanding. We couldn't be happier with the results and the professional approach throughout the project.",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+    name: "وسيم",
+    location: "محاسب",
+    text: "بالمناسبة عنجد فِش زي الكورس اللي عملتوه، كلشي واضح ومرتب، وأنا شخصياً تعلمت كثير شغلات منو واستفدت 🌹",
+    avatar: "/logo.png"
   }
 ];
 
@@ -43,13 +43,13 @@ function TestimonialsSection3() {
   const nextTestimonial = testimonials[nextIndex];
 
   return (
-    <section className="testimonials-section-3" dir="ltr">
+    <section className="testimonials-section-3" dir="rtl">
       <div className="testimonials-container-3">
         
         {/* Left Heading */}
         <div className="testimonials-heading-3">
-          <div className="testimonials-label-3">TESTIMONIALS</div>
-          <h2 className="testimonials-title-3">What People Say About Us.</h2>
+          <div className="testimonials-label-3">شهادات العملاء</div>
+          <h2 className="testimonials-title-3">ماذا يقول طلابنا؟</h2>
 
           {/* Dots Navigation */}
           <div className="testimonials-dots-3">

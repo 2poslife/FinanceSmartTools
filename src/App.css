@@ -1,0 +1,9 @@
+/* Add black lines between homepage sections */
+.homepage-desktop > section:not(:last-child) {
+  border-bottom: 1px solid #000;
+}
+
+.homepage-mobile > section:not(:last-child) {
+  border-bottom: 1px solid #000;
+}
+

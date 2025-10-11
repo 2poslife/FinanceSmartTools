@@ -12,6 +12,7 @@ import FAQSectionMobile from "./FAQSectionMobile";
 import TestimonialsSectionMobile from "./TestimonialsSectionMobile";
 import TestimonialsSection2Mobile from "./TestimonialsSection2Mobile";
 import ArticlesSectionMobile from "./ArticlesSectionMobile";
+import BackToTop from "./BackToTop";
 
 function HomePageMobile() {
   return (
@@ -29,6 +30,7 @@ function HomePageMobile() {
       <TestimonialsSectionMobile />
       <TestimonialsSection2Mobile />
       <ArticlesSectionMobile />
+      <BackToTop />
     </div>
   );
 }

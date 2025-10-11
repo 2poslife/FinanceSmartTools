@@ -6,12 +6,13 @@ import FeaturesSection from "./FeaturesSection";
 import FixedBackgroundSection from "./FixedBackgroundSection";
 import WhySection from "./WhySection";
 import CoursesSection from "./CoursesSection";
-import ImageSection from "./ImageSection";
 import JourneySection from "./JourneySection";
 import FAQSection from "./FAQSection";
 import TestimonialsSection from "./TestimonialsSection";
 import TestimonialsSection3 from "./TestimonialsSection3";
 import ArticlesSection from "./ArticlesSection";
+import PurpleSection from "./PurpleSection";
+import BackToTop from "./BackToTop";
 
 function HomePageDesktop() {
   return (
@@ -23,12 +24,13 @@ function HomePageDesktop() {
       <FixedBackgroundSection />
       <WhySection />
       <CoursesSection />
-      <ImageSection />
       <JourneySection />
+      <PurpleSection />
       <FAQSection />
       <TestimonialsSection />
       <TestimonialsSection3 />
       <ArticlesSection />
+      <BackToTop />
     </div>
   );
 }
