@@ -1,17 +1,17 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { articles } from '../../assets/data/articlesData';
+// import { useNavigate } from 'react-router-dom';
+// import { articles } from '../../assets/data/articlesData';
 import '../../styles/HomePage/ArticlesSection.css';
 
 function ArticlesSection() {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     
     // Show only first 3 articles on homepage
-    const homepageArticles = articles.slice(0, 3);
+    // const homepageArticles = articles.slice(0, 3);
 
-    const handleReadMore = (article) => {
-        navigate(`/article/${article.id}`);
-    };
+    // const handleReadMore = (article) => {
+    //     navigate(`/article/${article.id}`);
+    // };
 
     return (
         <section className="articles-section">
@@ -19,7 +19,12 @@ function ArticlesSection() {
                 <h2 className="articles-title">مقالاتنا المالية</h2>
                 <p className="articles-subtitle">نصائح ومعلومات مفيدة من خبرائنا</p>
                 
-                <div className="articles-grid">
+                <div className="coming-soon-message">
+                    <p className="coming-soon-text-hebrew">בקרוב יהיו כאן פוסטים ששווה לחכות להם</p>
+                    <p className="coming-soon-text-arabic">قريبًا جدًا — مقالات ونصائح مهنية لا تفوّتوها</p>
+                </div>
+                
+                {/* <div className="articles-grid">
                     {homepageArticles.map(article => (
                         <div key={article.id} className="article-card">
                             <div className="article-image">
@@ -45,7 +50,7 @@ function ArticlesSection() {
                             </div>
                         </div>
                     ))}
-                </div>
+                </div> */}
             </div>
         </section>
     );

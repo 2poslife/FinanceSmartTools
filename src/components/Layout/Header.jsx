@@ -162,7 +162,7 @@ const Header = () => {
 
             <section className="about-contact">
               <h2>تواصل معنا</h2>
-              <p>نحن هنا لمساعدتك في رحلتك المحاسبية</p>
+              <p>نحن دائمًا هنا لمساعدتك</p>
 
               <div className="contact-grid">
                 <div className="contact-card">

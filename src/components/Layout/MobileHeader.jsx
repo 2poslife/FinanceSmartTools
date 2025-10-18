@@ -200,7 +200,7 @@ const MobileHeader = () => {
 
             <section className="mobile-about-contact">
               <h2>تواصل معنا</h2>
-              <p>نحن هنا لمساعدتك في رحلتك المحاسبية</p>
+              <p>نحن دائمًا هنا لمساعدتك</p>
 
               <div className="mobile-contact-grid">
                 <div className="mobile-contact-card">

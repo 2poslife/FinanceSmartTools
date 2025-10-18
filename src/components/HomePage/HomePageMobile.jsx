@@ -8,6 +8,7 @@ import WhySectionMobile from "./WhySectionMobile";
 import CoursesSectionMobile from "./CoursesSectionMobile";
 import ImageSectionMobile from "./ImageSectionMobile";
 import JourneySectionMobile from "./JourneySectionMobile";
+import PracticalJourneySection from "./PracticalJourneySection";
 import FAQSectionMobile from "./FAQSectionMobile";
 import TestimonialsSectionMobile from "./TestimonialsSectionMobile";
 import TestimonialsSection2Mobile from "./TestimonialsSection2Mobile";
@@ -26,6 +27,7 @@ function HomePageMobile() {
       <CoursesSectionMobile />
       <ImageSectionMobile />
       <JourneySectionMobile />
+      <PracticalJourneySection />
       <FAQSectionMobile />
       <TestimonialsSectionMobile />
       <TestimonialsSection2Mobile />

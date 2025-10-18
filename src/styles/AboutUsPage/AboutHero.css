@@ -40,6 +40,7 @@
   border: 2px solid rgba(176, 147, 91, 0.4);
   backdrop-filter: blur(15px);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .vision-overlay::after {
@@ -68,26 +69,42 @@
   position: relative;
   direction: rtl;
   unicode-bidi: embed;
+  transition: all 0.3s ease;
 }
 
 .vision-text {
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 15px 0;
-  color: #000000;
-  text-shadow: none;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   direction: rtl;
   unicode-bidi: embed;
+  transition: all 0.3s ease;
 }
 
 .vision-principle {
   font-size: 18px;
   font-weight: 800;
   margin: 0;
-  color: #000000;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   direction: rtl;
   unicode-bidi: embed;
+  transition: all 0.3s ease;
 }
+
+/* When hovering over vision overlay, scale it up */
+.vision-overlay:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.25),
+    0 15px 40px rgba(178, 144, 83, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* When hovering over vision overlay, also scale up the title-subtitle */
+/* This will be handled by the parent container hover in AboutUsDesktop.css */
 
 /* Responsive Design */
 @media (max-width: 768px) {

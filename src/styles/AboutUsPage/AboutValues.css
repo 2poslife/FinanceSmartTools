@@ -309,7 +309,7 @@
 .values-conclusion-text {
   font-size: 18px;
   font-weight: 700;
-  color: #000000;
+  color: #ffffff;
   text-align: center;
   direction: rtl;
   unicode-bidi: embed;
@@ -317,7 +317,7 @@
   margin: 0;
   position: relative;
   z-index: 1;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive Design */

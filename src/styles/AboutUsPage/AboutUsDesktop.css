@@ -13,6 +13,24 @@
   gap: 20px;
 }
 
+/* Bidirectional hover effect - only when hovering over the gold boxes themselves */
+/* When hovering over title-subtitle (برؤية مختلفة), scale vision overlay */
+.about-main-content:has(.title-subtitle:hover) .vision-overlay {
+  transform: scale(1.05);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.25),
+    0 15px 40px rgba(178, 144, 83, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* When hovering over vision overlay (رؤيتنا مبنية على مبدأ), scale title-subtitle */
+.about-main-content:has(.vision-overlay:hover) .title-subtitle {
+  transform: scale(1.05);
+  box-shadow: 
+    0 12px 35px rgba(176, 147, 91, 0.5),
+    0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
 /* Floating Background Elements */
 .about-us-page::after {
   content: '';

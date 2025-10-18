@@ -41,8 +41,8 @@ const CalculatorsGrid = () => {
         ,
         // Second row - Self-employed calculators
         {
-            title: "מחשבון עצמאי זעיר",
-            desc: "חשב כמה מס על עצמאי זעיר",
+            title: "מחשבון ביטוח לאומי עוסק זעיר",
+            desc: "חשב כמה ישלם עצמאי בעל עוסק זעיר לביטוח לאומי",
             link: "/simulators/micro-self-employed",
             icon: <User className="calculators-desktop-sim-icon" />,
         },
@@ -54,7 +54,7 @@ const CalculatorsGrid = () => {
         },
         {
             title: "מחשבון מקדמות – ביטוח לאומי לעצמאי",
-            desc: "חשב את הביטוח לאומי לעצמאי",
+            desc: "חשב כמה דמי ביטוח לאומי ישלם עצמאי ומהי ההגדרה המתאימה לו",
             link: "/simulators/self-employed",
             icon: <Briefcase className="calculators-desktop-sim-icon" />,
         },
@@ -108,7 +108,7 @@ const CalculatorsGrid = () => {
             
             <div className="calculators-desktop-conclusion">
                 <p className="calculators-desktop-conclusion-text">
-                    نوفّر لك الأدوات التي تسهّل عليك فهم التزاماتك الضريبية لتتخذ قرارات مالية واثقة
+                    نوفر لك ادوات عملية تساعدك في اتخاذ قرارات محاسبية دقيقة
                 </p>
             </div>
         </section>

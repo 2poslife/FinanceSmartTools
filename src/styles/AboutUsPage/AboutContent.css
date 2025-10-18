@@ -52,9 +52,9 @@
 .title-subtitle {
   display: inline-block;
   text-align: center;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: 800;
-  color: #000000;
+  color: #ffffff;
   background: linear-gradient(135deg, #b29053 0%, #d4af37 50%, #b29053 100%);
   padding: 12px 24px;
   border-radius: 25px;
@@ -74,6 +74,9 @@
     0 12px 35px rgba(176, 147, 91, 0.5),
     0 6px 15px rgba(0, 0, 0, 0.3);
 }
+
+/* When hovering over title-subtitle, also scale up the vision overlay */
+/* This will be handled by the parent container hover in AboutUsDesktop.css */
 
 /* Content Body */
 .content-body {
@@ -234,7 +237,7 @@
   }
 
   .title-subtitle {
-    font-size: 22px;
+    font-size: 28px;
     text-align: right;
   }
 }

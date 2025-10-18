@@ -16,8 +16,8 @@ const CalculatorsGridMobile = () => {
 
     const simulators = [
         {
-            title: "מחשבון עצמאי זעיר",
-            desc: "חשב כמה מס על עצמאי זעיר",
+            title: "מחשבון ביטוח לאומי עוסק זעיר",
+            desc: "חשב כמה ישלם עצמאי בעל עוסק זעיר לביטוח לאומי",
             link: "/simulators/micro-self-employed",
             icon: <User className="calculators-sim-icon" />,
         },
@@ -43,7 +43,7 @@ const CalculatorsGridMobile = () => {
         },
         {
             title: "מחשבון מקדמות – ביטוח לאומי לעצמאי",
-            desc: "חשב את הביטוח לאומי לעצמאי",
+            desc: "חשב כמה דמי ביטוח לאומי ישלם עצמאי ומהי ההגדרה המתאימה לו",
             link: "/simulators/self-employed",
             icon: <Briefcase className="calculators-sim-icon" />,
         },
