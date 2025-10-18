@@ -4,6 +4,7 @@
 I use GitHub Desktop because it makes cloning and pushing easy
 2. **Install dependencies**
 open the VS terminal and run
+
  ```bash
  npm install react-router-dom lucide-react jwt-decode
 ```
