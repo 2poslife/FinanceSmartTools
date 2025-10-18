@@ -560,3 +560,15 @@
         transform: translateY(0);
     }
 }
+
+/* CTA Box */
+.cta-box {
+    background: #e3f2fd;
+    border: 1px solid #bbdefb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #1565c0;
+    font-weight: bold;
+}

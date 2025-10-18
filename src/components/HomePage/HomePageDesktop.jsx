@@ -19,17 +19,14 @@ function HomePageDesktop() {
   return (
     <div className="homepage-desktop">
       <HeroSection />
-      <ServicesSection />
       <ServicesSection2 />
       <FeaturesSection />
-      <FixedBackgroundSection />
       <WhySection />
       <CoursesSection />
       <JourneySection />
       <PracticalJourneySection />
       <PurpleSection />
       <FAQSection />
-      <TestimonialsSection />
       <TestimonialsSection3 />
       <ArticlesSection />
       <BackToTop />

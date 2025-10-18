@@ -19,9 +19,9 @@ function ArticlesSection() {
                 <h2 className="articles-title">مقالاتنا المالية</h2>
                 <p className="articles-subtitle">نصائح ومعلومات مفيدة من خبرائنا</p>
                 
-                <div className="coming-soon-message">
-                    <p className="coming-soon-text-hebrew">בקרוב יהיו כאן פוסטים ששווה לחכות להם</p>
-                    <p className="coming-soon-text-arabic">قريبًا جدًا — مقالات ونصائح مهنية لا تفوّتوها</p>
+                <div className="articles-coming-soon-message">
+                    <p className="articles-coming-soon-text-hebrew">בקרוב יהיו כאן פוסטים ששווה לחכות להם</p>
+                    <p className="articles-coming-soon-text-arabic">قريبًا جدًا — مقالات ونصائح مهنية لا تفوّتوها</p>
                 </div>
                 
                 {/* <div className="articles-grid">

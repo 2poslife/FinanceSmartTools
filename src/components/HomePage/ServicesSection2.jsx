@@ -5,31 +5,45 @@ function ServicesSection2() {
     const services = [
         {
             id: 1,
-            title: "أدوات حاسبة محاسبية تفاعلية",
-            description: "حاسبات متخصصة لحساب الضرائب والتكاليف والرواتب بدقة عالية",
-            icon: "🧮",
+            title: "إدارة وتدقيق حسابات",
+            description: "تجهيز ومراجعة تقارير سنوية",
+            icon: "📊",
             iconBg: "#FDF4E3"
         },
         {
             id: 2,
-            title: "ورش عمل في التدقيق المحاسبي",
-            description: "ورش تدريبية متخصصة في التدقيق المحاسبي والممارسات المهنية",
-            icon: "📊",
+            title: "استشارات مهنية",
+            description: "استشارات مهنية في المحاسبة والضرائب والتخطيط المالي",
+            icon: "💼",
             iconBg: "#FDF4E3",
             featured: true
         },
         {
             id: 3,
-            title: "استشارات محاسبية متخصصة",
-            description: "استشارات مهنية في المحاسبة والضرائب والتخطيط المالي",
-            icon: "💼",
+            title: "دورات تدريبية",
+            description: "دورات من المبتدىء إلى المتقدم للمحاسبين",
+            icon: "📚",
             iconBg: "#FDF4E3"
         },
         {
             id: 4,
-            title: "دورات المحاسبة الأساسية والمتقدمة",
-            description: "دورات شاملة من المبتدئ إلى المتقدم في المحاسبة المالية",
-            icon: "📚",
+            title: "آلات حاسبة ذكية",
+            description: "أدوات عملية تساعدك في اتخاذ قرارات محاسبية دقيقة",
+            icon: "🧮",
+            iconBg: "#FDF4E3"
+        },
+        {
+            id: 5,
+            title: "مرافقة شخصية",
+            description: "مرافقة شخصية من محاسبين معتمدين",
+            icon: "🤝",
+            iconBg: "#FDF4E3"
+        },
+        {
+            id: 6,
+            title: "مقالات ونصائح مهنية",
+            description: "محتوى تعليمي ومقالات مهنية لتطوير مهاراتك المحاسبية",
+            icon: "📝",
             iconBg: "#FDF4E3"
         }
     ];
@@ -38,8 +52,8 @@ function ServicesSection2() {
         <section className="services-section-2">
             <div className="services-container-2">
                 <div className="services-header-2">
-                    <h2 className="services-title-2">خدماتنا المتميزة</h2>
-                    <p className="services-subtitle-2">نقدم حلول محاسبية شاملة ومتخصصة لجميع احتياجاتك</p>
+                    <h2 className="services-title-2">خدمات محاسبة شاملة</h2>
+                    <p className="services-subtitle-2">في مكان واحد!</p>
                 </div>
                 
                 <div className="services-grid-2">

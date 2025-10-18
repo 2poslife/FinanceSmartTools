@@ -42,7 +42,7 @@
 }
 
 .coming-soon-text-hebrew-mobile {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 900;
   background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
   -webkit-background-clip: text;
@@ -57,7 +57,7 @@
 }
 
 .coming-soon-text-arabic-mobile {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 900;
   color: #000000;
   font-family: "Arial Black", Arial, sans-serif;
@@ -65,7 +65,7 @@
   position: relative;
   z-index: 1;
   animation: fadeInUp 1s ease-out 0.2s both;
-  padding: 10px 15px;
+  padding: 8px 12px;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   display: inline-block;

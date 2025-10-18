@@ -1,6 +1,6 @@
 .services-section-2 {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+    background: linear-gradient(135deg, #fdfcf9 0%, #f7f5ee 50%, #ece9df 100%);
     position: relative;
     overflow: hidden;
     direction: rtl;
@@ -58,9 +58,10 @@
 
 .services-grid-2 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     align-items: start;
+    justify-items: start;
 }
 
 .services-card-2 {
@@ -76,12 +77,25 @@
     animation: fadeInUp 0.6s ease-out forwards;
     opacity: 0;
     transform: translateY(30px);
+    width: 100%;
+    max-width: 320px;
 }
 
 .services-card-2:nth-child(1) { animation-delay: 0.1s; }
 .services-card-2:nth-child(2) { animation-delay: 0.2s; }
 .services-card-2:nth-child(3) { animation-delay: 0.3s; }
-.services-card-2:nth-child(4) { animation-delay: 0.4s; }
+.services-card-2:nth-child(4) { 
+    animation-delay: 0.4s; 
+    grid-column: 1;
+}
+.services-card-2:nth-child(5) { 
+    animation-delay: 0.5s; 
+    grid-column: 2;
+}
+.services-card-2:nth-child(6) { 
+    animation-delay: 0.6s; 
+    grid-column: 3;
+}
 
 @keyframes fadeInUp {
     to {
@@ -188,6 +202,12 @@
     .services-grid-2 {
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
+    }
+    
+    .services-card-2:nth-child(4),
+    .services-card-2:nth-child(5),
+    .services-card-2:nth-child(6) {
+        grid-column: auto;
     }
     
     .services-title-2 {

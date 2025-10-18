@@ -34,7 +34,7 @@ const CalculatorsGrid = () => {
         },
         {
             title: "מחשבון מס הכנסה ע״פ נקודות הזיכוי",
-            desc: "גלה כמה מס תשלם באמת – כולל נקודות הזיכוי שמגיעות לך",
+            desc: "גלה כמה מס תשלם לפי ההכנסה שלך ונקודות הזיכוי",
             link: "/simulators/IncomeTaxWithPoints",
             icon: <CreditCard className="calculators-desktop-sim-icon" />,
         }

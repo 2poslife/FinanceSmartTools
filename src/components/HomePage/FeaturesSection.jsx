@@ -4,10 +4,11 @@ import '../../styles/HomePage/FeaturesSection.css';
 
 function FeaturesSection() {
     const features = [
-        "حسابات دقيقة ومحدثة باستمرار",
-        "تقارير مالية شاملة ومفصلة",
-        "استشارات محاسبية متخصصة",
-        "دعم فني على مدار الساعة"
+       "دورات دقيقة ومحدثة باستمرار",
+        "محتوى شامل ومفصل",
+     "إرشاد وتطبيق عملي متخصص",
+        "دعم وتوجيه شخصي على مدار الساعة",
+
     ];
 
     return (
@@ -15,9 +16,9 @@ function FeaturesSection() {
             <div className="features-container">
                 <div className="features-content">
                     <div className="features-text">
-                        <h2 className="features-title">خدماتنا المتميزة</h2>
+                        <h2 className="features-title">دوراتنا المتميزة</h2>
                         <p className="features-description">
-                            يمكنك الاستفادة من خدماتنا المحاسبية المتخصصة التي تقدم حلولاً شاملة لجميع احتياجاتك المالية والمحاسبية.
+                        طوّر مهاراتك المحاسبية من الأساس إلى الاحتراف من خلال دورات عملية وشاملة.
                         </p>
                         
                         <ul className="features-list">

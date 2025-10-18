@@ -142,6 +142,7 @@ export default function EmployeeCostWithPension() {
                             onChange={(e) => setCreditPoints(e.target.value)}
                             placeholder="מספר נקודות זיכוי..."
                             required
+                            title="שווי נקודות הזיכוי הבסיסיות לגבר 2.25, ולאישה 2.75"
                         />
                     </div>
                 </div>
@@ -315,6 +316,11 @@ export default function EmployeeCostWithPension() {
                     הנתונים מבוססים על מדרגות מס והפרשות עדכניות, אך ייתכנו הבדלים בהתאם לנסיבות האישיות.
                     לקבלת ייעוץ מותאם אישית, מומלץ להתייעץ עם רואה חשבון מוסמך.
                 </p>
+
+                <div className="cta-box">
+                     רוצים לגלות עוד? 🚀<br />
+                    נסו גם את שאר המחשבונים שלנו לקבלת תמונה חשבונאית, פיננסית מלאה.
+                </div>
             </section>
         </div>
     );

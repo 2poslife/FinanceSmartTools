@@ -75,12 +75,11 @@ export default function IncomeTaxWithPoints() {
             <section className="calcpage-intro">
                 <h1>מחשבון מס הכנסה ע״פ נקודות הזיכוי</h1>
                 <p className="calcpage-tagline">
-                    מחשבון זה מציג את חבות מס ההכנסה החודשית והשנתית,
-                    כולל התחשבות בנקודות זיכוי אישיות.
+                מחשבון זה מחשב את המס לניכוי מההכנסה ברוטו על פי מספר נקודות זיכוי ומציג את חבות המס החודשית והשנתית. 
+
                 </p>
                 <div className="calcpage-hero-box">
-                    הזן שכר ברוטו ונקודות זיכוי,
-                    ותקבל את חבות המס לפני ואחרי נקודות זיכוי.
+                הזן הכנסה ברוטו ומספר נקודות זיכוי, ותקבל את חבות המס
                 </div>
             </section>
 
@@ -110,6 +109,7 @@ export default function IncomeTaxWithPoints() {
                             onChange={(e) => setCreditPoints(e.target.value)}
                             placeholder="מספר נקודות זיכוי..."
                             required
+                            title="שווי נקודות הזיכוי הבסיסיות לגבר 2.25, ולאישה 2.75"
                         />
                     </div>
                 </div>
