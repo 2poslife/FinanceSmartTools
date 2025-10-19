@@ -39,7 +39,8 @@
   border-radius: 12px;
 }
 
-.course-detail-video-container iframe {
+.course-detail-video-container iframe,
+.course-detail-video-container video {
   position: absolute;
   top: 0;
   left: 0;

@@ -16,6 +16,14 @@ const CalculatorsGridMobile = () => {
 
     const simulators = [
         {
+            title: "בדיקת עלות עובד (כולל פנסיה)",
+            desc: "חשב את עלות העובד למעסיק",
+            link: "/simulators/employee-cost-with-pension",
+            icon: <ShieldCheck className="calculators-sim-icon" />,
+            isFree: true,
+            freeNote: "🔥 ניתן להשתמש בחינם!"
+        },
+        {
             title: "מחשבון ביטוח לאומי עוסק זעיר",
             desc: "חשב כמה ישלם עצמאי בעל עוסק זעיר לביטוח לאומי",
             link: "/simulators/micro-self-employed",
@@ -32,14 +40,6 @@ const CalculatorsGridMobile = () => {
             desc: "חשב עלות העובד ״המיסויית״ למעסיק",
             link: "/simulators/employee-cost-no-pension",
             icon: <FileSpreadsheet className="calculators-sim-icon" />,
-        },
-        {
-            title: "בדיקת עלות עובד (כולל פנסיה)",
-            desc: "חשב את עלות העובד למעסיק",
-            link: "/simulators/employee-cost-with-pension",
-            icon: <ShieldCheck className="calculators-sim-icon" />,
-            isFree: true,
-            freeNote: "🔥 ניתן להשתמש בחינם!"
         },
         {
             title: "מחשבון מקדמות – ביטוח לאומי לעצמאי",

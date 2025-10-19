@@ -2,7 +2,7 @@
 export const homePageCourses = [
   {
     id: 1,
-    title: "חשבשבת",
+    title: "שבשבת",
     subtitle: "إرشاد مهني لاستخدام برنامج חשבשבת",
     description: "كيفية استخدام برنامج חשבשבת بشكل احترافي لإدارة الحسابات، هذا الكورس يمنحك فهما عمليا لكيفية إدارة الحسابات اليومية للمكاتب والشركات باستخدام واحد من أقوى برامج المحاسبة في السوق",
     level: "مبتدئ",
@@ -18,7 +18,7 @@ export const homePageCourses = [
       "إدارة المخزون والمشتريات",
       "إعداد الميزانيات والتقارير السنوية"
     ],
-    videoUrl: "https://www.youtube.com/embed/ZF4w3dwfp7Q",
+    videoUrl: "/חשבשת.mp4",
     courseLink: "https://my.schooler.biz/s/94061/maZanem/ZMbWsJ8?pr=2"
   },
   {
@@ -39,7 +39,7 @@ export const homePageCourses = [
       "أمثلة عملية وملفات تطبيقية من واقع العمل اليومي لمكاتب مدققي الحسابات",
       "تجهيز סט הגשה למס הכנסה وأمثلة رقمية لشركات حقيقية"
     ],
-    videoUrl: "https://www.youtube.com/embed/ZF4w3dwfp7Q",
+    videoUrl: "/מאזנים.mp4",
     courseLink: "https://my.schooler.biz/s/94061/maZanem/ZMbWsJ8?pr=2"
   },
   {
@@ -69,7 +69,7 @@ export const homePageCourses = [
 export const detailedCourses = {
   1: {
     id: 1,
-    title: "חשבשבת",
+    title: "שבשבת",
     subtitle: "إرشاد مهني لاستخدام برنامج חשבשבת",
     description: "كيفية استخدام برنامج חשבשבת بشكل احترافي لإدارة الحسابات، هذا الكورس يمنحك فهما عمليا لكيفية إدارة الحسابات اليومية للمكاتب والشركات باستخدام واحد من أقوى برامج المحاسبة في السوق",
     goal: "تعلم استخدام برنامج חשבשבת بشكل عملي واحترافي للمحاسبين، بما يشمل تسجيل فواتير، تقارير محاسبية، وתנועות יומן",
@@ -123,7 +123,7 @@ export const detailedCourses = {
         ]
       }
     ],
-    videoUrl: "https://www.youtube.com/embed/JCDvBOJpjJY",
+    videoUrl: "/חשבשת.mp4",
     courseLink: "https://my.schooler.biz/s/87349/hashavshavit/dmOqeEU?pr=2"
   },
   2: {
@@ -185,13 +185,13 @@ export const detailedCourses = {
           "تجهيز תיק ביקורת بشكل مهني",
           "إعداد סט הגשה למס הכנסה",
           "كتابة ניירות עבודה",
-          "דוגמא מספרית تطبيقية لشركة",
+          "דוגמא מספרית تطبيقية לشركة",
           "درس عن רווחים בלתי מחולקים",
           "إضافة دروس جديدة حسب الطلب"
         ]
       },
     ],
-    videoUrl: "https://www.youtube.com/embed/ZF4w3dwfp7Q",
+    videoUrl: "/מאזנים.mp4",
     courseLink: "https://my.schooler.biz/s/94061/maZanem/ZMbWsJ8?pr=2"
   },
   3: {
@@ -236,7 +236,7 @@ export const detailedCourses = {
         ]
       }
     ],
-    videoUrl: "https://www.youtube.com/embed/3TLUKebZyPs",
+    videoUrl: "/עצמאי.mp4",
     courseLink: "https://my.schooler.biz/s/77784/AtoZ/FGjiinA?pr=2"
   }
 };
@@ -245,7 +245,7 @@ export const detailedCourses = {
 export const courses = [
   {
     id: 1,
-    title: "חשבשבת",
+    title: "שבשבת",
     subtitle: "إرشاد مهني لاستخدام برنامج חשבשבת",
     description: "كيفية استخدام برنامج חשבשבת بشكل احترافي لإدارة الحسابات، هذا الكورس يمنحك فهما عمليا لكيفية إدارة الحسابات اليومية للمكاتب والشركات باستخدام واحد من أقوى برامج المحاسبة في السوق",
     level: "مبتدئ",
@@ -261,7 +261,7 @@ export const courses = [
       "إدارة المخزون والمشتريات",
       "إعداد الميزانيات والتقارير السنوية"
     ],
-    videoUrl: "https://www.youtube.com/embed/ZF4w3dwfp7Q",
+    videoUrl: "/חשבשת.mp4",
     courseLink: "https://my.schooler.biz/s/94061/maZanem/ZMbWsJ8?pr=2"
   },
   {
@@ -282,7 +282,7 @@ export const courses = [
       "أمثلة عملية وملفات تطبيقية من واقع العمل اليومي لمكاتب مدققي الحسابات",
       "تجهيز סט הגשה למס הכנסה وأمثلة رقمية لشركات حقيقية"
     ],
-    videoUrl: "https://www.youtube.com/embed/ZF4w3dwfp7Q",
+    videoUrl: "/מאזנים.mp4",
     courseLink: "https://my.schooler.biz/s/94061/maZanem/ZMbWsJ8?pr=2"
   },
   {
@@ -300,10 +300,10 @@ export const courses = [
       "إدارة ملفات المستقلين والتزاماتهم القانونية",
       "تجهيز وتقديم تقارير دورية وسنوية: דוחות מע״מ, 1301, 102, 126,856",
       "تعبئة استمارة تصريح املاك הצהרת הון",
-      "פרקטיکا - التطبيقات العملية",
+      "פרקטיکה - التطبيقات العملية",
       "شرح מערכת שע״מ مع تطبيقات عملية"
     ],
-    videoUrl: "https://www.youtube.com/embed/3TLUKebZyPs",
+    videoUrl: "/עצמאי.mp4",
     courseLink: "https://my.schooler.biz/s/77784/AtoZ/FGjiinA?pr=2"
   },
   {
