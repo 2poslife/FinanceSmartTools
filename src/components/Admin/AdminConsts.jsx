@@ -69,7 +69,11 @@ export default function AdminConsts() {
 
     const fetchConsts = async (token) => {
         setLoading(true);
-        const res = await fetch(`${API_BASE}/consts?token=${encodeURIComponent(token)}`);
+        const res = await fetch(`${API_BASE}/consts`, {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        });
         const data = await res.json();
         setConsts(data);
         setLoading(false);
@@ -79,9 +83,12 @@ export default function AdminConsts() {
         if (!editing) return;
         setSaving(true);
         const token = localStorage.getItem("access_token");
-        await fetch(`${API_BASE}/consts/update?token=${encodeURIComponent(token)}`, {
+        await fetch(`${API_BASE}/consts/update`, {
             method: "PUT",
-            headers: { "Content-Type": "application/json" },
+            headers: { 
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
             body: JSON.stringify({ field: editing.key, value: editing.value }),
         });
         setConsts((prev) => ({ ...prev, [editing.key]: editing.value }));

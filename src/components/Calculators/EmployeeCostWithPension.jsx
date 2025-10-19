@@ -77,7 +77,9 @@ export default function EmployeeCostWithPension() {
                 `${API_BASE}/employee-cost-with-pension/with-pension`,
                 {
                     method: "POST",
-                    headers: { "Content-Type": "application/json" },
+                    headers: { 
+                        "Content-Type": "application/json"
+                    },
                     body: JSON.stringify({
                         gross_salary: parseFloat(grossSalary),
                         credit_points: parseFloat(creditPoints),
@@ -162,9 +164,24 @@ export default function EmployeeCostWithPension() {
                     {loading ? "מחשב..." : "חשב"}
                 </button>
 
+                {/* Unauthorized Message */}
+                {authError && (
+                    <div className="auth-error">
+                        <AlertTriangle className="w-5 h-5 text-red-600" />
+                        <span>
+                            עליך להיות מחובר כמשתמש מורשה כדי לבצע חישוב.{" "}
+                            <button
+                                onClick={() => navigate("/SigninForm")}
+                                className="link-btn"
+                            >
+                                התחבר כאן
+                            </button>
+                        </span>
+                    </div>
+                )}
 
                 {/* Results */}
-                {result && (
+                {result && !authError && (
                     <div className="calcpage-result">
                         <h3>תוצאות החישוב</h3>
 

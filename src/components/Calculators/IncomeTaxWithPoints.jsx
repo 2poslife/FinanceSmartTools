@@ -36,10 +36,13 @@ export default function IncomeTaxWithPoints() {
 
         try {
             const res = await fetch(
-                `${API_BASE}/cost/income-tax-with-points?token=${encodeURIComponent(token)}`,
+                `${API_BASE}/cost/income-tax-with-points`,
                 {
                     method: "POST",
-                    headers: { "Content-Type": "application/json" },
+                    headers: { 
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
                     body: JSON.stringify({
                         gross_salary: parseFloat(grossSalary),
                         credit_points: parseFloat(creditPoints),

@@ -22,8 +22,8 @@ const CalculatorsGridMobile = () => {
             icon: <User className="calculators-sim-icon" />,
         },
         {
-            title: "מחשבון עצמאי זעיר + שכיר",
-            desc: "בדיקה משולבת לעצמאי זעיר ושכיר",
+            title: "מחשבון ביטוח לאומי עצמאי ושכיר",
+            desc: "חשב חבות ביטוח לאומי - עצמאי בלבד או עצמאי ושכיר",
             link: "/simulators/micro-self-employed-salaried",
             icon: <Users className="calculators-sim-icon" />,
         },
