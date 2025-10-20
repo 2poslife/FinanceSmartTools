@@ -75,6 +75,7 @@ export default function EmployeeCostNoPension() {
             }
 
             const data = await res.json();
+            console.log("🔍 Backend Response (No Pension):", data);
             setResult(data);
             setCalculatedGrossSalary(parseFloat(grossSalary));
         } catch (err) {
@@ -121,6 +122,7 @@ export default function EmployeeCostNoPension() {
                             onChange={(e) => setGrossSalary(e.target.value)}
                             placeholder="הכנס שכר ברוטו..."
                             required
+                            title="השכר ברוטו צריך להיות פחות מ 50,695"
                         />
                     </div>
                     <div className="calcpage-input-group">
@@ -181,6 +183,46 @@ export default function EmployeeCostNoPension() {
                             </div>
                         </div>
 
+                        {/* Expand details */}
+                        <button
+                            className="expand-btn"
+                            onClick={() => setExpanded((prev) => !prev)}
+                        >
+                            {expanded ? (
+                                <>
+                                    <ChevronUp className="w-4 h-4" /> הסתר פירוט
+                                </>
+                            ) : (
+                                <>
+                                    <ChevronDown className="w-4 h-4" /> הצג פירוט
+                                </>
+                            )}
+                        </button>
+
+                        {expanded && (
+                            <div className="details-box">
+                                <div className="detail-item single">
+                                    <span className="detail-label">מס הכנסה:</span>
+                                    <span className="detail-value">{result.income_tax.after_credit} ₪</span>
+                                </div>
+
+                                <div className="detail-section">
+                                    <h4>ביטוח לאומי</h4>
+                                    <div className="detail-item">
+                                        <span className="detail-label">סה"כ לעובד:</span>
+                                        <span className="detail-value">{result.national_insurance.employee_total} ₪</span>
+                                    </div>
+                                    <div className="detail-item">
+                                        <span className="detail-label">סה"כ מעסיק:</span>
+                                        <span className="detail-value">{result.national_insurance.employer_total} ₪</span>
+                                    </div>
+                                    <div className="detail-item highlight">
+                                        <span className="detail-label">סה"כ כולל:</span>
+                                        <span className="detail-value">{result.national_insurance.total} ₪</span>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 )}
 

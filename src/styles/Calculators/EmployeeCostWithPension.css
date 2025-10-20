@@ -408,7 +408,7 @@
 }
 
 .calcpage-description ul {
-    list-style: "✔️ ";
+    list-style: none;
     margin: 0.6rem 0 1.2rem;
     padding-right: 1.5rem;
 }

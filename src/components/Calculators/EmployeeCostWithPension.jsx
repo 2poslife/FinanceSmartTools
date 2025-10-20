@@ -132,6 +132,8 @@ export default function EmployeeCostWithPension() {
                             onChange={(e) => setGrossSalary(e.target.value)}
                             placeholder="הכנס שכר ברוטו..."
                             required
+                            title="השכר ברוטו צריך להיות פחות מ 50,695"
+
                         />
                     </div>
                     <div className="calcpage-input-group">
