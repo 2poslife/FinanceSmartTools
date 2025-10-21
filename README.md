@@ -1,9 +1,10 @@
 # 🚀 How to Run the App
 
 1. **Clone the repository** <br>
-I use GitHub Desktop because it makes cloning and pushing easy.
+I use GitHub Desktop because it makes cloning and pushing easy
 2. **Install dependencies**
 open the VS terminal and run
+
  ```bash
  npm install react-router-dom lucide-react jwt-decode
 ```
@@ -11,3 +12,6 @@ open the VS terminal and run
 ```bash
 npm run dev
 ```
+
+
+

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   Home,
@@ -11,9 +11,10 @@ import {
   LogOut,
   MapPin,
   Mail,
+  Monitor,
 } from "lucide-react";
 import { jwtDecode } from "jwt-decode";
-import "./Header.css";
+import "../../styles/Layout/Header.css";
 import Logo from '../../assets/logo.png'
 const Header = () => {
   const navigate = useNavigate();
@@ -43,6 +44,20 @@ const Header = () => {
     navigate("/");
   };
 
+  // Listen for custom event to open contact modal
+  useEffect(() => {
+    const handleOpenContactModal = () => {
+      console.log('Header received openContactModal event');
+      setShowContact(true);
+    };
+
+    window.addEventListener('openContactModal', handleOpenContactModal);
+
+    return () => {
+      window.removeEventListener('openContactModal', handleOpenContactModal);
+    };
+  }, []);
+
   return (
     <>
       <header className="header">
@@ -56,6 +71,16 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="nav">
+          {isLoggedIn && userRole === "admin" && (
+            <button
+              onClick={() => navigate("/AdminPage")}
+              className={`nav-btn control-panel-btn ${isActive("/AdminPage")}`}
+            >
+              <Monitor className="icon" />
+              لوحة التحكم
+            </button>
+          )}
+
           <button
             onClick={() => navigate("/")}
             className={`nav-btn ${isActive("/")}`}
@@ -137,7 +162,7 @@ const Header = () => {
 
             <section className="about-contact">
               <h2>تواصل معنا</h2>
-              <p>نحن هنا لمساعدتك في رحلتك المحاسبية</p>
+              <p>نحن دائمًا هنا لمساعدتك</p>
 
               <div className="contact-grid">
                 <div className="contact-card">

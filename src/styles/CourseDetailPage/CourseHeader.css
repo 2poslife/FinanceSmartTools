@@ -1,0 +1,126 @@
+/* Course Header Section */
+.course-detail-header-section {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 2px solid #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Golden divider line at the top of each section */
+.course-detail-header-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent 0%, #d4af37 20%, #f4d03f 50%, #d4af37 80%, transparent 100%);
+}
+
+.course-detail-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 2px solid #d4af37;
+  color: #d4af37;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  width: auto;
+  max-width: 150px;
+}
+
+.course-detail-back-button:hover {
+  background: #d4af37;
+  color: #000;
+}
+
+.course-detail-title {
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #d4af37;
+}
+
+.course-detail-section-title {
+  font-size: 32px;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #d4af37;
+}
+
+.course-detail-description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  white-space: pre-line;
+}
+
+.course-detail-goal {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(178, 144, 83, 0.1) 100%);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 25px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-detail-goal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #d4af37 0%, #b29053 100%);
+}
+
+.course-detail-goal-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #d4af37;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  direction: rtl;
+}
+
+.course-detail-goal-title::after {
+  content: '🎯';
+  font-size: 24px;
+}
+
+.course-detail-goal-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+  text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .course-detail-header-section {
+    padding: 25px;
+  }
+
+  .course-detail-title {
+    font-size: 32px;
+  }
+
+  .course-detail-section-title {
+    font-size: 24px;
+  }
+}

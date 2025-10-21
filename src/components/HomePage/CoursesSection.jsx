@@ -1,12 +1,10 @@
 import React from "react";
 import { courses } from "../../assets/data/courseMock";
 import CourseCard from "./CourseCard";
-import "./CoursesSection.css";
+import "../../styles/HomePage/CoursesSection.css";
 
 function CoursesSection() {
-  const topCourses = [...courses]
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, 3);
+  const topCourses = [...courses].slice(0, 3);
 
   return (
     <section className="courses-section">
@@ -28,6 +26,12 @@ function CoursesSection() {
           {topCourses.map((course) => (
             <CourseCard key={course.id} course={course} />
           ))}
+        </div>
+
+        <div className="courses-conclusion">
+          <p className="courses-conclusion-text">
+            في مكتبنا، نعمل على أساس قيم واضحة: الشفافية مع عملائنا، الاحترافية في كل خدمة، المسؤولية الكاملة عن النتائج، والابتكار في الحلول.
+          </p>
         </div>
       </div>
     </section>

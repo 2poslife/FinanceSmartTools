@@ -1,36 +1,17 @@
 import React from 'react';
-import './ArticlesSection.css';
+// import { useNavigate } from 'react-router-dom';
+// import { articles } from '../../assets/data/articlesData';
+import '../../styles/HomePage/ArticlesSection.css';
 
 function ArticlesSection() {
-    const articles = [
-        {
-            id: 1,
-            title: "أساسيات المحاسبة المالية",
-            description: "تعلم المبادئ الأساسية للمحاسبة المالية وكيفية تطبيقها في الأعمال التجارية الصغيرة والكبيرة",
-            date: "15 ديسمبر 2024",
-            author: "د. أحمد زيدان",
-            image: "/herosection.png",
-            category: "محاسبة"
-        },
-        {
-            id: 2,
-            title: "إدارة التدفق النقدي",
-            description: "نصائح عملية لإدارة التدفق النقدي في شركتك وتجنب المشاكل المالية الشائعة",
-            date: "12 ديسمبر 2024",
-            author: "د. أحمد زيدان",
-            image: "/aboutImage.jpg",
-            category: "إدارة مالية"
-        },
-        {
-            id: 3,
-            title: "الضرائب والالتزامات القانونية",
-            description: "دليل شامل للضرائب والالتزامات القانونية التي يجب على كل صاحب عمل معرفتها",
-            date: "10 ديسمبر 2024",
-            author: "د. أحمد زيدان",
-            image: "/faqImage.jpg",
-            category: "ضرائب"
-        }
-    ];
+    // const navigate = useNavigate();
+    
+    // Show only first 3 articles on homepage
+    // const homepageArticles = articles.slice(0, 3);
+
+    // const handleReadMore = (article) => {
+    //     navigate(`/article/${article.id}`);
+    // };
 
     return (
         <section className="articles-section">
@@ -38,8 +19,13 @@ function ArticlesSection() {
                 <h2 className="articles-title">مقالاتنا المالية</h2>
                 <p className="articles-subtitle">نصائح ومعلومات مفيدة من خبرائنا</p>
                 
-                <div className="articles-grid">
-                    {articles.map(article => (
+                <div className="articles-coming-soon-message">
+                    <p className="articles-coming-soon-text-hebrew">בקרוב יהיו כאן פוסטים ששווה לחכות להם</p>
+                    <p className="articles-coming-soon-text-arabic">قريبًا جدًا — مقالات ونصائح مهنية لا تفوّتوها</p>
+                </div>
+                
+                {/* <div className="articles-grid">
+                    {homepageArticles.map(article => (
                         <div key={article.id} className="article-card">
                             <div className="article-image">
                                 <img src={article.image} alt={article.title} />
@@ -55,11 +41,16 @@ function ArticlesSection() {
                                     <div className="article-date">{article.date}</div>
                                 </div>
                                 
-                                <button className="read-more-btn">اقرأ المزيد</button>
+                                <button 
+                                className="read-more-btn"
+                                onClick={() => handleReadMore(article)}
+                            >
+                                اقرأ المزيد
+                            </button>
                             </div>
                         </div>
                     ))}
-                </div>
+                </div> */}
             </div>
         </section>
     );

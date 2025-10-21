@@ -6,7 +6,7 @@ import {
     User,
     LogOut,
 } from "lucide-react";
-import "./Header.css";
+import "../../styles/Layout/Header.css";
 
 const PrivateHeader = () => {
     const navigate = useNavigate();
@@ -30,7 +30,7 @@ const PrivateHeader = () => {
             </div>
 
             <nav className="nav">
-                <button onClick={() => navigate("/UserPage")} className={`nav-btn ${isActive("/UserPage")}`}>
+                <button onClick={() => navigate("/")} className={`nav-btn ${isActive("/")}`}>
                     <Home className="icon" /> الرئيسية
                 </button>
                 <button onClick={() => navigate("/CalculatorsPage")} className={`nav-btn ${isActive("/CalculatorsPage")}`}>

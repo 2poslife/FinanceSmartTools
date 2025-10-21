@@ -7,8 +7,9 @@ import {
     ChevronDown,
     ChevronUp,
     AlertTriangle,
+    Lightbulb,
 } from "lucide-react";
-import "./EmployeeCostNoPension.css";
+import "../../styles/Calculators/EmployeeCostNoPension.css";
 
 const API_BASE = "https://financesmarttools-backend.onrender.com";
 
@@ -21,6 +22,7 @@ export default function EmployeeCostNoPension() {
     const [loading, setLoading] = useState(false);
     const [expanded, setExpanded] = useState(false);
     const [authError, setAuthError] = useState(false);
+    const [calculatedGrossSalary, setCalculatedGrossSalary] = useState(0);
 
     const handleLogout = () => {
         localStorage.removeItem("access_token");
@@ -52,10 +54,13 @@ export default function EmployeeCostNoPension() {
 
         try {
             const res = await fetch(
-                `${API_BASE}/employee-cost/no-pension?token=${encodeURIComponent(token)}`,
+                `${API_BASE}/employee-cost/no-pension`,
                 {
                     method: "POST",
-                    headers: { "Content-Type": "application/json" },
+                    headers: { 
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
                     body: JSON.stringify({
                         gross_salary: parseFloat(grossSalary),
                         credit_points: parseFloat(creditPoints),
@@ -70,7 +75,9 @@ export default function EmployeeCostNoPension() {
             }
 
             const data = await res.json();
+            console.log("🔍 Backend Response (No Pension):", data);
             setResult(data);
+            setCalculatedGrossSalary(parseFloat(grossSalary));
         } catch (err) {
             console.error("❌ Error calculating:", err);
         } finally {
@@ -92,13 +99,12 @@ export default function EmployeeCostNoPension() {
 
             {/* Introduction */}
             <section className="calcpage-intro">
-                <h1>מחשבון מס הכנסה לעצמאי</h1>
-                <p className="calcpage-tagline">
-                    רוצים להבין כמה מס אתם באמת צריכים לשלם? זה הכלי שיעזור לכם.
+                <h1>מחשבון עלות עובד — ללא פנסיה</h1>
+                <p className="calcpage-tagline" style={{ fontWeight: 'bold' }}>
+                    רוצים לדעת כמה באמת עולה להעסיק עובד לפני הפרשות פנסיוניות? זה הכלי שיעזור לכם.
                 </p>
                 <div className="calcpage-hero-box">
-                    המחשבון מיועד לעצמאים שרוצים תמונה ברורה של חבות המס והביטוח הלאומי.
-                    תוך שניות תקבלו הערכה מדויקת שתקל עליכם בתכנון הכלכלי.
+                    המחשבון מציג את נטו לעובד, חלק המעסיק, והעלות הכוללת — כולל מס הכנסה וביטוח לאומי.
                 </div>
             </section>
 
@@ -116,6 +122,7 @@ export default function EmployeeCostNoPension() {
                             onChange={(e) => setGrossSalary(e.target.value)}
                             placeholder="הכנס שכר ברוטו..."
                             required
+                            title="השכר ברוטו צריך להיות פחות מ 50,695"
                         />
                     </div>
                     <div className="calcpage-input-group">
@@ -128,6 +135,7 @@ export default function EmployeeCostNoPension() {
                             onChange={(e) => setCreditPoints(e.target.value)}
                             placeholder="מספר נקודות זיכוי..."
                             required
+                            title="שווי נקודות הזיכוי הבסיסיות לגבר 2.25, ולאישה 2.75"
                         />
                     </div>
                 </div>
@@ -163,7 +171,7 @@ export default function EmployeeCostNoPension() {
                         <div className="calcpage-summary-cards">
                             <div className="summary-card blue">
                                 <h4>נטו לעובד</h4>
-                                <p>{result.summary.employee_part.toLocaleString()} ₪</p>
+                                <p>{(calculatedGrossSalary - result.summary.employee_part).toLocaleString()} ₪</p>
                             </div>
                             <div className="summary-card red">
                                 <h4>חלק המעסיק</h4>
@@ -193,23 +201,26 @@ export default function EmployeeCostNoPension() {
 
                         {expanded && (
                             <div className="details-box">
-                                <h4>מס הכנסה</h4>
-                                <ul>
-                                    <li>לפני זיכוי: {result.income_tax.before_credit} ₪</li>
-                                    <li>ערך נקודות זיכוי: {result.income_tax.credit_points_value} ₪</li>
-                                    <li>אחרי זיכוי: {result.income_tax.after_credit} ₪</li>
-                                </ul>
+                                <div className="detail-item single">
+                                    <span className="detail-label">מס הכנסה:</span>
+                                    <span className="detail-value">{result.income_tax.after_credit} ₪</span>
+                                </div>
 
-                                <h4>ביטוח לאומי</h4>
-                                <ul>
-                                    <li>עובד – חלק נמוך: {result.national_insurance.employee_low} ₪</li>
-                                    <li>עובד – חלק גבוה: {result.national_insurance.employee_high} ₪</li>
-                                    <li>סה"כ עובד: {result.national_insurance.employee_total} ₪</li>
-                                    <li>מעסיק – חלק נמוך: {result.national_insurance.employer_low} ₪</li>
-                                    <li>מעסיק – חלק גבוה: {result.national_insurance.employer_high} ₪</li>
-                                    <li>סה"כ מעסיק: {result.national_insurance.employer_total} ₪</li>
-                                    <li>סה"כ כולל: {result.national_insurance.total} ₪</li>
-                                </ul>
+                                <div className="detail-section">
+                                    <h4>ביטוח לאומי</h4>
+                                    <div className="detail-item">
+                                        <span className="detail-label">סה"כ לעובד:</span>
+                                        <span className="detail-value">{result.national_insurance.employee_total} ₪</span>
+                                    </div>
+                                    <div className="detail-item">
+                                        <span className="detail-label">סה"כ מעסיק:</span>
+                                        <span className="detail-value">{result.national_insurance.employer_total} ₪</span>
+                                    </div>
+                                    <div className="detail-item highlight">
+                                        <span className="detail-label">סה"כ כולל:</span>
+                                        <span className="detail-value">{result.national_insurance.total} ₪</span>
+                                    </div>
+                                </div>
                             </div>
                         )}
                     </div>
@@ -225,6 +236,7 @@ export default function EmployeeCostNoPension() {
                             setGrossSalary("");
                             setCreditPoints("");
                             setResult(null);
+                            setCalculatedGrossSalary(0);
                         }}
                         className="calcpage-btn danger"
                     >
@@ -237,34 +249,25 @@ export default function EmployeeCostNoPension() {
             <section className="calcpage-description">
                 <h2>מה זה בדיקת עלות עובד (רק מיסים ללא פנסיה)?</h2>
                 <p>
-                    בדיקת עלות עובד (רק מיסים ללא פנסיה) הוא כלי מתמחה לחישוב העלות הכוללת של העסקת עובד,
-                    תוך התמקדות במיסים בלבד ללא הפרשות פנסיוניות. המחשבון מחשב את חלק העובד, חלק המעסיק,
-                    והעלות הכוללת של העובד, כולל מס הכנסה וביטוח לאומי.
+                    כאשר מחשבים את עלות העובד, חשוב להבין שהשכר הברוטו הוא רק חלק מהעלות הכוללת. המעסיק נדרש לשלם בנוסף גם עבור:
+                </p>
+                <ul>
+                    <li>הפרשות לפנסיה (פנסיה חובה)</li>
+                    <li>פיצויי פיטורים</li>
+                    <li>דמי ביטוח לאומי מעביד (תשלום למוסד לביטוח לאומי)</li>
+                </ul>
+                <p>
+                    המחשבון נותן תמונה של העלות המיסויית של העסקת עובד חדש, בהתאם לשכר הברוטו שהוזן.
+                    החישוב כולל את דמי הביטוח הלאומי למעסיק, מס הכנסה, ואינו כולל רכיבים סוציאליים נוספים כגון דמי הבראה, חופשה שנתית או ימי חג
                 </p>
 
-                <h2>למי מתאימה בדיקת עלות עובד (רק מיסים ללא פנסיה)?</h2>
+                <h2>לאילו שאלות המחשבון עונה?</h2>
                 <ul>
-                    <li>מעסיקים המעוניינים להבין את עלות ההעסקה הבסיסית</li>
-                    <li>מנהלי כספים המכינים תקציבי שכר</li>
-                    <li>עובדים המעוניינים להבין את ההבדל בין עלות המעסיק לשכר הנטו</li>
-                    <li>חברות סטארטאפ בתחילת הדרך</li>
+                    <li>כמה מס הכנסה וביטוח לאומי מנוכים משכר העובד?</li>
+                    <li>מהו השכר נטו שיקבל העובד בפועל מהשכר הברוטו שהוזן?</li>
+                    <li>כמה עולה למעסיק להעסיק את העובד מבחינת מיסוי בלבד (ללא הפרשות סוציאליות)?</li>
                 </ul>
 
-                <h2>למה כדאי להשתמש בבדיקת עלות עובד (רק מיסים ללא פנסיה)?</h2>
-                <ul>
-                    <li>✔️ מספק תמונה ברורה של עלות ההעסקה הבסיסית</li>
-                    <li>✔️ מציג את ההבדל בין שכר ברוטו, נטו ועלות מעסיק</li>
-                    <li>✔️ עוזר בתכנון תקציבי ובניהול משאבי אנוש</li>
-                    <li>✔️ מאפשר הבנה מלאה של חבויות המעסיק</li>
-                </ul>
-
-                <h2>מה תוכלו לגלות בבדיקת עלות עובד (רק מיסים ללא פנסיה)?</h2>
-                <ul>
-                    <li>כמה יקבל העובד נטו לאחר מס והפרשות</li>
-                    <li>מה חלקו של המעסיק בביטוח לאומי</li>
-                    <li>מהי העלות הכוללת של העובד עבור העסק</li>
-                    <li>פירוט מלא של מס הכנסה וביטוח לאומי</li>
-                </ul>
 
                 <h2>איך עובדת בדיקת עלות עובד (רק מיסים ללא פנסיה)?</h2>
                 <p>
@@ -273,17 +276,21 @@ export default function EmployeeCostNoPension() {
                     את חלק המעסיק, ואת העלות הכוללת של ההעסקה.
                 </p>
 
-                <h2>כתב ויתור</h2>
+                <div className="notice-box">
+                    <p>
+                        המחשבון מחשב את עלות העובד למעסיק מבחינה מיסויית בלבד על בסיס השכר הברוטו,
+                        החישוב אינו כולל רכיבים נוספים כגון דמי הבראה, חופשה שנתית, ימי חג, ימי מחלה, בונוסים או הוצאות רכב.
+                    </p>
+                </div>
+
+                <h2> כתב ויתור </h2>
                 <p className="disclaimer">
                     בדיקת עלות עובד (רק מיסים ללא פנסיה) נותנת אומדן בלבד ואינה מהווה ייעוץ מס או תחליף לליווי מקצועי.
                     הנתונים מבוססים על מדרגות מס והפרשות עדכניות, אך ייתכנו הבדלים בהתאם לנסיבות האישיות.
                     לקבלת ייעוץ מותאם אישית, מומלץ להתייעץ עם רואה חשבון מוסמך.
                 </p>
 
-                <div className="cta-box">
-                    🚀 רוצים לגלות עוד? <br />
-                    נסו גם את שאר המחשבונים שלנו לקבלת תמונה כלכלית מלאה.
-                </div>
+
             </section>
         </div>
     );

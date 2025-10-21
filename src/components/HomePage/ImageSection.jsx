@@ -1,6 +1,6 @@
 // ImageSection.jsx
 import React from "react";
-import "./ImageSection.css";
+import "../../styles/HomePage/ImageSection.css";
 
 function ImageSection() {
   return (

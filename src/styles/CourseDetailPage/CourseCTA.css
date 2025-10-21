@@ -1,0 +1,88 @@
+/* Course CTA Section */
+.course-detail-cta-section {
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative golden pattern for CTA section */
+.course-detail-cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  animation: course-detail-rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes course-detail-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.course-detail-cta-card {
+  text-align: center;
+  padding: 50px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.course-detail-cta-card h3 {
+  font-size: 28px;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.course-detail-cta-card p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.course-detail-enroll-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #000;
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.course-detail-enroll-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .course-detail-cta-card {
+    padding: 30px 20px;
+  }
+
+  .course-detail-cta-card h3 {
+    font-size: 22px;
+  }
+
+  .course-detail-enroll-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+  }
+}

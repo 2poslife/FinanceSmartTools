@@ -1,0 +1,660 @@
+/* Import Roboto Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+/* Testimonials Section - Modern Creative Design */
+.homepage-testimonials-section {
+  position: relative;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background Elements */
+.homepage-testimonials-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.homepage-testimonials-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.05) 0%,
+    rgba(212, 175, 55, 0.02) 50%,
+    rgba(212, 175, 55, 0.05) 100%
+  );
+}
+
+.homepage-testimonials-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+/* Background shapes removed */
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotateY(0deg);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.8) rotateY(-15deg);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotateY(0deg);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100px) scale(0.8) rotateY(15deg);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.8) rotateY(-15deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotateY(0deg);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px) scale(0.8) rotateY(15deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotateY(0deg);
+  }
+}
+
+@keyframes cardFlip {
+  0% {
+    transform: rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: rotateY(90deg) scale(0.9);
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Container */
+.homepage-testimonials-container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Header */
+.homepage-testimonials-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: slideInUp 1s ease-out;
+}
+
+/* Heart icon removed from header */
+
+.homepage-testimonials-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: #2d3748;
+  margin-bottom: 15px;
+  font-family: "Roboto", sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: inline-block;
+}
+
+/* Heart icon removed */
+
+.homepage-testimonials-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  color: #718096;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Testimonial Card Container */
+.homepage-testimonial-card-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* Navigation Arrows */
+.homepage-nav-arrow {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(190, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.homepage-nav-arrow:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: #d4af37;
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
+.homepage-nav-arrow:active {
+  transform: scale(0.95) translateY(0px);
+  transition: all 0.1s ease;
+}
+
+.homepage-arrow-icon {
+  width: 24px;
+  height: 24px;
+  color: #d4af37;
+}
+
+/* Testimonial Card */
+.homepage-testimonial-card {
+  flex: 1;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(134, 21, 21, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.homepage-testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #d4af37, #b89453, #d4af37);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.homepage-testimonial-content {
+  text-align: center;
+  animation: slideInUp 0.8s ease-out;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Animation Classes */
+.homepage-testimonial-content.slide-right {
+  animation: slideOutRight 0.4s ease-in-out forwards;
+}
+
+.homepage-testimonial-content.slide-left {
+  animation: slideOutLeft 0.4s ease-in-out forwards;
+}
+
+.homepage-testimonial-content.slide-in-right {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.homepage-testimonial-content.slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.homepage-testimonial-content.flip {
+  animation: cardFlip 0.8s ease-in-out forwards;
+}
+
+/* Quote Icon */
+.homepage-quote-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  opacity: 0.1;
+}
+
+.homepage-quote-symbol {
+  width: 60px;
+  height: 60px;
+  color: #d4af37;
+}
+
+/* Logo */
+.homepage-testimonial-logo {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.homepage-logo-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+}
+
+.homepage-logo-ring {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 5px solid rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Rating */
+.homepage-testimonial-rating {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 25px;
+}
+
+.homepage-star {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+}
+
+.homepage-star-filled {
+  color: #d4af37;
+  fill: currentColor;
+}
+
+.homepage-star-empty {
+  color: #e2e8f0;
+  fill: currentColor;
+}
+
+.homepage-star:hover {
+  transform: scale(1.2);
+}
+
+/* Text */
+.homepage-testimonial-text {
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  line-height: 1.7;
+  color: #4a5568;
+  margin-bottom: 30px;
+  font-style: italic;
+  text-align: center;
+  position: relative;
+}
+
+.homepage-testimonial-text::before {
+  content: '"';
+  font-size: 4rem;
+  color: #d4af37;
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  opacity: 0.3;
+  font-family: serif;
+}
+
+.homepage-testimonial-text::after {
+  content: '"';
+  font-size: 4rem;
+  color: #d4af37;
+  position: absolute;
+  bottom: -40px;
+  right: -10px;
+  opacity: 0.3;
+  font-family: serif;
+}
+
+/* Author */
+.homepage-testimonial-author {
+  margin-top: 30px;
+}
+
+.homepage-author-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 5px;
+  font-family: "Roboto", sans-serif;
+}
+
+.homepage-author-role {
+  font-size: 1rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+/* Sparkles */
+.homepage-testimonial-sparkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.homepage-sparkle-1 {
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  width: 20px;
+  height: 20px;
+  color: #d4af37;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.homepage-sparkle-2 {
+  position: absolute;
+  bottom: 25%;
+  right: 20%;
+  width: 16px;
+  height: 16px;
+  color: #b89453;
+  animation: sparkle 2.5s ease-in-out infinite 0.5s;
+}
+
+/* Dots Indicator */
+.homepage-testimonials-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.homepage-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(212, 175, 55, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.homepage-dot-active {
+  background: #d4af37;
+  transform: scale(1.3);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+.homepage-dot:hover {
+  background: #d4af37;
+  transform: scale(1.2);
+}
+
+/* Instagram CTA */
+.homepage-instagram-cta {
+  text-align: center;
+  animation: slideInUp 1.2s ease-out;
+}
+
+.homepage-instagram-icon {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #e1306c 0%, #fd1d1d 50%, #fcb045 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 8px 25px rgba(225, 48, 108, 0.3);
+  transition: all 0.3s ease;
+}
+
+.homepage-instagram-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(225, 48, 108, 0.4);
+}
+
+.homepage-instagram-symbol {
+  width: 28px;
+  height: 28px;
+  color: white;
+}
+
+.homepage-instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #d4af37 0%, #b89453 100%);
+  color: white;
+  padding: 15px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.homepage-instagram-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.homepage-instagram-link:hover .homepage-instagram-glow {
+  left: 100%;
+}
+
+.homepage-instagram-link:hover {
+  background: linear-gradient(135deg, #b89453 0%, #d4af37 100%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .homepage-testimonials-section {
+    padding: 50px 15px;
+    min-height: 450px;
+  }
+
+  .homepage-testimonials-container {
+    max-width: 100%;
+  }
+
+  .homepage-testimonials-header {
+    margin-bottom: 30px;
+  }
+
+  .homepage-testimonials-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .homepage-heart-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .homepage-testimonial-card-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .homepage-nav-arrow {
+    width: 50px;
+    height: 50px;
+  }
+
+  .homepage-arrow-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .homepage-testimonial-card {
+    padding: 30px 20px;
+    max-width: 100%;
+  }
+
+  .homepage-logo-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .homepage-testimonials-dots {
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage-testimonials-section {
+    padding: 40px 10px;
+    min-height: 400px;
+  }
+
+  .homepage-testimonials-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .homepage-heart-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .homepage-testimonial-card {
+    padding: 25px 15px;
+  }
+
+  .homepage-logo-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .homepage-nav-arrow {
+    width: 45px;
+    height: 45px;
+  }
+
+  .homepage-arrow-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Background shapes removed */
+}
+
+/* Hover effects only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .homepage-nav-arrow:hover,
+  .homepage-instagram-link:hover,
+  .homepage-testimonials-icon:hover {
+    transform: scale(1.1);
+  }
+}
+
+/* Remove hover transforms on touch devices */
+@media (hover: none) {
+  .homepage-nav-arrow:hover,
+  .homepage-instagram-link:hover,
+  .homepage-testimonials-icon:hover {
+    transform: none;
+  }
+  
+  .homepage-nav-arrow:active,
+  .homepage-instagram-link:active,
+  .homepage-testimonials-icon:active {
+    transform: scale(0.95);
+  }
+}

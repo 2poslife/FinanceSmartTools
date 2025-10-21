@@ -10,11 +10,11 @@ import {
 // Pages
 import HomePage from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
-import ArticlesPage from "./components/ArticlesPage/ArticlesPage";
+import ArticlesPage from "./pages/ArticlesPage";
+import ArticleDetailPage from "./pages/ArticleDetailPage";
 import CoursesPage from "./pages/CoursesPage";
 import CourseDetailPage from "./pages/CourseDetailPage";
 import CalculatorsPage from "./pages/CalculatorsPage";
-import UserPage from "./pages/UserPage";
 
 // Auth
 import SigninForm from "./components/Auth/SigninForm";
@@ -85,7 +85,7 @@ function Layout() {
   // Determine which header to show
   const renderHeader = () => {
     if (role === "admin") return <AdminHeader />;
-    if (isMobile) return <MobileHeader />;
+    if (isMobile && role !== "admin") return <MobileHeader />;
     return <Header />;
   };
 
@@ -99,6 +99,7 @@ function Layout() {
         <Route path="/SigninForm" element={<SigninForm />} />
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/articles" element={<ArticlesPage />} />
+        <Route path="/article/:id" element={<ArticleDetailPage />} />
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/course/:id" element={<CourseDetailPage />} />
         <Route path="/CalculatorsPage" element={<CalculatorsPage />} />
@@ -130,7 +131,6 @@ function Layout() {
         />
 
         {/* User Routes */}
-        <Route path="/UserPage" element={<UserPage />} />
 
         {/* Admin Routes */}
         <Route path="/AdminPage" element={<AdminPage />} />

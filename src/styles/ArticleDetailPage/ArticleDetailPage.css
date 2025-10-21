@@ -1,0 +1,46 @@
+/* Main Article Detail Page */
+.article-detail-page-main {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  direction: rtl;
+  font-family: var(--font-family);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Creative background pattern */
+.article-detail-page-main::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 40%, rgba(212, 175, 55, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Floating decorative elements */
+.article-detail-page-main::after {
+  content: '';
+  position: fixed;
+  top: 10%;
+  right: 5%;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), rgba(178, 144, 83, 0.1));
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+  animation: article-detail-float 6s ease-in-out infinite;
+}
+
+@keyframes article-detail-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}

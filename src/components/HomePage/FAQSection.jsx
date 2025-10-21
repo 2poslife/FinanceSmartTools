@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./FAQSection.css";
+import "../../styles/HomePage/FAQSection.css";
 import faqImg from "../../assets/faq.jpg";
 
 const faqs = [
@@ -32,34 +32,67 @@ function FAQSection() {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  const openContactModal = (e) => {
+    e.preventDefault();
+    // Dispatch a custom event to trigger the header contact modal
+    window.dispatchEvent(new CustomEvent('openContactModal'));
+  };
+
   return (
-    <section dir="rtl" className="faq-section">
-      <div className="faq-container">
+    <section dir="rtl" className="homepage-faq-section">
+      <div className="homepage-faq-container">
         {/* Right side: title + accordion */}
-        <div className="faq-content">
-          <h2 className="faq-title">الأسئلة الشائعة</h2>
-          <div className="faq-list">
+        <div className="homepage-faq-content">
+          <h2 className="homepage-faq-title">الأسئلة الشائعة</h2>
+          <div className="homepage-faq-list">
             {faqs.map((item, index) => (
-              <div key={index} className="faq-item">
+              <div key={index} className="homepage-faq-item">
                 <button
-                  className="faq-question"
+                  className="homepage-faq-question"
                   onClick={() => toggleFAQ(index)}
                 >
                   {item.question}
                   <span>{activeIndex === index ? "−" : "+"}</span>
                 </button>
                 {activeIndex === index && (
-                  <p className="faq-answer">{item.answer}</p>
+                  <p className="homepage-faq-answer">{item.answer}</p>
                 )}
               </div>
             ))}
           </div>
         </div>
 
-        {/* Left side: image */}
-        <div className="faq-image">
-          <img src={faqImg} alt="FAQ Illustration" />
-          <div className="img-overlay"></div>
+        {/* Left side: FAQ illustration */}
+        <div className="homepage-faq-illustration">
+          <div className="homepage-illustration-container">
+            <img 
+              src="/faq.svg" 
+              alt="FAQ Illustration" 
+              className="homepage-faq-svg-image"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Contact CTA Section */}
+      <div className="homepage-faq-contact-section">
+        <div className="homepage-faq-contact-container">
+          <div className="homepage-faq-contact-header">
+            <div className="homepage-contact-header-icon">
+              <span className="homepage-help-icon">❓</span>
+            </div>
+            <div className="homepage-contact-header-text">
+              <h3>لا تجد إجابة لسؤالك؟</h3>
+              <p>نحن هنا لمساعدتك - <a 
+                href="#" 
+                className="homepage-contact-link"
+                onClick={openContactModal}
+              >
+                تواصل معنا مباشرة
+              </a></p>
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>

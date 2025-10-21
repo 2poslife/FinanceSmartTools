@@ -1,5 +1,5 @@
 import React from 'react';
-import './ServicesSection.css';
+import '../../styles/HomePage/ServicesSection.css';
 
 function ServicesSection() {
     const services = [
@@ -48,25 +48,25 @@ function ServicesSection() {
     ];
 
     return (
-        <section className="services-section">
-            <div className="services-container">
-                <h2 className="services-title">خدماتنا المتميزة</h2>
-                <p className="services-subtitle">نقدم حلول محاسبية شاملة ومتخصصة لجميع احتياجاتك</p>
+        <section className="homepage-services-section">
+            <div className="homepage-services-container">
+                <h2 className="homepage-services-title">خدماتنا المتميزة</h2>
+                <p className="homepage-services-subtitle">نقدم حلول محاسبية شاملة ومتخصصة لجميع احتياجاتك</p>
                 
-                <div className="services-grid">
+                <div className="homepage-services-grid">
                     {services.map(service => (
-                        <div key={service.id} className="service-card">
-                            <div className="service-icon" style={{ backgroundColor: service.color }}>
-                                <span className="icon-emoji">{service.icon}</span>
+                        <div key={service.id} className="homepage-service-card">
+                            <div className="homepage-service-icon" style={{ backgroundColor: service.color }}>
+                                <span className="homepage-icon-emoji">{service.icon}</span>
                             </div>
                             
-                            <div className="service-content">
-                                <h3 className="service-title">{service.title}</h3>
-                                <p className="service-description">{service.description}</p>
+                            <div className="homepage-service-content">
+                                <h3 className="homepage-service-title">{service.title}</h3>
+                                <p className="homepage-service-description">{service.description}</p>
                             </div>
                             
-                            <div className="service-footer">
-                                <button className="service-btn" style={{ backgroundColor: service.color }}>
+                            <div className="homepage-service-footer">
+                                <button className="homepage-service-btn" style={{ backgroundColor: service.color }}>
                                     اكتشف المزيد
                                 </button>
                             </div>

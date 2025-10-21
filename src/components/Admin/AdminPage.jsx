@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./AdminPage.css";
+import "../../styles/Admin/AdminPage.css";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import {
@@ -89,14 +89,17 @@ const AdminPage = () => {
         const token = localStorage.getItem("access_token");
         if (!token) return;
 
-        const url = `https://financesmarttools-backend.onrender.com/admin/dashboard/users-stats?year=${year}&token=${encodeURIComponent(
-            token
-        )}`;
+        const url = `https://financesmarttools-backend.onrender.com/admin/dashboard/users-stats?year=${year}`;
 
         setLoading(true);
         setErrMsg("");
 
-        fetch(url, { headers: { Accept: "application/json" } })
+        fetch(url, { 
+            headers: { 
+                Accept: "application/json",
+                "Authorization": `Bearer ${token}`
+            } 
+        })
             .then(async (res) => {
                 if (!res.ok) {
                     const text = await res.text();
@@ -153,7 +156,7 @@ const AdminPage = () => {
 
         try {
             const token = localStorage.getItem("access_token");
-            const url = `https://financesmarttools-backend.onrender.com/user/admin/create-user?token=${token}`;
+            const url = `https://financesmarttools-backend.onrender.com/user/admin/create-user`;
             const body = {
                 username: newUsername,
                 role: newRole,
@@ -165,6 +168,7 @@ const AdminPage = () => {
                 headers: {
                     Accept: "application/json",
                     "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
                 },
                 body: JSON.stringify(body),
             });

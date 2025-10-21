@@ -1,0 +1,80 @@
+/* Courses Hero Section */
+.courses-hero-section {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+  color: #fff;
+  padding: 40px 40px 20px 40px;
+  text-align: center;
+  border-bottom: 3px solid #d4af37;
+}
+
+.courses-hero-content-wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.courses-hero-main-title {
+  font-size: 42px;
+  font-weight: 900;
+  margin-bottom: 15px;
+  color: #d4af37;
+  text-shadow: 0 4px 20px rgba(212, 175, 55, 0.5);
+}
+
+.courses-hero-intro {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  max-width: 810px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.courses-hero-intro ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  direction: rtl;
+  unicode-bidi: plaintext;
+}
+
+.courses-hero-intro-point {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #000000 !important;
+  margin-bottom: 20px;
+  font-family: "Arial Black", Arial, sans-serif;
+  text-align: center;
+  padding: 15px 25px;
+  background: #ffffff !important;
+  border-radius: 12px;
+  border: 3px solid #d4af37 !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  display: inline-block;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  direction: rtl;
+  unicode-bidi: plaintext;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .courses-hero-section {
+    padding: 30px 20px 15px 20px;
+  }
+
+  .courses-hero-main-title {
+    font-size: 28px;
+  }
+
+  .courses-hero-intro-point {
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    white-space: normal;
+    line-height: 1.4;
+  }
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./SigninForm.css";
+import "../../styles/Auth/SigninForm.css";
 import { jwtDecode } from "jwt-decode";
 
 const SigninForm = () => {
@@ -73,11 +73,10 @@ const SigninForm = () => {
         </svg>
       </div>
 
-      <div className="info-message">
-        <h3>تسجيل الدخول للمستخدمين المسجلين</h3>
+      <div className="info-message" dir="rtl">
+        <h3>مرحبًا بك في منصّة الأدوات والحاسبات الذكية.</h3>
         <p>
-          مرحباً بك في منصة الحاسبات المالية الذكية. للوصول إلى جميع الميزات
-          المتقدمة، يرجى تسجيل الدخول باستخدام بياناتك المسجلة.
+          سجّل دخولك للوصول إلى جميع الأدوات والميزات المتقدمة، يرجى تسجيل الدخول باستخدام بياناتك المسجلة
         </p>
       </div>
 
@@ -116,7 +115,7 @@ const SigninForm = () => {
           {/* Back button */}
           <button
             type="button"
-            className="back-button"
+            className="signin-back-button"
             onClick={() => navigate("/")}
           >
             ⬅ العودة

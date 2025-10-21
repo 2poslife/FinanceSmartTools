@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-    ChevronDown,
-    ChevronUp,
     AlertTriangle,
 } from "lucide-react";
-import "./IncomeTaxWithPoints.css";
+import "../../styles/Calculators/IncomeTaxWithPoints.css";
 
 const API_BASE = "https://financesmarttools-backend.onrender.com";
 
@@ -16,7 +14,6 @@ export default function IncomeTaxWithPoints() {
     const [creditPoints, setCreditPoints] = useState("");
     const [result, setResult] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [expanded, setExpanded] = useState(false);
     const [authError, setAuthError] = useState(false);
 
     const handleCalculate = async () => {
@@ -39,10 +36,13 @@ export default function IncomeTaxWithPoints() {
 
         try {
             const res = await fetch(
-                `${API_BASE}/cost/income-tax-with-points?token=${encodeURIComponent(token)}`,
+                `${API_BASE}/cost/income-tax-with-points`,
                 {
                     method: "POST",
-                    headers: { "Content-Type": "application/json" },
+                    headers: { 
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
                     body: JSON.stringify({
                         gross_salary: parseFloat(grossSalary),
                         credit_points: parseFloat(creditPoints),
@@ -76,14 +76,13 @@ export default function IncomeTaxWithPoints() {
         <div className="calcpage" dir="rtl">
             {/* Intro */}
             <section className="calcpage-intro">
-                <h1>מחשבון מס הכנסה עם נקודות זיכוי</h1>
+                <h1>מחשבון מס הכנסה ע״פ נקודות הזיכוי</h1>
                 <p className="calcpage-tagline">
-                    מחשבון זה מציג את חבות מס ההכנסה החודשית והשנתית,
-                    כולל התחשבות בנקודות זיכוי אישיות.
+                מחשבון זה מחשב את המס לניכוי מההכנסה ברוטו על פי מספר נקודות זיכוי ומציג את חבות המס החודשית והשנתית. 
+
                 </p>
                 <div className="calcpage-hero-box">
-                    הזן שכר ברוטו ונקודות זיכוי,
-                    ותקבל את חבות המס לפני ואחרי נקודות זיכוי.
+                הזן הכנסה ברוטו ומספר נקודות זיכוי, ותקבל את חבות המס
                 </div>
             </section>
 
@@ -113,6 +112,7 @@ export default function IncomeTaxWithPoints() {
                             onChange={(e) => setCreditPoints(e.target.value)}
                             placeholder="מספר נקודות זיכוי..."
                             required
+                            title="שווי נקודות הזיכוי הבסיסיות לגבר 2.25, ולאישה 2.75"
                         />
                     </div>
                 </div>
@@ -146,16 +146,8 @@ export default function IncomeTaxWithPoints() {
                         <h3>תוצאות החישוב</h3>
 
                         <div className="calcpage-summary-cards">
-                            <div className="summary-card blue">
-                                <h4>לפני זיכוי</h4>
-                                <p>{formatNumber(result.income_tax.before_credit)} ₪</p>
-                            </div>
-                            <div className="summary-card orange">
-                                <h4>שווי נקודות זיכוי</h4>
-                                <p>{formatNumber(result.income_tax.credit_points_value)} ₪</p>
-                            </div>
                             <div className="summary-card green">
-                                <h4>אחרי זיכוי</h4>
+                                <h4>מס חודשי</h4>
                                 <p>{formatNumber(result.income_tax.after_credit)} ₪</p>
                             </div>
                             <div className="summary-card red">
@@ -164,34 +156,6 @@ export default function IncomeTaxWithPoints() {
                             </div>
                         </div>
 
-                        <button
-                            className="expand-btn"
-                            onClick={() => setExpanded((prev) => !prev)}
-                        >
-                            {expanded ? (
-                                <>
-                                    <ChevronUp className="w-4 h-4" /> הסתר פירוט
-                                </>
-                            ) : (
-                                <>
-                                    <ChevronDown className="w-4 h-4" /> הצג פירוט
-                                </>
-                            )}
-                        </button>
-
-                        {expanded && (
-                            <div className="details-box">
-                                <h4>מדרגות מס</h4>
-                                <ul>
-                                    {result.brackets.map((b, i) => (
-                                        <li key={i}>
-                                            טווח {b.range} ({(b.rate * 100).toFixed(0)}%):{" "}
-                                            חייב {formatNumber(b.taxable)} ₪ → {formatNumber(b.amount)} ₪
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
                     </div>
                 )}
 
@@ -215,41 +179,31 @@ export default function IncomeTaxWithPoints() {
 
             {/* Description */}
             <section className="calcpage-description">
-                <h2>מה זה מחשבון מס הכנסה עם נקודות זיכוי?</h2>
+                <h2>מה זה מחשבון מס הכנסה ע"פ נקודות זיכוי?</h2>
                 <p>
-                    מחשבון מס הכנסה עם נקודות זיכוי הוא כלי מתקדם המחשב את חבות המס החודשית והשנתית שלכם,
-                    תוך התחשבות מלאה בנקודות הזיכוי האישיות שלכם. המחשבון מציג את המס לפני ואחרי נקודות הזיכוי,
-                    ומאפשר לכם לראות בדיוק כמה כסף אתם חוסכים בזכות הנקודות שלכם.
+                    מחשבון מס הכנסה ע"פ נקודות זיכוי הוא כלי מתקדם המחשב את חבות המס החודשית והשנתית שלכם, הוא נועד לספק הערכה מדויקת של גובה המס הצפוי לשלם במהלך השנה, בהתאם להכנסה הצפויה ולמספר נקודות הזיכוי האישיות של המשתמש.
                 </p>
 
-                <h2>למי מתאים מחשבון מס הכנסה עם נקודות זיכוי?</h2>
-                <ul>
-                    <li>שכירים עם נקודות זיכוי אישיות (ילדים, נכות, זקנה)</li>
-                    <li>עצמאים עם נקודות זיכוי רלוונטיות</li>
-                    <li>יועצי מס ורואי חשבון המבקשים לחשב מס ללקוחות</li>
-                    <li>עובדים המעוניינים להבין את השפעת נקודות הזיכוי על המס</li>
-                </ul>
-
-                <h2>למה כדאי להשתמש במחשבון מס הכנסה עם נקודות זיכוי?</h2>
-                <ul>
-                    <li>✔️ חישוב מדויק של מס הכנסה עם נקודות זיכוי</li>
-                    <li>✔️ הצגה ברורה של המס לפני ואחרי נקודות זיכוי</li>
-                    <li>✔️ פירוט מלא של מדרגות המס והחישוב</li>
-                    <li>✔️ עוזר בתכנון מס ובהבנת החיסכון מנקודות זיכוי</li>
-                </ul>
-
-                <h2>איך עובד מחשבון מס הכנסה עם נקודות זיכוי?</h2>
+                <h2>למי מתאים המחשבון?</h2>
                 <p>
-                    המחשבון מקבל את השכר הברוטו החודשי ואת מספר נקודות הזיכוי שלכם,
-                    ומחשב את חבות המס בהתאם למדרגות המס המעודכנות. הוא מציג את המס לפני נקודות הזיכוי,
-                    את שווי נקודות הזיכוי, ואת המס הסופי אחרי נקודות הזיכוי.
+                    המחשבון מתאים לרואי חשבון, יועצי מס, עצמאים ושכירים שמעוניינים להבין מראש את חבות המס שלהם ולתכנן נכון את תשלומי המס במהלך השנה.
+                    המחשבון מותאם במיוחד לרואי חשבון ויועצי מס, ומסייע להם בקבלת החלטות מקצועיות ותכנון מס מדויק עבור לקוחותיהם.
                 </p>
 
-                <h2>כתב ויתור</h2>
+                <h2>המחשבון עונה על שאלות כמו:</h2>
+                <ul>
+                    <li>כמה מס הכנסה ישלם עצמאי או שכיר לפי ההכנסה הצפויה?</li>
+                    <li>איך משפיעות נקודות הזיכוי על גובה המס?</li>
+                    <li>מהו הסכום שכדאי לשלם כמקדמות כדי למנוע חובות בסוף השנה?</li>
+                </ul>
+
+                <h2>איך עובד מחשבון מס הכנסה?</h2>
+                <p>
+                    המחשבון מקבל את השכר הברוטו החודשי ואת מספר נקודות הזיכוי, ומחשב את חבות המס בהתאם למדרגות המס המעודכנות. ומציג גובה המס החודשי והמס השנתי הצפוי.
+                </p>
+
                 <p className="disclaimer">
-                    מחשבון מס הכנסה עם נקודות זיכוי נותן אומדן בלבד ואינו מהווה ייעוץ מס או תחליף לליווי מקצועי.
-                    הנתונים מבוססים על מדרגות המס הקיימות, אך ייתכנו הבדלים בהתאם לנסיבות האישיות.
-                    לקבלת ייעוץ מותאם אישית, מומלץ להתייעץ עם רואה חשבון מוסמך.
+                    מחשבון מס הכנסה ע"פ נקודות הזיכוי נותן אומדן בלבד ואינו מהווה ייעוץ מס או תחליף לליווי מקצועי. הנתונים מבוססים על מדרגות המס הקיימות, אך ייתכנו הבדלים בהתאם לנסיבות האישיות. לקבלת ייעוץ מותאם אישית, מומלץ להתייעץ עם רואה חשבון מוסמך.
                 </p>
             </section>
         </div>

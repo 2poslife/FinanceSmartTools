@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   Home,
@@ -13,9 +13,10 @@ import {
   Mail,
   Menu,
   X,
+  Monitor,
 } from "lucide-react";
 import { jwtDecode } from "jwt-decode";
-import "./MobileHeader.css";
+import "../../styles/Layout/MobileHeader.css";
 import Logo from "../../assets/logo.png";
 
 const MobileHeader = () => {
@@ -53,6 +54,20 @@ const MobileHeader = () => {
     setShowMenu(false);
   };
 
+  // Listen for custom event to open contact modal
+  useEffect(() => {
+    const handleOpenContactModal = () => {
+      console.log('MobileHeader received openContactModal event');
+      setShowContact(true);
+    };
+
+    window.addEventListener('openContactModal', handleOpenContactModal);
+
+    return () => {
+      window.removeEventListener('openContactModal', handleOpenContactModal);
+    };
+  }, []);
+
   return (
     <>
       <header className="mobile-header">
@@ -86,6 +101,22 @@ const MobileHeader = () => {
             <Home className="mobile-icon" />
             <span>الرئيسية</span>
           </button>
+
+          {isLoggedIn && userRole === "admin" && (
+            <button
+              onClick={() => handleNavigate("/AdminPage")}
+              className={`mobile-nav-btn control-panel-btn ${isActive("/AdminPage")}`}
+              style={{
+                background: 'linear-gradient(135deg, #ff6b35 0%, #f7931e 100%)',
+                color: '#ffffff',
+                fontWeight: '600',
+                border: '2px solid #ff6b35'
+              }}
+            >
+              <Monitor className="mobile-icon" />
+              <span>لوحة التحكم</span>
+            </button>
+          )}
 
           <button
             onClick={() => handleNavigate("/courses")}
@@ -169,7 +200,7 @@ const MobileHeader = () => {
 
             <section className="mobile-about-contact">
               <h2>تواصل معنا</h2>
-              <p>نحن هنا لمساعدتك في رحلتك المحاسبية</p>
+              <p>نحن دائمًا هنا لمساعدتك</p>
 
               <div className="mobile-contact-grid">
                 <div className="mobile-contact-card">
