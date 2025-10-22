@@ -1,8 +1,7 @@
 /* Mobile Hero Section */
 .hero-mobile {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
+  height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,17 +10,83 @@
 
 .hero-bg-mobile {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   z-index: 1;
 }
 
 .hero-bg-mobile img {
-  width: 100%;
+  position: absolute;
   height: 100%;
-  object-fit: cover;
+  width: auto; /* shrink width naturally */
+  left: -110%; /* shift image left so we skip first 30% */
+  object-fit: contain; /* keep full height visible */
+}
+
+/* === Hero Logo (Mobile) === */
+.hero-mobile-logo {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  animation: logoEntrance 1.8s ease-out forwards, logoFloat 4s ease-in-out 2s infinite;
+}
+
+.hero-mobile-logo img {
+  width: 120px; /* good size for mobile */
+  height: auto;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Hover pulse (optional, subtle on mobile) */
+.hero-mobile-logo img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+}
+
+/* === Entrance Animation === */
+@keyframes logoEntrance {
+  0% {
+    transform: translateY(-40px) scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(10px) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* === Infinite Floating Animation === */
+@keyframes logoFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive Tweaks === */
+@media (min-width: 480px) {
+  .hero-mobile-logo img {
+    width: 150px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-mobile-logo img {
+    width: 180px;
+  }
 }
 
 .hero-overlay-mobile {

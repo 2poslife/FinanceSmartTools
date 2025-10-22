@@ -5,10 +5,13 @@ function HeroSectionMobile() {
   return (
     <section className="hero-mobile">
       <div className="hero-bg-mobile">
-        <img src="/Gray and Black Minimal Website Animated Presentation Video.svg" alt="Hero Background" />
+        <img src="/heroImageBG.png" alt="Hero Background" />
       </div>
       <div className="hero-overlay-mobile"></div>
       <div className="hero-content-mobile">
+      <div className="hero-mobile-logo">
+        <img src="/logo.png" alt="Company Logo" />
+      </div>
         <div className="hero-text-mobile">
           <h1 className="hero-title-mobile">
             مكتب زيدان للمحاسبة والاستشارات المالية
