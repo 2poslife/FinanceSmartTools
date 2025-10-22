@@ -60,7 +60,7 @@
 ========================= */
 .hero-logo-wrapper {
   position: absolute;
-  top: 25%;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
