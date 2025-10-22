@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./HeroSection.css";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 
 const HeroSection = () => {
   const [shelfVisible, setShelfVisible] = useState(false);
@@ -19,7 +20,7 @@ const HeroSection = () => {
         className={`shelf-toggle ${shelfVisible ? "active" : ""}`}
         onClick={toggleShelf}
       >
-        &#9654; {/* Left arrow */}
+        <FaArrowAltCircleRight /> {/* Left arrow */}
       </button>
 
       {/* Shelf */}

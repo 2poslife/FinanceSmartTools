@@ -162,20 +162,18 @@
   left: 0;
   z-index: 10;
   font-size: 2rem;
-  background: rgba(0, 0, 0, 0.4);
-  color: #fff;
+  text-align: center;
+  background: transparent;
+  color: black;
   border: none;
-  padding: 10px 15px;
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.5s ease; /* transition synced with shelf */
 }
 
-.shelf-toggle:hover {
-  background: rgba(0, 0, 0, 0.7);
-}
+
 
 /* When shelf is open, move arrow forward */
 .shelf-toggle.active {
-  transform: translate(204px) rotate(180deg);
+  transform: translate(152px) rotate(180deg);
 }
