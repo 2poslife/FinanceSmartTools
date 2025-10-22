@@ -89,7 +89,7 @@ export default function MicroSelfEmployedCalculator() {
                     כלי מהיר ופשוט לבדיקת תשלומי ביטוח לאומי ובריאות לעצמאי זעיר.
                 </p>
                 <div className="calcpage-hero-box">
-                    המחשבון מחשב באופן מיידי את תשלומי ביטוח לאומי ומס הריאות על בסיס הכנסה חייבת (לפי 70% מהערך שהוזן), ומציג לכם כמה תשלמי ביטוח לאומי חודשי, שנתי
+                    המחשבון מחשב באופן מיידי את תשלומי ביטוח לאומי ומס הבריאות על בסיס הכנסה חייבת (לפי 70% מהערך שהוזן), ומציג לכם כמה תשלמו ביטוח לאומי חודשי, שנתי
                 </div>
             </section>
 
@@ -162,10 +162,6 @@ export default function MicroSelfEmployedCalculator() {
                             <div className="summary-card red">
                                 <h4>סה״כ שנתי</h4>
                                 <p>{fmt(result.summary.yearly_total)} ₪</p>
-                            </div>
-                            <div className="summary-card green">
-                                <h4>נטו אחרי ניכויים</h4>
-                                <p>{fmt(result.summary.net_after_deductions)} ₪</p>
                             </div>
                         </div>
 
