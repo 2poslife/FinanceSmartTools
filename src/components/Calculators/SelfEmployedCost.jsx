@@ -11,6 +11,7 @@ import {
 import "../../styles/Calculators/SelfEmployedCost.css";
 
 const API_BASE = "https://financesmarttools-backend.onrender.com";
+const LOCAL_API_BASE = "http://localhost:8000";
 
 export default function SelfEmployedCost() {
     const navigate = useNavigate();
@@ -40,6 +41,9 @@ export default function SelfEmployedCost() {
         setAuthError(false);
 
         try {
+            console.log("🚀 Making request to:", `${API_BASE}/self-employed/self-employed`);
+            console.log("📤 Request payload:", { yearly_income: parseFloat(yearlyIncome), credit_points: 0 });
+            
             const res = await fetch(
                 `${API_BASE}/self-employed/self-employed`,
                 {
@@ -50,9 +54,13 @@ export default function SelfEmployedCost() {
                     },
                     body: JSON.stringify({
                         yearly_income: parseFloat(yearlyIncome),
+                        credit_points: 0
                     }),
                 }
             );
+            
+            console.log("📡 Response status:", res.status);
+            console.log("📡 Response headers:", res.headers);
 
             if (res.status === 401 || res.status === 403) {
                 setAuthError(true);
@@ -60,10 +68,57 @@ export default function SelfEmployedCost() {
                 return;
             }
 
+            if (res.status === 422 || res.status === 404) {
+                const errorData = res.status === 422 ? await res.json() : null;
+                console.error(`❌ ${res.status} Error - Server issue:`, errorData);
+                console.log("🔄 Trying localhost endpoint as fallback...");
+                
+                // Try localhost endpoint as fallback
+                try {
+                    const localRes = await fetch(
+                        `${LOCAL_API_BASE}/self-employed/self-employed`,
+                        {
+                            method: "POST",
+                            headers: { 
+                                "Content-Type": "application/json",
+                                "Authorization": `Bearer ${token}`
+                            },
+                            body: JSON.stringify({
+                                yearly_income: parseFloat(yearlyIncome),
+                                credit_points: 0
+                            }),
+                        }
+                    );
+                    
+                    if (localRes.ok) {
+                        const localData = await localRes.json();
+                        console.log("✅ Localhost response:", localData);
+                        setResult(localData);
+                        return;
+                    } else {
+                        console.error("❌ Localhost also failed with status:", localRes.status);
+                    }
+                } catch (localErr) {
+                    console.error("❌ Localhost also failed:", localErr);
+                }
+                
+                alert("שגיאה בנתונים שנשלחו לשרת. אנא בדוק את ההכנסה שהזנת.");
+                return;
+            }
+
+            if (!res.ok) {
+                console.error("❌ HTTP Error:", res.status, res.statusText);
+                alert(`שגיאה בשרת: ${res.status} ${res.statusText}`);
+                return;
+            }
+
             const data = await res.json();
+            console.log("🔍 API Response:", data);
+            console.log("📋 Full result structure:", JSON.stringify(data, null, 2));
             setResult(data);
         } catch (err) {
             console.error("❌ Error calculating:", err);
+            alert("שגיאה בחישוב. אנא נסה שוב.");
         } finally {
             setLoading(false);
         }
@@ -136,11 +191,11 @@ export default function SelfEmployedCost() {
                         <div className="calcpage-summary-cards">
                             <div className="summary-card blue">
                                 <h4>תשלום חודשי</h4>
-                                <p>{result.national_insurance.monthly_prepayment.toLocaleString()} ₪</p>
+                                <p>{result?.national_insurance?.monthly_prepayment?.toLocaleString()} ₪</p>
                             </div>
                             <div className="summary-card red">
                                 <h4>תשלום שנתי</h4>
-                                <p>{result.national_insurance.yearly_total.toLocaleString()} ₪</p>
+                                <p>{result?.national_insurance?.yearly_total?.toLocaleString()} ₪</p>
                             </div>
                         </div>
 
@@ -164,7 +219,14 @@ export default function SelfEmployedCost() {
                             <div className="details-box">
                                 <h4>פירוט ביטוח לאומי</h4>
                                 <ul>
-                                    <li>הגדרה: {result.national_insurance.definition}</li>
+                                    <li>הגדרה: {result?.national_insurance?.definition}</li>
+                                    <li>חלק בתעריף נמוך: {result?.national_insurance?.breakdown?.low_rate_part?.toLocaleString()} ₪</li>
+                                    <li>חלק בתעריף גבוה: {result?.national_insurance?.breakdown?.high_rate_part?.toLocaleString()} ₪</li>
+                                </ul>
+                                
+                                <h4>סיכום</h4>
+                                <ul>
+                                    <li>נטו אחרי ביטוח לאומי: {result?.summary?.net_after_ni?.toLocaleString()} ₪</li>
                                 </ul>
                             </div>
                         )}
