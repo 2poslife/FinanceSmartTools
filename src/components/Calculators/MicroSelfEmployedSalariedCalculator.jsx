@@ -72,6 +72,7 @@ export default function MicroSelfEmployedSalariedCalculator() {
             console.log("🔍 API Response:", data);
             console.log("📊 Endpoint used:", isSalaried ? "atsmaee-and-sakher" : "atsmaee-only");
             console.log("✅ Flag state (isSalaried):", isSalaried);
+            console.log("📋 Full result structure:", JSON.stringify(data, null, 2));
             setResult(data);
         } catch (err) {
             console.error("❌ Error calculating:", err);
@@ -93,12 +94,10 @@ export default function MicroSelfEmployedSalariedCalculator() {
             <section className="calcpage-intro">
                 <h1>מחשבון ביטוח לאומי עצמאי ושכיר</h1>
                 <p className="calcpage-tagline">
-                    חשבו את חבות הביטוח הלאומי והבריאות עבור עצמאים זעירים - עצמאי בלבד או עצמאי ושכיר.
+                חשבו את חובות הביטוח הלאומי והבריאות עבור עצמאים (עצמאי בלבד או עצמאי ושכיר).
                 </p>
                 <div className="calcpage-hero-box">
-                    המחשבון מחשב את תשלומי הביטוח הלאומי והבריאות על ההכנסה החייבת.
-                    בחרו בין עצמאי בלבד (תעריפים רגילים) או עצמאי ושכיר (תעריפים מיוחדים).
-                </div>
+                המחשבון מחשב את תשלומי הביטוח הלאומי והבריאות על ההכנסה החייבת (רווח לאחר ניכוי הוצאות). בחרו בין עצמאי בלבד או עצמאי ושכיר.                </div>
             </section>
 
             {/* Form */}
@@ -118,11 +117,9 @@ export default function MicroSelfEmployedSalariedCalculator() {
                             האם יש לך גם הכנסה כשכיר? (עצמאי ושכיר)
                         </span>
                     </label>
+
                     <p style={{ fontSize: '14px', color: '#666', marginTop: '8px', marginRight: '30px', textAlign: 'right' }}>
-                        {isSalaried 
-                            ? 'החישוב יכלול תעריפים מיוחדים עבור עצמאי ושכיר'
-                            : 'החישוב יכלול תעריפים רגילים עבור עצמאי בלבד'
-                        }
+                        בהנחה שהעצמאי עובד גם כשכיר ומקבל שכר מעל 7,522 בחודש.
                     </p>
                 </div>
 
@@ -187,13 +184,13 @@ export default function MicroSelfEmployedSalariedCalculator() {
                     <div className="calcpage-result">
                         <h3>תוצאות החישוב</h3>
                         <div className="calcpage-summary-cards">
+                            <div className="summary-card blue">
+                                <h4>תשלום חודשי</h4>
+                                <p>{fmt(result.monthly.prepayment)} ₪</p>
+                            </div>
                             <div className="summary-card red">
                                 <h4>סה״כ שנתי</h4>
-                                <p>{fmt(isSalaried ? result.totals.yearly_total : result.totals?.yearly_total)} ₪</p>
-                            </div>
-                            <div className="summary-card green">
-                                <h4>נטו אחרי ניכויים</h4>
-                                <p>{fmt(isSalaried ? result.summary.net_after_deductions : result.summary?.net_after_deductions)} ₪</p>
+                                <p>{fmt(result.totals.yearly_total)} ₪</p>
                             </div>
                         </div>
 
@@ -217,8 +214,8 @@ export default function MicroSelfEmployedSalariedCalculator() {
                             <div className="details-box">
                                 <h4>פירוט ניכויים</h4>
                                 <ul>
-                                    <li>ביטוח לאומי: {fmt(isSalaried ? result.totals.national_insurance : result.totals?.national_insurance)} ₪</li>
-                                    <li>ביטוח בריאות: {fmt(isSalaried ? result.totals.health_tax : result.totals?.health_tax)} ₪</li>
+                                    <li>ביטוח לאומי: {fmt(result.totals.national_insurance)} ₪</li>
+                                    <li>ביטוח בריאות: {fmt(result.totals.health_tax)} ₪</li>
                                 </ul>
                             </div>
                         )}
@@ -228,43 +225,40 @@ export default function MicroSelfEmployedSalariedCalculator() {
 
             {/* Description */}
             <section className="calcpage-description">
-                <h2>מה זה מחשבון ביטוח לאומי עצמאי ושכיר?</h2>
+                <h2>מחשבון חישוב מקדמות ביטוח לאומי לעצמאי:</h2>
                 <p>
-                    מחשבון ביטוח לאומי עצמאי ושכיר הוא כלי מתמחה לחישוב תשלומי ביטוח לאומי ובריאות עבור עצמאים זעירים.
-                    המחשבון מאפשר לכם לבחור בין שני מצבים: עצמאי בלבד או עצמאי ושכיר, ומחשב את התשלומים בהתאם.
-                    המחשבון מחשב את התשלומים על בסיס ההכנסה החייבת ומציג את החבות השנתית והנטו שנותר.
+               המחשבון נועד לספק הערכה של גובה המקדמות לביטוח הלאומי שעל עצמאי לשלם במהלך השנה, בהתאם להכנסה הצפויה שלו כאשר הוא עונה להגדרה.
+בשלב הראשון המשתמש בוחר האם הוא עצמאי בלבד או עצמאי שגם עובד כשכיר, והמחשבון מחשב בהתאם את גובה התשלומים החודשיים והשנתיים.
+
                 </p>
 
-                <h2>למי מתאים מחשבון זה?</h2>
+                <h2>המחשבון עונה על שאלות כמו:</h2>
                 <ul>
-                    <li>עצמאים זעירים שרוצים לחשב את חבות הביטוח הלאומי והבריאות</li>
-                    <li>עצמאים שעובדים גם כשכירים במקביל</li>
-                    <li>מי שרוצה להבין את ההבדל בין חבות עצמאי בלבד לבין חבות עצמאי ושכיר</li>
-                    <li>עוסקים פטורים או פרילנסרים המעוניינים לתכנן את תשלומי הביטוח הלאומי</li>
+                    <li>כמה מקדמות ביטוח לאומי ישלם עצמאי לפי ההכנסה שלו?</li>
+                    <li>איך משתנה גובה התשלום כאשר העוסק גם שכיר וגם עצמאי?</li>
+                    <li>מהו הסכום שכדאי לשלם מדי חודש כדי למנוע חובות בסוף השנה?</li>
                 </ul>
 
-                <h2>למה כדאי להשתמש במחשבון?</h2>
-                <ul>
-                    <li>✔️ חישוב מדויק של תשלומי ביטוח לאומי ובריאות</li>
-                    <li>✔️ אפשרות לבחור בין עצמאי בלבד לעצמאי ושכיר</li>
-                    <li>✔️ הצגה ברורה של החבות השנתית והנטו שנותר</li>
-                    <li>✔️ פירוט מלא של ביטוח לאומי וביטוח בריאות</li>
-                </ul>
-
-                <h2>מה תוכלו לגלות במחשבון?</h2>
-                <ul>
-                    <li>סה"כ שנתי לתשלומי ביטוח לאומי ובריאות</li>
-                    <li>נטו שנותר לאחר ניכוי כל החבויות</li>
-                    <li>פירוט מלא של ביטוח לאומי וביטוח בריאות</li>
-                    <li>ההבדל בין חבות עצמאי בלבד לחבות עצמאי ושכיר</li>
-                </ul>
-
-                <h2>איך עובד המחשבון?</h2>
+                <h2>למי מתאים המחשבון?</h2>
                 <p>
-                    המחשבון מקבל את ההכנסה השנתית הברוטו שלכם ומחשב את ההכנסה החייבת.
-                    בהתאם לבחירה שלכם (עצמאי בלבד או עצמאי ושכיר), המחשבון מחשב את תשלומי הביטוח הלאומי והבריאות
-                    ומציג את הסה"כ השנתי והנטו שנותר לאחר הניכויים.
+                    המחשבון מתאים לרואי חשבון, יועצי מס, עצמאים. המחשבון מסייע בקבלת החלטות מקצועיות, ומהווה כלי יעיל לניהול נכון של תשלומי הביטוח הלאומי במהלך השנה.
                 </p>
+
+                <div className="micro-self-employed-note-alt">
+                    <h4 className="micro-self-employed-note-title-alt">הערה:</h4>
+                    <p className="micro-self-employed-note-text-alt">
+                        המחשבון יוצא מנקודת הנחה כי העצמאי מוגדר כעונה להגדרה לפי חוק ביטוח לאומי, ועל בסיס זה מתבצע חישוב תשלומי הביטוח הלאומי.
+                    </p>
+                    <p className="micro-self-employed-note-text-alt">
+                        אם ברצונכם לחשב מקדמות כאשר העוסק הזעיר אינו עונה להגדרה, עברו למחשבון:
+                    </p>
+                    <button 
+                        className="calculator-link-btn"
+                        onClick={() => window.open('https://www.cpa-zedan.com/simulators/micro-self-employed-salaried', '_blank')}
+                    >
+                        חישוב מקדמות ביטוח לאומי ובחירת הגדרה כדאית לעצמאי
+                    </button>
+                </div>
 
                 <h2>כתב ויתור</h2>
                 <p className="disclaimer">
