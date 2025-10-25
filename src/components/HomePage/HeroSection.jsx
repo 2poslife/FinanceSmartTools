@@ -1,46 +1,69 @@
 import React, { useState } from "react";
 import "./HeroSection.css";
-import { FaArrowAltCircleRight } from "react-icons/fa";
 
 const HeroSection = () => {
-  const [shelfVisible, setShelfVisible] = useState(false);
+  const [activeBook, setActiveBook] = useState(null);
 
-  const toggleShelf = () => setShelfVisible(!shelfVisible);
-
+  const books = [
+    { id: 1, video: "/Video1.mp4" },
+    { id: 2, video: "/Video2.mp4" },
+    { id: 3, video: "/Video3.mp4" },
+  ];
+  const goToNavigate = () => {
+    alert("Navigate");
+  };
+  const goToContact = () => {
+    alert("Contact");
+  };
   return (
     <div className="hero-section">
-      <img className="hero-section-table" src="/HeroSection/Table.svg" alt="" />
-      <div className="hero-section-content">
-        <div className="hero-logo-wrapper">
-          <img className="hero-section-logo" src="/logo.png" alt="" />
+      {activeBook && (
+        <div className="video-overlay" onClick={() => setActiveBook(null)}>
+          <video
+            src={books.find((b) => b.id === activeBook).video}
+            controls
+            autoPlay
+            className="video-player"
+          />
         </div>
+      )}
+      <div className="hero-section-content">
+        <img className="hero-section-logo" src="/logo.png" alt="" />
         <img
           className="hero-section-Title"
           src="/HeroSection/Title.svg"
           alt=""
         />
-        <div className="hero-section-buttons">
-          <button>دوراتنا</button>
-          <button>خدماتنا</button>
+        <button className="hero-section-button">دوراتنا</button>
+      </div>
+      <div className="hero-section-shelf">
+        <div className="hero-section-top-shelf">
+          <img
+            className="hero-shelf-compass"
+            src="/HeroSection/Compass.svg"
+            alt=""
+            onClick={goToNavigate}
+          />
+        </div>
+        <div className="hero-shelf-books">
+          {books.map((book) => (
+            <div
+              key={book.id}
+              className="hero-shelf-book"
+              onClick={() => setActiveBook(book.id)}
+            >
+              {book.id}
+            </div>
+          ))}
         </div>
       </div>
-
-      {/* Arrow button */}
-      <button
-        className={`shelf-toggle ${shelfVisible ? "active" : ""}`}
-        onClick={toggleShelf}
-      >
-        <FaArrowAltCircleRight /> {/* Left arrow */}
-      </button>
-
-      {/* Shelf */}
-      <div className={`hero-shelfs-wrapper ${shelfVisible ? "show" : ""}`}>
+      <div className="hero-section-table">
         <img
-          className="hero-section-shelfs"
-          src="/HeroSection/BookShelfs.svg"
+          className="hero-table-phone"
+          src="/HeroSection/Phone.svg"
           alt=""
+          onClick={goToContact}
         />
-        <img className="hero-compass" src="/HeroSection/Compass.svg" alt="" />
       </div>
     </div>
   );

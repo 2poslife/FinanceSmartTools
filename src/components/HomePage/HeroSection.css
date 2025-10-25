@@ -4,220 +4,201 @@
 .hero-section {
   position: relative;
   width: 100%;
-  height: 100vh;
   background-image: url("/HeroSection/Bg.svg");
+  background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
-  background-size: cover;
-  transition: background-size 0.3s ease;
-  overflow: hidden; /* hide any overflow from sliding shelves */
+  height: calc(100vh - 72px);
 }
 
-/* =========================
-   HERO TABLE
-========================= */
-.hero-section-table {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+.video-overlay {
+  position: fixed;
+  top: 0;
   left: 0;
-  height: 25%;
-  z-index: 2;
-  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.video-player {
+  width: 90%;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
 }
 
 /* =========================
    HERO CONTENT
 ========================= */
 .hero-section-content {
-  position: relative;
   z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100%;
+  justify-content: space-around;
+  height: 72.5%;
+  width: 37%;
+  min-width: 500px;
+  margin: auto auto;
   text-align: center;
-  padding: 0 20px;
+  padding: 50px;
+
+  overflow: hidden;
+}
+
+/* Logo */
+.hero-section-logo {
+  flex: 3;
+  object-fit: contain;
+  max-width: 40%;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.45));
+  opacity: 0;
+  transform: scale(0.9);
+  animation: logo-fade-in 1s forwards, logo-float 3s ease-in-out infinite;
+}
+
+/* Fade-in keyframes */
+@keyframes logo-fade-in {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Infinite floating up-down */
+@keyframes logo-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.45));
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+  }
 }
 
 /* Title */
 .hero-section-Title {
-  width: 50%;
-  max-width: 500px;
-  height: auto;
+  flex: 2;
   object-fit: contain;
-  filter: drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.35));
-  animation: fadeInTitle 1.2s ease-out forwards;
+  max-width: 40%;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.35));
+
+  /* Smooth transition for hover or animations */
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+.hero-section-Title:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.45));
 }
 
-/* Buttons container */
-.hero-section-buttons {
-  margin-top: 20px;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* Buttons style */
-.hero-section-buttons button {
-  padding: 12px 25px;
-  font-size: 1rem;
+/* Button */
+.hero-section-button {
+  flex: 1;
+  width: 40%;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: #fff;
-  background-color: #0077ff;
+  color: black;
+  padding: 0.8rem 2rem;
+
+  background: linear-gradient(135deg, #ebcb63, #ba731f);
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.3s ease;
-}
-
-.hero-section-buttons button:hover {
-  transform: translateY(-2px);
-  background-color: #005ecc;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
 }
 
 /* =========================
-   HERO LOGO
+   HERO SHELF
 ========================= */
-.hero-logo-wrapper {
-  margin-top: 20px;
-}
 
-.hero-section-logo {
-  max-width: 250px;
-  width: 100%;
-  opacity: 0;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
-  animation: logoEntrance 1.5s ease-out forwards,
-             logoFloat 4s ease-in-out 2s infinite,
-             logoShadowPulse 3s ease-in-out 2s infinite;
-}
-
-/* Logo Animations */
-@keyframes logoEntrance {
-  0% { transform: translateY(-40px) scale(0.8); opacity: 0; }
-  60% { transform: translateY(10px) scale(1.05); opacity: 1; }
-  100% { transform: translateY(0) scale(1); opacity: 1; }
-}
-
-@keyframes logoFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes logoShadowPulse {
-  0%, 100% { filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4)); }
-  50% { filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6)); }
-}
-
-/* =========================
-   SHELF & COMPASS
-========================= */
-.hero-shelfs-wrapper {
+.hero-section-shelf {
   position: absolute;
   top: 0;
-  left: -100%; /* hidden by default */
-  height: 100%;
-  max-width: 204px;
-  z-index: 1;
-  transition: left 0.5s ease;
-}
-
-.hero-shelfs-wrapper.show {
-  left: 0;
-}
-
-.hero-section-shelfs {
-  height: 100%;
-  width: auto;
-  object-fit: contain;
-  object-position: top left;
-}
-
-.hero-compass {
-  position: absolute;
-  top: 7%;
-  left: 46%;
-  transform: translateX(-50%);
-  max-width: 60%;
-  height: auto;
-  z-index: 2;
-  transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.hero-compass:hover {
-  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.8));
-  transform: translateX(-50%) translateY(-2px);
-}
-
-/* =========================
-   ARROW BUTTON
-========================= */
-.shelf-toggle {
-  position: absolute;
-  top: 40%;
-  left: 0;
+  bottom: 0;
+  height: 72.5%;
+  aspect-ratio: 17/78;
+  background-image: url("/HeroSection/Shelf.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
   z-index: 10;
-  font-size: 2rem;
-  background: transparent;
-  color: black;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.5s ease;
+}
+.hero-section-top-shelf {
+  height: 23%;
+  z-index: 100;
+  aspect-ratio: 17/18;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+.hero-shelf-compass {
+  bottom: 0;
+  height: 75%;
+  width: auto;
+  transition: all 0.3s ease;
 }
 
-/* When shelf is open, move arrow forward */
-.shelf-toggle.active {
-  transform: translateX(204px) rotate(180deg);
+.hero-shelf-compass:hover {
+  background: linear-gradient(135deg, #ebcb63, #ba731f);
+  box-shadow: 0 8px 20px rgba(186, 115, 31, 0.6),
+    0 0 30px rgba(235, 203, 99, 0.5);
+  border-radius: 12px; /* optional, matches button style */
+  transform: translateY(-3px); /* optional subtle lift */
+  cursor: pointer;
+}
+.hero-shelf-books {
+  position: relative;
+  top: 17.5%;
+  left: 7%;
+  display: flex;
+  height: 17.8%;
+  width: 86%;
+  color: black;
+  align-items: center;
+  user-select: none;
+}
+.hero-shelf-book {
+  flex: 1;
+  padding: 2px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.hero-shelf-book:hover {
+  opacity: 1;
+  filter: drop-shadow(0 8px 20px rgba(186, 115, 31, 0.6))
+    drop-shadow(0 0 30px rgba(235, 203, 99, 0.5));
+  cursor: pointer;
 }
 
 /* =========================
-   HERO BUTTONS
+   HERO TABLE
 ========================= */
-.hero-section-buttons {
-  margin-top: 30px;
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-  justify-content: center;
+.hero-section-table {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 27.5%;
+  z-index: 100;
 }
-
-/* General button style */
-.hero-section-buttons button {
-  padding: 18px 40px; /* bigger padding */
-  font-size: 1.2rem; /* larger font */
-  font-weight: 700;
-  color: #fff;
-  background: linear-gradient(135deg, #d4af37, #b89453); /* gold gradient */
-  border: 2px solid #333; /* subtle black border */
-  border-radius: 14px; /* slightly rounder */
-  cursor: pointer;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45), 0 0 12px rgba(212, 175, 55, 0.6); /* stronger glow */
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+.hero-table-phone {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 50%;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
 }
-
-/* Hover effect: lift + stronger glow */
-.hero-section-buttons button:hover {
-  transform: translateY(-4px) scale(1.08); /* slightly bigger lift */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 18px rgba(212, 175, 55, 0.9);
-  background: linear-gradient(135deg, #e3c156, #cdb066); /* brighter gold */
-}
-
-/* Active/click effect */
-.hero-section-buttons button:active {
-  transform: translateY(0) scale(0.97);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45), 0 0 12px rgba(212, 175, 55, 0.6);
-}
-
-/* Responsive for small screens */
-@media (max-width: 768px) {
-  .hero-section-buttons button {
-    padding: 14px 28px;
-    font-size: 1rem;
-  }
+.hero-table-phone:hover {
+  filter: drop-shadow(0 8px 20px rgba(186, 115, 31, 0.6))
+    drop-shadow(0 0 30px rgba(235, 203, 99, 0.5));
+  border-radius: 12px;
+  transform: translateY(-3px);
+  cursor: pointer;
 }
