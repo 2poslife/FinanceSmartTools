@@ -11,6 +11,26 @@
   height: calc(100vh - 72px);
 }
 
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.video-player {
+  width: 90%;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
 /* =========================
    HERO CONTENT
 ========================= */
@@ -131,4 +151,54 @@
     0 0 30px rgba(235, 203, 99, 0.5);
   border-radius: 12px; /* optional, matches button style */
   transform: translateY(-3px); /* optional subtle lift */
+  cursor: pointer;
+}
+.hero-shelf-books {
+  position: relative;
+  top: 17.5%;
+  left: 7%;
+  display: flex;
+  height: 17.8%;
+  width: 86%;
+  color: black;
+  align-items: center;
+  user-select: none;
+}
+.hero-shelf-book {
+  flex: 1;
+  padding: 2px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.hero-shelf-book:hover {
+  opacity: 1;
+  filter: drop-shadow(0 8px 20px rgba(186, 115, 31, 0.6))
+    drop-shadow(0 0 30px rgba(235, 203, 99, 0.5));
+  cursor: pointer;
+}
+
+/* =========================
+   HERO TABLE
+========================= */
+.hero-section-table {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 27.5%;
+  z-index: 100;
+}
+.hero-table-phone {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 50%;
+  transition: all 0.3s ease;
+}
+.hero-table-phone:hover {
+  filter: drop-shadow(0 8px 20px rgba(186, 115, 31, 0.6))
+    drop-shadow(0 0 30px rgba(235, 203, 99, 0.5));
+  border-radius: 12px;
+  transform: translateY(-3px);
+  cursor: pointer;
 }
