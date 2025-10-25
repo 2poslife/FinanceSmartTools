@@ -1,22 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./HeroSection.css";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
   const [activeBook, setActiveBook] = useState(null);
-
+  const navigate = useNavigate();
   const books = [
     { id: 1, video: "/Video1.mp4" },
     { id: 2, video: "/Video2.mp4" },
     { id: 3, video: "/Video3.mp4" },
   ];
   const goToNavigate = () => {
-    alert("Navigate");
+    const mapsUrl =
+      "https://www.google.com/maps/place/Maghar/@32.8733419,35.3949619,14z/data=!3m1!4b1!4m6!3m5!1s0x151c3a6ef0bba4b7:0x7aabf869ce2d72b9!8m2!3d32.8872843!4d35.4091765!16zL20vMGc3bmx4?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D";
+    window.open(mapsUrl, "_blank");
   };
   const goToContact = () => {
-    alert("Contact");
+    navigate("/CalculatorsPage");
   };
   return (
     <div className="hero-section">
+      <img className="hero-section-bg" src="/HeroSection/Bg.svg" alt="" />
       {activeBook && (
         <div className="video-overlay" onClick={() => setActiveBook(null)}>
           <video
@@ -34,7 +38,12 @@ const HeroSection = () => {
           src="/HeroSection/Title.svg"
           alt=""
         />
-        <button className="hero-section-button">دوراتنا</button>
+        <button className="hero-section-button">
+          زيدان - مكتب تدقيق حسابات
+        </button>
+        <div className="hero-section-subtitle">
+          من الاستشارة الى التنفيذ - كل الخدمات المحاسبية في مكان واحد
+        </div>
       </div>
       <div className="hero-section-shelf">
         <div className="hero-section-top-shelf">
@@ -59,8 +68,8 @@ const HeroSection = () => {
       </div>
       <div className="hero-section-table">
         <img
-          className="hero-table-phone"
-          src="/HeroSection/Phone.svg"
+          className="hero-table-calculator"
+          src="/HeroSection/Calculator.svg"
           alt=""
           onClick={goToContact}
         />
