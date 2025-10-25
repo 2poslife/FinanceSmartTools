@@ -336,6 +336,81 @@
     line-height: 1.5;
 }
 
+/* Alternative note design */
+.micro-self-employed-note-alt {
+    background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+    border: 2px solid #c4b5fd;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 8px 25px rgba(196, 181, 253, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.micro-self-employed-note-alt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    pointer-events: none;
+}
+
+.micro-self-employed-note-title-alt {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #5b21b6;
+    margin: 0 0 1rem 0 !important;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.micro-self-employed-note-text-alt {
+    color: #6b21b6;
+    font-size: 1rem;
+    margin: 0 0 1rem 0 !important;
+    padding: 0 !important;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.calculator-link-btn {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #1f2937;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+    position: relative;
+    z-index: 1;
+    margin-top: 0.5rem;
+    display: inline-block;
+    text-align: center;
+    min-width: 200px;
+}
+
+.calculator-link-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(251, 191, 36, 0.6);
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.calculator-link-btn:active {
+    transform: translateY(-1px);
+}
+
 .disclaimer {
     background: #fff3cd;
     border: 2px solid #000000;

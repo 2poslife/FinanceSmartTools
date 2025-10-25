@@ -1,3 +1,4 @@
+
 # 🚀 How to Run the App
 
 1. **Clone the repository** <br>
@@ -12,6 +13,8 @@ open the VS terminal and run
 ```bash
 npm run dev
 ```
+
+
 
 
 
