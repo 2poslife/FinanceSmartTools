@@ -60,17 +60,13 @@
 
 .mobile-values-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 15px;
   margin-bottom: 30px;
   align-items: stretch;
 }
 
-.mobile-value-trust {
-  grid-column: 3;
-  grid-row: 2;
-}
 
 .mobile-value-item {
   background: #ffffff;
@@ -87,6 +83,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.mobile-value-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
 }
 
 .mobile-value-item::before {
@@ -178,9 +180,9 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .mobile-values-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
+    gap: 12px;
   }
   
   .mobile-value-item {
@@ -209,9 +211,9 @@
   }
   
   .mobile-values-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 8px;
+    gap: 10px;
   }
   
   .mobile-value-item {

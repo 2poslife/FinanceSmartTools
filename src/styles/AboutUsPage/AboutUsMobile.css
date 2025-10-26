@@ -4,6 +4,7 @@
   min-height: 100vh;
   background: #fff;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* Global mobile styles */
@@ -11,7 +12,14 @@
   box-sizing: border-box;
 }
 
-/* Smooth scrolling for mobile */
+/* Enhanced mobile performance */
 .about-us-page-mobile {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Touch-friendly interactions */
+.about-us-page-mobile * {
+  -webkit-tap-highlight-color: transparent;
 }

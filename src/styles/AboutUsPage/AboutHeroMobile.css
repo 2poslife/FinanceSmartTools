@@ -41,9 +41,10 @@
 .mobile-title-highlight {
   font-size: 36px;
   font-weight: 900;
-  color: #333;
+  color: #2c3e50;
   text-align: center;
   line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-title-subtitle {
@@ -59,14 +60,15 @@
 }
 
 .mobile-hero-description {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   color: #555;
-  line-height: 1.6;
+  line-height: 1.7;
   text-align: center;
   direction: rtl;
-  max-width: 300px;
+  max-width: 320px;
   margin: 0 auto;
+  letter-spacing: 0.3px;
 }
 
 .mobile-vision-box {

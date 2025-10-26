@@ -40,13 +40,6 @@ function AboutValuesMobile() {
               نواكب التغييرات لنقدم حلولًا ذكية وعملية
             </p>
           </div>
-          
-          <div className="mobile-value-item mobile-value-trust">
-            <h3 className="mobile-value-title">الثقة</h3>
-            <p className="mobile-value-description">
-              هدفنا أن نبني علاقة طويلة المدى قائمة على الصدق
-            </p>
-          </div>
         </div>
         
         <div className="mobile-values-logo">
