@@ -30,7 +30,7 @@
 }
 
 .services-title-2-mobile {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 800;
     background: linear-gradient(135deg, #1e293b 0%, #475569 50%, #64748b 100%);
     -webkit-background-clip: text;
@@ -188,7 +188,7 @@
     }
     
     .services-title-2-mobile {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
     
     .services-category-2-mobile {

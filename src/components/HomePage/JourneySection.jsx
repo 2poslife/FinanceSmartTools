@@ -32,8 +32,7 @@ function JourneySection() {
           <h2 className="homepage-journey-title">ابدأ رحلتك المحاسبية اليوم</h2>
           
           <p className="homepage-journey-subtitle">
-            لا تفوت الفرصة للانضمام إلى مجتمعنا من المحاسبين المحترفين واستخدام
-            أدواتنا المجانية
+            لا تفوت الفرصة في الانضمام الى مجتمعنا من المحاسبين
           </p>
 
           <div className="homepage-journey-stats">
@@ -46,8 +45,8 @@ function JourneySection() {
               <span className="homepage-stat-label">مكتب زيدان</span>
             </div>
             <div className="homepage-stat-item">
-              <span className="homepage-stat-number">24/7</span>
-              <span className="homepage-stat-label">دعم فني</span>
+              <span className="homepage-stat-number">أدوات عملية</span>
+              <span className="homepage-stat-label">ومحدّثة باستمرار</span>
             </div>
           </div>
 

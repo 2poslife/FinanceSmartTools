@@ -28,7 +28,7 @@
 
 .features-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 60px;
     align-items: center;
 }
@@ -61,7 +61,7 @@
 }
 
 .features-text {
-    padding-right: 40px;
+    padding-right: 10px;
 }
 
 .features-title {
@@ -73,6 +73,7 @@
     line-height: 1.2;
     letter-spacing: -0.5px;
     position: relative;
+    white-space: nowrap;
 }
 
 .features-title::after {
@@ -104,24 +105,25 @@
 .features-item {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-    font-size: 1.1rem;
+    margin-bottom: 22px;
+    font-size: 1.05rem;
     font-weight: 500;
     color: #1e293b;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
 }
 
 .features-checkmark {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     background: linear-gradient(135deg, #d4af37 0%, #b89453 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 15px;
+    margin-left: 12px;
     flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 3px 10px rgba(212, 175, 55, 0.25);
     transition: all 0.3s ease;
     position: relative;
 }
@@ -162,6 +164,8 @@
 
 .features-text-item {
     flex: 1;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
 }
 
 /* Responsive Design */

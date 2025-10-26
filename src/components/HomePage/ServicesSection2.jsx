@@ -6,7 +6,7 @@ function ServicesSection2() {
         {
             id: 1,
             title: "إدارة وتدقيق حسابات",
-            description: "تجهيز ومراجعة تقارير سنوية",
+            description: "تجهيز ومراجعة تقارير سنوية للشركات والمستقلين",
             icon: "📊",
             iconBg: "#FDF4E3"
         },

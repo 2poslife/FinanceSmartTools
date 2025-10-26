@@ -3,7 +3,7 @@
 ========================= */
 .hero-section {
   width: 100%;
-  height: calc(100vh - 72px);
+  height: 870px;
   position: relative;
   overflow: hidden;
 }
