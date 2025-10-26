@@ -205,10 +205,12 @@ const AdminPage = () => {
                             <span className="nav-icon">👥</span>
                             <span className="nav-text">إضافة مستخدم</span>
                         </div>
+                        {/* COMMENTED OUT - Constants update functionality no longer needed
                         <div className="nav-item" onClick={() => navigate("/AdminConsts")}>
                             <span className="nav-icon">⚙️</span>
                             <span className="nav-text">تعديل الثوابت</span>
                         </div>
+                        */}
                         <div className="nav-item" onClick={() => navigate("/CalculatorsPage")}>
                             <span className="nav-icon">🧮</span>
                             <span className="nav-text">إدارة الحاسبات</span>

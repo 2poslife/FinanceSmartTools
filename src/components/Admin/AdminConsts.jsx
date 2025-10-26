@@ -1,3 +1,5 @@
+// COMMENTED OUT - Constants update functionality no longer needed
+/*
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
@@ -194,6 +196,17 @@ export default function AdminConsts() {
                     </div>
                 </div>
             )}
+        </div>
+    );
+}
+*/
+
+// Placeholder component to prevent errors
+export default function AdminConsts() {
+    return (
+        <div style={{ padding: '2rem', textAlign: 'center' }}>
+            <h2>Constants Management</h2>
+            <p>This feature has been disabled.</p>
         </div>
     );
 }

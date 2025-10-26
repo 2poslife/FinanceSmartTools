@@ -21,7 +21,8 @@ import SigninForm from "./components/Auth/SigninForm";
 
 // Admin
 import AdminPage from "./components/Admin/AdminPage";
-import AdminConsts from "./components/Admin/AdminConsts";
+// COMMENTED OUT - Constants update functionality no longer needed
+// import AdminConsts from "./components/Admin/AdminConsts";
 
 // Calculators
 import EmployeeCostNoPension from "./components/Calculators/EmployeeCostNoPension";
@@ -134,7 +135,9 @@ function Layout() {
 
         {/* Admin Routes */}
         <Route path="/AdminPage" element={<AdminPage />} />
+        {/* COMMENTED OUT - Constants update functionality no longer needed
         <Route path="/AdminConsts" element={<AdminConsts />} />
+        */}
       </Routes>
 
       <Footer />
