@@ -42,14 +42,14 @@ const CalculatorsGridMobile = () => {
             icon: <FileSpreadsheet className="calculators-sim-icon" />,
         },
         {
-            title: "מחשבון מקדמות – ביטוח לאומי לעצמאי",
+            title: "כלי עזר מקדמות ובחירת סוג תיק לעצמאי בביטוח לאומי",
             desc: "חשב כמה דמי ביטוח לאומי ישלם עצמאי ומהי ההגדרה המתאימה לו",
             link: "/simulators/self-employed",
             icon: <Briefcase className="calculators-sim-icon" />,
         },
         {
             title: "מחשבון מס הכנסה ע״פ נקודות הזיכוי",
-            desc: "חשב את מס ההכנסה ע״פ נקודות הזיכוי",
+            desc: "גלה כמה מס תשלם לפי ההכנסה שלך ונקודות הזיכוי",
             link: "/simulators/IncomeTaxWithPoints",
             icon: <CreditCard className="calculators-sim-icon" />,
         },

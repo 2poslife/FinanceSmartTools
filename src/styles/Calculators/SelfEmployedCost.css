@@ -350,6 +350,63 @@
     line-height: 1.5;
 }
 
+/* Important info section */
+.self-employed-important-info {
+    background: #f0f9ff;
+    border: 2px solid #0ea5e9;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    text-align: right;
+    direction: rtl;
+}
+
+.self-employed-important-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0c4a6e;
+    margin: 0 !important;
+    margin-bottom: 1rem !important;
+    padding: 0 !important;
+    text-align: right;
+}
+
+.self-employed-important-text {
+    color: #0c4a6e;
+    font-size: 1rem;
+    margin: 0 !important;
+    margin-bottom: 1rem !important;
+    padding: 0 !important;
+    line-height: 1.5;
+    text-align: right;
+}
+
+.self-employed-conditions {
+    margin: 1rem 0 !important;
+    padding-right: 1.5rem !important;
+    text-align: right;
+    direction: rtl;
+}
+
+.self-employed-conditions li {
+    color: #0c4a6e;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+    text-align: right;
+}
+
+.self-employed-warning-text {
+    color: #dc2626;
+    font-size: 1rem;
+    margin: 0 !important;
+    margin-top: 1rem !important;
+    padding: 0 !important;
+    line-height: 1.5;
+    text-align: right;
+    font-weight: 500;
+}
+
 .calcpage-summary {
     background: #f0f9ff;
     border: 2px solid #0ea5e9;
