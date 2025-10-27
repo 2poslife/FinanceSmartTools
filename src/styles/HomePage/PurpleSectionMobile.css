@@ -1,0 +1,41 @@
+.purple-section-mobile {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  padding: 0 1rem;
+}
+
+.purple-container-mobile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-svg-mobile {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 480px) {
+  .purple-section-mobile {
+    height: 350px;
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .purple-section-mobile {
+    height: 300px;
+  }
+}

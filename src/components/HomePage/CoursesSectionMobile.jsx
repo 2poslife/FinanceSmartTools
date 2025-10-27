@@ -1,57 +1,37 @@
 import React from "react";
+import { courses } from "../../assets/data/courseMock";
+import CourseCard from "./CourseCard";
 import "../../styles/HomePage/CoursesSectionMobile.css";
-import { homePageCourses } from "../../assets/data/courseMock";
 
 function CoursesSectionMobile() {
+  const topCourses = [...courses].slice(0, 3);
+
   return (
-    <section dir="rtl" className="courses-section-mobile">
+    <section className="courses-section-mobile">
       <div className="courses-container-mobile">
+        <h2 className="courses-title-mobile">
+          دورات مصممة لتناسب احتياجات المحاسبين في التعامل مع:
+        </h2>
+
         <div className="courses-intro-mobile">
-          <h2 className="courses-title-mobile">دوراتنا التدريبية</h2>
-          <p className="courses-subtitle-mobile">
-            اكتشف مجموعة متنوعة من الدورات المحاسبية المتخصصة
-          </p>
-          
-          <div className="courses-points-mobile">
-            <div className="point-mobile">
-              <span className="point-icon-mobile">✅</span>
-              <span>دورات معتمدة ومهنية</span>
-            </div>
-            <div className="point-mobile">
-              <span className="point-icon-mobile">📚</span>
-              <span>محتوى شامل ومفصل</span>
-            </div>
-            <div className="point-mobile">
-              <span className="point-icon-mobile">🎯</span>
-              <span>أمثلة عملية من الواقع</span>
-            </div>
-          </div>
+          <ul>
+            <li className="intro-point-mobile">الأفراد - أجيرين ومستقلين</li>
+            <li className="intro-point-mobile">
+              الشركات - تقارير مالية، إدارة حسابات، وتدقيق تقارير شركات
+            </li>
+          </ul>
         </div>
 
         <div className="courses-grid-mobile">
-          {homePageCourses.map((course) => (
-            <div key={course.id} className="course-card-mobile">
-              <div className="course-image-mobile">
-                <img src={course.image} alt={course.title} />
-              </div>
-              <div className="course-content-mobile">
-                <h3 className="course-title-mobile">{course.title}</h3>
-                <p className="course-subtitle-mobile">{course.subtitle}</p>
-                <p className="course-description-mobile">{course.description}</p>
-                <div className="course-meta-mobile">
-                  <span className="course-duration-mobile">⏱️ {course.duration}</span>
-                  <span className="course-level-mobile">📊 {course.level}</span>
-                </div>
-                <button className="course-btn-mobile">تعرف على المزيد</button>
-              </div>
-            </div>
+          {topCourses.map((course) => (
+            <CourseCard key={course.id} course={course} />
           ))}
         </div>
 
         <div className="courses-conclusion-mobile">
-          <h3>ابدأ رحلتك التعليمية معنا اليوم</h3>
-          <p>انضم إلى آلاف الطلاب الذين طوروا مهاراتهم المحاسبية معنا</p>
-          <button className="cta-btn-mobile">عرض جميع الدورات</button>
+          <p className="courses-conclusion-text-mobile">
+            في مكتبنا، نعمل على أساس قيم واضحة: الشفافية مع عملائنا، الاحترافية في كل خدمة، المسؤولية الكاملة عن النتائج، والابتكار في الحلول.
+          </p>
         </div>
       </div>
     </section>

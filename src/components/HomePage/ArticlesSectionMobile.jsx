@@ -30,9 +30,9 @@ function ArticlesSectionMobile() {
     <section dir="rtl" className="articles-section-mobile">
       <div className="articles-container-mobile">
         <div className="articles-header-mobile">
-          <h2 className="articles-title-mobile">أحدث المقالات</h2>
+          <h2 className="articles-title-mobile">مقالاتنا المالية</h2>
           <p className="articles-subtitle-mobile">
-            اكتشف مقالات مفيدة في المحاسبة والمالية
+            نصائح ومعلومات مفيدة من خبرائنا
           </p>
         </div>
 

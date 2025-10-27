@@ -5,31 +5,45 @@ function ServicesSection2Mobile() {
     const services = [
         {
             id: 1,
-            title: "أدوات حاسبة محاسبية تفاعلية",
-            description: "حاسبات متخصصة لحساب الضرائب والتكاليف والرواتب بدقة عالية",
-            icon: "🧮",
+            title: "إدارة وتدقيق حسابات",
+            description: "تجهيز ومراجعة تقارير سنوية للشركات والمستقلين",
+            icon: "📊",
             iconBg: "#FDF4E3"
         },
         {
             id: 2,
-            title: "ورش عمل في التدقيق المحاسبي",
-            description: "ورش تدريبية متخصصة في التدقيق المحاسبي والممارسات المهنية",
-            icon: "📊",
+            title: "استشارات مهنية",
+            description: "استشارات مهنية في المحاسبة والضرائب والتخطيط المالي",
+            icon: "💼",
             iconBg: "#FDF4E3",
             featured: true
         },
         {
             id: 3,
-            title: "استشارات محاسبية متخصصة",
-            description: "استشارات مهنية في المحاسبة والضرائب والتخطيط المالي",
-            icon: "💼",
+            title: "دورات تدريبية",
+            description: "دورات من المبتدىء إلى المتقدم للمحاسبين",
+            icon: "📚",
             iconBg: "#FDF4E3"
         },
         {
             id: 4,
-            title: "دورات المحاسبة الأساسية والمتقدمة",
-            description: "دورات شاملة من المبتدئ إلى المتقدم في المحاسبة المالية",
-            icon: "📚",
+            title: "آلات حاسبة ذكية",
+            description: "أدوات عملية تساعدك في اتخاذ قرارات محاسبية دقيقة",
+            icon: "🧮",
+            iconBg: "#FDF4E3"
+        },
+        {
+            id: 5,
+            title: "مرافقة شخصية",
+            description: "مرافقة شخصية من محاسبين معتمدين",
+            icon: "🤝",
+            iconBg: "#FDF4E3"
+        },
+        {
+            id: 6,
+            title: "مقالات ونصائح مهنية",
+            description: "محتوى تعليمي ومقالات مهنية لتطوير مهاراتك المحاسبية",
+            icon: "📝",
             iconBg: "#FDF4E3"
         }
     ];
@@ -38,9 +52,8 @@ function ServicesSection2Mobile() {
         <section className="services-section-2-mobile">
             <div className="services-container-2-mobile">
                 <div className="services-header-2-mobile">
-                    <span className="services-category-2-mobile">خدماتنا</span>
-                    <h2 className="services-title-2-mobile">خدماتنا المتميزة</h2>
-                    <p className="services-subtitle-2-mobile">نقدم حلول محاسبية شاملة ومتخصصة لجميع احتياجاتك</p>
+                    <h2 className="services-title-2-mobile">خدمات محاسبة شاملة</h2>
+                    <p className="services-subtitle-2-mobile">في مكان واحد!</p>
                 </div>
                 
                 <div className="services-grid-2-mobile">

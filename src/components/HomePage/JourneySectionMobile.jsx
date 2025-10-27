@@ -31,8 +31,7 @@ function JourneySectionMobile() {
           <h2 className="homepage-journey-title-mobile">ابدأ رحلتك المحاسبية اليوم</h2>
           
           <p className="homepage-journey-subtitle-mobile">
-            لا تفوت الفرصة للانضمام إلى مجتمعنا من المحاسبين المحترفين واستخدام
-            أدواتنا المجانية
+            لا تفوت الفرصة في الانضمام الى مجتمعنا من المحاسبين
           </p>
 
           <div className="homepage-journey-stats-mobile">
@@ -45,8 +44,8 @@ function JourneySectionMobile() {
               <span className="homepage-stat-label-mobile">مكتب زيدان</span>
             </div>
             <div className="homepage-stat-item-mobile">
-              <span className="homepage-stat-number-mobile">24/7</span>
-              <span className="homepage-stat-label-mobile">دعم فني</span>
+              <span className="homepage-stat-number-mobile">أدوات عملية</span>
+              <span className="homepage-stat-label-mobile">ومحدّثة باستمرار</span>
             </div>
           </div>
 

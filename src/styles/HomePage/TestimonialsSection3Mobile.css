@@ -1,0 +1,239 @@
+/* Mobile Testimonials Section */
+.testimonials-section-3-mobile {
+  background: #f7f8fa;
+  padding: 3rem 1rem;
+}
+
+.testimonials-container-3-mobile {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+/* Heading */
+.testimonials-heading-3-mobile {
+  text-align: center;
+  direction: rtl;
+  width: 100%;
+}
+
+.testimonials-label-3-mobile {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.testimonials-title-3-mobile {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1e293b;
+  margin: 0;
+}
+
+/* Cards Container */
+.testimonials-cards-3-mobile {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+}
+
+/* Testimonial Card */
+.testimonial-card-mobile {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid #f1f5f9;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.testimonial-avatar-3-mobile {
+  position: absolute;
+  top: -25px;
+  right: 20px;
+  z-index: 2;
+}
+
+.testimonial-avatar-3-mobile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  background-color: #000;
+  padding: 6px;
+}
+
+/* Card content */
+.testimonial-content-3-mobile {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120px;
+}
+
+.testimonial-text-3-mobile {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #374151;
+  margin-bottom: 1rem;
+  font-style: italic;
+  text-align: right;
+  direction: rtl;
+  flex: 1;
+}
+
+.testimonial-author-3-mobile {
+  text-align: right;
+  direction: rtl;
+  margin-top: auto;
+}
+
+.testimonial-author-3-mobile h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.25rem 0;
+}
+
+.testimonial-author-3-mobile span {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Navigation */
+.testimonials-navigation-3-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Dots Navigation */
+.testimonials-dots-3-mobile {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.testimonial-dot-3-mobile {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testimonial-dot-3-mobile.active {
+  background: #1e293b;
+  transform: scale(1.2);
+}
+
+.testimonial-dot-3-mobile:hover {
+  background: #9ca3af;
+}
+
+/* Arrows */
+.testimonials-arrows-3-mobile {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.arrow-btn-3-mobile {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #6b7280;
+}
+
+.arrow-btn-3-mobile:hover {
+  background: #f8fafc;
+  border-color: #d1d5db;
+  color: #374151;
+}
+
+/* Animation classes */
+.testimonial-card-animating {
+  opacity: 0.7;
+  transform: scale(0.98);
+  transition: all 0.3s ease;
+}
+
+.avatar-animating {
+  opacity: 0.6;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+}
+
+.testimonial-content-animating {
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .testimonials-section-3-mobile {
+    padding: 2rem 0.75rem;
+  }
+  
+  .testimonials-title-3-mobile {
+    font-size: 1.5rem;
+  }
+  
+  .testimonial-card-mobile {
+    padding: 1.25rem;
+  }
+  
+  .testimonial-text-3-mobile {
+    font-size: 0.9rem;
+  }
+  
+  .testimonial-avatar-3-mobile {
+    top: -20px;
+    right: 15px;
+  }
+  
+  .testimonial-avatar-3-mobile img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 360px) {
+  .testimonials-title-3-mobile {
+    font-size: 1.3rem;
+  }
+  
+  .testimonial-card-mobile {
+    padding: 1rem;
+  }
+  
+  .testimonial-text-3-mobile {
+    font-size: 0.85rem;
+  }
+}

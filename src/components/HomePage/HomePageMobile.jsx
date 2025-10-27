@@ -1,17 +1,14 @@
 import React from "react";
 import HeroSectionMobile from "./HeroSectionMobile";
-import ServicesSectionMobile from "./ServicesSectionMobile";
 import ServicesSection2Mobile from "./ServicesSection2Mobile";
 import FeaturesSectionMobile from "./FeaturesSectionMobile";
-import FixedBackgroundSectionMobile from "./FixedBackgroundSectionMobile";
 import WhySectionMobile from "./WhySectionMobile";
 import CoursesSectionMobile from "./CoursesSectionMobile";
-import ImageSectionMobile from "./ImageSectionMobile";
 import JourneySectionMobile from "./JourneySectionMobile";
 import PracticalJourneySection from "./PracticalJourneySection";
+import PurpleSectionMobile from "./PurpleSectionMobile";
 import FAQSectionMobile from "./FAQSectionMobile";
-import TestimonialsSectionMobile from "./TestimonialsSectionMobile";
-import TestimonialsSection2Mobile from "./TestimonialsSection2Mobile";
+import TestimonialsSection3Mobile from "./TestimonialsSection3Mobile";
 import ArticlesSectionMobile from "./ArticlesSectionMobile";
 import BackToTop from "./BackToTop";
 
@@ -19,18 +16,15 @@ function HomePageMobile() {
   return (
     <div className="homepage-mobile">
       <HeroSectionMobile />
-      <ServicesSectionMobile />
       <ServicesSection2Mobile />
       <FeaturesSectionMobile />
-      <FixedBackgroundSectionMobile />
       <WhySectionMobile />
       <CoursesSectionMobile />
-      <ImageSectionMobile />
       <JourneySectionMobile />
       <PracticalJourneySection />
+      <PurpleSectionMobile />
       <FAQSectionMobile />
-      <TestimonialsSectionMobile />
-      <TestimonialsSection2Mobile />
+      <TestimonialsSection3Mobile />
       <ArticlesSectionMobile />
       <BackToTop />
     </div>

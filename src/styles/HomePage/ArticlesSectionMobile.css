@@ -1,7 +1,8 @@
 /* Mobile Articles Section */
 .articles-section-mobile {
   padding: 60px 20px;
-  background: white;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-bottom: 3px solid #000000;
 }
 
 .articles-container-mobile {

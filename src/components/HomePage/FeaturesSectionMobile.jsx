@@ -4,10 +4,11 @@ import '../../styles/HomePage/FeaturesSectionMobile.css';
 
 function FeaturesSectionMobile() {
     const features = [
-        "حسابات دقيقة ومحدثة باستمرار",
-        "تقارير مالية شاملة ومفصلة",
-        "استشارات محاسبية متخصصة",
-        "دعم فني على مدار الساعة"
+       "أدوات عملية وسهلة الاستخدام" ,
+        "مساعدة في اتخاذ قرارات صحيحة بدون الحاجة للبحث المطوّل أو الحساب اليدوي",
+     "تحديثات مستمرة لضمان دقة النتائج",
+        "حلول واجوبة فورية لمشاكل تواجه المحاسبين",
+
     ];
 
     return (
@@ -15,9 +16,10 @@ function FeaturesSectionMobile() {
             <div className="features-container-mobile">
                 <div className="features-content-mobile">
                     <div className="features-text-mobile">
-                        <h2 className="features-title-mobile">خدماتنا المتميزة</h2>
+                        <h2 className="features-title-mobile">أدواتنا المحاسبية الذكية</h2>
                         <p className="features-description-mobile">
-                            يمكنك الاستفادة من خدماتنا المحاسبية المتخصصة التي تقدم حلولاً شاملة لجميع احتياجاتك المالية والمحاسبية.
+                        طوّر مهاراتك المحاسبية من خلال مجموعة من الآلات الحاسبة والادوات المساعدة المصممة خصيصًا للمحاسبين ومديري الحسابات.
+كل آلة حاسبة تم بناؤها لتختصر عليك الوقت، وتقدّم لك أرقام دقيقة تساعدك في اتخاذ قرارات مالية مدروسة.
                         </p>
                         
                         <ul className="features-list-mobile">
