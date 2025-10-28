@@ -5,9 +5,7 @@ import FeaturesSectionMobile from "./FeaturesSectionMobile";
 import WhySectionMobile from "./WhySectionMobile";
 import CoursesSectionMobile from "./CoursesSectionMobile";
 import JourneySectionMobile from "./JourneySectionMobile";
-import PracticalJourneySection2 from "./PracticalJourneySection2";
-import PracticalJourneySection from "./PracticalJourneySection";
-import PurpleSectionMobile from "./PurpleSectionMobile";
+
 import FAQSectionMobile from "./FAQSectionMobile";
 import TestimonialsSection3Mobile from "./TestimonialsSection3Mobile";
 import ArticlesSectionMobile from "./ArticlesSectionMobile";
@@ -22,8 +20,8 @@ function HomePageMobile() {
       <WhySectionMobile />
       <CoursesSectionMobile />
       <JourneySectionMobile />
-      <PracticalJourneySection2 />
-      <PracticalJourneySection />
+      {/* <PracticalJourneySection2 />
+      <PracticalJourneySection /> */}
       {/* <PurpleSectionMobile /> */}
       <FAQSectionMobile />
       <TestimonialsSection3Mobile />
