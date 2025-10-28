@@ -61,6 +61,8 @@
   position: relative;
   z-index: 1;
   animation: fadeInUp 1s ease-out;
+  text-align: right;
+  direction: rtl;
 }
 
 .coming-soon-page-text-arabic {
@@ -77,6 +79,8 @@
   border-radius: 15px;
   display: inline-block;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: right;
+  direction: rtl;
 }
 
 @keyframes fadeInUp {
@@ -134,3 +138,4 @@
     padding: 8px 12px;
   }
 }
+  

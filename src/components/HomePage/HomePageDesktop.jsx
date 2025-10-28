@@ -7,6 +7,7 @@ import FixedBackgroundSection from "./FixedBackgroundSection";
 import WhySection from "./WhySection";
 import CoursesSection from "./CoursesSection";
 import JourneySection from "./JourneySection";
+import PracticalJourneySection2 from "./PracticalJourneySection2";
 import PracticalJourneySection from "./PracticalJourneySection";
 import FAQSection from "./FAQSection";
 import TestimonialsSection from "./TestimonialsSection";
@@ -24,7 +25,8 @@ function HomePageDesktop() {
       <WhySection />
       <CoursesSection />
       <JourneySection />
-      <PracticalJourneySection />
+      <PracticalJourneySection2 />
+      {/* <PracticalJourneySection /> */}
       <PurpleSection />
       <FAQSection />
       <TestimonialsSection3 />

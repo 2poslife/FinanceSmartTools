@@ -1,0 +1,28 @@
+.practical-journey-section-2 {
+  width: 100%;
+  padding: 0;
+  margin: 0 0 -100px 0;
+  overflow: hidden;
+  background: #000000;
+}
+
+.practical-journey-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  margin-bottom: -50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .practical-journey-section-2 {
+    padding: 0;
+  }
+  
+  .practical-journey-video {
+    width: 100%;
+    height: auto;
+  }
+}
+

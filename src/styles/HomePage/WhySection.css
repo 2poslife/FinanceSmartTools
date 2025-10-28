@@ -1,12 +1,22 @@
 .why-section {
-  padding: 4rem 0;
-  background-color: #fafafa;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000; /* pure black fallback */
   background-image: 
-    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(212, 175, 55, 0.05) 35px, rgba(212, 175, 55, 0.05) 70px);
-  background-size: 100px 100px;
-  border-bottom: 3px solid #000000;
+    url('/black_gold.svg'),
+    radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.25) 0%, transparent 70%),
+    radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.15) 0%, transparent 60%);
+  background-repeat: no-repeat;
+  background-size: cover; /* important: fill the whole width and height */
+  background-position: center; /* centers the SVG, not pushed to right */
+  background-attachment: fixed; /* optional: gives a subtle parallax effect */
+  border-bottom: 3px solid #d4af37;
   position: relative;
+  overflow: hidden;
+  padding-top: 6rem;  /* push everything down */
+  padding-bottom: 4rem; /* optional, adds space at bottom too */
 }
+
 
 .why-section::before {
   content: '';
@@ -15,7 +25,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(250, 250, 250, 0.9) 100%);
   pointer-events: none;
   z-index: 0;
 }
@@ -36,13 +45,13 @@
 .section-header h2 {
   font-size: 2rem;
   font-weight: 900;
-  color: #2d3748;
+  color: #ffffff;
   font-family: "Arial Black", Arial, sans-serif;
 }
 
 .section-header p {
   margin-top: 0.75rem;
-  color: #718096;
+  color: #d4af37;
   font-weight: 700;
   font-family: "Arial Black", Arial, sans-serif;
   font-size: 1.4rem;
@@ -70,16 +79,18 @@
 
 .feature-card {
   border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s ease, transform 0.2s ease;
   height: 100%;
-  border: 3px solid #000000;
+  border: 3px solid #d4af37;
+  background: linear-gradient(145deg, #ffffff 0%, #f9f9f9 100%);
 }
 
 .feature-card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px rgba(212, 175, 55, 0.3);
   transform: translateY(-2px);
+  border-color: #f4d03f;
 }
 
 .icon-wrapper {
@@ -106,13 +117,13 @@
 }
 
 .feature-card h3 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 900;
   color: #2d3748;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.8rem;
   font-family: "Arial Black", Arial, sans-serif;
   text-align: center;
-  padding: 0.8rem 1rem;
+  padding: 0.5rem 0.8rem;
   border-radius: 0.8rem;
   position: relative;
   overflow: hidden;
@@ -120,7 +131,7 @@
 }
 
 .feature-card p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 900;
   font-family: "Arial Black", Arial, sans-serif;
   color: #2d3748;

@@ -18,7 +18,7 @@ export const homePageCourses = [
       "إدارة المخزون والمشتريات",
       "إعداد الميزانيات والتقارير السنوية"
     ],
-    videoUrl: "/חשבשת.mp4",
+    videoUrl: "/Video1.mp4",
     courseLink: "https://my.schooler.biz/s/94061/maZanem/ZMbWsJ8?pr=2"
   },
   {
@@ -39,7 +39,7 @@ export const homePageCourses = [
       "أمثلة عملية وملفات تطبيقية من واقع العمل اليومي لمكاتب مدققي الحسابات",
       "تجهيز סט הגשה למס הכנסה وأمثلة رقمية لشركات حقيقية"
     ],
-    videoUrl: "/מאזנים.mp4",
+    videoUrl: "/Video2.mp4",
     courseLink: "https://my.schooler.biz/s/94061/maZanem/ZMbWsJ8?pr=2"
   },
   {
@@ -123,7 +123,7 @@ export const detailedCourses = {
         ]
       }
     ],
-    videoUrl: "/חשבשת.mp4",
+    videoUrl: "/Video1.mp4",
     courseLink: "https://my.schooler.biz/s/87349/hashavshavit/dmOqeEU?pr=2"
   },
   2: {
@@ -191,7 +191,7 @@ export const detailedCourses = {
         ]
       },
     ],
-    videoUrl: "/מאזנים.mp4",
+    videoUrl: "/Video2.mp4",
     courseLink: "https://my.schooler.biz/s/94061/maZanem/ZMbWsJ8?pr=2"
   },
   3: {
@@ -236,7 +236,7 @@ export const detailedCourses = {
         ]
       }
     ],
-    videoUrl: "/עצמאי.mp4",
+    videoUrl: "/Video3.mp4",
     courseLink: "https://my.schooler.biz/s/77784/AtoZ/FGjiinA?pr=2"
   }
 };
@@ -261,7 +261,7 @@ export const courses = [
       "إدارة المخزون والمشتريات",
       "إعداد الميزانيات والتقارير السنوية"
     ],
-    videoUrl: "/חשבשת.mp4",
+    videoUrl: "/Video1.mp4",
     courseLink: "https://my.schooler.biz/s/94061/maZanem/ZMbWsJ8?pr=2"
   },
   {
@@ -282,7 +282,7 @@ export const courses = [
       "أمثلة عملية وملفات تطبيقية من واقع العمل اليومي لمكاتب مدققي الحسابات",
       "تجهيز סט הגשה למס הכנסה وأمثلة رقمية لشركات حقيقية"
     ],
-    videoUrl: "/מאזנים.mp4",
+    videoUrl: "/Video2.mp4",
     courseLink: "https://my.schooler.biz/s/94061/maZanem/ZMbWsJ8?pr=2"
   },
   {
