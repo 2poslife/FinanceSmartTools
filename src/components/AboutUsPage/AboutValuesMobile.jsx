@@ -7,43 +7,43 @@ function AboutValuesMobile() {
       <div className="mobile-values-container">
         <div className="mobile-values-header">
           <h2 className="mobile-values-title">قيمنا ومبادئنا</h2>
-          <p className="mobile-values-subtitle">
-            نؤمن بأن التعليم المحاسبي الجيد يبني أساساً قوياً للنجاح المهني
-          </p>
         </div>
         
         <div className="mobile-values-grid">
           <div className="mobile-value-item">
             <h3 className="mobile-value-title">الشفافية</h3>
             <p className="mobile-value-description">
-              نؤمن بأن الزبون يجب أن يعرف كل التفاصيل بوضوح
+              نؤمن بأن الزبون يجب أن يعرف كل التفاصيل بوضوح، ومن دون أي مفاجآت.
             </p>
           </div>
           
           <div className="mobile-value-item">
-            <h3 className="mobile-value-title">الاحترافية</h3>
+            <h3 className="mobile-value-title">الاحترافية والدقة</h3>
             <p className="mobile-value-description">
-              نلتزم بأعلى معايير المهنة والدقة في كل خدمة
+              نلتزم بأعلى معايير المهنة والدقة في كل خدمة نقدمها.
             </p>
           </div>
           
           <div className="mobile-value-item">
             <h3 className="mobile-value-title">المسؤولية</h3>
             <p className="mobile-value-description">
-              نتعامل مع كل ملف وكأنه الوحيد ونمنحه الخدمة على أتم وجه
+              نتعامل مع كل ملف، وكل معاملة، وكل زبون وكأنه الوحيد، ونمنحه الخدمة على أتم وجه.
             </p>
           </div>
           
           <div className="mobile-value-item">
             <h3 className="mobile-value-title">الابتكار</h3>
             <p className="mobile-value-description">
-              نواكب التغييرات لنقدم حلولًا ذكية وعملية
+              نواكب التغييرات في القوانين والتكنولوجيا لنقدم حلولًا ذكية وعملية.
             </p>
           </div>
-        </div>
-        
-        <div className="mobile-values-logo">
-          <img src="/logo.png" alt="Logo" className="mobile-logo-image" />
+          
+          <div className="mobile-value-item mobile-value-item-last">
+            <h3 className="mobile-value-title">الثقة</h3>
+            <p className="mobile-value-description">
+              هدفنا أن نبني علاقة طويلة المدى قائمة على الصدق والالتزام.
+            </p>
+          </div>
         </div>
         
         <div className="mobile-values-conclusion">

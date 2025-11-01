@@ -49,8 +49,10 @@ function WhySectionMobile() {
                 <div className="feature-icon-mobile">
                   <IconComponent className="icon" />
                 </div>
-                <h3 className="feature-title-mobile">{feature.title}</h3>
-                <p className="feature-description-mobile">{feature.description}</p>
+                <div className="feature-content-mobile">
+                  <h3 className="feature-title-mobile">{feature.title}</h3>
+                  <p className="feature-description-mobile">{feature.description}</p>
+                </div>
               </div>
             );
           })}

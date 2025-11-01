@@ -1,31 +1,104 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { MapPin, Mail, Phone } from "lucide-react";
 import "../../styles/HomePage/HeroSectionMobile.css";
 
 function HeroSectionMobile() {
+  const navigate = useNavigate();
+  const [showContact, setShowContact] = useState(false);
+
+  const handleDiscoverServices = () => {
+    navigate("/courses");
+  };
+
+  const handleContactUs = () => {
+    setShowContact(true);
+  };
+
   return (
-    <section className="hero-mobile">
-      <div className="hero-bg-mobile">
-        <img src="/heroImageBG.png" alt="Hero Background" />
-      </div>
-      <div className="hero-overlay-mobile"></div>
-      <div className="hero-content-mobile">
-      <div className="hero-mobile-logo">
-        <img src="/logo.png" alt="Company Logo" />
-      </div>
-        <div className="hero-text-mobile">
-          <h1 className="hero-title-mobile">
-            مكتب زيدان للمحاسبة والاستشارات المالية
-          </h1>
-          <p className="hero-subtitle-mobile">
-            نقدم لك أفضل الحلول المحاسبية والاستشارات المالية المتخصصة
-          </p>
-          <div className="hero-buttons-mobile">
-            <button className="btn-primary-mobile">اكتشف خدماتنا</button>
-            <button className="btn-secondary-mobile">تواصل معنا</button>
+    <>
+      <section className="hero-mobile">
+        <img src="/heromobile.svg" alt="Hero Section" className="hero-section-bg-mobile" />
+        <div className="hero-content-mobile">
+          <div className="hero-mobile-logo">
+            <img src="/logo.png" alt="Company Logo" />
+          </div>
+          <div className="hero-text-mobile">
+            <h1 className="hero-title-mobile">
+              مكتب زيدان للمحاسبة والاستشارات المالية
+            </h1>
+            <p className="hero-subtitle-mobile">
+              نقدم لك أفضل الحلول المحاسبية والاستشارات المالية المتخصصة
+            </p>
+            <div className="hero-buttons-mobile">
+              <button className="btn-primary-mobile" onClick={handleDiscoverServices}>
+                اكتشف خدماتنا
+              </button>
+              <button className="btn-secondary-mobile" onClick={handleContactUs}>
+                تواصل معنا
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Contact Modal */}
+      {showContact && (
+        <div
+          className="mobile-modal-overlay"
+          onClick={() => setShowContact(false)}
+        >
+          <div
+            className="mobile-modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="mobile-modal-close"
+              onClick={() => setShowContact(false)}
+            >
+              ✖
+            </button>
+
+            <section className="mobile-about-contact">
+              <h2>تواصل معنا</h2>
+              <p>نحن دائمًا هنا لمساعدتك</p>
+
+              <div className="mobile-contact-grid">
+                <div className="mobile-contact-card">
+                  <div className="mobile-icon-wrapper green">
+                    <MapPin className="mobile-contact-icon" />
+                  </div>
+                  <h3>موقعنا</h3>
+                  <p dir="rtl">
+                    <strong>📍 المغار</strong>
+                  </p>
+                </div>
+
+                <div className="mobile-contact-card">
+                  <div className="mobile-icon-wrapper blue">
+                    <Mail className="mobile-contact-icon" />
+                  </div>
+                  <h3>راسلنا</h3>
+                  <p>
+                    <strong>zedan.cpa@gmail.com</strong>
+                  </p>
+                </div>
+
+                <div className="mobile-contact-card">
+                  <div className="mobile-icon-wrapper orange">
+                    <Phone className="mobile-contact-icon" />
+                  </div>
+                  <h3>اتصل بنا</h3>
+                  <p dir="rtl">
+                    <strong>0528092596</strong>
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

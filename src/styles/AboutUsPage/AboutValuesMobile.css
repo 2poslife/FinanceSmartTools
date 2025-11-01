@@ -111,6 +111,10 @@
   transform: scaleX(1);
 }
 
+.mobile-value-item-last {
+  grid-column: 2;
+  margin-left: auto;
+}
 
 .mobile-value-title {
   font-size: 18px;

@@ -12,11 +12,13 @@ function AboutContentMobile() {
           
           <div className="mobile-content-body">
             <p className="mobile-content-paragraph">
+              نحن مكتب حسابات مستقل، نقدم خدمات مالية محاسبية وضريبية بجودة عالية وبمهنية تامة. 
               يجمع مكتبنا بين الخبرة العملية والمعرفة الأكاديمية، لنقدم لكل عميل خدمة دقيقة، سريعة، وشفافة.
             </p>
             
             <p className="mobile-content-paragraph">
-              منذ تأسيس مكتب زيدان، لم يقتصر دورنا على تقديم الخدمات، بل أخذنا على عاتقنا مرافقة الأشخاص ودعمهم.
+              منذ تأسيس مكتب زيدان، لم يقتصر دورنا على تقديم الخدمات، بل أخذنا على عاتقنا مرافقة الأشخاص ودعمهم، 
+              سواء في حقوقهم كموظفين، فهمهم لعالم الضرائب، أو شرح القوانين الجديدة بشكل مبسط.
             </p>
             
             <div className="mobile-highlight-box">
@@ -26,7 +28,9 @@ function AboutContentMobile() {
             </div>
             
             <div className="mobile-instagram-section">
-              <p className="mobile-instagram-text">تعرّف علينا أكثر:</p>
+              <p className="mobile-instagram-text">
+                وإذا لم تتعرف عليها بعد - حان الوقت لتزورنا وتتعرف علينا أكثر:
+              </p>
               <a 
                 href="https://www.instagram.com/cpa.zedan" 
                 target="_blank" 
@@ -45,7 +49,8 @@ function AboutContentMobile() {
             
             <div className="mobile-final-message">
               <p className="mobile-message-text">
-                مستمرون في مساعدتكم لتصبحوا محاسبين مستقلين ناجحين بأعمالكم.
+                نحن كما عودناكم دائمًا، مستمرون في مساعدتكم لتصبحوا محاسبين مستقلين ناجحين بأعمالكم. 
+                أو موظفين محترفين، واثقين بأنفسهم، غير معتمدين على أحد.
               </p>
             </div>
           </div>

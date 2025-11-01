@@ -14,8 +14,8 @@
   border-bottom: 3px solid #d4af37;
   position: relative;
   overflow: hidden;
-  padding-top: 6rem;  /* push everything down */
-  padding-bottom: 4rem; /* optional, adds space at bottom too */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .why-section-mobile::before {
@@ -38,7 +38,7 @@
 
 .section-header-mobile {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .section-title-mobile {
@@ -61,42 +61,52 @@
 .features-grid-mobile {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 12px;
 }
 
 .feature-card-mobile {
   background: linear-gradient(145deg, #ffffff 0%, #f9f9f9 100%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 3px solid #d4af37;
-  padding: 20px 20px;
-  text-align: center;
+  border-radius: 12px;
+  border: 2px solid #d4af37;
+  padding: 18px 20px;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.12), 0 1px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: right;
 }
 
 .feature-card-mobile:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.2), 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-color: #f4d03f;
 }
 
 .feature-icon-mobile {
-  width: 90px;
-  height: 90px;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
   background: linear-gradient(135deg, #d4af37 0%, #b89453 100%);
-  border-radius: 50%;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+  margin: 0;
+  box-shadow: 0 2px 12px rgba(212, 175, 55, 0.15);
+  transition: all 0.3s ease;
+}
+
+.feature-icon-mobile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
 }
 
 .feature-icon-mobile .icon {
-  width: 45px;
-  height: 45px;
+  width: 28px;
+  height: 28px;
   color: white;
   stroke-width: 2;
 }
@@ -107,17 +117,24 @@
 }
 
 .feature-title-mobile {
-  font-size: 1.5rem;
-  font-weight: 900;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: #2d3748;
-  margin-bottom: 10px;
+  margin: 0 0 6px 0;
   font-family: "Arial Black", Arial, sans-serif;
 }
 
 .feature-description-mobile {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: #4a5568;
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
-  font-weight: 700;
+  font-weight: 400;
+}
+
+.feature-content-mobile {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }

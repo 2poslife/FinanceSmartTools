@@ -15,14 +15,31 @@ const CalculatorsGridMobile = () => {
     const navigate = useNavigate();
 
     const simulators = [
+        // Free calculator first in mobile
         {
-            title: "בדיקת עלות עובד (כולל פנסיה)",
+            title: "בדיקת עלות עובד",
+            titleSecondLine: "(כולל פנסיה)",
             desc: "חשב את עלות העובד למעסיק",
             link: "/simulators/employee-cost-with-pension",
             icon: <ShieldCheck className="calculators-sim-icon" />,
             isFree: true,
             freeNote: "🔥 ניתן להשתמש בחינם!"
         },
+        // First row - Non-self-employed calculators
+        {
+            title: "בדיקת עלות עובד",
+            titleSecondLine: "(רק מיסים ללא פנסיה)",
+            desc: "חשב עלות העובד ״המיסויית״ למעסיק",
+            link: "/simulators/employee-cost-no-pension",
+            icon: <FileSpreadsheet className="calculators-sim-icon" />,
+        },
+        {
+            title: "מחשבון מס הכנסה ע״פ נקודות הזיכוי",
+            desc: "גלה כמה מס תשלם לפי ההכנסה שלך ונקודות הזיכוי",
+            link: "/simulators/IncomeTaxWithPoints",
+            icon: <CreditCard className="calculators-sim-icon" />,
+        },
+        // Second row - Self-employed calculators
         {
             title: "מחשבון ביטוח לאומי עוסק זעיר",
             desc: "חשב כמה ישלם עצמאי בעל עוסק זעיר לביטוח לאומי",
@@ -36,22 +53,10 @@ const CalculatorsGridMobile = () => {
             icon: <Users className="calculators-sim-icon" />,
         },
         {
-            title: "בדיקת עלות עובד (רק מיסים ללא פנסיה)",
-            desc: "חשב עלות העובד ״המיסויית״ למעסיק",
-            link: "/simulators/employee-cost-no-pension",
-            icon: <FileSpreadsheet className="calculators-sim-icon" />,
-        },
-        {
             title: "כלי עזר מקדמות ובחירת סוג תיק לעצמאי בביטוח לאומי",
             desc: "חשב כמה דמי ביטוח לאומי ישלם עצמאי ומהי ההגדרה המתאימה לו",
             link: "/simulators/self-employed",
             icon: <Briefcase className="calculators-sim-icon" />,
-        },
-        {
-            title: "מחשבון מס הכנסה ע״פ נקודות הזיכוי",
-            desc: "גלה כמה מס תשלם לפי ההכנסה שלך ונקודות הזיכוי",
-            link: "/simulators/IncomeTaxWithPoints",
-            icon: <CreditCard className="calculators-sim-icon" />,
         },
     ];
 
@@ -88,14 +93,23 @@ const CalculatorsGridMobile = () => {
                         )}
                         <div className="calculators-card-header">
                             {sim.icon}
-                            <h3>{sim.title}</h3>
+                            <h3>
+                                {sim.title}
+                                {sim.titleSecondLine && ` ${sim.titleSecondLine}`}
+                            </h3>
                         </div>
                         <p>{sim.desc}</p>
                         {sim.isFree && (
                             <div className="free-note">{sim.freeNote}</div>
                         )}
                     </div>
-                ))}
+                    ))}
+            </div>
+            
+            <div className="calculators-conclusion">
+                <p className="calculators-conclusion-text">
+                    نوفر لك ادوات عملية تساعدك في اتخاذ قرارات محاسبية دقيقة
+                </p>
             </div>
         </section>
     );
