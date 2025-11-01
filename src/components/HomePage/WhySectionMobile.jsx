@@ -37,7 +37,7 @@ function WhySectionMobile() {
         <div className="section-header-mobile">
           <h2 className="section-title-mobile">لماذا نحن الخيار الأفضل؟</h2>
           <p className="section-subtitle-mobile">
-            نقدم تجربة تعليمية متكاملة تجمع بين النظرية والتطبيق العملي
+            نقدم تجربة تعليمية متكاملة تجمع بين النظري والتطبيق العملي
           </p>
         </div>
 

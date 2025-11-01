@@ -17,7 +17,7 @@ function WhySection() {
       <div className="container">
         <header className="section-header">
           <h2 id="whyus-heading">لماذا نحن الخيار الأفضل؟</h2>
-          <p>نقدم تجربة تعليمية متكاملة تجمع بين النظرية والتطبيق العملي</p>
+          <p>نقدم تجربة تعليمية متكاملة تجمع بين النظري والتطبيق العملي</p>
         </header>
 
         <ul className="features-grid">
