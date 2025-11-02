@@ -57,6 +57,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transform: translateX(50px);
+   /* Move content a little bit to the right */
 }
 
 /* اللوجو */
@@ -79,9 +81,10 @@
 ========================= */
 .hero-text {
   position: relative;
-  top: -280px; /* moves text upward only */
+  top: -240px; /* moves text upward only - reduced to move it down a bit */
   margin-left: 40px; /* 👈 Move text container to the right */
   transition: transform 0.3s ease-in-out;
+  transform: translateX(10px); /* Move content a little bit to the right */
 
 }
 
