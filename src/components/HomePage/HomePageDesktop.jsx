@@ -24,10 +24,11 @@ function HomePageDesktop() {
       <FeaturesSection />
       <WhySection />
       <CoursesSection />
-      <JourneySection />
       <PracticalJourneySection2 />
+      <JourneySection />
+
       {/* <PracticalJourneySection /> */}
-      <PurpleSection />
+      {/* <PurpleSection /> */}
       <FAQSection />
       <TestimonialsSection3 />
       <ArticlesSection />

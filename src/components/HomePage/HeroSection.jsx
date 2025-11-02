@@ -24,7 +24,7 @@ const HeroSection = () => {
         <div className="hero-text">
           <h1 className="hero-title">زيدان - مكتب تدقيق حسابات</h1>
           <p className="hero-subtitle">
-            من الاستشارة إلى التنفيذ - كل الخدمات المحاسبية في مكان واحد
+            نقدم لك أفضل الحلول المحاسبية والاستشارات المالية المتخصصة
           </p>
         </div>
       </div>

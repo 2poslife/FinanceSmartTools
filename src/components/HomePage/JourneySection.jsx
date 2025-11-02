@@ -37,7 +37,7 @@ function JourneySection() {
 
           <div className="homepage-journey-stats">
             <div className="homepage-stat-item">
-              <span className="homepage-stat-number">500+</span>
+              <span className="homepage-stat-number">400+</span>
               <span className="homepage-stat-label">محاسب محترف</span>
             </div>
             <div className="homepage-stat-item homepage-logo-stat">

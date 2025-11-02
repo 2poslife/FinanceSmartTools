@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../../styles/HomePage/FAQSection.css";
-import faqImg from "../../assets/faq.jpg";
 
 const faqs = [
   {
@@ -41,7 +40,6 @@ function FAQSection() {
   return (
     <section dir="rtl" className="homepage-faq-section">
       <div className="homepage-faq-container">
-        {/* Right side: title + accordion */}
         <div className="homepage-faq-content">
           <h2 className="homepage-faq-title">الأسئلة الشائعة</h2>
           <div className="homepage-faq-list">
@@ -59,17 +57,6 @@ function FAQSection() {
                 )}
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Left side: FAQ illustration */}
-        <div className="homepage-faq-illustration">
-          <div className="homepage-illustration-container">
-            <img 
-              src="/faq.svg" 
-              alt="FAQ Illustration" 
-              className="homepage-faq-svg-image"
-            />
           </div>
         </div>
       </div>

@@ -9,9 +9,14 @@ function CoursesSection() {
   return (
     <section className="courses-section">
       <div className="courses-container">
-        <h2 className="courses-title">
-          دورات مصممة لتناسب احتياجات المحاسبين في التعامل مع:
-        </h2>
+        <div className="courses-hero-text">
+          <h1 className="courses-main-title">
+            ارتق بمهاراتك المحاسبية مع مكتب زيدان
+          </h1>
+          <h2 className="courses-subtitle">
+             دورات مصممة لتناسب احتياجات المحاسبين في التعامل مع:
+          </h2>
+        </div>
 
         <div className="courses-intro">
           <ul>
