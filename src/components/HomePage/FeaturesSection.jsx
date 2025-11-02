@@ -5,7 +5,7 @@ import '../../styles/HomePage/FeaturesSection.css';
 function FeaturesSection() {
     const features = [
        "أدوات عملية وسهلة الاستخدام" ,
-        "مساعدة في اتخاذ قرارات صحيحة بدون الحاجة للبحث المطوّل أو الحساب اليدوي",
+        "مساعدة في اتخاذ قرارات صحيحة\nبدون الحاجة للبحث المطوّل أو الحساب اليدوي",
      "تحديثات مستمرة لضمان دقة النتائج",
         "حلول واجوبة فورية لمشاكل تواجه المحاسبين",
 
@@ -26,7 +26,7 @@ function FeaturesSection() {
                             {features.map((feature, index) => (
                                 <li key={index} className="features-item">
                                     <div className="features-checkmark"></div>
-                                    <span className="features-text-item">{feature}</span>
+                                    <span className="features-text-item" style={{ whiteSpace: 'pre-line' }}>{feature}</span>
                                 </li>
                             ))}
                         </ul>

@@ -36,7 +36,7 @@ function JourneySectionMobile() {
 
           <div className="homepage-journey-stats-mobile">
             <div className="homepage-stat-item-mobile">
-              <span className="homepage-stat-number-mobile">500+</span>
+              <span className="homepage-stat-number-mobile">400+</span>
               <span className="homepage-stat-label-mobile">محاسب محترف</span>
             </div>
             <div className="homepage-stat-item-mobile homepage-logo-stat-mobile">

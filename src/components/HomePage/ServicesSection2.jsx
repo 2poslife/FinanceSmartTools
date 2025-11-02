@@ -49,7 +49,7 @@ function ServicesSection2() {
     ];
 
     return (
-        <section className="services-section-2">
+        <section id="services-section" className="services-section-2">
             <div className="services-container-2">
                 <div className="services-header-2">
                     <h2 className="services-title-2">خدمات محاسبة شاملة</h2>

@@ -5,7 +5,7 @@ import '../../styles/HomePage/FeaturesSectionMobile.css';
 function FeaturesSectionMobile() {
     const features = [
        "أدوات عملية وسهلة الاستخدام" ,
-        "مساعدة في اتخاذ قرارات صحيحة بدون الحاجة للبحث المطوّل أو الحساب اليدوي",
+        "مساعدة في اتخاذ قرارات صحيحة\nبدون الحاجة للبحث المطوّل أو الحساب اليدوي",
      "تحديثات مستمرة لضمان دقة النتائج",
         "حلول واجوبة فورية لمشاكل تواجه المحاسبين",
 
@@ -26,7 +26,7 @@ function FeaturesSectionMobile() {
                             {features.map((feature, index) => (
                                 <li key={index} className="features-item-mobile">
                                     <div className="features-checkmark-mobile"></div>
-                                    <span className="features-text-item-mobile">{feature}</span>
+                                    <span className="features-text-item-mobile" style={{ whiteSpace: 'pre-line' }}>{feature}</span>
                                 </li>
                             ))}
                         </ul>

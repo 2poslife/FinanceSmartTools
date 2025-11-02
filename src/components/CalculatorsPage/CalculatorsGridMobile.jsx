@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
-    Calculator,
     User,
     Users,
     Briefcase,
@@ -14,49 +13,68 @@ import "../../styles/CalculatorsPage/CalculatorsGridMobile.css";
 const CalculatorsGridMobile = () => {
     const navigate = useNavigate();
 
-    const simulators = [
-        // Free calculator first in mobile
+    const calculatorGroups = [
         {
-            title: "בדיקת עלות עובד",
-            titleSecondLine: "(כולל פנסיה)",
-            desc: "חשב את עלות העובד למעסיק",
-            link: "/simulators/employee-cost-with-pension",
-            icon: <ShieldCheck className="calculators-sim-icon" />,
-            isFree: true,
-            freeNote: "🔥 ניתן להשתמש בחינם!"
-        },
-        // First row - Non-self-employed calculators
-        {
-            title: "בדיקת עלות עובד",
-            titleSecondLine: "(רק מיסים ללא פנסיה)",
-            desc: "חשב עלות העובד ״המיסויית״ למעסיק",
-            link: "/simulators/employee-cost-no-pension",
-            icon: <FileSpreadsheet className="calculators-sim-icon" />,
-        },
-        {
-            title: "מחשבון מס הכנסה ע״פ נקודות הזיכוי",
-            desc: "גלה כמה מס תשלם לפי ההכנסה שלך ונקודות הזיכוי",
-            link: "/simulators/IncomeTaxWithPoints",
-            icon: <CreditCard className="calculators-sim-icon" />,
-        },
-        // Second row - Self-employed calculators
-        {
-            title: "מחשבון ביטוח לאומי עוסק זעיר",
-            desc: "חשב כמה ישלם עצמאי בעל עוסק זעיר לביטוח לאומי",
-            link: "/simulators/micro-self-employed",
-            icon: <User className="calculators-sim-icon" />,
+            id: "employee-cost",
+            title: "חישוב עלות עובד",
+            icon: "🧮",
+            simulators: [
+                {
+                    title: "בדיקת עלות עובד",
+                    titleSecondLine: "(כולל פנסיה)",
+                    desc: "חשב את עלות העובד למעסיק",
+                    link: "/simulators/employee-cost-with-pension",
+                    icon: <ShieldCheck className="calculators-sim-icon" />,
+                    isFree: true,
+                    freeNote: "🔥 ניתן להשתמש בחינם!"
+                },
+                {
+                    title: "בדיקת עלות עובד",
+                    titleSecondLine: "(רק מיסים ללא פנסיה)",
+                    desc: "חשב עלות העובד ״המיסויית״ למעסיק",
+                    link: "/simulators/employee-cost-no-pension",
+                    icon: <FileSpreadsheet className="calculators-sim-icon" />,
+                },
+            ]
         },
         {
-            title: "מחשבון ביטוח לאומי עצמאי ושכיר",
-            desc: "חשב חבות ביטוח לאומי - עצמאי בלבד או עצמאי ושכיר",
-            link: "/simulators/micro-self-employed-salaried",
-            icon: <Users className="calculators-sim-icon" />,
+            id: "income-tax",
+            title: "מס הכנסה",
+            icon: "💰",
+            simulators: [
+                {
+                    title: "מחשבון מס הכנסה ע״פ נקודות הזיכוי",
+                    desc: "גלה כמה מס תשלם לפי ההכנסה שלך ונקודות הזיכוי",
+                    link: "/simulators/IncomeTaxWithPoints",
+                    icon: <CreditCard className="calculators-sim-icon" />,
+                },
+            ]
         },
         {
-            title: "כלי עזר מקדמות ובחירת סוג תיק לעצמאי בביטוח לאומי",
-            desc: "חשב כמה דמי ביטוח לאומי ישלם עצמאי ומהי ההגדרה המתאימה לו",
-            link: "/simulators/self-employed",
-            icon: <Briefcase className="calculators-sim-icon" />,
+            id: "national-insurance",
+            title: "ביטוח לאומי",
+            icon: "📊",
+            simulators: [
+                {
+                    title: "מחשבון ביטוח לאומי עוסק זעיר",
+                    desc: "חשב כמה ישלם עצמאי בעל עוסק זעיר לביטוח לאומי",
+                    link: "/simulators/micro-self-employed",
+                    icon: <User className="calculators-sim-icon" />,
+                },
+                {
+                    title: "מחשבון ביטוח לאומי עצמאי ושכיר",
+                    desc: "חשב חבות ביטוח לאומי - עצמאי בלבד או עצמאי ושכיר",
+                    link: "/simulators/micro-self-employed-salaried",
+                    icon: <Users className="calculators-sim-icon" />,
+                },
+                {
+                    title: "כלי עזר מקדמות ובחירת סוג תיק לעצמאי בביטוח לאומי",
+                    desc: "חשב כמה דמי ביטוח לאומי ישלם עצמאי ומהי ההגדרה המתאימה לו",
+                    link: "/simulators/self-employed",
+                    icon: <Briefcase className="calculators-sim-icon" />,
+                    isWide: true,
+                },
+            ]
         },
     ];
 
@@ -76,35 +94,41 @@ const CalculatorsGridMobile = () => {
 
     return (
         <section className="calculators-list">
-            <h2 className="calculators-section-title">
-                <span>מיסוי ועבודה</span>
-                <Calculator className="calculators-inline-icon" />
-            </h2>
-
-            <div className="calculators-grid">
-                {simulators.map((sim, idx) => (
-                    <div
-                        key={idx}
-                        className={`calculators-card ${sim.isFree ? 'free-calculator' : ''}`}
-                        onClick={() => handleSimulatorClick(sim.link)}
-                    >
-                        {sim.isFree && (
-                            <div className="free-badge">🔥 בחינם</div>
-                        )}
-                        <div className="calculators-card-header">
-                            {sim.icon}
-                            <h3>
-                                {sim.title}
-                                {sim.titleSecondLine && ` ${sim.titleSecondLine}`}
-                            </h3>
-                        </div>
-                        <p>{sim.desc}</p>
-                        {sim.isFree && (
-                            <div className="free-note">{sim.freeNote}</div>
-                        )}
+            {calculatorGroups.map((group) => (
+                <div key={group.id} className="calculators-group">
+                    <div className="calculators-group-header">
+                        <span className="calculators-group-icon">{group.icon}</span>
+                        <h2 className="calculators-group-title">{group.title}</h2>
                     </div>
-                    ))}
-            </div>
+                    
+                    <div className={`calculators-grid ${group.simulators.length === 1 ? 'single-card' : ''}`}>
+                        {group.simulators.map((sim, idx) => (
+                            <div
+                                key={idx}
+                                className={`calculators-card ${sim.isFree ? 'free-calculator' : ''} ${sim.isWide ? 'wide-card' : ''}`}
+                                onClick={() => handleSimulatorClick(sim.link)}
+                            >
+                                <div className="calculators-card-header">
+                                    {sim.icon}
+                                    <h3>
+                                        {sim.title}
+                                        {sim.titleSecondLine && (
+                                            <>
+                                                <br />
+                                                <span className="calculators-title-second-line">{sim.titleSecondLine}</span>
+                                            </>
+                                        )}
+                                    </h3>
+                                </div>
+                                {sim.isFree && (
+                                    <div className="calculators-free-badge">בחינם</div>
+                                )}
+                                <p>{sim.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            ))}
             
             <div className="calculators-conclusion">
                 <p className="calculators-conclusion-text">

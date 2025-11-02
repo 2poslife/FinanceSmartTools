@@ -1,4 +1,5 @@
 import React from "react";
+import { Lightbulb } from "lucide-react";
 import "../../styles/AboutUsPage/AboutContentMobile.css";
 
 function AboutContentMobile() {
@@ -7,7 +8,10 @@ function AboutContentMobile() {
       <div className="mobile-content-container">
         <div className="mobile-content-card">
           <div className="mobile-content-header">
-            <h2 className="mobile-content-title">من نحن</h2>
+            <div className="mobile-title-decorative">
+              <Lightbulb className="mobile-title-icon" />
+              <h2 className="mobile-content-title">من نحن</h2>
+            </div>
           </div>
           
           <div className="mobile-content-body">

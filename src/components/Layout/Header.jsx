@@ -65,7 +65,7 @@ const Header = () => {
         <div className="logo" onClick={() => navigate("/")}>
           <img className="logo-img" src={Logo} alt="logo" />
           <div className="logo-texts">
-            <span className="logo-title">مكتب زيدان</span>
+            <span className="logo-title">زيدان - مكتب تدقيق حسابات</span>
           </div>
         </div>
 

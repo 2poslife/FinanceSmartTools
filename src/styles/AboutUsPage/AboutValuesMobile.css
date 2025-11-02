@@ -112,8 +112,9 @@
 }
 
 .mobile-value-item-last {
-  grid-column: 2;
-  margin-left: auto;
+  grid-column: 1 / -1;
+  max-width: 50%;
+  margin: 0 auto;
 }
 
 .mobile-value-title {

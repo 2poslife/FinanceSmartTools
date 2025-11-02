@@ -36,7 +36,7 @@ function AboutCoursesMobile() {
         
         <div className="mobile-courses-footer">
           <p className="mobile-courses-conclusion">
-            كل مجال له أدواته، لغته، وتقنياته - وهنا ستجد كورسات متخصصة لكل مجال لتكون محاسبا أكثر احتراقا وأكثر ثقة.
+            كل مجال له أدواته، لغته، وتقنياته - وهنا ستجد كورسات متخصصة لكل مجال لتكون محاسبا أكثر احترافا وأكثر ثقة.
           </p>
         </div>
       </div>

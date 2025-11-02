@@ -10,7 +10,9 @@ function CoursesSectionMobile() {
     <section className="courses-section-mobile">
       <div className="courses-container-mobile">
         <h2 className="courses-title-mobile">
-          دورات مصممة لتناسب احتياجات المحاسبين في التعامل مع
+          ارتقِ بمهاراتك المحاسبية مع مكتب زيدان
+          <br />
+          دورات مصممة لتناسب احتياجات المحاسبين
         </h2>
 
         <div className="courses-intro-mobile">

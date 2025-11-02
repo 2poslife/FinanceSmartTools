@@ -49,7 +49,7 @@ function ServicesSection2Mobile() {
     ];
 
     return (
-        <section className="services-section-2-mobile">
+        <section id="services-section" className="services-section-2-mobile">
             <div className="services-container-2-mobile">
                 <div className="services-header-2-mobile">
                     <h2 className="services-title-2-mobile">خدمات محاسبة شاملة</h2>

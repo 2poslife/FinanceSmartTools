@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { MapPin, Mail, Phone } from "lucide-react";
 import "../../styles/HomePage/HeroSectionMobile.css";
 
 function HeroSectionMobile() {
-  const navigate = useNavigate();
   const [showContact, setShowContact] = useState(false);
 
   const handleDiscoverServices = () => {
-    navigate("/courses");
+    const servicesSection = document.getElementById("services-section");
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   const handleContactUs = () => {
@@ -18,14 +19,13 @@ function HeroSectionMobile() {
   return (
     <>
       <section className="hero-mobile">
-        <img src="/heromobile.svg" alt="Hero Section" className="hero-section-bg-mobile" />
+        <img src="/herosection_mobiel.svg" alt="Hero Section" className="hero-section-bg-mobile" />
         <div className="hero-content-mobile">
           <div className="hero-mobile-logo">
-            <img src="/logo.png" alt="Company Logo" />
           </div>
           <div className="hero-text-mobile">
             <h1 className="hero-title-mobile">
-              مكتب زيدان للمحاسبة والاستشارات المالية
+              زيدان - مكتب تدقيق حسابات
             </h1>
             <p className="hero-subtitle-mobile">
               نقدم لك أفضل الحلول المحاسبية والاستشارات المالية المتخصصة

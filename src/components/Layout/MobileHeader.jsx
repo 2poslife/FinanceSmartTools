@@ -74,7 +74,7 @@ const MobileHeader = () => {
         {/* Logo */}
         <div className="mobile-logo" onClick={() => handleNavigate("/")}>
           <img className="mobile-logo-img" src={Logo} alt="logo" />
-          <span className="mobile-logo-title">مكتب زيدان</span>
+          <span className="mobile-logo-title">زيدان - مكتب تدقيق حسابات</span>
         </div>
 
         {/* Hamburger Menu Button */}
