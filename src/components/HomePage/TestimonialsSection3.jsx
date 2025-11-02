@@ -45,7 +45,7 @@ const testimonials = [
 ];
 
 function TestimonialsSection3() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(5);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const goToTestimonial = (index) => {
@@ -70,7 +70,7 @@ function TestimonialsSection3() {
         
         {/* Left Heading */}
         <div className="testimonials-heading-3">
-          <div className="testimonials-label-3">شهادات العملاء</div>
+          <div className="testimonials-label-3"> شهادات المشتركين في الدورات</div>
           <h2 className="testimonials-title-3">ماذا يقول طلابنا؟</h2>
 
           {/* Dots Navigation */}

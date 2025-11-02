@@ -26,6 +26,7 @@ const testimonials = [
     text: "زيدان، من لا يشكر الناس لا يشكر الله. بِسلم إيديك يا رب، ما بعتقد في كورسات متعوب عليها مثل هذا الكورس. المتابعة تبعتك بتخدم كثير، وما بتخلي الواحد يعلق على شغلة معينة مثلاً 🙏",
     avatar: "/logo.png"
   },
+
   {
     name: "معالي",
     location: "مديرة حسابات",
@@ -45,7 +46,7 @@ const testimonials = [
 ];
 
 function TestimonialsSection3Mobile() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(5); // Default to "وسيم" (next right of "سوزان")
   const [isAnimating, setIsAnimating] = useState(false);
 
   const goToTestimonial = (index) => {
@@ -68,7 +69,7 @@ function TestimonialsSection3Mobile() {
         
         {/* Heading */}
         <div className="testimonials-heading-3-mobile">
-          <div className="testimonials-label-3-mobile">شهادات العملاء</div>
+          <div className="testimonials-label-3-mobile"> شهادات المشتركين في الدورات</div>
           <h2 className="testimonials-title-3-mobile">ماذا يقول طلابنا؟</h2>
         </div>
 
@@ -137,3 +138,4 @@ function TestimonialsSection3Mobile() {
 }
 
 export default TestimonialsSection3Mobile;
+
