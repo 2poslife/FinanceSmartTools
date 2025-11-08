@@ -6,6 +6,7 @@ function AboutContent() {
     <div className="about-right-section">
       <div className="content-wrapper">
         <h1 className="main-title">
+          <span className="promo-tagline">وراء كل رقم قصة نجاح — ونحن هنا لنكتبها معك</span>
           <span className="title-highlight">مكتب حسابات</span>
           <span className="title-subtitle">برؤية مختلفة</span>
         </h1>

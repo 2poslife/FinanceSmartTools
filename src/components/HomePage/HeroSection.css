@@ -64,8 +64,8 @@
 
 /* اللوجو */
 .hero-logo {
-  width: 60%;
-  max-width: 90%;
+  width: 55%;
+  max-width: 85%;
   height: auto;
   margin-bottom: 20px;
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.4));
@@ -82,7 +82,7 @@
 ========================= */
 .hero-text {
   position: relative;
-  top: -220px; /* moves text upward - adjusted to move it down more */
+  top: -260px; /* moves text upward closer to the logo */
   margin-left: 40px; /* 👈 Move text container to the right */
   transition: transform 0.3s ease-in-out;
   transform: translateX(10px); /* Move content a little bit to the right */

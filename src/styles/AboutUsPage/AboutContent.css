@@ -18,6 +18,18 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
+.promo-tagline {
+  font-size: 22px;
+  font-weight: 700;
+  color: #b29053;
+  text-align: center;
+  margin-bottom: 20px;
+  display: block;
+  direction: rtl;
+  unicode-bidi: embed;
+  letter-spacing: 0.5px;
+}
+
 .content-wrapper::before {
   content: '';
   position: absolute;
@@ -229,6 +241,11 @@
 @media (max-width: 768px) {
   .about-right-section {
     padding: 40px 20px;
+  }
+
+  .promo-tagline {
+    font-size: 18px;
+    text-align: right;
   }
 
   .title-highlight {

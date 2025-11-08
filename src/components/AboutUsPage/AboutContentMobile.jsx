@@ -8,6 +8,9 @@ function AboutContentMobile() {
       <div className="mobile-content-container">
         <div className="mobile-content-card">
           <div className="mobile-content-header">
+            <p className="mobile-promo-tagline">
+              وراء كل رقم قصة نجاح — ونحن هنا لنكتبها معك
+            </p>
             <div className="mobile-title-decorative">
               <Lightbulb className="mobile-title-icon" />
               <h2 className="mobile-content-title">من نحن</h2>
