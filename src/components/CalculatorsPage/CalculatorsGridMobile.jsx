@@ -76,13 +76,29 @@ const CalculatorsGridMobile = () => {
                 },
             ]
         },
+        {
+            id: "journal-entries",
+            title: "פקודות יומן",
+            icon: "📘",
+            simulators: [
+                {
+                    title: "פקודות יומן ",
+                    desc: "פקודות יומן לדוחות כספיים",
+                    link: "/simulators/new-journal-entries",
+                    icon: <FileSpreadsheet className="calculators-sim-icon" />,
+                },
+            ]
+        },
     ];
 
     const handleSimulatorClick = (link) => {
         const token = localStorage.getItem("access_token");
-        
-        // Allow access to employee-cost-with-pension without login
-        if (link === "/simulators/employee-cost-with-pension") {
+        const publicLinks = [
+            "/simulators/employee-cost-with-pension",
+            "/simulators/new-journal-entries",
+        ];
+
+        if (publicLinks.includes(link)) {
             navigate(link);
         } else if (!token) {
             alert("עליך להתחבר כדי להשתמש במחשבון");

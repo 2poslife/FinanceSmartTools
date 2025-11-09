@@ -1,0 +1,224 @@
+.nje-table1-input-inline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nje-table1-inline-input {
+  width: 100%;
+  max-width: 120px;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #cbb88d;
+  border-radius: 6px;
+  background-color: #fffef9;
+  text-align: center;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700; /* 🔹 Bold */
+  direction: rtl;
+}
+
+.nje-table1-inline-input:focus {
+  outline: none;
+  border-color: #b29053;
+  box-shadow: 0 0 4px rgba(178, 144, 83, 0.4);
+}
+
+/* ===== Table Base ===== */
+.nje-table1-6cols {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-weight: 700; /* 🔹 Bold all text inside table */
+}
+
+.nje-table1-row {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 0.8fr 0.8fr 0.8fr 0.5fr;
+  gap: 0;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e4d4b0;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(189, 147, 72, 0.1);
+  transition: all 0.25s ease-in-out;
+}
+
+.nje-table1-row > span {
+  padding: 0.9rem 1.1rem;
+  border-left: 1px solid #e4d4b0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  font-weight: 700; /* 🔹 Bold */
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  word-break: break-word;
+}
+
+/* Center middle columns */
+.nje-table1-row > span:nth-child(3),
+.nje-table1-row > span:nth-child(4),
+.nje-table1-row > span:nth-child(5),
+.nje-table1-row > span:nth-child(6) {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Inline value */
+.nje-table1-inline-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: 700; /* 🔹 Bold */
+  color: #3d2c17;
+}
+
+/* Two-line text */
+.nje-table1-two-line,
+.nje-table1-two-line2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  width: 100%;
+  font-weight: 700; /* 🔹 Bold */
+}
+
+/* First column */
+.nje-table1-row > span:first-child {
+  justify-content: flex-start;
+  text-align: right;
+}
+
+/* Header */
+.nje-table1-row-head {
+  background: #f1e3c8;
+  font-weight: 800; /* 🔹 Slightly bolder for header */
+}
+
+.nje-table1-row-head > span:nth-child(3),
+.nje-table1-row-head > span:nth-child(4),
+.nje-table1-row-head > span:nth-child(6) {
+  justify-content: center;
+  text-align: center;
+  direction: rtl;
+  padding-right: 0;
+}
+
+.nje-table1-row-head > span:nth-child(5) {
+  justify-content: center;
+  text-align: right;
+  direction: rtl;
+  padding-right: 0;
+}
+
+/* Hover */
+.nje-table1-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(189, 147, 72, 0.25);
+}
+
+/* Inputs */
+.nje-table1-input-cell {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.nje-table1-input {
+  width: 100%;
+  max-width: 130px;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #cbb88d;
+  border-radius: 6px;
+  background-color: #fffef9;
+  font-family: inherit;
+  font-size: 0.95rem;
+  text-align: right;
+  direction: rtl;
+  font-weight: 700; /* 🔹 Bold */
+  unicode-bidi: plaintext;
+  position: relative;
+}
+
+.nje-table1-input::-webkit-inner-spin-button,
+.nje-table1-input::-webkit-outer-spin-button {
+  direction: ltr;
+  position: absolute;
+  left: 0;
+  right: auto;
+}
+
+.nje-table1-input[type="number"] {
+  text-align: center;
+}
+
+.nje-table1-input:focus {
+  outline: none;
+  border-color: #b29053;
+  box-shadow: 0 0 4px rgba(178, 144, 83, 0.4);
+}
+
+/* Center column 2 values */
+.nje-table1-row:not(.nje-table1-row-head) > span:nth-child(2) {
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .nje-table1-6cols {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Adjusted column proportions for mobile */
+  .nje-table1-row {
+    min-width: 640px;
+    border-radius: 10px;
+    grid-template-columns: 1.0fr 0.8fr 0.8fr 0.6fr 0.8fr 0.8fr; /* 🔹 new balance */
+    box-shadow: 0 3px 8px rgba(189, 147, 72, 0.18);
+  }
+
+  /* Slightly smaller text and padding */
+  .nje-table1-row > span {
+    padding: 0.7rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  /* Inputs wider for better usability */
+  .nje-table1-input {
+    max-width: 110px;
+    font-size: 1rem;
+    padding: 0.5rem 0.6rem;
+  }
+
+  /* Sticky header */
+  .nje-table1-row-head {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(180deg, #f5e9d2 0%, #f1e3c8 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even narrower phones */
+  .nje-table1-row {
+    min-width: 600px;
+    grid-template-columns: 0.9fr 0.8fr 0.8fr 0.6fr 0.8fr 1fr; /* 🔹 give last col more room */
+  }
+
+  .nje-table1-row > span {
+    padding: 0.6rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .nje-table1-input {
+    max-width: 95px;
+    font-size: 0.9rem;
+  }
+}

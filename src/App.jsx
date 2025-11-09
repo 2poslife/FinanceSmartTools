@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useLocation,
 } from "react-router-dom";
 
 // Pages
@@ -15,6 +14,7 @@ import ArticleDetailPage from "./pages/ArticleDetailPage";
 import CoursesPage from "./pages/CoursesPage";
 import CourseDetailPage from "./pages/CourseDetailPage";
 import CalculatorsPage from "./pages/CalculatorsPage";
+import NewJournalEntriesPage from "./pages/NewJournalEntriesPage";
 
 // Auth
 import SigninForm from "./components/Auth/SigninForm";
@@ -104,6 +104,10 @@ function Layout() {
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/course/:id" element={<CourseDetailPage />} />
         <Route path="/CalculatorsPage" element={<CalculatorsPage />} />
+        <Route
+          path="/simulators/new-journal-entries"
+          element={<NewJournalEntriesPage />}
+        />
 
         {/* Calculator Routes */}
         <Route

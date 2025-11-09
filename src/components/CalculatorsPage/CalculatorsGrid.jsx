@@ -62,9 +62,12 @@ const CalculatorsGrid = () => {
 
     const handleSimulatorClick = (link) => {
         const token = localStorage.getItem("access_token");
-        
-        // Allow access to employee-cost-with-pension without login
-        if (link === "/simulators/employee-cost-with-pension") {
+        const publicLinks = [
+            "/simulators/employee-cost-with-pension",
+            "/simulators/new-journal-entries",
+        ];
+
+        if (publicLinks.includes(link)) {
             navigate(link);
         } else if (!token) {
             alert("עליך להתחבר כדי להשתמש במחשבון");
@@ -105,7 +108,23 @@ const CalculatorsGrid = () => {
                     </div>
                 ))}
             </div>
-            
+                        
+            <div className="calculators-desktop-conclusion">
+                <p className="calculators-desktop-conclusion-text">
+                פקודות יומן                </p>
+            </div>
+            <div className="calculators-desktop-standalone-card">
+                <div
+                    className="calculators-desktop-card info-card"
+                    onClick={() => handleSimulatorClick("/simulators/new-journal-entries")}
+                >
+                    <div className="calculators-desktop-card-header">
+                        <FileSpreadsheet className="calculators-desktop-sim-icon" />
+                        <h3>פקודות יומן לדוגמה</h3>
+                    </div>
+                    <p>פקודות יומן לדוחות כספיים</p>
+                </div>
+            </div>
             <div className="calculators-desktop-conclusion">
                 <p className="calculators-desktop-conclusion-text">
                     نوفر لك ادوات عملية تساعدك في اتخاذ قرارات محاسبية دقيقة
