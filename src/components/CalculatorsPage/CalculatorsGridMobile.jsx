@@ -93,10 +93,7 @@ const CalculatorsGridMobile = () => {
 
     const handleSimulatorClick = (link) => {
         const token = localStorage.getItem("access_token");
-        const publicLinks = [
-            "/simulators/employee-cost-with-pension",
-            "/simulators/new-journal-entries",
-        ];
+        const publicLinks = ["/simulators/employee-cost-with-pension"];
 
         if (publicLinks.includes(link)) {
             navigate(link);

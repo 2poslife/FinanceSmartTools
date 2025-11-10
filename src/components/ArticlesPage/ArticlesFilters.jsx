@@ -13,7 +13,7 @@ function ArticlesFilters({ selectedCategory, setSelectedCategory }) {
           className={`articles-page-filter-btn ${selectedCategory === category.name ? "articles-page-active" : ""}`}
           onClick={() => setSelectedCategory(category.name)}
         >
-          {category.name === "all" ? "جميع المقالات" : category.name} ({category.count})
+          {category.name === "all" ? "כל המאמרים" : category.name} ({category.count})
         </button>
       ))}
     </div>

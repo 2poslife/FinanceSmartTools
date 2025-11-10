@@ -25,7 +25,7 @@ function HomePageMobile() {
       {/* <PurpleSectionMobile /> */}
       <FAQSectionMobile />
       <TestimonialsSection3Mobile />
-      <ArticlesSectionMobile />
+      {/* <ArticlesSectionMobile /> */}
       <BackToTop />
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getArticleById } from '../assets/data/articlesData';
+import { getArticleDetailById } from '../assets/data/articleDetailData';
 import ArticleHeader from '../components/ArticleDetailPage/ArticleHeader';
 import ArticleContent from '../components/ArticleDetailPage/ArticleContent';
 import ArticleNotFound from '../components/ArticleDetailPage/ArticleNotFound';
@@ -14,7 +14,7 @@ const ArticleDetailPage = () => {
         window.scrollTo(0, 0);
     }, [id]);
 
-    const article = getArticleById(id);
+    const article = getArticleDetailById(id);
 
     if (!article) {
         return <ArticleNotFound />;

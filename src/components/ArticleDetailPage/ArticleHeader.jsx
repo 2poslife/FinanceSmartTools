@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowRight, Calendar, User, Clock, Share2 } from "lucide-react";
+import { ArrowRight, Calendar, Clock } from "lucide-react";
 import "../../styles/ArticleDetailPage/ArticleHeader.css";
 
 function ArticleHeader({ article }) {
@@ -22,7 +22,7 @@ function ArticleHeader({ article }) {
   return (
     <div className="article-detail-header">
       <button onClick={() => navigate(-1)} className="article-detail-back-button">
-        <ArrowRight /> العودة
+        <ArrowRight /> חזרה
       </button>
       
       <div className="article-detail-meta">
@@ -31,17 +31,9 @@ function ArticleHeader({ article }) {
           <span>{article.date}</span>
         </div>
         <div className="article-detail-meta-item">
-          <User size={16} />
-          <span>{article.author}</span>
-        </div>
-        <div className="article-detail-meta-item">
           <Clock size={16} />
           <span>{article.readTime}</span>
         </div>
-        <button className="article-detail-share-btn" onClick={handleShare}>
-          <Share2 size={18} />
-          مشاركة
-        </button>
       </div>
     </div>
   );

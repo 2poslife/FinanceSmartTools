@@ -31,7 +31,7 @@ function HomePageDesktop() {
       {/* <PurpleSection /> */}
       <FAQSection />
       <TestimonialsSection3 />
-      <ArticlesSection />
+      {/* <ArticlesSection /> */}
       <BackToTop />
     </div>
   );
