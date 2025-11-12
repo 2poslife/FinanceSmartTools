@@ -13,6 +13,9 @@ function ArticlesGrid({ filteredArticles }) {
     <div className="articles-page-grid">
       {filteredArticles.map((article) => (
         <div key={article.id} className="articles-page-card">
+          <div className="articles-page-card-image">
+            <img src="/aaa.svg" alt={article.title} />
+          </div>
           <div className="articles-page-card-header">
             <span className="articles-page-category">{article.category}</span>
             <span className="articles-page-read-time">{article.readTime}</span>
