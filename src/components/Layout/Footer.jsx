@@ -9,7 +9,7 @@ function Footer() {
         <div className="footer-left">
           <div className="footer-logo-section">
             <div className="logo-wrapper">
-              <img src="/logo.png" alt="Logo" className="footer-logo" />
+              <img src="https://d3egla0dyi6qxn.cloudfront.net/public/logo.png" alt="Logo" className="footer-logo" />
             </div>
           </div>
           <h2 className="office-name">مكتب زيدان</h2>

@@ -7,7 +7,7 @@ function ImageSection() {
     <section className="image-section">
       <div className="image-container">
         <img
-          src="/Section.png"
+          src="https://d3egla0dyi6qxn.cloudfront.net/public/Section.png"
           alt="Section"
           className="section-image"
           loading="lazy"

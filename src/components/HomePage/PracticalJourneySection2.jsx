@@ -5,7 +5,7 @@ function PracticalJourneySection2() {
   return (
     <section className="practical-journey-section-2">
       <video 
-        src="/RoadmapBrainstorm.mp4" 
+        src="https://d3egla0dyi6qxn.cloudfront.net/public/RoadmapBrainstorm.mp4" 
         className="practical-journey-video"
         autoPlay
         loop

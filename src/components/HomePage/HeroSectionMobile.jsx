@@ -19,7 +19,7 @@ function HeroSectionMobile() {
   return (
     <>
       <section className="hero-mobile">
-        <img src="/herosection_mobiel.svg" alt="Hero Section" className="hero-section-bg-mobile" />
+        <img src="https://d3egla0dyi6qxn.cloudfront.net/public/herosection_mobiel.svg" alt="Hero Section" className="hero-section-bg-mobile" />
         <div className="hero-content-mobile">
           <div className="hero-mobile-logo">
           </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './SuccessSection.css';
-import downloadImage from '../../assets/download.jpg';
+const downloadImage = 'https://d3egla0dyi6qxn.cloudfront.net/public/download.jpg';
 
 function SuccessSection() {
     return (

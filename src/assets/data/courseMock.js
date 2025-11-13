@@ -10,7 +10,7 @@ export const homePageCourses = [
     price: "700 ₪",
     originalPrice: "1000 ₪",
     duration: "دورة اونلاين",
-    image: "/course3.png",
+    image: "https://d3egla0dyi6qxn.cloudfront.net/public/course3.png",
     mainTopics: [
       "التعرف على واجهة البرنامج والإعدادات الأساسية",
       "إدارة الحسابات اليومية والفواتير",
@@ -19,7 +19,7 @@ export const homePageCourses = [
       "إدارة المخزون والمشتريات",
       "إعداد الميزانيات والتقارير السنوية"
     ],
-    videoUrl: "/Video1.mp4",
+    videoUrl: "https://d3egla0dyi6qxn.cloudfront.net/public/Video1.mp4",
     courseLink: "https://my.schooler.biz/s/94061/maZanem/ZMbWsJ8?pr=2"
   },
   {
@@ -31,7 +31,7 @@ export const homePageCourses = [
     price: "2,500 ₪",
     originalPrice: "3,000 ₪",
     duration: "دورة اونلاين",
-    image: "/course2.png",
+    image: "https://d3egla0dyi6qxn.cloudfront.net/public/course2.png",
     mainTopics: [
       "خطوات إعداد ومراجعة ميزانية الشركة بشكل مهني ودقيق",
       "تحليل وتدقيق تقارير الأرباح والخسائر وتأثيرها على الميزانية العامة",
@@ -40,7 +40,7 @@ export const homePageCourses = [
       "أمثلة عملية وملفات تطبيقية من واقع العمل اليومي لمكاتب مدققي الحسابات",
       "تجهيز סט הגשה למס הכנסה وأمثلة رقمية لشركات حقيقية"
     ],
-    videoUrl: "/Video2.mp4",
+    videoUrl: "https://d3egla0dyi6qxn.cloudfront.net/public/Video2.mp4",
     courseLink: "https://my.schooler.biz/s/94061/maZanem/ZMbWsJ8?pr=2"
   },
   {
@@ -51,7 +51,7 @@ export const homePageCourses = [
     level: "اساسي",
     price: "1,300 ₪",
     duration: "دورة اونلاين",
-    image: "/course1.png",
+    image: "https://d3egla0dyi6qxn.cloudfront.net/public/course1.png",
     mainTopics: [
       "كيفية استقبال الزبائن الجدد وفتح الملفات الضريبية",
       "التعامل مع ضريبة الدخل، التأمين الوطني وال־מע״מ",
@@ -79,7 +79,7 @@ export const detailedCourses = {
     price: "700 ₪",
     originalPrice: "1000 ₪",
     duration: "دورة اونلاين",
-    image: "/course1.png",
+    image: "https://d3egla0dyi6qxn.cloudfront.net/public/course1.png",
     chapters: [
       {
         id: 1,
@@ -124,7 +124,7 @@ export const detailedCourses = {
         ]
       }
     ],
-    videoUrl: "/Video1.mp4",
+    videoUrl: "https://d3egla0dyi6qxn.cloudfront.net/public/Video1.mp4",
     courseLink: "https://my.schooler.biz/s/87349/hashavshavit/dmOqeEU?pr=2"
   },
   2: {
@@ -138,7 +138,7 @@ export const detailedCourses = {
     price: "2,500 ₪",
     originalPrice: "3,000 ₪",
     duration: "دورة اونلاين",
-    image: "/course2.png",
+    image: "https://d3egla0dyi6qxn.cloudfront.net/public/course2.png",
     chapters: [
       {
         id: 1,
@@ -192,7 +192,7 @@ export const detailedCourses = {
         ]
       },
     ],
-    videoUrl: "/Video2.mp4",
+    videoUrl: "https://d3egla0dyi6qxn.cloudfront.net/public/Video2.mp4",
     courseLink: "https://my.schooler.biz/s/94061/maZanem/ZMbWsJ8?pr=2"
   },
   3: {
@@ -205,7 +205,7 @@ export const detailedCourses = {
     level: "اساسي",
     price: "1,300 ₪",
     duration: "دورة اونلاين",
-    image: "/course1.png",
+    image: "https://d3egla0dyi6qxn.cloudfront.net/public/course1.png",
     chapters: [
       {
         id: 1,
@@ -237,7 +237,7 @@ export const detailedCourses = {
         ]
       }
     ],
-    videoUrl: "/Video3.mp4",
+    videoUrl: "https://d3egla0dyi6qxn.cloudfront.net/public/Video3.mp4",
     courseLink: "https://my.schooler.biz/s/77784/AtoZ/FGjiinA?pr=2"
   }
 };
@@ -253,7 +253,7 @@ export const courses = [
     price: "700 ₪",
     originalPrice: "1000 ₪",
     duration: "دورة اونلاين",
-    image: "/course3.png",
+    image: "https://d3egla0dyi6qxn.cloudfront.net/public/course3.png",
     mainTopics: [
       "التعرف على واجهة البرنامج والإعدادات الأساسية",
       "إدارة الحسابات اليومية والفواتير",
@@ -262,7 +262,7 @@ export const courses = [
       "إدارة المخزون والمشتريات",
       "إعداد الميزانيات والتقارير السنوية"
     ],
-    videoUrl: "/Video1.mp4",
+    videoUrl: "https://d3egla0dyi6qxn.cloudfront.net/public/Video1.mp4",
     courseLink: "https://my.schooler.biz/s/94061/maZanem/ZMbWsJ8?pr=2"
   },
   {
@@ -274,7 +274,7 @@ export const courses = [
     price: "2,500 ₪",
     originalPrice: "3,000 ₪",
     duration: "دورة اونلاين",
-    image: "/course2.png",
+    image: "https://d3egla0dyi6qxn.cloudfront.net/public/course2.png",
     mainTopics: [
       "خطوات إعداد ومراجعة ميزانية الشركة بشكل مهني ودقيق",
       "تحليل وتدقيق تقارير الأرباح والخسائر وتأثيرها على الميزانية العامة",
@@ -283,7 +283,7 @@ export const courses = [
       "أمثلة عملية وملفات تطبيقية من واقع العمل اليومي لمكاتب مدققي الحسابات",
       "تجهيز סט הגשה למס הכנסה وأمثلة رقمية لشركات حقيقية"
     ],
-    videoUrl: "/Video2.mp4",
+    videoUrl: "https://d3egla0dyi6qxn.cloudfront.net/public/Video2.mp4",
     courseLink: "https://my.schooler.biz/s/94061/maZanem/ZMbWsJ8?pr=2"
   },
   {
@@ -294,7 +294,7 @@ export const courses = [
     level: "اساسي",
     price: "1,300 ₪",
     duration: "دورة اونلاين",
-    image: "/course1.png",
+    image: "https://d3egla0dyi6qxn.cloudfront.net/public/course1.png",
     mainTopics: [
       "كيفية استقبال الزبائن الجدد وفتح الملفات الضريبية",
       "التعامل مع ضريبة الدخل، التأمين الوطني وال־מע״מ",
@@ -304,7 +304,7 @@ export const courses = [
       "פרקטיکה - التطبيقات العملية",
       "شرح מערכת שע״מ مع تطبيقات عملية"
     ],
-    videoUrl: "/עצמאי.mp4",
+    videoUrl: "https://d3egla0dyi6qxn.cloudfront.net/public/עצמאי.mp4",
     courseLink: "https://my.schooler.biz/s/77784/AtoZ/FGjiinA?pr=2"
   },
   {

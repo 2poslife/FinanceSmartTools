@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { jwtDecode } from "jwt-decode";
 import "../../styles/Layout/Header.css";
-import Logo from '../../assets/logo.png'
+const Logo = 'https://d3egla0dyi6qxn.cloudfront.net/public/logo.png';
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();

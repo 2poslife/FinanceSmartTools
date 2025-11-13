@@ -40,7 +40,7 @@ function JourneySectionMobile() {
               <span className="homepage-stat-label-mobile">محاسب محترف</span>
             </div>
             <div className="homepage-stat-item-mobile homepage-logo-stat-mobile">
-              <img src="/logo.png" alt="Logo" className="homepage-stat-logo-mobile" />
+              <img src="https://d3egla0dyi6qxn.cloudfront.net/public/logo.png" alt="Logo" className="homepage-stat-logo-mobile" />
               <span className="homepage-stat-label-mobile">مكتب زيدان</span>
             </div>
             <div className="homepage-stat-item-mobile">

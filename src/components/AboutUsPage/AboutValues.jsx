@@ -37,7 +37,7 @@ function AboutValues() {
           </div>
           
           <div className="value-logo-wrapper">
-            <img src="/logo.png" alt="Logo" className="values-logo" />
+            <img src="https://d3egla0dyi6qxn.cloudfront.net/public/logo.png" alt="Logo" className="values-logo" />
           </div>
           
           <div className="value-card">

@@ -287,7 +287,7 @@ export default function EmployeeCostWithPension() {
             {/* Course Connection */}
             <section className="calcpage-course-connection">
                 <div className="guide-icon-wrapper">
-                    <img src="/Guide_1.svg" alt="Guide" className="guide-icon" />
+                    <img src="https://d3egla0dyi6qxn.cloudfront.net/public/Guide_1.svg" alt="Guide" className="guide-icon" />
                 </div>
             </section>
 

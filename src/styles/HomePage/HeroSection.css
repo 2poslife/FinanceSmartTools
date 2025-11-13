@@ -17,7 +17,7 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url('/heroImageBG.png');
+  background-image: url('https://d3egla0dyi6qxn.cloudfront.net/public/heroImageBG.png');
   background-size: fill;
 
 }

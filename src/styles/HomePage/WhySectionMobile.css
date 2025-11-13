@@ -4,7 +4,7 @@
   min-height: 100vh;
   background-color: #000; /* pure black fallback */
   background-image: 
-    url('/black_gold.svg'),
+    url('https://d3egla0dyi6qxn.cloudfront.net/public/black_gold.svg'),
     radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.25) 0%, transparent 70%),
     radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.15) 0%, transparent 60%);
   background-repeat: no-repeat;

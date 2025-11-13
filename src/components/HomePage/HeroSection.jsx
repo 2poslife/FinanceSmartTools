@@ -7,7 +7,7 @@ const HeroSection = () => {
       {/* الخلفية */}
       <img
         className="hero-section-bg"
-        src="/hero_without_text.svg"
+        src="https://d3egla0dyi6qxn.cloudfront.net/public/hero_without_text.svg"
         alt="Hero Background"
       />
 
@@ -15,7 +15,7 @@ const HeroSection = () => {
       <div className="hero-content">
         {/* اللوجو العبراني */}
         <img
-          src="/logo_herosection.png"
+          src="https://d3egla0dyi6qxn.cloudfront.net/public/logo_herosection.png"
           alt="Company Logo"
           className="hero-logo"
         />

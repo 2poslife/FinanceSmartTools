@@ -137,7 +137,7 @@ function TestimonialsSection() {
 
               {/* Logo */}
               <div className="homepage-testimonial-logo">
-                <img src="/logo.png" alt="Logo" className="homepage-logo-image" />
+                <img src="https://d3egla0dyi6qxn.cloudfront.net/public/logo.png" alt="Logo" className="homepage-logo-image" />
                 <div className="homepage-logo-ring"></div>
               </div>
 

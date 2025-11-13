@@ -14,7 +14,7 @@ function ArticlesGrid({ filteredArticles }) {
       {filteredArticles.map((article) => (
         <div key={article.id} className="articles-page-card">
           <div className="articles-page-card-image">
-            <img src="/aaa.svg" alt={article.title} />
+            <img src="https://d3egla0dyi6qxn.cloudfront.net/public/aaa.svg" alt={article.title} />
           </div>
           <div className="articles-page-card-header">
             <span className="articles-page-category">{article.category}</span>

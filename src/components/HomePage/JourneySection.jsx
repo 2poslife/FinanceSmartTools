@@ -41,7 +41,7 @@ function JourneySection() {
               <span className="homepage-stat-label">محاسب محترف</span>
             </div>
             <div className="homepage-stat-item homepage-logo-stat">
-              <img src="/logo.png" alt="Logo" className="homepage-stat-logo" />
+              <img src="https://d3egla0dyi6qxn.cloudfront.net/public/logo.png" alt="Logo" className="homepage-stat-logo" />
               <span className="homepage-stat-label">مكتب زيدان</span>
             </div>
             <div className="homepage-stat-item">

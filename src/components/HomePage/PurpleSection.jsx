@@ -6,7 +6,7 @@ function PurpleSection() {
     <section className="purple-section">
       <div className="purple-container">
         <img 
-          src="/Section _final.svg" 
+          src="https://d3egla0dyi6qxn.cloudfront.net/public/Section _final.svg" 
           alt="Section Content" 
           className="section-svg"
         />
