@@ -12,7 +12,7 @@ import {
     Lightbulb,
 } from "lucide-react";
 import "../../styles/Calculators/EmployeeCostWithPension.css";
-import { getImageUrl } from "../../utils/index.jsx";
+import { getImageUrl } from "@/lib/utils";
 
 export default function EmployeeCostWithPension() {
     const router = useRouter();

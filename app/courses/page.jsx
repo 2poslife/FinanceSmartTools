@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect } from "react"
-import CoursesHero from "../../src/components/CoursesPage/CoursesHero"
-import CoursesGrid from "../../src/components/CoursesPage/CoursesGrid"
-import CoursesConclusion from "../../src/components/CoursesPage/CoursesConclusion"
-import "../../src/styles/CoursesPage/CoursesPage.css"
+import CoursesHero from "@/src/components/CoursesPage/CoursesHero"
+import CoursesGrid from "@/src/components/CoursesPage/CoursesGrid"
+import CoursesConclusion from "@/src/components/CoursesPage/CoursesConclusion"
+import "@/src/styles/CoursesPage/CoursesPage.css"
 
 export default function CoursesPage() {
   useEffect(() => {

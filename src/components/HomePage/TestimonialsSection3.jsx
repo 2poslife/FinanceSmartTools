@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/HomePage/TestimonialsSection3.css";
-import { getImageUrl } from "../../utils/index.jsx";
+import { getImageUrl } from "@/lib/utils";
 
 const testimonials = [
   {

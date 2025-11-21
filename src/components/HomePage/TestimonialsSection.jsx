@@ -8,7 +8,7 @@ import {
   Instagram,
   Sparkles
 } from "lucide-react";
-import { getImageUrl } from "../../utils/index.jsx";
+import { getImageUrl } from "@/lib/utils";
 
 const testimonials = [
   {

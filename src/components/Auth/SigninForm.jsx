@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import "../../styles/Auth/SigninForm.css";
 import { jwtDecode } from "jwt-decode";
-import { getImageUrl } from "../../utils/index.jsx";
+import { getImageUrl } from "@/lib/utils";
 
 const SigninForm = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const navigate = useNavigate();
+  const router = useRouter();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -46,9 +46,9 @@ const SigninForm = () => {
 
       // Redirect based on role
       if (decoded.role === "admin") {
-        navigate("/AdminPage");
+        router.push("/AdminPage");
       } else {
-        navigate("/CalculatorsPage");
+        router.push("/CalculatorsPage");
       }
     } catch (err) {
       setError(err.message);
@@ -117,7 +117,7 @@ const SigninForm = () => {
           <button
             type="button"
             className="signin-back-button"
-            onClick={() => navigate("/")}
+            onClick={() => router.push("/")}
           >
             ⬅ العودة
           </button>

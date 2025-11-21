@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MapPin, Mail, Phone } from "lucide-react";
 import "../../styles/HomePage/HeroSectionMobile.css";
-import { getImageUrl } from "../../utils/index.jsx";
+import { getImageUrl } from "@/lib/utils";
 
 function HeroSectionMobile() {
   const [showContact, setShowContact] = useState(false);

@@ -1,7 +1,7 @@
 // ImageSection.jsx
 import React from "react";
 import "../../styles/HomePage/ImageSection.css";
-import { getImageUrl } from "../../utils/index.jsx";
+import { getImageUrl } from "@/lib/utils";
 
 function ImageSection() {
   return (

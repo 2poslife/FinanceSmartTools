@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { jwtDecode } from "jwt-decode";
 import "../../styles/Layout/MobileHeader.css";
-import { getImageUrl } from "../../utils/index.jsx";
+import { getImageUrl } from "@/lib/utils";
 const Logo = getImageUrl('logo.png');
 
 const MobileHeader = () => {

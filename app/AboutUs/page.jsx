@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState } from "react"
-import AboutUsDesktop from "../../src/components/AboutUsPage/AboutUsDesktop"
-import AboutUsMobile from "../../src/components/AboutUsPage/AboutUsMobile"
+import AboutUsDesktop from "@/src/components/AboutUsPage/AboutUsDesktop"
+import AboutUsMobile from "@/src/components/AboutUsPage/AboutUsMobile"
 
 export default function AboutUs() {
   const [isMobile, setIsMobile] = useState(false)

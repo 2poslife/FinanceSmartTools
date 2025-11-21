@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
-import "../../src/styles/Auth/SigninForm.css"
+import "@/src/styles/Auth/SigninForm.css"
 import { jwtDecode } from "jwt-decode"
 
 export default function SigninForm() {

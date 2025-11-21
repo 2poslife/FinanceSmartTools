@@ -1,5 +1,5 @@
 import React from "react";
-import { courses } from "../../assets/data/courseMock";
+import { courses } from "@/lib/data/courseMock";
 import CourseCard from "./CourseCard";
 import "../../styles/HomePage/CoursesSection.css";
 

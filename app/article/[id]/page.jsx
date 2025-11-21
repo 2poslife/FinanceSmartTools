@@ -2,11 +2,11 @@
 
 import { useEffect } from 'react'
 import { useParams } from 'next/navigation'
-import { getArticleDetailById } from '../../../src/assets/data/articleDetailData'
-import ArticleHeader from '../../../src/components/ArticleDetailPage/ArticleHeader'
-import ArticleContent from '../../../src/components/ArticleDetailPage/ArticleContent'
-import ArticleNotFound from '../../../src/components/ArticleDetailPage/ArticleNotFound'
-import '../../../src/styles/ArticleDetailPage/ArticleDetailPage.css'
+import { getArticleDetailById } from '@/lib/data/articleDetailData'
+import ArticleHeader from '@/src/components/ArticleDetailPage/ArticleHeader'
+import ArticleContent from '@/src/components/ArticleDetailPage/ArticleContent'
+import ArticleNotFound from '@/src/components/ArticleDetailPage/ArticleNotFound'
+import '@/src/styles/ArticleDetailPage/ArticleDetailPage.css'
 
 export default function ArticleDetailPage() {
   const params = useParams()

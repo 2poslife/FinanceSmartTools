@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/HomePage/PurpleSectionMobile.css';
-import { getImageUrl } from '../../utils/index.jsx';
+import { getImageUrl } from "@/lib/utils";
 
 function PurpleSectionMobile() {
   return (

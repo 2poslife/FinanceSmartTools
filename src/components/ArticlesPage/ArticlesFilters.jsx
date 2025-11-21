@@ -1,5 +1,5 @@
 import React from "react";
-import { getCategoriesWithCounts } from "../../assets/data/articlesData";
+import { getCategoriesWithCounts } from "@/lib/data/articlesData";
 import "../../styles/ArticlesPage/ArticlesFilters.css";
 
 function ArticlesFilters({ selectedCategory, setSelectedCategory }) {

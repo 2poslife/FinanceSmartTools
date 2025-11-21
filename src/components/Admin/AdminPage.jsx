@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/Admin/AdminPage.css";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { jwtDecode } from "jwt-decode";
 import {
     BarChart,
@@ -23,7 +23,7 @@ const ALL_MONTHS = [
 ];
 
 const AdminPage = () => {
-    const navigate = useNavigate();
+    const router = useRouter();
 
     // Add User states
     const [showAddUser, setShowAddUser] = useState(false);
@@ -53,7 +53,7 @@ const AdminPage = () => {
     useEffect(() => {
         const token = localStorage.getItem("access_token");
         if (!token) {
-            navigate("/SigninForm");
+            router.push("/SigninForm");
             return;
         }
 
@@ -62,15 +62,15 @@ const AdminPage = () => {
 
             if (decoded.exp * 1000 < Date.now() || decoded.role !== "admin") {
                 localStorage.removeItem("access_token");
-                navigate("/SigninForm");
+                router.push("/SigninForm");
                 return;
             }
         } catch (err) {
             console.error("❌ Invalid token:", err);
             localStorage.removeItem("access_token");
-            navigate("/SigninForm");
+            router.push("/SigninForm");
         }
-    }, [navigate]);
+    }, [router]);
 
     // ✅ Fetch users stats
     useEffect(() => {
@@ -204,12 +204,12 @@ const AdminPage = () => {
                             <span className="nav-text">إضافة مستخدم</span>
                         </div>
                         {/* COMMENTED OUT - Constants update functionality no longer needed
-                        <div className="nav-item" onClick={() => navigate("/AdminConsts")}>
+                        <div className="nav-item" onClick={() => router.push("/AdminConsts")}>
                             <span className="nav-icon">⚙️</span>
                             <span className="nav-text">تعديل الثوابت</span>
                         </div>
                         */}
-                        <div className="nav-item" onClick={() => navigate("/CalculatorsPage")}>
+                        <div className="nav-item" onClick={() => router.push("/CalculatorsPage")}>
                             <span className="nav-icon">🧮</span>
                             <span className="nav-text">إدارة الحاسبات</span>
                         </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { Clock, BarChart } from "lucide-react";
-import { homePageCourses } from "../../assets/data/courseMock";
+import { homePageCourses } from "@/lib/data/courseMock";
 import "../../styles/CoursesPage/CoursesGrid.css";
 
 function CoursesGrid() {

@@ -1,6 +1,6 @@
 import React from "react";
 import "./HeroSection.css";
-import { getImageUrl } from "../../utils/index.jsx";
+import { getImageUrl } from "@/lib/utils";
 
 const HeroSection = () => {
   return (

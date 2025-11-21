@@ -2,7 +2,7 @@
 
 import React from "react";
 import "../../styles/Layout/Footer.css";
-import { getImageUrl } from "../../utils/index.jsx";
+import { getImageUrl } from "@/lib/utils";
 
 function Footer() {
   return (

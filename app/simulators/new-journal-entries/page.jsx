@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState } from "react"
-import NewJournalEntriesDesktop2 from "../../../src/components/NewJournalEntries2/NewJournalEntriesDesktop2"
-import NewJournalEntriesMobile from "../../../src/components/NewJournalEntries/NewJournalEntriesMobile"
+import NewJournalEntriesDesktop2 from "@/src/components/NewJournalEntries2/NewJournalEntriesDesktop2"
+import NewJournalEntriesMobile from "@/src/components/NewJournalEntries/NewJournalEntriesMobile"
 
 export default function NewJournalEntriesPage() {
   const [isMobile, setIsMobile] = useState(false)

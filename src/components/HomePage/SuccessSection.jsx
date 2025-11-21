@@ -1,6 +1,6 @@
 import React from 'react';
 import './SuccessSection.css';
-import { getImageUrl } from '../../utils/index.jsx';
+import { getImageUrl } from "@/lib/utils";
 const downloadImage = getImageUrl('download.jpg');
 
 function SuccessSection() {

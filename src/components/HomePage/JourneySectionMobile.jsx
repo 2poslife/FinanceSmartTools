@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import "../../styles/HomePage/JourneySectionMobile.css";
 import { BookOpen, Calculator } from "lucide-react";
-import { getImageUrl } from "../../utils/index.jsx";
+import { getImageUrl } from "@/lib/utils";
 
 function JourneySectionMobile() {
   const router = useRouter();

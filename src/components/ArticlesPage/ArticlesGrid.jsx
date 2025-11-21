@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import "../../styles/ArticlesPage/ArticlesGrid.css";
-import { getImageUrl } from "../../utils/index.jsx";
+import { getImageUrl } from "@/lib/utils";
 
 function ArticlesGrid({ filteredArticles }) {
   const router = useRouter();

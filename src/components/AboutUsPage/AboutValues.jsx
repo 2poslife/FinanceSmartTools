@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/AboutUsPage/AboutValues.css";
-import { getImageUrl } from "../../utils/index.jsx";
+import { getImageUrl } from "@/lib/utils";
 
 function AboutValues() {
   return (

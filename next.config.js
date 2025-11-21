@@ -22,6 +22,9 @@ const nextConfig = {
     config.resolve.alias = {
       ...config.resolve.alias,
       '@': __dirname,
+      '@/lib': __dirname + '/lib',
+      '@/src': __dirname + '/src',
+      '@/app': __dirname + '/app',
     };
     
     // Ensure lib directory is included in server builds

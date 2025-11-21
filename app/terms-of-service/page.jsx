@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from "react"
-import "../../src/styles/Pages/LegalPages.css"
+import "@/src/styles/Pages/LegalPages.css"
 
 export default function TermsOfService() {
   useEffect(() => {

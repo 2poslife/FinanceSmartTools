@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/HomePage/FeaturesSectionMobile.css';
-import { getImageUrl } from '../../utils/index.jsx';
+import { getImageUrl } from "@/lib/utils";
 const Illustration2 = getImageUrl('Illustration 2 .svg');
 
 function FeaturesSectionMobile() {

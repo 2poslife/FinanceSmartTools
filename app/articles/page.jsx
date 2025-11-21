@@ -1,11 +1,11 @@
 'use client'
 
 import { useEffect, useMemo, useState } from "react"
-import ArticlesHeader from "../../src/components/ArticlesPage/ArticlesHeader"
-import ArticlesFilters from "../../src/components/ArticlesPage/ArticlesFilters"
-import ArticlesGrid from "../../src/components/ArticlesPage/ArticlesGrid"
-import { articles } from "../../src/assets/data/articlesData"
-import "../../src/styles/ArticlesPage/ArticlesPage.css"
+import ArticlesHeader from "@/src/components/ArticlesPage/ArticlesHeader"
+import ArticlesFilters from "@/src/components/ArticlesPage/ArticlesFilters"
+import ArticlesGrid from "@/src/components/ArticlesPage/ArticlesGrid"
+import { articles } from "@/lib/data/articlesData"
+import "@/src/styles/ArticlesPage/ArticlesPage.css"
 
 export default function ArticlesPage() {
   const [selectedCategory, setSelectedCategory] = useState("all")
