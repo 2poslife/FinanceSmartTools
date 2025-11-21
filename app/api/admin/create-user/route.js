@@ -1,12 +1,8 @@
-/* eslint-env node */
+/* eslint-disable no-undef */
 import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import { createClient } from '@supabase/supabase-js';
 import { requireAdmin } from '../../../../lib/auth';
-import dotenv from 'dotenv';
-
-// Load environment variables from .env file
-dotenv.config({ path: '.env' });
 
 // Helper function to get Supabase client
 function getSupabaseClient() {
@@ -25,7 +21,7 @@ export async function POST(request) {
     // Check authentication and admin role
     const authResult = requireAdmin(request);
     if (authResult instanceof NextResponse) {
-      return authResult; // Return error response
+      return authResult;
     }
 
     const body = await request.json();
@@ -61,7 +57,6 @@ export async function POST(request) {
       .single();
 
     if (checkError && checkError.code !== 'PGRST116') {
-      // PGRST116 = no rows returned (expected if user doesn't exist)
       throw checkError;
     }
 
@@ -94,7 +89,7 @@ export async function POST(request) {
       );
     }
 
-    // Return success response (without password hash)
+    // Return success response
     return NextResponse.json({
       message: 'تم إنشاء المستخدم بنجاح',
       user: {
@@ -104,6 +99,7 @@ export async function POST(request) {
         created_at: newUser.created_at,
       },
     });
+
   } catch (error) {
     console.error('Create user error:', error);
     return NextResponse.json(
@@ -112,4 +108,3 @@ export async function POST(request) {
     );
   }
 }
-

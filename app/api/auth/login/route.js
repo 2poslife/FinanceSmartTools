@@ -1,23 +1,22 @@
-/* eslint-env node */
+/* eslint-disable no-undef */
 import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { createClient } from '@supabase/supabase-js';
-import dotenv from 'dotenv';
 
-// Load environment variables from .env file
-dotenv.config({ path: '.env' });
-
+// JWT config (loaded automatically by Next.js from .env)
 const jwtSecret = process.env.JWT_SECRET || 'your-secret-key-change-in-production';
 const jwtExpiresIn = process.env.JWT_EXPIRES_IN || '7d';
 
-// Helper function to get Supabase client
+// Create Supabase client (server-side)
 function getSupabaseClient() {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
   if (!supabaseUrl || !supabaseKey) {
-    throw new Error('Supabase configuration is missing. Please set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY environment variables.');
+    throw new Error(
+      'Supabase configuration is missing. Please set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in .env'
+    );
   }
 
   return createClient(supabaseUrl, supabaseKey);
@@ -36,10 +35,9 @@ export async function POST(request) {
       );
     }
 
-    // Get Supabase client
     const supabase = getSupabaseClient();
 
-    // Find user in database
+    // Retrieve user from DB
     const { data: user, error: userError } = await supabase
       .from('finance_users')
       .select('id, username, password_hash, role')
@@ -63,7 +61,7 @@ export async function POST(request) {
       );
     }
 
-    // Generate JWT token
+    // Generate JWT
     const token = jwt.sign(
       {
         id: user.id,
@@ -71,12 +69,10 @@ export async function POST(request) {
         role: user.role,
       },
       jwtSecret,
-      {
-        expiresIn: jwtExpiresIn,
-      }
+      { expiresIn: jwtExpiresIn }
     );
 
-    // Return success response
+    // Success response
     return NextResponse.json({
       message: 'تم تسجيل الدخول بنجاح',
       access_token: token,
@@ -87,6 +83,7 @@ export async function POST(request) {
         role: user.role,
       },
     });
+
   } catch (error) {
     console.error('Login error:', error);
     return NextResponse.json(
@@ -95,4 +92,3 @@ export async function POST(request) {
     );
   }
 }
-
