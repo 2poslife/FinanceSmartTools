@@ -21,10 +21,7 @@ export default function SelfEmployedCost() {
     const [expanded, setExpanded] = useState(false);
     const [authError, setAuthError] = useState(false);
 
-    const handleLogout = () => {
-        localStorage.removeItem("access_token");
-        router.push("/SigninForm");
-    };
+    // Removed unused handleLogout function
 
     const handleCalculate = async () => {
         const token = localStorage.getItem("access_token");
@@ -66,11 +63,13 @@ export default function SelfEmployedCost() {
             }
 
             const data = await res.json();
-            console.log("🔍 API Response:", data);
-            console.log("📋 Full result structure:", JSON.stringify(data, null, 2));
+            // Removed console.log for production
             setResult(data);
         } catch (err) {
-            console.error("❌ Error calculating:", err);
+            // Log error only in development
+            if (process.env.NODE_ENV === 'development') {
+                console.error("❌ Error calculating:", err);
+            }
             alert("שגיאה בחישוב. אנא נסה שוב.");
         } finally {
             setLoading(false);
@@ -126,7 +125,7 @@ export default function SelfEmployedCost() {
                         <span>
                             עליך להיות מחובר כדי לבצע חישוב.{" "}
                             <button
-                                onClick={() => navigate("/SigninForm")}
+                                onClick={() => router.push("/SigninForm")}
                                 className="link-btn"
                             >
                                 התחבר כאן

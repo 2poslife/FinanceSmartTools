@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "../../styles/HomePage/TestimonialsSection.css";
 import { 
   ChevronLeft, 
@@ -74,7 +74,7 @@ function TestimonialsSection() {
     }, 400);
   };
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     if (isAnimating) return;
     setIsAnimating(true);
     setAnimationDirection("slide-left");
@@ -88,7 +88,7 @@ function TestimonialsSection() {
         setIsAnimating(false);
       }, 600);
     }, 400);
-  };
+  }, [isAnimating]);
 
   // Auto-rotate testimonials
   useEffect(() => {
@@ -96,7 +96,7 @@ function TestimonialsSection() {
       goToNext();
     }, 8000);
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [goToNext]);
 
   return (
     <section className="homepage-testimonials-section" dir="rtl">

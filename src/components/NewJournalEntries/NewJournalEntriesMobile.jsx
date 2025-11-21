@@ -74,7 +74,9 @@ const NewJournalEntriesMobile = () => {
 
             <div className="nje-mobile-sections">
                 {sections.map(
-                    ({ id, title, subtitle, icon, component: SectionComponent, dotClass }) => (
+                    ({ id, title, subtitle, icon, component: SectionComponent, dotClass }) => {
+                        const Component = SectionComponent;
+                        return (
                         <details key={id} className="nje-mobile-section" open>
                             <summary className="nje-mobile-section-summary">
                                 <span className="nje-mobile-section-icon" aria-hidden="true">
@@ -88,11 +90,12 @@ const NewJournalEntriesMobile = () => {
                             </summary>
                             <div className="nje-mobile-section-content">
                                 <div className="nje-mobile-table-wrapper">
-                                    <SectionComponent />
+                                    <Component />
                                 </div>
                             </div>
                         </details>
-                    )
+                        );
+                    }
                 )}
             </div>
         </div>

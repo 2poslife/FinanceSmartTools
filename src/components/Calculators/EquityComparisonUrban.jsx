@@ -81,7 +81,10 @@ function EquityComparisonUrban() {
                 return;
             }
         } catch (err) {
-            console.error("❌ Invalid token:", err);
+            // Log error only in development
+            if (process.env.NODE_ENV === 'development') {
+                console.error("❌ Invalid token:", err);
+            }
             localStorage.removeItem("access_token");
             setShowAlert(true);
         }

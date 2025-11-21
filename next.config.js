@@ -6,6 +6,12 @@ const nextConfig = {
   images: {
     unoptimized: true, // For static exports or if you don't want Next.js image optimization
   },
+  // Remove console.log in production
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? {
+      exclude: ['error', 'warn'], // Keep console.error and console.warn
+    } : false,
+  },
   // Hide Next.js development overlay and indicators
   devIndicators: {
     buildActivity: false,

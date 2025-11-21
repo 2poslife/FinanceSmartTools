@@ -11,7 +11,7 @@ function CourseChapters({ course }) {
       <div className="course-detail-chapters-container">
         {course.chapters ? (
           <>
-            {course.chapters.slice(0, showAllChapters ? course.chapters.length : 3).map((chapter, index) => (
+            {course.chapters.slice(0, showAllChapters ? course.chapters.length : 3).map((chapter) => (
               <div key={chapter.id} className="course-detail-chapter-card">
                 <div className="course-detail-chapter-header">
                   <div className="course-detail-chapter-number">{chapter.id}</div>
@@ -49,8 +49,8 @@ function CourseChapters({ course }) {
               </div>
             )}
           </>
-        ) : course.mainTopics && course.mainTopics.map((topic, index) => (
-          <li key={index} className="course-detail-topic-item">
+        ) : course.mainTopics && course.mainTopics.map((topic, topicIdx) => (
+          <li key={topicIdx} className="course-detail-topic-item">
             <CheckCircle className="course-detail-check-icon" />
             <span>{topic}</span>
           </li>

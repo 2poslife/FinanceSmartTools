@@ -25,30 +25,7 @@ export default function EmployeeCostWithPension() {
     const [authError, setAuthError] = useState(false);
     const [calculatedGrossSalary, setCalculatedGrossSalary] = useState(0);
 
-    // Log SVG dimensions
-    React.useEffect(() => {
-        const guideImg = document.querySelector('.guide-icon');
-        if (guideImg) {
-            const logDimensions = () => {
-                console.log('📏 Guide_1.svg Dimensions:');
-                console.log('  - Width:', guideImg.offsetWidth + 'px');
-                console.log('  - Height:', guideImg.offsetHeight + 'px');
-                console.log('  - Computed Width:', window.getComputedStyle(guideImg).width);
-                console.log('  - Computed Height:', window.getComputedStyle(guideImg).height);
-            };
-            
-            // Log immediately
-            logDimensions();
-            
-            // Log after image loads
-            guideImg.addEventListener('load', logDimensions);
-            
-            // Log after a short delay to ensure rendering is complete
-            setTimeout(logDimensions, 100);
-            
-            return () => guideImg.removeEventListener('load', logDimensions);
-        }
-    }, []);
+    // Removed debug logging for production
 
     const handleLogout = () => {
         localStorage.removeItem("access_token");
