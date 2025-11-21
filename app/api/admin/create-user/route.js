@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import { createClient } from '@supabase/supabase-js';

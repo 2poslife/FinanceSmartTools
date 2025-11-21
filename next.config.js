@@ -12,10 +12,6 @@ const nextConfig = {
       exclude: ['error', 'warn'], // Keep console.error and console.warn
     } : false,
   },
-  // Hide Next.js development overlay and indicators
-  devIndicators: {
-    buildActivity: false,
-  },
   // Disable the overlay in development
   onDemandEntries: {
     maxInactiveAge: 25 * 1000,
