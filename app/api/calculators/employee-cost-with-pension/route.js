@@ -1,3 +1,6 @@
+// Explicitly set runtime to Node.js (not Edge)
+export const runtime = 'nodejs';
+
 // ========= Excel-Style Rounding =========
 function r2(x) {
     /** Round to 2 decimals like Excel. */

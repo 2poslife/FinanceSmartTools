@@ -1,3 +1,6 @@
+// Explicitly set runtime to Node.js (not Edge) since we use bcryptjs
+export const runtime = 'nodejs';
+
 import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import { createClient } from '@supabase/supabase-js';

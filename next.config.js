@@ -21,8 +21,15 @@ const nextConfig = {
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
+      '@': __dirname,
     };
     return config;
+  },
+  // Configure API routes to use Node.js runtime by default
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '2mb',
+    },
   },
   // Add headers for API requests
   async headers() {

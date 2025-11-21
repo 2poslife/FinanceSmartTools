@@ -1,3 +1,6 @@
+// Explicitly set runtime to Node.js (not Edge)
+export const runtime = 'nodejs';
+
 import { requireAuth } from '../../../../lib/auth';
 import { NextResponse } from 'next/server';
 
