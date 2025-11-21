@@ -44,8 +44,10 @@ const useAuth = () => {
 export default function Layout({ children }) {
   const { role } = useAuth()
   const [isMobile, setIsMobile] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth <= 768)
     }
@@ -55,8 +57,12 @@ export default function Layout({ children }) {
     return () => window.removeEventListener("resize", checkScreenSize)
   }, [])
 
-  // Determine which header to show
+  // Determine which header to show (client-side only after mount)
   const renderHeader = () => {
+    if (!mounted) {
+      // Default to Header during SSR to prevent hydration mismatch
+      return <Header />
+    }
     if (role === "admin") return <AdminHeader />
     if (isMobile && role !== "admin") return <MobileHeader />
     return <Header />

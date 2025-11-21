@@ -6,12 +6,16 @@ import AboutUsMobile from "@/src/components/AboutUsPage/AboutUsMobile"
 
 export default function AboutUs() {
   const [isMobile, setIsMobile] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     window.scrollTo(0, 0)
   }, [])
 
   useEffect(() => {
+    if (!mounted) return
+    
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth <= 768)
     }
@@ -19,7 +23,11 @@ export default function AboutUs() {
     checkScreenSize()
     window.addEventListener('resize', checkScreenSize)
     return () => window.removeEventListener('resize', checkScreenSize)
-  }, [])
+  }, [mounted])
+
+  if (!mounted) {
+    return <AboutUsDesktop />
+  }
 
   return (
     <>

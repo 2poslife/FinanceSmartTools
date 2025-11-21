@@ -6,12 +6,16 @@ import NewJournalEntriesMobile from "@/src/components/NewJournalEntries/NewJourn
 
 export default function NewJournalEntriesPage() {
   const [isMobile, setIsMobile] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     window.scrollTo(0, 0)
   }, [])
 
   useEffect(() => {
+    if (!mounted) return
+    
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth <= 768)
     }
@@ -20,7 +24,15 @@ export default function NewJournalEntriesPage() {
 
     window.addEventListener("resize", checkScreenSize)
     return () => window.removeEventListener("resize", checkScreenSize)
-  }, [])
+  }, [mounted])
+
+  if (!mounted) {
+    return (
+      <div dir="rtl">
+        <NewJournalEntriesDesktop2 />
+      </div>
+    )
+  }
 
   return (
     <div dir="rtl">

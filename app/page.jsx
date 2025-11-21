@@ -6,14 +6,18 @@ import HomePageMobile from "@/src/components/HomePage/HomePageMobile"
 
 export default function HomePage() {
   const [isMobile, setIsMobile] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   // Scroll to top when component mounts
   useEffect(() => {
+    setMounted(true)
     window.scrollTo(0, 0)
   }, [])
 
   // Check screen size and update mobile state
   useEffect(() => {
+    if (!mounted) return
+    
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth <= 768)
     }
@@ -26,7 +30,12 @@ export default function HomePage() {
 
     // Cleanup event listener
     return () => window.removeEventListener('resize', checkScreenSize)
-  }, [])
+  }, [mounted])
+
+  // Default to desktop during SSR to prevent hydration mismatch
+  if (!mounted) {
+    return <HomePageDesktop />
+  }
 
   return (
     <>

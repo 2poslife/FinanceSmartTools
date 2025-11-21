@@ -1,5 +1,10 @@
 {
-  "/page": "app/page.js",
-  "/articles/page": "app/articles/page.js",
-  "/CalculatorsPage/page": "app/CalculatorsPage/page.js"
+  "/api/calculators/employee-cost-with-pension/route": "app/api/calculators/employee-cost-with-pension/route.js",
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/CalculatorsPage/page": "app/CalculatorsPage/page.js",
+  "/simulators/employee-cost-with-pension/page": "app/simulators/employee-cost-with-pension/page.js",
+  "/SigninForm/page": "app/SigninForm/page.js",
+  "/simulators/micro-self-employed-salaried/page": "app/simulators/micro-self-employed-salaried/page.js",
+  "/simulators/new-journal-entries/page": "app/simulators/new-journal-entries/page.js",
+  "/simulators/equity-urban/page": "app/simulators/equity-urban/page.js"
 }
