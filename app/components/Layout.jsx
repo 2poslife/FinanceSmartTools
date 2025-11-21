@@ -42,7 +42,7 @@ const useAuth = () => {
 }
 
 export default function Layout({ children }) {
-  const { isAuthenticated, role } = useAuth()
+  const { role } = useAuth()
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {

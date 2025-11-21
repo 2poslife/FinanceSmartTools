@@ -81,7 +81,7 @@ const useResponsive = () => {
 
 // Layout component
 function Layout() {
-  const { isAuthenticated, role } = useAuth();
+  const { role } = useAuth();
   const isMobile = useResponsive();
 
   // Determine which header to show
