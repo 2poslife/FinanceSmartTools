@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from "react"
 import { jwtDecode } from "jwt-decode"
-import Header from "@/src/components/Layout/Header"
-import MobileHeader from "@/src/components/Layout/MobileHeader"
-import AdminHeader from "@/src/components/Layout/AdminHeader"
-import Footer from "@/src/components/Layout/Footer"
-import CookieConsent from "@/src/components/Layout/CookieConsent"
-import AccessibilityMenu from "@/src/components/Layout/AccessibilityMenu"
+import Header from "./Layout/Header"
+import MobileHeader from "./Layout/MobileHeader"
+import AdminHeader from "./Layout/AdminHeader"
+import Footer from "./Layout/Footer"
+import CookieConsent from "./Layout/CookieConsent"
+import AccessibilityMenu from "./Layout/AccessibilityMenu"
 
 // Custom hook for authentication
 const useAuth = () => {

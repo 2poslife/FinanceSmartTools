@@ -1,6 +1,6 @@
 'use client'
 
-import EmployeeCostNoPension from "@/src/components/Calculators/EmployeeCostNoPension"
+import EmployeeCostNoPension from "../../components/Calculators/EmployeeCostNoPension"
 
 export default function EmployeeCostNoPensionPage() {
   return <EmployeeCostNoPension />

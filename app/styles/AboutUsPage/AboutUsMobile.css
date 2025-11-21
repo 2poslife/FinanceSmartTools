@@ -1,0 +1,25 @@
+/* About Us Page - Mobile Version */
+.about-us-page-mobile {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  min-height: 100vh;
+  background: #fff;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Global mobile styles */
+.about-us-page-mobile * {
+  box-sizing: border-box;
+}
+
+/* Enhanced mobile performance */
+.about-us-page-mobile {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Touch-friendly interactions */
+.about-us-page-mobile * {
+  -webkit-tap-highlight-color: transparent;
+}

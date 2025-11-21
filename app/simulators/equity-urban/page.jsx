@@ -1,6 +1,6 @@
 'use client'
 
-import EquityComparisonUrban from "@/src/components/Calculators/EquityComparisonUrban"
+import EquityComparisonUrban from "../../components/Calculators/EquityComparisonUrban"
 
 export default function EquityComparisonUrbanPage() {
   return <EquityComparisonUrban />

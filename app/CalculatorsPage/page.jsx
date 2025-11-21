@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState } from "react"
-import CalculatorsDesktop from "@/src/components/CalculatorsPage/CalculatorsDesktop"
-import CalculatorsMobile from "@/src/components/CalculatorsPage/CalculatorsMobile"
+import CalculatorsDesktop from "../components/CalculatorsPage/CalculatorsDesktop"
+import CalculatorsMobile from "../components/CalculatorsPage/CalculatorsMobile"
 
 export default function CalculatorsPage() {
   const [isMobile, setIsMobile] = useState(false)

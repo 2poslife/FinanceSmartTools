@@ -17,22 +17,14 @@ const nextConfig = {
     maxInactiveAge: 25 * 1000,
     pagesBufferLength: 2,
   },
-  // Ensure CSS and other assets are handled correctly
+  // Webpack configuration for path aliases
   webpack: (config, { isServer }) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       '@': __dirname,
       '@/lib': __dirname + '/lib',
-      '@/src': __dirname + '/src',
       '@/app': __dirname + '/app',
     };
-    
-    // Ensure lib directory is included in server builds
-    if (isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-      };
-    }
     
     return config;
   },

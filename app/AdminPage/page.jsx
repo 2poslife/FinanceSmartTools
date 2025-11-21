@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from "react"
-import "@/src/styles/Admin/AdminPage.css"
+import "../styles/Admin/AdminPage.css"
 import { useRouter } from "next/navigation"
 import { jwtDecode } from "jwt-decode"
 import {

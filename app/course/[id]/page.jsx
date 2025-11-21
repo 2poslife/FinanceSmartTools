@@ -3,12 +3,12 @@
 import { useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { courses, detailedCourses } from "@/lib/data/courseMock"
-import CourseHeader from "@/src/components/CourseDetailPage/CourseHeader"
-import CourseChapters from "@/src/components/CourseDetailPage/CourseChapters"
-import CourseVideo from "@/src/components/CourseDetailPage/CourseVideo"
-import CourseCTA from "@/src/components/CourseDetailPage/CourseCTA"
-import CourseSidebar from "@/src/components/CourseDetailPage/CourseSidebar"
-import "@/src/styles/CourseDetailPage/CourseDetailPage.css"
+import CourseHeader from '../../components/CourseDetailPage/CourseHeader'
+import CourseChapters from '../../components/CourseDetailPage/CourseChapters'
+import CourseVideo from '../../components/CourseDetailPage/CourseVideo'
+import CourseCTA from '../../components/CourseDetailPage/CourseCTA'
+import CourseSidebar from '../../components/CourseDetailPage/CourseSidebar'
+import "../../styles/CourseDetailPage/CourseDetailPage.css"
 
 export default function CourseDetailPage() {
   const params = useParams()

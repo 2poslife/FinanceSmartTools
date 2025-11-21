@@ -1,6 +1,6 @@
-import '@/src/index.css'
-import '@/src/theme.css'
-import '@/src/App.css'
+import './globals.css'
+import './theme.css'
+import './App.css'
 import Layout from './components/Layout'
 
 export const metadata = {
