@@ -18,11 +18,19 @@ const nextConfig = {
     pagesBufferLength: 2,
   },
   // Ensure CSS and other assets are handled correctly
-  webpack: (config) => {
+  webpack: (config, { isServer }) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       '@': __dirname,
     };
+    
+    // Ensure lib directory is included in server builds
+    if (isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+      };
+    }
+    
     return config;
   },
   // Configure API routes to use Node.js runtime by default
@@ -30,6 +38,10 @@ const nextConfig = {
     serverActions: {
       bodySizeLimit: '2mb',
     },
+  },
+  // Ensure API routes are properly handled and lib directory is included in builds
+  outputFileTracingIncludes: {
+    '/api/**': ['./lib/**/*'],
   },
   // Add headers for API requests
   async headers() {

@@ -1,0 +1,6 @@
+# Ignore old React/Vite build artifacts
+src/App.jsx
+src/main.jsx
+vite.config.js
+dist/
+build/
