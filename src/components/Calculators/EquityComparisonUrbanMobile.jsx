@@ -87,10 +87,8 @@ function EquityComparisonUrbanMobile() {
                 return;
             }
         } catch (err) {
-            // Log error only in development
-            if (process.env.NODE_ENV === 'development') {
-                console.error("❌ Invalid token:", err);
-            }
+            // Error will be logged in development, removed in production by Next.js compiler
+            console.error("❌ Invalid token:", err);
             localStorage.removeItem("access_token");
             setShowAlert(true);
         }
@@ -188,7 +186,7 @@ function EquityComparisonUrbanMobile() {
     }, []);
     const expensesTotals = useMemo(() => {
         const totals = Array(5).fill(0);
-        expenses.forEach((row, rowIdx) => {
+        expenses.forEach((row) => {
             row.forEach((v, colIdx) => {
                 const numValue = v === "" || v === null || v === undefined ? 0 : Number(v);
                 if (!isNaN(numValue)) {
@@ -204,7 +202,7 @@ function EquityComparisonUrbanMobile() {
     // Grand total of all expenses across all years
     const expensesGrandTotal = useMemo(() => {
         const totals = Array(5).fill(0);
-        expenses.forEach((row, rowIdx) => {
+        expenses.forEach((row) => {
             row.forEach((v, colIdx) => {
                 const numValue = v === "" || v === null || v === undefined ? 0 : Number(v);
                 if (!isNaN(numValue)) {

@@ -21,10 +21,7 @@ export default function MicroSelfEmployedCalculator() {
     const [expanded, setExpanded] = useState(false);
     const [authError, setAuthError] = useState(false);
 
-    const handleLogout = () => {
-localStorage.removeItem("access_token");
-        router.push("/SigninForm");
-    };
+    // Removed unused handleLogout function
 
     const handleCalculate = async () => {
         const token = localStorage.getItem("access_token");
@@ -147,7 +144,7 @@ localStorage.removeItem("access_token");
                         <AlertTriangle className="w-5 h-5 text-red-600" />
                         <span>
                             עליך להיות מחובר כדי לבצע חישוב.{" "}
-                            <button onClick={() => navigate("/SigninForm")} className="link-btn">
+                            <button onClick={() => router.push("/SigninForm")} className="link-btn">
                                 התחבר כאן
                             </button>
                         </span>

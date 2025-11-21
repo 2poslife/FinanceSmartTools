@@ -81,10 +81,8 @@ function EquityComparisonUrban() {
                 return;
             }
         } catch (err) {
-            // Log error only in development
-            if (process.env.NODE_ENV === 'development') {
-                console.error("❌ Invalid token:", err);
-            }
+            // Error will be logged in development, removed in production by Next.js compiler
+            console.error("❌ Invalid token:", err);
             localStorage.removeItem("access_token");
             setShowAlert(true);
         }

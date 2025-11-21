@@ -66,10 +66,8 @@ export default function SelfEmployedCost() {
             // Removed console.log for production
             setResult(data);
         } catch (err) {
-            // Log error only in development
-            if (process.env.NODE_ENV === 'development') {
-                console.error("❌ Error calculating:", err);
-            }
+            // Error will be logged in development, removed in production by Next.js compiler
+            console.error("❌ Error calculating:", err);
             alert("שגיאה בחישוב. אנא נסה שוב.");
         } finally {
             setLoading(false);
