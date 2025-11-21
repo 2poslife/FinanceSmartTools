@@ -11,12 +11,14 @@ export default function HomePage() {
   // Scroll to top when component mounts
   useEffect(() => {
     setMounted(true)
-    window.scrollTo(0, 0)
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0)
+    }
   }, [])
 
   // Check screen size and update mobile state
   useEffect(() => {
-    if (!mounted) return
+    if (!mounted || typeof window === 'undefined') return
     
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth <= 768)
