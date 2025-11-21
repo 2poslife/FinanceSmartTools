@@ -481,14 +481,6 @@ function EquityComparisonUrbanMobile() {
     };
 
     // Calculate value_3_4 for each year
-
-    const getFamilySizeIndex = (familyCount) => {
-        const count = Number(familyCount) || 0;
-        if (count <= 0) return 0;
-        if (count >= 6) return 5;
-        return count - 1;
-    };
-
     const value_3_4 = useMemo(() => {
         const values = Array(5).fill("");
         years.forEach((year, idx) => {
