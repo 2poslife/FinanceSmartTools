@@ -1,5 +1,8 @@
+'use client'
+
 import React from "react";
 import "../../styles/Layout/Footer.css";
+import { getImageUrl } from "../../utils/index.jsx";
 
 function Footer() {
   return (
@@ -9,7 +12,7 @@ function Footer() {
         <div className="footer-left">
           <div className="footer-logo-section">
             <div className="logo-wrapper">
-              <img src="https://d3egla0dyi6qxn.cloudfront.net/public/logo.png" alt="Logo" className="footer-logo" />
+              <img src={getImageUrl('logo.png')} alt="Logo" className="footer-logo" />
             </div>
           </div>
           <h2 className="office-name">مكتب زيدان</h2>
@@ -79,6 +82,18 @@ function Footer() {
             </a>
           </div>
         </div>
+      </div>
+
+      {/* Legal Links */}
+      <div className="footer-legal">
+        <div className="legal-links">
+          <a href="/privacy-policy" className="legal-link">سياسة الخصوصية</a>
+          <span className="legal-separator">|</span>
+          <a href="/terms-of-service" className="legal-link">شروط الخدمة</a>
+        </div>
+        <p className="footer-copyright">
+          © {new Date().getFullYear()} مكتب زيدان - جميع الحقوق محفوظة
+        </p>
       </div>
 
       {/* Bottom Decorative Wave */}

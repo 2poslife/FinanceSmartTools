@@ -1,14 +1,14 @@
+'use client'
+
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import {
     AlertTriangle,
 } from "lucide-react";
 import "../../styles/Calculators/IncomeTaxWithPoints.css";
 
-const API_BASE = "https://financesmarttools-backend.onrender.com";
-
 export default function IncomeTaxWithPoints() {
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const [grossSalary, setGrossSalary] = useState("");
     const [creditPoints, setCreditPoints] = useState("");
@@ -36,7 +36,7 @@ export default function IncomeTaxWithPoints() {
 
         try {
             const res = await fetch(
-                `${API_BASE}/cost/income-tax-with-points`,
+                "/api/calculators/income-tax-with-points",
                 {
                     method: "POST",
                     headers: { 
@@ -56,10 +56,16 @@ export default function IncomeTaxWithPoints() {
                 return;
             }
 
+            if (!res.ok) {
+                const errorData = await res.json().catch(() => ({}));
+                throw new Error(errorData.error || 'API calculation failed');
+            }
+
             const data = await res.json();
             setResult(data);
         } catch (err) {
             console.error("❌ Error calculating:", err);
+            alert("שגיאה בחישוב. אנא נסה שוב.");
         } finally {
             setLoading(false);
         }
@@ -133,7 +139,7 @@ export default function IncomeTaxWithPoints() {
                         <AlertTriangle className="w-5 h-5 text-red-600" />
                         <span>
                             עליך להיות מחובר כמשתמש מורשה כדי לבצע חישוב.{" "}
-                            <button onClick={() => navigate("/SigninForm")} className="link-btn">
+                            <button onClick={() => router.push("/SigninForm")} className="link-btn">
                                 התחבר כאן
                             </button>
                         </span>
@@ -161,7 +167,7 @@ export default function IncomeTaxWithPoints() {
 
                 {/* Footer Buttons */}
                 <div className="calcpage-form-footer">
-                    <button onClick={() => navigate(-1)} className="calcpage-btn home">
+                    <button onClick={() => router.back()} className="calcpage-btn home">
                         🔙 חזור
                     </button>
                     <button

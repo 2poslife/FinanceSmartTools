@@ -8,6 +8,7 @@ import {
   Instagram,
   Sparkles
 } from "lucide-react";
+import { getImageUrl } from "../../utils/index.jsx";
 
 const testimonials = [
   {
@@ -137,7 +138,7 @@ function TestimonialsSection() {
 
               {/* Logo */}
               <div className="homepage-testimonial-logo">
-                <img src="https://d3egla0dyi6qxn.cloudfront.net/public/logo.png" alt="Logo" className="homepage-logo-image" />
+                <img src={getImageUrl('logo.png')} alt="Logo" className="homepage-logo-image" />
                 <div className="homepage-logo-ring"></div>
               </div>
 

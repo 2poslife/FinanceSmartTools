@@ -1,22 +1,26 @@
+'use client'
+
 import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useRouter, usePathname } from "next/navigation";
 import { Home, Settings, LogOut, Users, BarChart, Calculator, Info, FileText, BookOpen, Monitor } from "lucide-react";
 import "../../styles/Layout/Header.css";
 
 const AdminHeader = () => {
-    const navigate = useNavigate();
-    const location = useLocation();
+    const router = useRouter();
+    const pathname = usePathname();
 
-    const isActive = (path) => (location.pathname === path ? "active" : "");
+    const isActive = (path) => (pathname === path ? "active" : "");
 
     const handleLogout = () => {
-        localStorage.removeItem("access_token");
-        navigate("/SigninForm");
+        if (typeof window !== 'undefined') {
+            localStorage.removeItem("access_token");
+        }
+        router.push("/SigninForm");
     };
 
     return (
         <header className="header admin-header">
-            <div className="logo" onClick={() => navigate("/AdminPage")}>
+            <div className="logo" onClick={() => router.push("/AdminPage")}>
                 <Settings className="logo-icon" />
                 <div className="logo-texts">
                     <span className="logo-title">منطقة الإدارة</span>
@@ -26,7 +30,7 @@ const AdminHeader = () => {
 
             <nav className="nav">
                 <button
-                    onClick={() => navigate("/AdminPage")}
+                    onClick={() => router.push("/AdminPage")}
                     className={`nav-btn control-panel-btn ${isActive("/AdminPage")}`}
                     style={{
                         background: 'linear-gradient(135deg, #ff6b35 0%, #f7931e 100%)',
@@ -39,31 +43,31 @@ const AdminHeader = () => {
                     <Monitor className="icon" /> لوحة التحكم
                 </button>
                 <button
-                    onClick={() => navigate("/")}
+                    onClick={() => router.push("/")}
                     className={`nav-btn ${isActive("/")}`}
                 >
                     <Home className="icon" /> الرئيسية
                 </button>
                 <button
-                    onClick={() => navigate("/courses")}
+                    onClick={() => router.push("/courses")}
                     className={`nav-btn ${isActive("/courses")}`}
                 >
                     <BookOpen className="icon" /> الدورات
                 </button>
                 <button
-                    onClick={() => navigate("/articles")}
+                    onClick={() => router.push("/articles")}
                     className={`nav-btn ${isActive("/articles")}`}
                 >
                     <FileText className="icon" /> المقالات
                 </button>
                 <button
-                    onClick={() => navigate("/CalculatorsPage")}
+                    onClick={() => router.push("/CalculatorsPage")}
                     className={`nav-btn ${isActive("/CalculatorsPage")}`}
                 >
                     <Calculator className="icon" /> الآلات الحاسبة
                 </button>
                 <button
-                    onClick={() => navigate("/AboutUs")}
+                    onClick={() => router.push("/AboutUs")}
                     className={`nav-btn ${isActive("/AboutUs")}`}
                 >
                     <Info className="icon" /> حول المكتب

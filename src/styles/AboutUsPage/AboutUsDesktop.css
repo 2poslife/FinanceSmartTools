@@ -3,14 +3,23 @@
   font-family: "Segoe UI", Tahoma, sans-serif;
   min-height: 100vh;
   background: #fff;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Main Content Layout */
 .about-main-content {
   display: flex;
+  flex-direction: row; /* Content on left, image on right */
   min-height: calc(100vh - 80px);
   border-top: 2px solid #000;
-  gap: 20px;
+  gap: 0 !important; /* Force no gap between sections */
+  padding: 0 !important; /* Force no padding on container */
+  margin: 0 !important; /* Force no margin */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Bidirectional hover effect - only when hovering over the gold boxes themselves */

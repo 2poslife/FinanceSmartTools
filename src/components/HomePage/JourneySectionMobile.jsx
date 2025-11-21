@@ -1,17 +1,18 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import "../../styles/HomePage/JourneySectionMobile.css";
 import { BookOpen, Calculator } from "lucide-react";
+import { getImageUrl } from "../../utils/index.jsx";
 
 function JourneySectionMobile() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleBrowseCourses = () => {
-    navigate("/courses");
+    router.push("/courses");
   };
 
   const handleUseCalculators = () => {
-    navigate("/CalculatorsPage");
+    router.push("/CalculatorsPage");
   };
 
   return (
@@ -40,7 +41,7 @@ function JourneySectionMobile() {
               <span className="homepage-stat-label-mobile">محاسب محترف</span>
             </div>
             <div className="homepage-stat-item-mobile homepage-logo-stat-mobile">
-              <img src="https://d3egla0dyi6qxn.cloudfront.net/public/logo.png" alt="Logo" className="homepage-stat-logo-mobile" />
+              <img src={getImageUrl('logo.png')} alt="Logo" className="homepage-stat-logo-mobile" />
               <span className="homepage-stat-label-mobile">مكتب زيدان</span>
             </div>
             <div className="homepage-stat-item-mobile">

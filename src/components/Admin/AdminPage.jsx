@@ -156,7 +156,12 @@ const AdminPage = () => {
 
         try {
             const token = localStorage.getItem("access_token");
-            const url = `https://financesmarttools-backend.onrender.com/user/admin/create-user`;
+            if (!token) {
+                setMessage("❌ يجب تسجيل الدخول أولاً");
+                return;
+            }
+
+            const url = `/api/admin/create-user`;
             const body = {
                 username: newUsername,
                 role: newRole,
@@ -181,6 +186,11 @@ const AdminPage = () => {
             setMessage("✅ تم إنشاء المستخدم بنجاح");
             resetFields();
             setShowAddUser(false);
+            
+            // Refresh page to update stats
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
         } catch (err) {
             console.error("❌ Error during request:", err);
             setMessage(`❌ ${err.message}`);
@@ -319,7 +329,11 @@ const AdminPage = () => {
                                 </button>
                             </div>
                         </form>
-                        {message && <p className="message">{message}</p>}
+                        {message && (
+                            <p className={`message ${message.startsWith('❌') ? 'error' : message.startsWith('✅') ? 'success' : ''}`}>
+                                {message}
+                            </p>
+                        )}
                     </div>
                 </div>
             )}

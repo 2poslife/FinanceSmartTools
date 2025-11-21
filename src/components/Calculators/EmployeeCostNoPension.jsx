@@ -1,5 +1,7 @@
+'use client'
+
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import {
     LogOut,
     Home,
@@ -11,10 +13,8 @@ import {
 } from "lucide-react";
 import "../../styles/Calculators/EmployeeCostNoPension.css";
 
-const API_BASE = "https://financesmarttools-backend.onrender.com";
-
 export default function EmployeeCostNoPension() {
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const [grossSalary, setGrossSalary] = useState("");
     const [creditPoints, setCreditPoints] = useState("");
@@ -26,7 +26,7 @@ export default function EmployeeCostNoPension() {
 
     const handleLogout = () => {
         localStorage.removeItem("access_token");
-        navigate("/SigninForm");
+        router.push("/SigninForm");
     };
 
     const handleCalculate = async () => {
@@ -54,7 +54,7 @@ export default function EmployeeCostNoPension() {
 
         try {
             const res = await fetch(
-                `${API_BASE}/employee-cost/no-pension`,
+                "/api/calculators/employee-cost-no-pension",
                 {
                     method: "POST",
                     headers: { 
@@ -74,12 +74,18 @@ export default function EmployeeCostNoPension() {
                 return;
             }
 
+            if (!res.ok) {
+                const errorData = await res.json().catch(() => ({}));
+                throw new Error(errorData.error || 'API calculation failed');
+            }
+
             const data = await res.json();
             console.log("🔍 Backend Response (No Pension):", data);
             setResult(data);
             setCalculatedGrossSalary(parseFloat(grossSalary));
         } catch (err) {
             console.error("❌ Error calculating:", err);
+            alert("שגיאה בחישוב. אנא נסה שוב.");
         } finally {
             setLoading(false);
         }
@@ -228,7 +234,7 @@ export default function EmployeeCostNoPension() {
 
                 {/* Footer Buttons */}
                 <div className="calcpage-form-footer">
-                    <button onClick={() => navigate(-1)} className="calcpage-btn home">
+                    <button onClick={() => router.back()} className="calcpage-btn home">
                         🔙 חזור
                     </button>
                     <button

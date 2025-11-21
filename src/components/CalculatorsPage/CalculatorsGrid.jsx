@@ -1,7 +1,11 @@
+'use client'
+
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import {
     Calculator,
+    Home as HomeIcon,
+    Building2,
     User,
     Users,
     Briefcase,
@@ -12,7 +16,7 @@ import {
 import "../../styles/CalculatorsPage/CalculatorsGrid.css";
 
 const CalculatorsGrid = () => {
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const simulators = [
         // First row - Non-self-employed calculators
@@ -65,12 +69,12 @@ const CalculatorsGrid = () => {
         const publicLinks = ["/simulators/employee-cost-with-pension"];
 
         if (publicLinks.includes(link)) {
-            navigate(link);
+            router.push(link);
         } else if (!token) {
             alert("עליך להתחבר כדי להשתמש במחשבון");
-            navigate("/SigninForm");
+            router.push("/SigninForm");
         } else {
-            navigate(link);
+            router.push(link);
         }
     };
 
@@ -122,6 +126,35 @@ const CalculatorsGrid = () => {
                     <p>פקודות יומן לדוחות כספיים</p>
                 </div>
             </div>
+
+            {/* Equity Comparison header bar */}
+            <div className="calculators-desktop-conclusion" style={{ marginBottom: '1.5rem' }}>
+                <p className="calculators-desktop-conclusion-text">
+                    השוואת הון
+                </p>
+            </div>
+
+            {/* Equity Comparison cards */}
+            <div className="calculators-desktop-grid">
+                <div
+                    className="calculators-desktop-card info-card"
+                    onClick={() => handleSimulatorClick("/simulators/equity-urban")}
+                >
+                    <div className="calculators-desktop-card-header">
+                        <Building2 className="calculators-desktop-sim-icon" />
+                        <h3>עירוני</h3>
+                    </div>
+                    <p>השוואת הון - מגזר עירוני</p>
+                </div>
+                <div className="calculators-desktop-card info-card">
+                    <div className="calculators-desktop-card-header">
+                        <HomeIcon className="calculators-desktop-sim-icon" />
+                        <h3>כפרי</h3>
+                    </div>
+                    <p>השוואת הון - מגזר כפרי</p>
+                </div>
+            </div>
+
             <div className="calculators-desktop-conclusion">
                 <p className="calculators-desktop-conclusion-text">
                     نوفر لك ادوات عملية تساعدك في اتخاذ قرارات محاسبية دقيقة

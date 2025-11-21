@@ -305,8 +305,9 @@
 
 .message.error {
     background: #f8d7da;
-    color: #721c24;
+    color: #dc3545;
     border: 1px solid #f5c6cb;
+    font-weight: 600;
 }
 
 .message.success {

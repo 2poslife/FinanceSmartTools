@@ -1,5 +1,7 @@
+'use client'
+
 import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useRouter, usePathname } from "next/navigation";
 import {
     Home,
     Calculator,
@@ -9,19 +11,19 @@ import {
 import "../../styles/Layout/Header.css";
 
 const PrivateHeader = () => {
-    const navigate = useNavigate();
-    const location = useLocation();
+    const router = useRouter();
+    const pathname = usePathname();
 
-    const isActive = (path) => (location.pathname === path ? "active" : "");
+    const isActive = (path) => (pathname === path ? "active" : "");
 
     const handleLogout = () => {
         localStorage.removeItem("access_token");
-        navigate("/SigninForm");
+        router.push("/SigninForm");
     };
 
     return (
         <header className="header">
-            <div className="logo" onClick={() => navigate("/")}>
+            <div className="logo" onClick={() => router.push("/")}>
                 <User className="logo-icon" />
                 <div className="logo-texts">
                     <span className="logo-title">منطقة المستخدم</span>
@@ -30,10 +32,10 @@ const PrivateHeader = () => {
             </div>
 
             <nav className="nav">
-                <button onClick={() => navigate("/")} className={`nav-btn ${isActive("/")}`}>
+                <button onClick={() => router.push("/")} className={`nav-btn ${isActive("/")}`}>
                     <Home className="icon" /> الرئيسية
                 </button>
-                <button onClick={() => navigate("/CalculatorsPage")} className={`nav-btn ${isActive("/CalculatorsPage")}`}>
+                <button onClick={() => router.push("/CalculatorsPage")} className={`nav-btn ${isActive("/CalculatorsPage")}`}>
                     <Calculator className="icon" /> الآلات الحاسبة
                 </button>
             </nav>

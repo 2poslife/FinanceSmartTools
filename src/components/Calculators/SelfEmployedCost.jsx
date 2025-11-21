@@ -1,5 +1,7 @@
+'use client'
+
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import {
     LogOut,
     Home,
@@ -10,11 +12,8 @@ import {
 } from "lucide-react";
 import "../../styles/Calculators/SelfEmployedCost.css";
 
-const API_BASE = "https://financesmarttools-backend.onrender.com";
-const LOCAL_API_BASE = "http://localhost:8000";
-
 export default function SelfEmployedCost() {
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const [yearlyIncome, setYearlyIncome] = useState("");
     const [result, setResult] = useState(null);
@@ -24,7 +23,7 @@ export default function SelfEmployedCost() {
 
     const handleLogout = () => {
         localStorage.removeItem("access_token");
-        navigate("/SigninForm");
+        router.push("/SigninForm");
     };
 
     const handleCalculate = async () => {
@@ -41,11 +40,8 @@ export default function SelfEmployedCost() {
         setAuthError(false);
 
         try {
-            console.log("🚀 Making request to:", `${API_BASE}/self-employed/self-employed`);
-            console.log("📤 Request payload:", { yearly_income: parseFloat(yearlyIncome), credit_points: 0 });
-            
             const res = await fetch(
-                `${API_BASE}/self-employed/self-employed`,
+                "/api/calculators/self-employed",
                 {
                     method: "POST",
                     headers: { 
@@ -54,13 +50,9 @@ export default function SelfEmployedCost() {
                     },
                     body: JSON.stringify({
                         yearly_income: parseFloat(yearlyIncome),
-                        credit_points: 0
                     }),
                 }
             );
-            
-            console.log("📡 Response status:", res.status);
-            console.log("📡 Response headers:", res.headers);
 
             if (res.status === 401 || res.status === 403) {
                 setAuthError(true);
@@ -68,48 +60,9 @@ export default function SelfEmployedCost() {
                 return;
             }
 
-            if (res.status === 422 || res.status === 404) {
-                const errorData = res.status === 422 ? await res.json() : null;
-                console.error(`❌ ${res.status} Error - Server issue:`, errorData);
-                console.log("🔄 Trying localhost endpoint as fallback...");
-                
-                // Try localhost endpoint as fallback
-                try {
-                    const localRes = await fetch(
-                        `${LOCAL_API_BASE}/self-employed/self-employed`,
-                        {
-                            method: "POST",
-                            headers: { 
-                                "Content-Type": "application/json",
-                                "Authorization": `Bearer ${token}`
-                            },
-                            body: JSON.stringify({
-                                yearly_income: parseFloat(yearlyIncome),
-                                credit_points: 0
-                            }),
-                        }
-                    );
-                    
-                    if (localRes.ok) {
-                        const localData = await localRes.json();
-                        console.log("✅ Localhost response:", localData);
-                        setResult(localData);
-                        return;
-                    } else {
-                        console.error("❌ Localhost also failed with status:", localRes.status);
-                    }
-                } catch (localErr) {
-                    console.error("❌ Localhost also failed:", localErr);
-                }
-                
-                alert("שגיאה בנתונים שנשלחו לשרת. אנא בדוק את ההכנסה שהזנת.");
-                return;
-            }
-
             if (!res.ok) {
-                console.error("❌ HTTP Error:", res.status, res.statusText);
-                alert(`שגיאה בשרת: ${res.status} ${res.statusText}`);
-                return;
+                const errorData = await res.json().catch(() => ({}));
+                throw new Error(errorData.error || 'API calculation failed');
             }
 
             const data = await res.json();
@@ -235,7 +188,7 @@ export default function SelfEmployedCost() {
 
                 {/* Footer Buttons */}
                 <div className="calcpage-form-footer">
-                    <button onClick={() => navigate(-1)} className="calcpage-btn home">
+                    <button onClick={() => router.back()} className="calcpage-btn home">
                         🔙 חזור
                     </button>
                     <button

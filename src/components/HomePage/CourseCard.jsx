@@ -1,17 +1,25 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+'use client'
+
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const CourseCard = ({ course }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
+  const [imageSrc, setImageSrc] = useState(course.image);
+
+  useEffect(() => {
+    // Set cache-busting parameter only on client side
+    setImageSrc(`${course.image}?v=${Date.now()}`);
+  }, [course.image]);
 
   const handleCourseClick = () => {
-    navigate(`/course/${course.id}`);
+    router.push(`/course/${course.id}`);
   };
 
   return (
     <div className="course-card" onClick={handleCourseClick} style={{cursor: 'pointer'}}>
       <div className="course-image">
-        <img src={`${course.image}?v=${Date.now()}`} alt="Course" className="course-image-bg" />
+        <img src={imageSrc} alt="Course" className="course-image-bg" />
         <div className="course-category">{course.level}</div>
       </div>
       
@@ -27,7 +35,7 @@ const CourseCard = ({ course }) => {
         
         <button className="enroll-btn" onClick={(e) => {
           e.stopPropagation();
-          navigate(`/course/${course.id}`);
+          router.push(`/course/${course.id}`);
         }}>
           اشترك الآن
         </button>

@@ -1,10 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import "../../styles/ArticleDetailPage/ArticleHeader.css";
 
 function ArticleHeader({ article }) {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleShare = () => {
     if (navigator.share) {
@@ -21,7 +21,7 @@ function ArticleHeader({ article }) {
 
   return (
     <div className="article-detail-header">
-      <button onClick={() => navigate(-1)} className="article-detail-back-button">
+      <button onClick={() => router.back()} className="article-detail-back-button">
         <ArrowRight /> חזרה
       </button>
       

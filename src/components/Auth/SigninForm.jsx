@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/Auth/SigninForm.css";
 import { jwtDecode } from "jwt-decode";
+import { getImageUrl } from "../../utils/index.jsx";
 
 const SigninForm = () => {
   useEffect(() => {
@@ -82,7 +83,7 @@ const SigninForm = () => {
 
       <div className="login-box">
         <div className="login-logo">
-          <img src="https://d3egla0dyi6qxn.cloudfront.net/public/logo.png" alt="Logo" className="logo-image" />
+          <img src={getImageUrl('logo.png')} alt="Logo" className="logo-image" />
         </div>
         <h2>تسجيل الدخول</h2>
         {error && <p className="error-message">{error}</p>}

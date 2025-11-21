@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/AboutUsPage/AboutValues.css";
+import { getImageUrl } from "../../utils/index.jsx";
 
 function AboutValues() {
   return (
@@ -37,7 +38,7 @@ function AboutValues() {
           </div>
           
           <div className="value-logo-wrapper">
-            <img src="https://d3egla0dyi6qxn.cloudfront.net/public/logo.png" alt="Logo" className="values-logo" />
+            <img src={getImageUrl('logo.png')} alt="Logo" className="values-logo" />
           </div>
           
           <div className="value-card">

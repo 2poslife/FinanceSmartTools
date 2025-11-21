@@ -2,9 +2,10 @@
 .about-right-section {
   flex: 1;
   background: white;
-  padding: 60px 20px 60px 40px;
+  padding: 60px 20px 60px 10px;
   display: flex;
   align-items: center;
+  transform: translateX(-150px); /* Move content further left */
 }
 
 .content-wrapper {

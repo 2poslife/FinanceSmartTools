@@ -1,5 +1,7 @@
+'use client'
+
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useRouter, usePathname } from "next/navigation";
 import {
   Home,
   BookOpen,
@@ -15,33 +17,79 @@ import {
 } from "lucide-react";
 import { jwtDecode } from "jwt-decode";
 import "../../styles/Layout/Header.css";
-const Logo = 'https://d3egla0dyi6qxn.cloudfront.net/public/logo.png';
+import { getImageUrl } from "../../utils/index.jsx";
+const Logo = getImageUrl('logo.png');
 const Header = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const pathname = usePathname();
   const [showContact, setShowContact] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userRole, setUserRole] = useState(null);
 
-  const isActive = (path) => (location.pathname === path ? "active" : "");
+  const isActive = (path) => (pathname === path ? "active" : "");
 
-  // Check if user is logged in
-  const token = localStorage.getItem("access_token");
-  let isLoggedIn = false;
-  let userRole = null;
+  // Function to check and update login status
+  const checkLoginStatus = () => {
+    if (typeof window === 'undefined') return;
+    
+    const token = localStorage.getItem("access_token");
+    if (!token) {
+      setIsLoggedIn(false);
+      setUserRole(null);
+      return;
+    }
 
-  if (token) {
     try {
       const decoded = jwtDecode(token);
-      isLoggedIn = decoded.exp * 1000 > Date.now();
-      userRole = decoded.role;
+      const isExpired = decoded.exp * 1000 < Date.now();
+      
+      if (isExpired) {
+        localStorage.removeItem("access_token");
+        setIsLoggedIn(false);
+        setUserRole(null);
+      } else {
+        setIsLoggedIn(true);
+        setUserRole(decoded.role);
+      }
     } catch (err) {
       console.error("❌ Invalid token:", err);
       localStorage.removeItem("access_token");
+      setIsLoggedIn(false);
+      setUserRole(null);
     }
-  }
+  };
+
+  // Check if user is logged in (client-side only)
+  useEffect(() => {
+    checkLoginStatus();
+    
+    // Listen for storage changes (when token is set/removed from other tabs)
+    const handleStorageChange = () => {
+      checkLoginStatus();
+    };
+    
+    // Listen for custom auth event (when token is set/removed in same tab)
+    const handleAuthChange = () => {
+      checkLoginStatus();
+    };
+    
+    window.addEventListener('storage', handleStorageChange);
+    window.addEventListener('authChange', handleAuthChange);
+    
+    // Also check on pathname change (in case login happens on same page)
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('authChange', handleAuthChange);
+    };
+  }, [pathname]); // Re-check when pathname changes
 
   const handleLogout = () => {
     localStorage.removeItem("access_token");
-    navigate("/");
+    setIsLoggedIn(false);
+    setUserRole(null);
+    // Trigger auth change event
+    window.dispatchEvent(new Event('authChange'));
+    router.push("/SigninForm");
   };
 
   // Listen for custom event to open contact modal
@@ -62,7 +110,7 @@ const Header = () => {
     <>
       <header className="header">
         {/* Logo */}
-        <div className="logo" onClick={() => navigate("/")}>
+        <div className="logo" onClick={() => router.push("/")}>
           <img className="logo-img" src={Logo} alt="logo" />
           <div className="logo-texts">
             <span className="logo-title">زيدان - مكتب تدقيق حسابات</span>
@@ -73,7 +121,7 @@ const Header = () => {
         <nav className="nav">
           {isLoggedIn && userRole === "admin" && (
             <button
-              onClick={() => navigate("/AdminPage")}
+              onClick={() => router.push("/AdminPage")}
               className={`nav-btn control-panel-btn ${isActive("/AdminPage")}`}
             >
               <Monitor className="icon" />
@@ -82,7 +130,7 @@ const Header = () => {
           )}
 
           <button
-            onClick={() => navigate("/")}
+            onClick={() => router.push("/")}
             className={`nav-btn ${isActive("/")}`}
           >
             <Home className="icon" />
@@ -90,7 +138,7 @@ const Header = () => {
           </button>
 
           <button
-            onClick={() => navigate("/courses")}
+            onClick={() => router.push("/courses")}
             className={`nav-btn ${isActive("/courses")}`}
           >
             <BookOpen className="icon" />
@@ -98,7 +146,7 @@ const Header = () => {
           </button>
 
           <button
-            onClick={() => navigate("/articles")}
+            onClick={() => router.push("/articles")}
             className={`nav-btn ${isActive("/articles")}`}
           >
             <FileText className="icon" />
@@ -106,7 +154,7 @@ const Header = () => {
           </button>
 
           <button
-            onClick={() => navigate("/CalculatorsPage")}
+            onClick={() => router.push("/CalculatorsPage")}
             className={`nav-btn ${isActive("/CalculatorsPage")}`}
           >
             <Calculator className="icon" />
@@ -114,7 +162,7 @@ const Header = () => {
           </button>
 
           <button
-            onClick={() => navigate("/AboutUs")}
+            onClick={() => router.push("/AboutUs")}
             className={`nav-btn ${isActive("/about")}`}
           >
             <Info className="icon" />
@@ -131,7 +179,7 @@ const Header = () => {
             </button>
           ) : (
             <button
-              onClick={() => navigate("/SigninForm")}
+              onClick={() => router.push("/SigninForm")}
               className={`nav-btn ${isActive("/SigninForm")}`}
             >
               <LogIn className="icon" />

@@ -1,5 +1,7 @@
+'use client'
+
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import {
     User,
     Users,
@@ -11,7 +13,7 @@ import {
 import "../../styles/CalculatorsPage/CalculatorsGridMobile.css";
 
 const CalculatorsGridMobile = () => {
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const calculatorGroups = [
         {
@@ -96,12 +98,12 @@ const CalculatorsGridMobile = () => {
         const publicLinks = ["/simulators/employee-cost-with-pension"];
 
         if (publicLinks.includes(link)) {
-            navigate(link);
+            router.push(link);
         } else if (!token) {
             alert("עליך להתחבר כדי להשתמש במחשבון");
-            navigate("/SigninForm");
+            router.push("/SigninForm");
         } else {
-            navigate(link);
+            router.push(link);
         }
     };
 

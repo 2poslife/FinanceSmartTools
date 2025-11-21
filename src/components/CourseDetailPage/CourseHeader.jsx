@@ -1,14 +1,14 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import "../../styles/CourseDetailPage/CourseHeader.css";
 
 function CourseHeader({ course }) {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <section className="course-detail-header-section">
-      <button onClick={() => navigate(-1)} className="course-detail-back-button">
+      <button onClick={() => router.back()} className="course-detail-back-button">
         <ArrowRight /> العودة
       </button>
       <h1 className="course-detail-title">{course.title}</h1>

@@ -1,14 +1,14 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import "../../styles/ArticleDetailPage/ArticleNotFound.css";
 
 function ArticleNotFound() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <div className="article-detail-not-found">
       <h2>المقال غير موجود</h2>
-      <button onClick={() => navigate("/articles")} className="article-detail-back-btn">
+      <button onClick={() => router.push("/articles")} className="article-detail-back-btn">
         العودة للمقالات
       </button>
     </div>

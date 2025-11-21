@@ -1,5 +1,7 @@
+'use client'
+
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import {
     LogOut,
     Home,
@@ -10,10 +12,8 @@ import {
 } from "lucide-react";
 import "../../styles/Calculators/MicroSelfEmployedSalariedCalculator.css";
 
-const API_BASE = "https://financesmarttools-backend.onrender.com";
-//const API_BASE = "http://127.0.0.1:8000";
 export default function MicroSelfEmployedSalariedCalculator() {
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const [yearlyIncome, setYearlyIncome] = useState("");
     const [result, setResult] = useState(null);
@@ -23,8 +23,8 @@ export default function MicroSelfEmployedSalariedCalculator() {
     const [isSalaried, setIsSalaried] = useState(false); // Flag for עצמאי ושכיר
 
     const handleLogout = () => {
-        localStorage.removeItem("access_token");
-        navigate("/SigninForm");
+localStorage.removeItem("access_token");
+        router.push("/SigninForm");
     };
 
     const handleCalculate = async () => {
@@ -47,8 +47,8 @@ export default function MicroSelfEmployedSalariedCalculator() {
         try {
             // Choose endpoint based on flag
             const endpoint = isSalaried 
-                ? `${API_BASE}/micro-self-employed-salaried/atsmaee-and-sakher`
-                : `${API_BASE}/micro-self-employed-salaried`;
+                ? "/api/calculators/micro-self-employed-salaried/atsmaee-and-sakher"
+                : "/api/calculators/micro-self-employed-salaried";
             
             const res = await fetch(endpoint, {
                     method: "POST",
@@ -68,6 +68,11 @@ export default function MicroSelfEmployedSalariedCalculator() {
                 return;
             }
 
+            if (!res.ok) {
+                const errorData = await res.json().catch(() => ({}));
+                throw new Error(errorData.error || 'API calculation failed');
+            }
+
             const data = await res.json();
             console.log("🔍 API Response:", data);
             console.log("📊 Endpoint used:", isSalaried ? "atsmaee-and-sakher" : "atsmaee-only");
@@ -76,6 +81,7 @@ export default function MicroSelfEmployedSalariedCalculator() {
             setResult(data);
         } catch (err) {
             console.error("❌ Error calculating:", err);
+            alert("שגיאה בחישוב. אנא נסה שוב.");
         } finally {
             setLoading(false);
         }
@@ -148,7 +154,7 @@ export default function MicroSelfEmployedSalariedCalculator() {
                 {/* Footer buttons */}
                 <div className="calcpage-form-footer">
                     <button
-                        onClick={() => navigate(-1)}
+                        onClick={() => router.back()}
                         className="calcpage-btn home"
                     >
                         🔙 חזור

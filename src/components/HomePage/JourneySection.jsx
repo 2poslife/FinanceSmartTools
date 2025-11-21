@@ -1,17 +1,18 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import "../../styles/HomePage/JourneySection.css";
 import { BookOpen, Calculator } from "lucide-react";
+import { getImageUrl } from "../../utils/index.jsx";
 
 function JourneySection() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleBrowseCourses = () => {
-    navigate("/courses");
+    router.push("/courses");
   };
 
   const handleUseCalculators = () => {
-    navigate("/CalculatorsPage");
+    router.push("/CalculatorsPage");
   };
 
   return (
@@ -41,7 +42,7 @@ function JourneySection() {
               <span className="homepage-stat-label">محاسب محترف</span>
             </div>
             <div className="homepage-stat-item homepage-logo-stat">
-              <img src="https://d3egla0dyi6qxn.cloudfront.net/public/logo.png" alt="Logo" className="homepage-stat-logo" />
+              <img src={getImageUrl('logo.png')} alt="Logo" className="homepage-stat-logo" />
               <span className="homepage-stat-label">مكتب زيدان</span>
             </div>
             <div className="homepage-stat-item">

@@ -290,6 +290,50 @@
 }
 
 /* Bottom Wave Decoration */
+.footer-legal {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.legal-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.legal-link {
+  color: #d4af37;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 5px 10px;
+}
+
+.legal-link:hover {
+  color: #f4d03f;
+  text-decoration: underline;
+}
+
+.legal-separator {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+}
+
+.footer-copyright {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  margin: 0;
+  font-weight: 400;
+}
+
 .footer-wave {
   position: absolute;
   bottom: 0;

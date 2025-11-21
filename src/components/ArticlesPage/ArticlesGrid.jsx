@@ -1,12 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import "../../styles/ArticlesPage/ArticlesGrid.css";
+import { getImageUrl } from "../../utils/index.jsx";
 
 function ArticlesGrid({ filteredArticles }) {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleReadMore = (article) => {
-    navigate(`/article/${article.id}`);
+    router.push(`/article/${article.id}`);
   };
 
   return (
@@ -14,7 +15,7 @@ function ArticlesGrid({ filteredArticles }) {
       {filteredArticles.map((article) => (
         <div key={article.id} className="articles-page-card">
           <div className="articles-page-card-image">
-            <img src="https://d3egla0dyi6qxn.cloudfront.net/public/aaa.svg" alt={article.title} />
+            <img src={getImageUrl('aaa.svg')} alt={article.title} />
           </div>
           <div className="articles-page-card-header">
             <span className="articles-page-category">{article.category}</span>

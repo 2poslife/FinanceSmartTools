@@ -31,6 +31,7 @@ import SelfEmployedCost from "./components/Calculators/SelfEmployedCost";
 import MicroSelfEmployedCalculator from "./components/Calculators/MicroSelfEmployedCalculator";
 import MicroSelfEmployedSalariedCalculator from "./components/Calculators/MicroSelfEmployedSalariedCalculator";
 import IncomeTaxWithPoints from "./components/Calculators/IncomeTaxWithPoints";
+import EquityComparisonUrban from "./components/Calculators/EquityComparisonUrban";
 
 // Layout
 import Header from "./components/Layout/Header";
@@ -133,6 +134,10 @@ function Layout() {
         <Route
           path="/simulators/IncomeTaxWithPoints"
           element={<IncomeTaxWithPoints />}
+        />
+        <Route
+          path="/simulators/equity-urban"
+          element={<EquityComparisonUrban />}
         />
 
         {/* User Routes */}

@@ -1,5 +1,7 @@
+'use client'
+
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import {
     LogOut,
     Home,
@@ -10,10 +12,8 @@ import {
 } from "lucide-react";
 import "../../styles/Calculators/MicroSelfEmployedCalculator.css";
 
-const API_BASE = "https://financesmarttools-backend.onrender.com";
-
 export default function MicroSelfEmployedCalculator() {
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const [yearlyIncome, setYearlyIncome] = useState("");
     const [result, setResult] = useState(null);
@@ -22,8 +22,8 @@ export default function MicroSelfEmployedCalculator() {
     const [authError, setAuthError] = useState(false);
 
     const handleLogout = () => {
-        localStorage.removeItem("access_token");
-        navigate("/SigninForm");
+localStorage.removeItem("access_token");
+        router.push("/SigninForm");
     };
 
     const handleCalculate = async () => {
@@ -45,7 +45,7 @@ export default function MicroSelfEmployedCalculator() {
 
         try {
             const res = await fetch(
-                `${API_BASE}/micro-self-employed`,
+                "/api/calculators/micro-self-employed",
                 {
                     method: "POST",
                     headers: { 
@@ -64,10 +64,16 @@ export default function MicroSelfEmployedCalculator() {
                 return;
             }
 
+            if (!res.ok) {
+                const errorData = await res.json().catch(() => ({}));
+                throw new Error(errorData.error || 'API calculation failed');
+            }
+
             const data = await res.json();
             setResult(data);
         } catch (err) {
             console.error("❌ Error calculating:", err);
+            alert("שגיאה בחישוב. אנא נסה שוב.");
         } finally {
             setLoading(false);
         }
@@ -120,7 +126,7 @@ export default function MicroSelfEmployedCalculator() {
 
                 {/* Footer buttons */}
                 <div className="calcpage-form-footer">
-                    <button onClick={() => navigate(-1)} className="calcpage-btn home">
+                    <button onClick={() => router.back()} className="calcpage-btn home">
                         🔙 חזור
                     </button>
                     <button

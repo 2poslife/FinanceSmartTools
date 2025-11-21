@@ -1,5 +1,7 @@
+'use client'
+
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import {
     LogOut,
     Home,
@@ -10,11 +12,10 @@ import {
     Lightbulb,
 } from "lucide-react";
 import "../../styles/Calculators/EmployeeCostWithPension.css";
-
-const API_BASE = "https://financesmarttools-backend.onrender.com";
+import { getImageUrl } from "../../utils/index.jsx";
 
 export default function EmployeeCostWithPension() {
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const [grossSalary, setGrossSalary] = useState("");
     const [creditPoints, setCreditPoints] = useState("");
@@ -51,7 +52,7 @@ export default function EmployeeCostWithPension() {
 
     const handleLogout = () => {
         localStorage.removeItem("access_token");
-        navigate("/SigninForm");
+        router.push("/SigninForm");
     };
 
     const handleCalculate = async () => {
@@ -74,7 +75,7 @@ export default function EmployeeCostWithPension() {
         // This calculator is FREE - no authentication required
         try {
             const res = await fetch(
-                `${API_BASE}/employee-cost-with-pension/with-pension`,
+                "/api/calculators/employee-cost-with-pension",
                 {
                     method: "POST",
                     headers: { 
@@ -88,7 +89,8 @@ export default function EmployeeCostWithPension() {
             );
 
             if (!res.ok) {
-                throw new Error('API calculation failed');
+                const errorData = await res.json().catch(() => ({}));
+                throw new Error(errorData.error || 'API calculation failed');
             }
 
             const data = await res.json();
@@ -264,7 +266,7 @@ export default function EmployeeCostWithPension() {
                 {/* Footer Buttons */}
                 <div className="calcpage-form-footer">
                     <button
-                        onClick={() => navigate(-1)}
+                        onClick={() => router.back()}
                         className="calcpage-btn home"
                     >
                         🔙 חזור
@@ -287,7 +289,7 @@ export default function EmployeeCostWithPension() {
             {/* Course Connection */}
             <section className="calcpage-course-connection">
                 <div className="guide-icon-wrapper">
-                    <img src="https://d3egla0dyi6qxn.cloudfront.net/public/Guide_1.svg" alt="Guide" className="guide-icon" />
+                    <img src={getImageUrl('Guide_1.svg')} alt="Guide" className="guide-icon" />
                 </div>
             </section>
 

@@ -1,13 +1,14 @@
 // ImageSection.jsx
 import React from "react";
 import "../../styles/HomePage/ImageSection.css";
+import { getImageUrl } from "../../utils/index.jsx";
 
 function ImageSection() {
   return (
     <section className="image-section">
       <div className="image-container">
         <img
-          src="https://d3egla0dyi6qxn.cloudfront.net/public/Section.png"
+          src={getImageUrl('Section.png')}
           alt="Section"
           className="section-image"
           loading="lazy"

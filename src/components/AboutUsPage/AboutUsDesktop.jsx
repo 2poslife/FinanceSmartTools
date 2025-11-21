@@ -10,8 +10,8 @@ function AboutUsDesktop() {
     <div className="about-us-page">
       {/* Main Content */}
       <div className="about-main-content">
-        <AboutHero />
         <AboutContent />
+        <AboutHero />
       </div>
 
       <AboutCourses />

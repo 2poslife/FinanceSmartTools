@@ -1,37 +1,38 @@
 import React, { useState } from "react";
 import "../../styles/HomePage/TestimonialsSection3Mobile.css";
+import { getImageUrl } from "../../utils/index.jsx";
 
 const testimonials = [
   {
     name: "سوزان",
     location: "محاسبة أجور ومديرة حسابات",
     text: "اليوم كان تاني يوم الي اشتغل عند רואה חשבון، حسيت حالي الي شهر عندو، وقديش الثقة عندي عالية ما احتجت حدا يساعدني من بعد ما حضرت نص المحاضرات واسا مكملة الباقي. عنجد يسلمو كتيرر، لولا الكورس هذا كان اسا تلاقيي متلبكة بالشغل ومش عارفة راسي من رجلي.",
-    avatar: "https://d3egla0dyi6qxn.cloudfront.net/public/logo.png"
+    avatar: getImageUrl('logo.png')
   },
   {
     name: "وسيم",
     location: "محاسب",
     text: "بالمناسبة عنجد فِش زي الكورس اللي عملتوه، كلشي واضح ومرتب، وأنا شخصياً تعلمت كثير شغلات منو واستفدت 🌹",
-    avatar: "https://d3egla0dyi6qxn.cloudfront.net/public/logo.png"
+    avatar: getImageUrl('logo.png')
   },
   {
     name: "بانا",
     location: "مستشارة مالية - مدققة حسابات",
     text: "يعطيكوا ألف عافية، عهيك كورس مرتب مفيد متكتك 👏 كتير المعلومات اللي فيه فادتني وخَلتني يكون عندي ثقة بنفسي إنه صح هيك الإشي معناه وهيك بنعمل ✨💪😍",
-    avatar: "https://d3egla0dyi6qxn.cloudfront.net/public/logo.png"
+    avatar: getImageUrl('logo.png')
   },
   {
     name: "ليث",
     location: "مدقق حسابات",
     text: "زيدان، من لا يشكر الناس لا يشكر الله. بِسلم إيديك يا رب، ما بعتقد في كورسات متعوب عليها مثل هذا الكورس. المتابعة تبعتك بتخدم كثير، وما بتخلي الواحد يعلق على شغلة معينة مثلاً 🙏",
-    avatar: "https://d3egla0dyi6qxn.cloudfront.net/public/logo.png"
+    avatar: getImageUrl('logo.png')
   },
 
   {
     name: "معالي",
     location: "مديرة حسابات",
     text: "الشرح رائع بطريقة سلسة ومفهوم، متأكدة انه رح يساعدني كثير بتطرق لمواضيع اللي متوسعناش فيها بكورس الـ הנהלת חשבונות، مثل ماقلتلك قبل صارلي أشهر ادور على הכשרה מקצועית والكورس تبعكو اجا بوقته",
-    avatar: "https://d3egla0dyi6qxn.cloudfront.net/public/logo.png"
+    avatar: getImageUrl('logo.png')
   },
 
 
@@ -40,7 +41,7 @@ const testimonials = [
     name: "رشا",
     location: "مدققة حسابات",
     text: "أنا اليوم بلشت في كورس ״עצמאי A to Z״ رغم عندي معرفة بالمجال وخبرة ٤ سنين بالمجال، إلا إنه فعلاً معلومات جديدة ومفهومة، وطريقة الشرح جداً مميزة. استمتعت كثير وما بحس بملل، حتى طريقة الشرح بتحببك بالشغل والمجال أكثر عنجد شكراً على مجهودك.",
-    avatar: "https://d3egla0dyi6qxn.cloudfront.net/public/logo.png"
+    avatar: getImageUrl('logo.png')
   },
 
 ];

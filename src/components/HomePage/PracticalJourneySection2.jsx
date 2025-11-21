@@ -1,11 +1,12 @@
 import React from "react";
 import "../../styles/HomePage/PracticalJourneySection2.css";
+import { getImageUrl } from "../../utils/index.jsx";
 
 function PracticalJourneySection2() {
   return (
     <section className="practical-journey-section-2">
       <video 
-        src="https://d3egla0dyi6qxn.cloudfront.net/public/RoadmapBrainstorm.mp4" 
+        src={getImageUrl('RoadmapBrainstorm.mp4')} 
         className="practical-journey-video"
         autoPlay
         loop

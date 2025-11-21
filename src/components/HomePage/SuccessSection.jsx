@@ -1,6 +1,7 @@
 import React from 'react';
 import './SuccessSection.css';
-const downloadImage = 'https://d3egla0dyi6qxn.cloudfront.net/public/download.jpg';
+import { getImageUrl } from '../../utils/index.jsx';
+const downloadImage = getImageUrl('download.jpg');
 
 function SuccessSection() {
     return (

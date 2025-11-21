@@ -1,5 +1,6 @@
 import React from "react";
 import "./HeroSection.css";
+import { getImageUrl } from "../../utils/index.jsx";
 
 const HeroSection = () => {
   return (
@@ -7,7 +8,7 @@ const HeroSection = () => {
       {/* الخلفية */}
       <img
         className="hero-section-bg"
-        src="https://d3egla0dyi6qxn.cloudfront.net/public/hero_without_text.svg"
+        src={getImageUrl('hero_without_text.svg')}
         alt="Hero Background"
       />
 
@@ -15,7 +16,7 @@ const HeroSection = () => {
       <div className="hero-content">
         {/* اللوجو العبراني */}
         <img
-          src="https://d3egla0dyi6qxn.cloudfront.net/public/logo_herosection.png"
+          src={getImageUrl('logo_herosection.png')}
           alt="Company Logo"
           className="hero-logo"
         />

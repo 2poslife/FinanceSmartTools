@@ -1,15 +1,15 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { Clock, BarChart } from "lucide-react";
 import { homePageCourses } from "../../assets/data/courseMock";
 import "../../styles/CoursesPage/CoursesGrid.css";
 
 function CoursesGrid() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const topCourses = homePageCourses;
 
   const handleCourseClick = (courseId) => {
-    navigate(`/course/${courseId}`);
+    router.push(`/course/${courseId}`);
   };
 
   return (

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MapPin, Mail, Phone } from "lucide-react";
 import "../../styles/HomePage/HeroSectionMobile.css";
+import { getImageUrl } from "../../utils/index.jsx";
 
 function HeroSectionMobile() {
   const [showContact, setShowContact] = useState(false);
@@ -19,7 +20,7 @@ function HeroSectionMobile() {
   return (
     <>
       <section className="hero-mobile">
-        <img src="https://d3egla0dyi6qxn.cloudfront.net/public/herosection_mobiel.svg" alt="Hero Section" className="hero-section-bg-mobile" />
+        <img src={getImageUrl('herosection_mobiel.svg')} alt="Hero Section" className="hero-section-bg-mobile" />
         <div className="hero-content-mobile">
           <div className="hero-mobile-logo">
           </div>

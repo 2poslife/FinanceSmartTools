@@ -1,0 +1,1798 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/components/NewJournalEntries2/NewJournalEntriesDesktop2.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************/
+.nje-input-inline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nje-inline-input {
+  width: 100%;
+  max-width: 120px;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #cbb88d;
+  border-radius: 6px;
+  background-color: #fffef9;
+  text-align: center;
+  font-family: inherit;
+  font-size: 0.9rem;
+  direction: rtl;
+}
+
+.nje-inline-input:focus {
+  outline: none;
+  border-color: #b29053;
+  box-shadow: 0 0 4px rgba(178, 144, 83, 0.4);
+}
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap");
+
+/* ===== Page Base ===== */
+.nje-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fefaf2 0%, #f8f0de 100%);
+  padding: 4.5rem 1.75rem 6rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  direction: rtl;
+  font-family: "Heebo", "Assistant", sans-serif;
+  color: #2d2418;
+}
+
+/* ===== Hero ===== */
+.nje-hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.nje-hero-overlay {
+  position: absolute;
+  inset: -120px -60px auto;
+  height: 360px;
+  background: radial-gradient(circle, rgba(189, 147, 72, 0.35), transparent 70%);
+  filter: blur(50px);
+  opacity: 0.6;
+}
+
+.nje-hero-card {
+  position: relative;
+  max-width: 980px;
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(250, 234, 210, 0.95)
+  );
+  border-radius: 32px;
+  padding: 3rem;
+  border: 1px solid rgba(189, 147, 72, 0.25);
+  box-shadow: 0 35px 70px rgba(189, 147, 72, 0.2);
+  text-align: center;
+}
+
+.nje-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #b29053, #dcbc76);
+  color: #1c150c;
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+}
+
+.nje-hero-title {
+  font-size: clamp(1.5rem, 2.25vw, 2.4rem);
+  margin-bottom: 1rem;
+  color: #1f1a17;
+}
+
+.nje-hero-description {
+  margin: 0 auto;
+  max-width: 70ch;
+  color: #5d5647;
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+/* ===== Section ===== */
+.nje-section {
+  background: #fff9ef;
+  border-radius: 20px;
+  padding: 2rem 2rem 2.5rem;
+  border: 1px solid #e4d4b0;
+  box-shadow: 0 8px 20px rgba(189, 147, 72, 0.12);
+}
+
+.nje-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.nje-section-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.nje-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.nje-section-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 18px;
+  font-size: 1.4rem;
+  color: #2a2216;
+  background: linear-gradient(135deg, #f6e6c8 0%, #f3d6a7 100%);
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.6), 0 6px 12px rgba(189, 147, 72, 0.18);
+}
+
+.nje-section-icon-income {
+  background: radial-gradient(circle at 30% 30%, #def8ad, #9bd984 65%, #6fbf57 100%);
+}
+
+.nje-section-icon-expenses {
+  background: radial-gradient(circle at 30% 30%, #ffd2c2, #ff9f90 65%, #f26c5f 100%);
+}
+
+.nje-section-icon-dividend {
+  background: radial-gradient(circle at 30% 30%, #ffe9a7, #ffcd56 65%, #f3a71a 100%);
+}
+
+.nje-section-icon-import {
+  background: radial-gradient(circle at 30% 30%, #e9e2ff, #c3a9ff 65%, #8f6df5 100%);
+}
+
+.nje-section-icon-inventory {
+  background: radial-gradient(circle at 30% 30%, #ffe8c2, #f4c58b 65%, #e59b4a 100%);
+}
+
+.nje-section-icon-self {
+  background: radial-gradient(circle at 30% 30%, #c7f0f5, #8dd7df 65%, #54b8c7 100%);
+}
+
+.nje-section-header-text h2 {
+  font-size: 1.7rem;
+  color: #3d2c17;
+  margin: 0;
+}
+
+.nje-section-header-text p {
+  color: #8a7b61;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.nje-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.nje-dot-green {
+  background: #a0c47f;
+  box-shadow: 0 0 10px #a0c47f;
+}
+
+.nje-dot-red {
+  background: #e88a7c;
+  box-shadow: 0 0 10px #e88a7c;
+}
+
+.nje-dot-orange {
+  background: #f2b15f;
+  box-shadow: 0 0 10px rgba(242, 177, 95, 0.8);
+}
+
+.nje-dot-purple {
+  background: #c5a4ff;
+  box-shadow: 0 0 10px rgba(197, 164, 255, 0.8);
+}
+
+.nje-dot-brown {
+  background: #e2a86d;
+  box-shadow: 0 0 10px rgba(226, 168, 109, 0.8);
+}
+
+.nje-dot-teal {
+  background: #5ec4ca;
+  box-shadow: 0 0 10px rgba(94, 196, 202, 0.8);
+}
+
+/* ===== Table (6 Columns) ===== */
+.nje-table-6cols {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  text-align: ce;
+}
+
+.nje-table-6cols .nje-row {
+  display: grid;
+  grid-template-columns: 1.15fr 0.5fr 1fr 0.6fr 0.5fr 0.6fr;
+  grid-gap: 0;
+  gap: 0;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e4d4b0;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(189, 147, 72, 0.1);
+  transition: all 0.25s ease-in-out;
+  
+}
+.nje-table-6cols .nje-row > span {
+  padding: 0.9rem 1.1rem;
+  border-left: 1px solid #e4d4b0;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.nje-table-6cols .nje-row > span:nth-child(3),
+.nje-table-6cols .nje-row > span:nth-child(4),
+.nje-table-6cols .nje-row > span:nth-child(5),
+.nje-table-6cols .nje-row > span:nth-child(6) {
+  justify-content: center;
+  text-align: center;
+}
+
+.nje-inline-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: 600;
+  color: #3d2c17;
+}
+
+.nje-two-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  width: 100%;
+}
+
+.nje-table-6cols .nje-row > span:first-child {
+  justify-content: flex-start; 
+  text-align: right;          
+}
+
+
+.nje-table-6cols .nje-row > span:nth-child(2) {
+  border-left: 1px solid #e4d4b0;
+}
+
+.nje-table-6cols .nje-row > span:first-child {
+  border-left: 1px solid #e4d4b0;
+}
+
+.nje-table-6cols .nje-row-head {
+  background: #f4e8ce;
+  font-weight: 700;
+  border-left: 1px solid #e4d4b0;
+}
+
+.nje-table-6cols .nje-row-head > span:nth-child(2) {
+  justify-content: center;
+  text-align: center;
+}
+
+.nje-table-6cols .nje-row-head > span:nth-child(3) {
+  justify-content: center;
+  text-align: center;
+}
+.nje-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(189, 147, 72, 0.25);
+}
+
+.nje-row-total {
+  background: #f9f3df;
+  font-weight: 700;
+  color: #5b4825;
+}
+
+.nje-row-total > span:not(:first-child) {
+  border-left-color: transparent;
+}
+
+/* ===== Input Column (ערך) ===== */
+.nje-input-cell {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+}
+.nje-input {
+  width: 100%;
+  max-width: 130px;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #cbb88d;
+  border-radius: 6px;
+  background-color: #fffef9;
+  font-family: inherit;
+  font-size: 0.95rem;
+  text-align: right;    
+  direction: rtl;       
+  unicode-bidi: plaintext;
+  position: relative;
+
+}
+
+/* Move spin buttons (↑↓) to the left side */
+.nje-input::-webkit-inner-spin-button,
+.nje-input::-webkit-outer-spin-button {
+  direction: ltr;
+  position: absolute;
+  left: 0;
+  right: auto;
+}
+
+/* For Firefox */
+.nje-input[type="number"] {
+  text-align: center;
+}
+
+
+.nje-input:focus {
+  outline: none;
+  border-color: #b29053;
+  box-shadow: 0 0 4px rgba(178, 144, 83, 0.4);
+}
+.nje-table-6cols .nje-row > span:nth-child(3),
+.nje-table-6cols .nje-row-head > span:nth-child(3) {
+  justify-content: center; 
+  text-align: center;       
+  direction: rtl;            
+  padding-right: 0;        
+}
+.nje-table-6cols .nje-row > span:nth-child(3),
+.nje-table-6cols .nje-row-head > span:nth-child(3) {
+  justify-content: center; 
+  text-align: center;       
+  direction: rtl;            
+  padding-right: 0;        
+}
+
+
+
+.nje-table-6cols .nje-row > span:nth-child(4),
+.nje-table-6cols .nje-row-head > span:nth-child(4) {
+  justify-content: center; 
+  text-align: center;       
+  direction: rtl;            
+  padding-right: 0;        
+}
+
+.nje-table-6cols .nje-row > span:nth-child(5),
+.nje-table-6cols .nje-row-head > span:nth-child(5) {
+  justify-content: center; 
+  text-align: right;       
+  direction: rtl;            
+  padding-right: 0;        
+}
+
+.nje-table-6cols .nje-row > span:nth-child(6),
+.nje-table-6cols .nje-row-head > span:nth-child(6) {
+  justify-content: center; 
+  text-align: center;       
+  direction: rtl;            
+  padding-right: 0;        
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/components/NewJournalEntries2/NewJournalEntriesTable1.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************/
+.nje-table1-input-inline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nje-table1-inline-input {
+  width: 100%;
+  max-width: 120px;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #cbb88d;
+  border-radius: 6px;
+  background-color: #fffef9;
+  text-align: center;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700; /* 🔹 Bold */
+  direction: rtl;
+}
+
+.nje-table1-inline-input:focus {
+  outline: none;
+  border-color: #b29053;
+  box-shadow: 0 0 4px rgba(178, 144, 83, 0.4);
+}
+
+/* ===== Table Base ===== */
+.nje-table1-6cols {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-weight: 700; /* 🔹 Bold all text inside table */
+}
+
+.nje-table1-row {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 0.8fr 0.8fr 0.8fr 0.5fr;
+  grid-gap: 0;
+  gap: 0;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e4d4b0;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(189, 147, 72, 0.1);
+  transition: all 0.25s ease-in-out;
+}
+
+.nje-table1-row > span {
+  padding: 0.9rem 1.1rem;
+  border-left: 1px solid #e4d4b0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  font-weight: 700; /* 🔹 Bold */
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  word-break: break-word;
+}
+
+/* Center middle columns */
+.nje-table1-row > span:nth-child(3),
+.nje-table1-row > span:nth-child(4),
+.nje-table1-row > span:nth-child(5),
+.nje-table1-row > span:nth-child(6) {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Inline value */
+.nje-table1-inline-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: 700; /* 🔹 Bold */
+  color: #3d2c17;
+}
+
+/* Two-line text */
+.nje-table1-two-line,
+.nje-table1-two-line2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  width: 100%;
+  font-weight: 700; /* 🔹 Bold */
+}
+
+/* First column */
+.nje-table1-row > span:first-child {
+  justify-content: flex-start;
+  text-align: right;
+}
+
+/* Header */
+.nje-table1-row-head {
+  background: #f1e3c8;
+  font-weight: 800; /* 🔹 Slightly bolder for header */
+}
+
+.nje-table1-row-head > span:nth-child(3),
+.nje-table1-row-head > span:nth-child(4),
+.nje-table1-row-head > span:nth-child(6) {
+  justify-content: center;
+  text-align: center;
+  direction: rtl;
+  padding-right: 0;
+}
+
+.nje-table1-row-head > span:nth-child(5) {
+  justify-content: center;
+  text-align: right;
+  direction: rtl;
+  padding-right: 0;
+}
+
+/* Hover */
+.nje-table1-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(189, 147, 72, 0.25);
+}
+
+/* Inputs */
+.nje-table1-input-cell {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.nje-table1-input {
+  width: 100%;
+  max-width: 130px;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #cbb88d;
+  border-radius: 6px;
+  background-color: #fffef9;
+  font-family: inherit;
+  font-size: 0.95rem;
+  text-align: right;
+  direction: rtl;
+  font-weight: 700; /* 🔹 Bold */
+  unicode-bidi: plaintext;
+  position: relative;
+}
+
+.nje-table1-input::-webkit-inner-spin-button,
+.nje-table1-input::-webkit-outer-spin-button {
+  direction: ltr;
+  position: absolute;
+  left: 0;
+  right: auto;
+}
+
+.nje-table1-input[type="number"] {
+  text-align: center;
+}
+
+.nje-table1-input:focus {
+  outline: none;
+  border-color: #b29053;
+  box-shadow: 0 0 4px rgba(178, 144, 83, 0.4);
+}
+
+/* Center column 2 values */
+.nje-table1-row:not(.nje-table1-row-head) > span:nth-child(2) {
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .nje-table1-6cols {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Adjusted column proportions for mobile */
+  .nje-table1-row {
+    min-width: 640px;
+    border-radius: 10px;
+    grid-template-columns: 1.0fr 0.8fr 0.8fr 0.6fr 0.8fr 0.8fr; /* 🔹 new balance */
+    box-shadow: 0 3px 8px rgba(189, 147, 72, 0.18);
+  }
+
+  /* Slightly smaller text and padding */
+  .nje-table1-row > span {
+    padding: 0.7rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  /* Inputs wider for better usability */
+  .nje-table1-input {
+    max-width: 110px;
+    font-size: 1rem;
+    padding: 0.5rem 0.6rem;
+  }
+
+  /* Sticky header */
+  .nje-table1-row-head {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(180deg, #f5e9d2 0%, #f1e3c8 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even narrower phones */
+  .nje-table1-row {
+    min-width: 600px;
+    grid-template-columns: 0.9fr 0.8fr 0.8fr 0.6fr 0.8fr 1fr; /* 🔹 give last col more room */
+  }
+
+  .nje-table1-row > span {
+    padding: 0.6rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .nje-table1-input {
+    max-width: 95px;
+    font-size: 0.9rem;
+  }
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/components/NewJournalEntries2/NewJournalEntriesTable3.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************/
+.nje-table3 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-weight: 700;
+}
+
+.nje-table3-row {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 0.8fr 0.8fr 0.8fr 0.5fr;
+  grid-gap: 0;
+  gap: 0;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e3d1b5;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(189, 147, 72, 0.1);
+  transition: all 0.25s ease-in-out;
+}
+
+.nje-table3-row > span {
+  padding: 0.9rem 1.1rem;
+  border-left: 1px solid #e3d1b5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  font-weight: 700;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  word-break: break-word;
+}
+
+.nje-table3-row > span:first-child {
+  justify-content: flex-start;
+}
+
+.nje-table3-row > span:nth-child(2) {
+  border-left: 1px solid #e3d1b5;
+}
+
+.nje-table3-row > span:nth-child(3),
+.nje-table3-row > span:nth-child(4),
+.nje-table3-row > span:nth-child(5) {
+  justify-content: center;
+  text-align: center;
+}
+
+.nje-table3-row > span:nth-child(6) {
+  justify-content: center;
+}
+
+.nje-table3-row-head {
+  background: #f5e7d1;
+  font-weight: 800;
+}
+
+.nje-table3-row-head > span:nth-child(2),
+.nje-table3-row-head > span:nth-child(3),
+.nje-table3-row-head > span:nth-child(4),
+.nje-table3-row-head > span:nth-child(5) {
+  justify-content: center;
+  text-align: center;
+  direction: rtl;
+  padding-right: 0;
+}
+
+.nje-table3-row:not(.nje-table3-row-head) > span:nth-child(2) {
+  justify-content: center;
+  text-align: center;
+}
+
+.nje-table3-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(189, 147, 72, 0.25);
+}
+
+.nje-table3-two-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  width: 100%;
+}
+
+.nje-table3-inline-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: 700;
+  color: #3d2c17;
+}
+
+.nje-table3-input-cell {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nje-table3-input {
+  width: 100%;
+  max-width: 120px;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #cbb88d;
+  border-radius: 6px;
+  background-color: #fffef9;
+  font-family: inherit;
+  font-size: 0.95rem;
+  text-align: center;
+  direction: rtl;
+  font-weight: 700;
+}
+
+.nje-table3-input:focus {
+  outline: none;
+  border-color: #b29053;
+  box-shadow: 0 0 4px rgba(178, 144, 83, 0.4);
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .nje-table3-6cols {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Adjusted column proportions for mobile */
+  .nje-table3-row {
+    min-width: 640px;
+    border-radius: 10px;
+    grid-template-columns: 1.0fr 0.8fr 0.8fr 0.6fr 0.8fr 0.8fr; /* 🔹 new balance */
+    box-shadow: 0 3px 8px rgba(189, 147, 72, 0.18);
+  }
+
+  /* Slightly smaller text and padding */
+  .nje-table3-row > span {
+    padding: 0.7rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  /* Inputs wider for better usability */
+  .nje-table3-input {
+    max-width: 110px;
+    font-size: 1rem;
+    padding: 0.5rem 0.6rem;
+  }
+
+  /* Sticky header */
+  .nje-table3-row-head {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(180deg, #f5e9d2 0%, #f1e3c8 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even narrower phones */
+  .nje-table3-row {
+    min-width: 600px;
+    grid-template-columns: 0.9fr 0.8fr 0.8fr 0.6fr 0.8fr 1fr; /* 🔹 give last col more room */
+  }
+
+  .nje-table3-row > span {
+    padding: 0.6rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .nje-table3-input {
+    max-width: 95px;
+    font-size: 0.9rem;
+  }
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/components/NewJournalEntries2/NewJournalEntriesTable2.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************/
+.nje-table2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-weight: 700;
+}
+
+.nje-table2-row {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 0.8fr 0.8fr 0.8fr 0.5fr;
+  grid-gap: 0;
+  gap: 0;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e3d1b5;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(189, 147, 72, 0.1);
+  transition: all 0.25s ease-in-out;
+}
+
+.nje-table2-row > span {
+  padding: 0.9rem 1.1rem;
+  border-left: 1px solid #e3d1b5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  font-weight: 700;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  word-break: break-word;
+}
+
+.nje-table2-row > span:first-child {
+  justify-content: flex-start;
+}
+
+.nje-table2-row > span:nth-child(2) {
+  border-left: 1px solid #e3d1b5;
+}
+
+.nje-table2-row > span:nth-child(3),
+.nje-table2-row > span:nth-child(4),
+.nje-table2-row > span:nth-child(5) {
+  justify-content: center;
+  text-align: center;
+}
+
+.nje-table2-row > span:nth-child(6) {
+  justify-content: center;
+}
+
+.nje-table2-row-head {
+  background: #f5e7d1;
+  font-weight: 800;
+}
+
+.nje-table2-row-head > span:nth-child(2),
+.nje-table2-row-head > span:nth-child(3),
+.nje-table2-row-head > span:nth-child(4),
+.nje-table2-row-head > span:nth-child(5) {
+  justify-content: center;
+  text-align: center;
+  direction: rtl;
+  padding-right: 0;
+}
+
+.nje-table2-row:not(.nje-table2-row-head) > span:nth-child(2) {
+  justify-content: center;
+  text-align: center;
+}
+
+.nje-table2-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(189, 147, 72, 0.25);
+}
+
+.nje-table2-two-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  width: 100%;
+}
+
+.nje-table2-inline-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: 700;
+  color: #3d2c17;
+}
+
+.nje-table2-input-cell {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nje-table2-input {
+  width: 100%;
+  max-width: 120px;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #cbb88d;
+  border-radius: 6px;
+  background-color: #fffef9;
+  font-family: inherit;
+  font-size: 0.95rem;
+  text-align: center;
+  direction: rtl;
+  font-weight: 700;
+}
+
+.nje-table2-input:focus {
+  outline: none;
+  border-color: #b29053;
+  box-shadow: 0 0 4px rgba(178, 144, 83, 0.4);
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .nje-table2-6cols {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Adjusted column proportions for mobile */
+  .nje-table2-row {
+    min-width: 640px;
+    border-radius: 10px;
+    grid-template-columns: 1.0fr 0.8fr 0.8fr 0.6fr 0.8fr 0.8fr; /* 🔹 new balance */
+    box-shadow: 0 3px 8px rgba(189, 147, 72, 0.18);
+  }
+
+  /* Slightly smaller text and padding */
+  .nje-table2-row > span {
+    padding: 0.7rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  /* Inputs wider for better usability */
+  .nje-table2-input {
+    max-width: 110px;
+    font-size: 1rem;
+    padding: 0.5rem 0.6rem;
+  }
+
+  /* Sticky header */
+  .nje-table2-row-head {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(180deg, #f5e9d2 0%, #f1e3c8 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even narrower phones */
+  .nje-table2-row {
+    min-width: 600px;
+    grid-template-columns: 0.9fr 0.8fr 0.8fr 0.6fr 0.8fr 1fr; /* 🔹 give last col more room */
+  }
+
+  .nje-table2-row > span {
+    padding: 0.6rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .nje-table2-input {
+    max-width: 95px;
+    font-size: 0.9rem;
+  }
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/components/NewJournalEntries2/NewJournalEntriesTable4.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************/
+.nje-table4 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-weight: 700;
+}
+
+.nje-table4-row {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 0.8fr 0.8fr 0.8fr 0.5fr;
+  grid-gap: 0;
+  gap: 0;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e3d1b5;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(189, 147, 72, 0.1);
+  transition: all 0.25s ease-in-out;
+}
+
+.nje-table4-row > span {
+  padding: 0.9rem 1.1rem;
+  border-left: 1px solid #e3d1b5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  font-weight: 700;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  word-break: break-word;
+}
+
+.nje-table4-row > span:first-child {
+  justify-content: flex-start;
+}
+
+.nje-table4-row > span:nth-child(2) {
+  border-left: 1px solid #e3d1b5;
+}
+
+.nje-table4-row > span:nth-child(3),
+.nje-table4-row > span:nth-child(4),
+.nje-table4-row > span:nth-child(5) {
+  justify-content: center;
+  text-align: center;
+}
+
+.nje-table4-row > span:nth-child(6) {
+  justify-content: center;
+}
+
+.nje-table4-row-head {
+  background: #f5e7d1;
+  font-weight: 800;
+}
+
+.nje-table4-row-head > span:nth-child(2),
+.nje-table4-row-head > span:nth-child(3),
+.nje-table4-row-head > span:nth-child(4),
+.nje-table4-row-head > span:nth-child(5) {
+  justify-content: center;
+  text-align: center;
+  direction: rtl;
+  padding-right: 0;
+}
+
+.nje-table4-row:not(.nje-table4-row-head) > span:nth-child(2) {
+  justify-content: center;
+  text-align: center;
+}
+
+.nje-table4-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(189, 147, 72, 0.25);
+}
+
+.nje-table4-two-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  width: 100%;
+}
+
+.nje-table4-inline-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: 700;
+  color: #3d2c17;
+}
+
+.nje-table4-input-cell {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nje-table4-input {
+  width: 100%;
+  max-width: 120px;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #cbb88d;
+  border-radius: 6px;
+  background-color: #fffef9;
+  font-family: inherit;
+  font-size: 0.95rem;
+  text-align: center;
+  direction: rtl;
+  font-weight: 700;
+}
+
+.nje-table4-input:focus {
+  outline: none;
+  border-color: #b29053;
+  box-shadow: 0 0 4px rgba(178, 144, 83, 0.4);
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .nje-table4-6cols {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Adjusted column proportions for mobile */
+  .nje-table4-row {
+    min-width: 640px;
+    border-radius: 10px;
+    grid-template-columns: 1.0fr 0.8fr 0.8fr 0.6fr 0.8fr 0.8fr; /* 🔹 new balance */
+    box-shadow: 0 3px 8px rgba(189, 147, 72, 0.18);
+  }
+
+  /* Slightly smaller text and padding */
+  .nje-table4-row > span {
+    padding: 0.7rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  /* Inputs wider for better usability */
+  .nje-table4-input {
+    max-width: 110px;
+    font-size: 1rem;
+    padding: 0.5rem 0.6rem;
+  }
+
+  /* Sticky header */
+  .nje-table4-row-head {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(180deg, #f5e9d2 0%, #f1e3c8 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even narrower phones */
+  .nje-table4-row {
+    min-width: 600px;
+    grid-template-columns: 0.9fr 0.8fr 0.8fr 0.6fr 0.8fr 1fr; /* 🔹 give last col more room */
+  }
+
+  .nje-table4-row > span {
+    padding: 0.6rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .nje-table4-input {
+    max-width: 95px;
+    font-size: 0.9rem;
+  }
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/components/NewJournalEntries2/NewJournalEntriesTable5.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************/
+.nje-table5 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-weight: 700;
+}
+
+.nje-table5-row {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 0.8fr 0.8fr 0.8fr 0.5fr;
+  grid-gap: 0;
+  gap: 0;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e3d1b5;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(189, 147, 72, 0.1);
+  transition: all 0.25s ease-in-out;
+}
+
+.nje-table5-row > span {
+  padding: 0.9rem 1.1rem;
+  border-left: 1px solid #e3d1b5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  font-weight: 700;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  word-break: break-word;
+}
+
+.nje-table5-row > span:first-child {
+  justify-content: flex-start;
+}
+
+.nje-table5-row > span:nth-child(2) {
+  border-left: 1px solid #e3d1b5;
+}
+
+.nje-table5-row > span:nth-child(3),
+.nje-table5-row > span:nth-child(4),
+.nje-table5-row > span:nth-child(5) {
+  justify-content: center;
+  text-align: center;
+}
+
+.nje-table5-row > span:nth-child(6) {
+  justify-content: center;
+}
+
+.nje-table5-row-head {
+  background: #f5e7d1;
+  font-weight: 800;
+}
+
+.nje-table5-row-head > span:nth-child(2),
+.nje-table5-row-head > span:nth-child(3),
+.nje-table5-row-head > span:nth-child(4),
+.nje-table5-row-head > span:nth-child(5) {
+  justify-content: center;
+  text-align: center;
+  direction: rtl;
+  padding-right: 0;
+}
+
+.nje-table5-row:not(.nje-table5-row-head) > span:nth-child(2) {
+  justify-content: center;
+  text-align: center;
+}
+
+.nje-table5-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(189, 147, 72, 0.25);
+}
+
+.nje-table5-two-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  width: 100%;
+}
+
+.nje-table5-inline-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: 700;
+  color: #3d2c17;
+}
+
+.nje-table5-input-cell {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nje-table5-input {
+  width: 100%;
+  max-width: 120px;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #cbb88d;
+  border-radius: 6px;
+  background-color: #fffef9;
+  font-family: inherit;
+  font-size: 0.95rem;
+  text-align: center;
+  direction: rtl;
+  font-weight: 700;
+}
+
+.nje-table5-input:focus {
+  outline: none;
+  border-color: #b29053;
+  box-shadow: 0 0 4px rgba(178, 144, 83, 0.4);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .nje-table5-6cols {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Adjusted column proportions for mobile */
+  .nje-table5-row {
+    min-width: 640px;
+    border-radius: 10px;
+    grid-template-columns: 1.0fr 0.8fr 0.8fr 0.6fr 0.8fr 0.8fr; /* 🔹 new balance */
+    box-shadow: 0 3px 8px rgba(189, 147, 72, 0.18);
+  }
+
+  /* Slightly smaller text and padding */
+  .nje-table5-row > span {
+    padding: 0.7rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  /* Inputs wider for better usability */
+  .nje-table5-input {
+    max-width: 110px;
+    font-size: 1rem;
+    padding: 0.5rem 0.6rem;
+  }
+
+  /* Sticky header */
+  .nje-table5-row-head {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(180deg, #f5e9d2 0%, #f1e3c8 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even narrower phones */
+  .nje-table5-row {
+    min-width: 600px;
+    grid-template-columns: 0.9fr 0.8fr 0.8fr 0.6fr 0.8fr 1fr; /* 🔹 give last col more room */
+  }
+
+  .nje-table5-row > span {
+    padding: 0.6rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .nje-table5-input {
+    max-width: 95px;
+    font-size: 0.9rem;
+  }
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/components/NewJournalEntries2/NewJournalEntriesTable6.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************/
+.nje-table6 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-weight: 700;
+}
+
+.nje-table6-row {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 0.8fr 0.8fr 0.8fr 0.5fr;
+  grid-gap: 0;
+  gap: 0;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e3d1b5;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(189, 147, 72, 0.1);
+  transition: all 0.25s ease-in-out;
+}
+
+.nje-table6-row > span {
+  padding: 0.9rem 1.1rem;
+  border-left: 1px solid #e3d1b5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  font-weight: 700;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  word-break: break-word;
+}
+
+.nje-table6-row > span:first-child {
+  justify-content: flex-start;
+}
+
+.nje-table6-row > span:nth-child(2) {
+  border-left: 1px solid #e3d1b5;
+}
+
+.nje-table6-row > span:nth-child(3),
+.nje-table6-row > span:nth-child(4),
+.nje-table6-row > span:nth-child(5) {
+  justify-content: center;
+  text-align: center;
+}
+
+.nje-table6-row > span:nth-child(6) {
+  justify-content: center;
+}
+
+.nje-table6-row-head {
+  background: #f5e7d1;
+  font-weight: 800;
+}
+
+.nje-table6-row-head > span:nth-child(2),
+.nje-table6-row-head > span:nth-child(3),
+.nje-table6-row-head > span:nth-child(4),
+.nje-table6-row-head > span:nth-child(5) {
+  justify-content: center;
+  text-align: center;
+  direction: rtl;
+  padding-right: 0;
+}
+
+.nje-table6-row:not(.nje-table6-row-head) > span:nth-child(2) {
+  justify-content: center;
+  text-align: center;
+}
+
+.nje-table6-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(189, 147, 72, 0.25);
+}
+
+.nje-table6-two-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  width: 100%;
+}
+
+.nje-table6-inline-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: 700;
+  color: #3d2c17;
+}
+
+.nje-table6-input-cell {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nje-table6-input {
+  width: 100%;
+  max-width: 120px;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #cbb88d;
+  border-radius: 6px;
+  background-color: #fffef9;
+  font-family: inherit;
+  font-size: 0.95rem;
+  text-align: center;
+  direction: rtl;
+  font-weight: 700;
+}
+
+.nje-table6-input:focus {
+  outline: none;
+  border-color: #b29053;
+  box-shadow: 0 0 4px rgba(178, 144, 83, 0.4);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .nje-table6-6cols {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Adjusted column proportions for mobile */
+  .nje-table6-row {
+    min-width: 640px;
+    border-radius: 10px;
+    grid-template-columns: 1.0fr 0.8fr 0.8fr 0.6fr 0.8fr 0.8fr; /* 🔹 new balance */
+    box-shadow: 0 3px 8px rgba(189, 147, 72, 0.18);
+  }
+
+  /* Slightly smaller text and padding */
+  .nje-table6-row > span {
+    padding: 0.7rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  /* Inputs wider for better usability */
+  .nje-table6-input {
+    max-width: 110px;
+    font-size: 1rem;
+    padding: 0.5rem 0.6rem;
+  }
+
+  /* Sticky header */
+  .nje-table6-row-head {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(180deg, #f5e9d2 0%, #f1e3c8 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even narrower phones */
+  .nje-table6-row {
+    min-width: 600px;
+    grid-template-columns: 0.9fr 0.8fr 0.8fr 0.6fr 0.8fr 1fr; /* 🔹 give last col more room */
+  }
+
+  .nje-table6-row > span {
+    padding: 0.6rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .nje-table6-input {
+    max-width: 95px;
+    font-size: 0.9rem;
+  }
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/styles/NewJournalEntries/NewJournalEntriesMobile.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************/
+.nje-mobile-page {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #fefaf2 0%, #f8f0de 100%);
+    padding: 3rem 1.25rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    direction: rtl;
+    font-family: "Heebo", "Assistant", sans-serif;
+    color: #2d2418;
+}
+
+.nje-mobile-hero {
+    display: flex;
+    justify-content: center;
+}
+
+.nje-mobile-hero-card {
+    width: 100%;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(250, 234, 210, 0.96));
+    border: 1px solid rgba(189, 147, 72, 0.25);
+    box-shadow: 0 18px 45px rgba(189, 147, 72, 0.18);
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.nje-mobile-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #b29053, #dcbc76);
+    color: #1c150c;
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+    font-size: 0.95rem;
+}
+
+.nje-mobile-hero-title {
+    font-size: clamp(1.4rem, 5vw, 1.9rem);
+    margin-bottom: 0.8rem;
+    color: #1f1a17;
+    line-height: 1.3;
+}
+
+.nje-mobile-hero-description {
+    margin: 0 auto;
+    max-width: 45ch;
+    color: #5d5647;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.nje-mobile-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nje-mobile-section {
+    border-radius: 20px;
+    background: #fffaf1;
+    border: 1px solid rgba(189, 147, 72, 0.25);
+    box-shadow: 0 12px 28px rgba(189, 147, 72, 0.16);
+    overflow: hidden;
+}
+
+.nje-mobile-section[open] .nje-mobile-section-summary {
+    border-bottom: 1px solid rgba(189, 147, 72, 0.2);
+}
+
+.nje-mobile-section-summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 1.3rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.nje-mobile-section-summary::-webkit-details-marker {
+    display: none;
+}
+
+.nje-mobile-section-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f6e6c8 0%, #f3d6a7 100%);
+    font-size: 1.3rem;
+    box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.6), 0 4px 10px rgba(189, 147, 72, 0.18);
+}
+
+.nje-mobile-section-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.nje-mobile-section-text h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #3d2c17;
+}
+
+.nje-mobile-section-text p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #8a7b61;
+}
+
+.nje-mobile-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    -webkit-margin-start: auto;
+            margin-inline-start: auto;
+    box-shadow: 0 0 10px currentColor;
+}
+
+.nje-mobile-dot-green {
+    color: #a0c47f;
+}
+
+.nje-mobile-dot-red {
+    color: #e88a7c;
+}
+
+.nje-mobile-dot-orange {
+    color: #f2b15f;
+}
+
+.nje-mobile-dot-purple {
+    color: #c5a4ff;
+}
+
+.nje-mobile-dot-brown {
+    color: #e2a86d;
+}
+
+.nje-mobile-dot-teal {
+    color: #5ec4ca;
+}
+
+.nje-mobile-section-content {
+    padding: 1.1rem 0.75rem 1.25rem;
+}
+
+.nje-mobile-table-wrapper {
+    overflow-x: auto;
+    direction: rtl;
+    padding-bottom: 0.5rem;
+}
+
+.nje-mobile-table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.nje-mobile-table-wrapper::-webkit-scrollbar-track {
+    background: rgba(189, 147, 72, 0.15);
+    border-radius: 999px;
+}
+
+.nje-mobile-table-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(189, 147, 72, 0.55);
+    border-radius: 999px;
+}
+
+.nje-mobile-page .nje-table1,
+.nje-mobile-page .nje-table2,
+.nje-mobile-page .nje-table3,
+.nje-mobile-page .nje-table4,
+.nje-mobile-page .nje-table5,
+.nje-mobile-page .nje-table6,
+.nje-mobile-page .nje-table1-6cols,
+.nje-mobile-page .nje-table2-6cols,
+.nje-mobile-page .nje-table3-6cols,
+.nje-mobile-page .nje-table4-6cols,
+.nje-mobile-page .nje-table5-6cols,
+.nje-mobile-page .nje-table6-6cols {
+    min-width: 100%;
+    width: 100%;
+}
+
+.nje-mobile-page input[type="number"] {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 420px) {
+    .nje-mobile-hero-card {
+        padding: 1.7rem 1.2rem;
+    }
+
+    .nje-mobile-section-summary {
+        padding: 1rem 1rem;
+        gap: 0.8rem;
+    }
+
+    .nje-mobile-section-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 1.15rem;
+    }
+
+    .nje-mobile-section-text h2 {
+        font-size: 1.1rem;
+    }
+
+    .nje-mobile-section-text p {
+        font-size: 0.9rem;
+    }
+
+    .nje-mobile-page .nje-table1-6cols,
+    .nje-mobile-page .nje-table2-6cols,
+    .nje-mobile-page .nje-table3-6cols,
+    .nje-mobile-page .nje-table4-6cols,
+    .nje-mobile-page .nje-table5-6cols,
+    .nje-mobile-page .nje-table6-6cols {
+        min-width: 100%;
+    }
+}
+
+

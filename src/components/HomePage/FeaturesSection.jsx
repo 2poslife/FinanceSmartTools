@@ -1,6 +1,7 @@
 import React from 'react';
-const Illustration2 = 'https://d3egla0dyi6qxn.cloudfront.net/public/Illustration 2 .svg';
 import '../../styles/HomePage/FeaturesSection.css';
+import { getImageUrl } from '../../utils/index.jsx';
+const Illustration2 = getImageUrl('Illustration 2 .svg');
 
 function FeaturesSection() {
     const features = [

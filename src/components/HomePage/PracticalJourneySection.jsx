@@ -1,11 +1,12 @@
 import React from "react";
 import "../../styles/HomePage/PracticalJourneySection.css";
+import { getImageUrl } from "../../utils/index.jsx";
 
 function PracticalJourneySection() {
   return (
     <section className="practical-journey-section">
       <img 
-        src="https://d3egla0dyi6qxn.cloudfront.net/public/practical-journey.jpeg" 
+        src={getImageUrl('practical-journey.jpeg')} 
         alt="Practical Journey - من هنا دورنا يبدأ" 
         className="practical-journey-image"
       />

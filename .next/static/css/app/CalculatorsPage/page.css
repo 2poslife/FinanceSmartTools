@@ -1,0 +1,730 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/styles/CalculatorsPage/CalculatorsIntro.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
+/* Desktop Intro Section */
+.calculators-desktop-intro {
+    text-align: center;
+    margin: 1.5rem auto;
+    background: linear-gradient(135deg, #b29053 0%, #d4af37 50%, #b29053 100%);
+    padding: 1.5rem 1rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(178, 144, 83, 0.3);
+    border: 2px solid rgba(178, 144, 83, 0.4);
+    max-width: 1300px;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calculators-desktop-intro h1 {
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.calculators-desktop-tagline {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #666;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/styles/CalculatorsPage/CalculatorsGrid.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+/* Desktop Section title */
+.calculators-desktop-section-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin: 0 auto 1rem auto;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #b29053 0%, #d4af37 50%, #b29053 100%);
+    padding: 12px 30px;
+    border-radius: 25px;
+    border: 2px solid #b29053;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(178, 144, 83, 0.3);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+    flex-direction: row;
+    max-width: 1300px;
+    width: 100%;
+}
+
+.calculators-desktop-section-title span {
+    order: 1;
+}
+
+.calculators-desktop-inline-icon {
+    width: 24px;
+    height: 24px;
+    color: #1e293b ;
+    order: 2;
+}
+
+/* Desktop Grid: 2 cards per row layout */
+.calculators-desktop-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-gap: 2rem !important;
+    gap: 2rem !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+}
+
+/* Force 2 columns on desktop */
+@media (min-width: 769px) {
+    .calculators-desktop-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        display: grid !important;
+    }
+}
+
+/* Desktop Each card - 2 per row size */
+.calculators-desktop-card {
+    background: linear-gradient(145deg, #fafafa 0%, #f0f0f0 100%);
+    border: 2px solid #b29053;
+    border-radius: 12px;
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 6px 20px rgba(178, 144, 83, 0.2),
+        0 3px 8px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    position: relative;
+    min-height: 200px;
+    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.calculators-desktop-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 12px 30px rgba(178, 144, 83, 0.3),
+        0 6px 15px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border-color: #d4af37;
+    border-width: 4px;
+}
+
+.calculators-desktop-card h3 {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 1.2rem;
+    color: #333;
+    background: linear-gradient(135deg, #b29053 0%, #d4af37 50%, #b29053 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    padding: 0.6rem 1rem;
+    text-align: right;
+    direction: rtl;
+    min-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.calculators-desktop-card p {
+    font-size: 1rem !important;
+    color: #333 !important;
+    line-height: 1.5 !important;
+    font-weight: 600 !important;
+    margin-top: auto;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: right;
+}
+
+/* Desktop Conclusion Section */
+.calculators-desktop-conclusion {
+    margin-top: 2rem;
+    text-align: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calculators-desktop-conclusion-text {
+    background: linear-gradient(135deg, #b29053 0%, #d4af37 50%, #b29053 100%);
+    color: #000;
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(178, 144, 83, 0.3);
+    border: 2px solid rgba(178, 144, 83, 0.4);
+    direction: rtl;
+    text-align: center;
+    margin: 0;
+}
+
+.calculators-desktop-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+    min-height: 2.5rem;
+}
+
+.calculators-desktop-sim-icon {
+    width: 30px;
+    height: 30px;
+    color: #b29053;
+    flex-shrink: 0;
+}
+
+/* Desktop responsive adjustments */
+@media (max-width: 1400px) {
+    .calculators-desktop-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.8rem !important;
+        max-width: 1100px !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .calculators-desktop-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+        max-width: 1000px !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .calculators-desktop-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+        max-width: 800px !important;
+    }
+}
+
+/* Free Calculator Styling */
+.free-calculator {
+    position: relative;
+    background: linear-gradient(135deg, #fff9e6 0%, #fffaed 100%) !important;
+    border: 3px solid #ffc857 !important;
+    box-shadow: 
+        0 8px 25px rgba(255, 200, 87, 0.4),
+        0 0 0 1px rgba(255, 200, 87, 0.1) inset !important;
+    transform: scale(1.02);
+    animation: freeCalculatorGlow 3s ease-in-out infinite;
+}
+
+.free-calculator:hover {
+    transform: scale(1.05) translateY(-5px) !important;
+    box-shadow: 
+        0 15px 35px rgba(255, 200, 87, 0.6),
+        0 0 0 1px rgba(255, 200, 87, 0.2) inset !important;
+}
+
+.free-badge {
+    position: absolute;
+    top: -8px;
+    right: 15px;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+    z-index: 10;
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+.free-note {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border: 1px solid #2196f3;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1976d2;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.2);
+}
+
+@keyframes freeCalculatorGlow {
+    0%, 100% {
+        box-shadow: 
+            0 8px 25px rgba(255, 200, 87, 0.4),
+            0 0 0 1px rgba(255, 200, 87, 0.1) inset;
+    }
+    50% {
+        box-shadow: 
+            0 12px 30px rgba(255, 200, 87, 0.6),
+            0 0 0 1px rgba(255, 200, 87, 0.2) inset;
+    }
+}
+
+.calculators-desktop-standalone-card {
+    max-width: 420px;
+    margin: 2.5rem auto 0;
+    width: 100%;
+}
+
+.info-card {
+    cursor: pointer;
+    min-height: auto;
+    max-height: none;
+    padding: 1.5rem;
+}
+
+.info-card .calculators-desktop-card-header {
+    justify-content: center;
+    text-align: center;
+}
+
+.info-card h3 {
+    min-height: auto;
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+.info-card p {
+    justify-content: center;
+    text-align: center;
+    min-height: auto;
+}
+
+@keyframes badgePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/styles/CalculatorsPage/CalculatorsDesktop.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+/* Page container for desktop */
+.calculators-page {
+    font-family: "Tahoma", sans-serif;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/styles/CalculatorsPage/CalculatorsIntroMobile.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************/
+/* Mobile Intro Section */
+.calculators-intro {
+    text-align: center;
+    margin: 1rem auto;
+    background: linear-gradient(135deg, #b29053 0%, #d4af37 50%, #b29053 100%);
+    padding: 1.5rem 1rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(178, 144, 83, 0.3);
+    border: 2px solid rgba(178, 144, 83, 0.4);
+    width: 100%;
+    max-width: 100%;
+}
+
+.calculators-intro h1 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.calculators-tagline {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #666;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+    .calculators-intro {
+        margin: 0.5rem auto;
+        padding: 1rem 0.75rem;
+    }
+    
+    .calculators-intro h1 {
+        font-size: 1.4rem;
+    }
+    
+    .calculators-tagline {
+        font-size: 0.8rem;
+    }
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/styles/CalculatorsPage/CalculatorsGridMobile.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************/
+/* Calculator Groups */
+.calculators-group {
+    margin-bottom: 2.5rem;
+}
+
+.calculators-group:last-of-type {
+    margin-bottom: 2rem;
+}
+
+/* Group Header with Icon */
+.calculators-group-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #b29053 0%, #d4af37 50%, #b29053 100%);
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(178, 144, 83, 0.3);
+    border: 2px solid #b29053;
+}
+
+.calculators-group-icon {
+    font-size: 2rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculators-group-title {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #000;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile Grid: 2 cards per row layout */
+.calculators-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-gap: 1rem !important;
+    gap: 1rem !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0;
+}
+
+/* Center single card in a group */
+.calculators-grid:has(> *:only-child) {
+    grid-template-columns: 1fr !important;
+    max-width: 95% !important;
+    margin: 0 auto !important;
+}
+
+/* Fallback for browsers that don't support :has() */
+.calculators-grid.single-card {
+    grid-template-columns: 1fr !important;
+    max-width: 95% !important;
+    margin: 0 auto !important;
+}
+
+/* Wide card styling for long titles */
+.calculators-card.wide-card {
+    grid-column: 1 / -1 !important;
+    max-width: 95% !important;
+    margin: 0 auto !important;
+}
+
+/* Mobile Each card */
+.calculators-card {
+    background: #fefefe;
+    border: 1px solid #e0e0e0;
+    border-radius: 24px;
+    padding: 1.8rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+    min-height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.calculators-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-color: #d4af37;
+}
+
+.calculators-card h3 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    margin: 1rem 0 0.8rem 0;
+    color: #2c3e50;
+    line-height: 1.4;
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: center;
+    padding: 0;
+    border: none;
+    background: none;
+    -webkit-text-fill-color: #2c3e50;
+    font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif;
+}
+
+.calculators-title-second-line {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 900;
+    margin-top: 0.3rem;
+    color: #2c3e50;
+    font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif;
+}
+
+.calculators-free-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.4);
+    text-align: center;
+    font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.calculators-card p {
+    font-size: 0.95rem !important;
+    color: #555 !important;
+    line-height: 1.6 !important;
+    font-weight: 500 !important;
+    margin: 0;
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.calculators-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.calculators-sim-icon {
+    width: 56px;
+    height: 56px;
+    color: #ffc107;
+    flex-shrink: 0;
+    margin-bottom: 0.5rem;
+    stroke-width: 1.5;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Mobile Conclusion Section */
+.calculators-conclusion {
+    margin-top: 2rem;
+    text-align: center;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calculators-conclusion-text {
+    background: linear-gradient(135deg, #b29053 0%, #d4af37 50%, #b29053 100%);
+    color: #000;
+    padding: 1.2rem 1.5rem;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(178, 144, 83, 0.3);
+    border: 2px solid rgba(178, 144, 83, 0.4);
+    direction: rtl;
+    text-align: center;
+    margin: 0;
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+    .calculators-group-header {
+        padding: 12px 15px;
+        gap: 0.6rem;
+    }
+    
+    .calculators-group-icon {
+        font-size: 1.6rem;
+    }
+    
+    .calculators-group-title {
+        font-size: 1.2rem;
+    }
+    
+    .calculators-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.8rem !important;
+        padding: 0;
+    }
+    
+    .calculators-card {
+        padding: 1.2rem 0.8rem;
+        min-height: auto;
+        border-width: 1px;
+        width: 100%;
+        border-radius: 20px;
+    }
+    
+    .calculators-card h3 {
+        font-size: 1.2rem;
+        font-weight: 900;
+        margin: 0.8rem 0 0.6rem 0;
+        white-space: normal;
+        word-wrap: break-word;
+        font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif;
+    }
+    
+    .calculators-title-second-line {
+        font-size: 1rem;
+        font-weight: 900;
+        font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif;
+    }
+    
+    .calculators-card p {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+    
+    .calculators-card-header {
+        gap: 0;
+        margin-bottom: 0;
+    }
+    
+    .calculators-sim-icon {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+    }
+}
+
+/* Free Calculator Styling for Mobile */
+.free-calculator {
+    position: relative;
+    background: linear-gradient(135deg, #fff9e6 0%, #fffaed 100%) !important;
+    border: 3px solid #ffc857 !important;
+    box-shadow: 
+        0 8px 25px rgba(255, 200, 87, 0.4),
+        0 0 0 1px rgba(255, 200, 87, 0.1) inset !important;
+    transform: scale(1.02);
+    animation: freeCalculatorGlow 3s ease-in-out infinite;
+}
+
+.free-calculator:hover {
+    transform: scale(1.05) translateY(-5px) !important;
+    box-shadow: 
+        0 15px 35px rgba(255, 200, 87, 0.6),
+        0 0 0 1px rgba(255, 200, 87, 0.2) inset !important;
+}
+
+.free-badge {
+    position: absolute;
+    top: -8px;
+    right: 15px;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+    z-index: 10;
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+.free-note {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border: 1px solid #2196f3;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1976d2;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.2);
+}
+
+@keyframes freeCalculatorGlow {
+    0%, 100% {
+        box-shadow: 
+            0 8px 25px rgba(255, 200, 87, 0.4),
+            0 0 0 1px rgba(255, 200, 87, 0.1) inset;
+    }
+    50% {
+        box-shadow: 
+            0 12px 30px rgba(255, 200, 87, 0.6),
+            0 0 0 1px rgba(255, 200, 87, 0.2) inset;
+    }
+}
+
+@keyframes badgePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/styles/CalculatorsPage/CalculatorsMobile.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************/
+/* Page container for mobile */
+.calculators-page {
+    font-family: "Tahoma", sans-serif;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    .calculators-page {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculators-page {
+        padding: 0.25rem;
+    }
+}
+
