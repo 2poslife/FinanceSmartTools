@@ -1,4 +1,4 @@
-import { requireAuth } from '@/lib/auth';
+import { requireAuth } from '../../../../../lib/auth';
 import { NextResponse } from 'next/server';
 
 // ========= Constants =========
