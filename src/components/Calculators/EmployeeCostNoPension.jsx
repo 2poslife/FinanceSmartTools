@@ -24,10 +24,7 @@ export default function EmployeeCostNoPension() {
     const [authError, setAuthError] = useState(false);
     const [calculatedGrossSalary, setCalculatedGrossSalary] = useState(0);
 
-    const handleLogout = () => {
-        localStorage.removeItem("access_token");
-        router.push("/SigninForm");
-    };
+    // Removed unused handleLogout function
 
     const handleCalculate = async () => {
         const token = localStorage.getItem("access_token");
@@ -160,7 +157,7 @@ export default function EmployeeCostNoPension() {
                         <span>
                             עליך להיות מחובר כמשתמש מורשה כדי לבצע חישוב.{" "}
                             <button
-                                onClick={() => navigate("/SigninForm")}
+                                onClick={() => router.push("/SigninForm")}
                                 className="link-btn"
                             >
                                 התחבר כאן

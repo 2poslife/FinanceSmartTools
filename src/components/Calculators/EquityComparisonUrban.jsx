@@ -184,7 +184,7 @@ function EquityComparisonUrban() {
     }, []);
     const expensesTotals = useMemo(() => {
         const totals = Array(5).fill(0);
-        expenses.forEach((row, rowIdx) => {
+        expenses.forEach((row) => {
             row.forEach((v, colIdx) => {
                 // Convert to number, handling empty strings and invalid values
                 const numValue = v === "" || v === null || v === undefined ? 0 : Number(v);
@@ -206,7 +206,7 @@ function EquityComparisonUrban() {
     const expensesGrandTotal = useMemo(() => {
         // Calculate totals without the special last column logic
         const totals = Array(5).fill(0);
-        expenses.forEach((row, rowIdx) => {
+        expenses.forEach((row) => {
             row.forEach((v, colIdx) => {
                 const numValue = v === "" || v === null || v === undefined ? 0 : Number(v);
                 if (!isNaN(numValue)) {
@@ -465,7 +465,7 @@ function EquityComparisonUrban() {
             }
         });
         return values;
-    }, [sourcesTotals, familyCounts, years]);
+    }, [sourcesTotals, familyCounts, years, TABLE_3_4_DATA, findBracketIndex]);
 
     // ----- Table 5-6: פער לוחות חישוב הוצאות המחיה (Gap in living expenses calculation tables) -----
     // Table 5-6 data structure: [family_size_index][bracket_index]
@@ -549,7 +549,7 @@ function EquityComparisonUrban() {
             }
         });
         return values;
-    }, [sourcesTotals, familyCounts, years]);
+    }, [sourcesTotals, familyCounts, years, TABLE_5_6_DATA, findBracketIndexFor5_6]);
 
     // Grand total of הוצאות המחיה (value_3_4) across all years
     const value_3_4_GrandTotal = useMemo(() => {

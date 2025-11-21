@@ -487,7 +487,7 @@ function EquityComparisonUrbanMobile() {
             }
         });
         return values;
-    }, [sourcesTotals, familyCounts, years]);
+    }, [sourcesTotals, familyCounts, years, TABLE_3_4_DATA, findBracketIndex]);
 
     const findBracketIndexFor5_6 = (income, year) => {
         const bracketIdx = findBracketIndex(income, year);
@@ -509,7 +509,7 @@ function EquityComparisonUrbanMobile() {
             }
         });
         return values;
-    }, [sourcesTotals, familyCounts, years]);
+    }, [sourcesTotals, familyCounts, years, TABLE_5_6_DATA, findBracketIndexFor5_6]);
 
     // Grand totals
     const value_3_4_GrandTotal = useMemo(() => {

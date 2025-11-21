@@ -27,10 +27,7 @@ export default function EmployeeCostWithPension() {
 
     // Removed debug logging for production
 
-    const handleLogout = () => {
-        localStorage.removeItem("access_token");
-        router.push("/SigninForm");
-    };
+    // Removed unused handleLogout function
 
     const handleCalculate = async () => {
         // validate inputs
@@ -152,7 +149,7 @@ export default function EmployeeCostWithPension() {
                         <span>
                             עליך להיות מחובר כמשתמש מורשה כדי לבצע חישוב.{" "}
                             <button
-                                onClick={() => navigate("/SigninForm")}
+                                onClick={() => router.push("/SigninForm")}
                                 className="link-btn"
                             >
                                 התחבר כאן

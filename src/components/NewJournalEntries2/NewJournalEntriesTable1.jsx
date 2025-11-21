@@ -29,7 +29,7 @@ function NewJournalEntriesTable1() {
   };
 
   const taxableBase = computeBaseValue(incomeValues.taxable);
-  const exemptBase = computeBaseValue(incomeValues.exempt);
+  // Removed unused exemptBase variable
 
   return (
     <div className="nje-table1 nje-table1-6cols">
