@@ -1,69 +1,243 @@
 {
   "pages": {
-    "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
+    "/_not-found/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/chunks/app/_not-found/page-c96a10c82856e669.js"
     ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/page.css",
-      "static/chunks/app/page.js"
-    ],
-    "/articles/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/articles/page.css",
-      "static/chunks/app/articles/page.js"
-    ],
-    "/courses/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/courses/page.css",
-      "static/chunks/app/courses/page.js"
-    ],
-    "/CalculatorsPage/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/CalculatorsPage/page.css",
-      "static/chunks/app/CalculatorsPage/page.js"
-    ],
-    "/AboutUs/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/AboutUs/page.css",
-      "static/chunks/app/AboutUs/page.js"
-    ],
-    "/simulators/employee-cost-with-pension/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/simulators/employee-cost-with-pension/page.css",
-      "static/chunks/app/simulators/employee-cost-with-pension/page.js"
-    ],
-    "/SigninForm/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/SigninForm/page.css",
-      "static/chunks/app/SigninForm/page.js"
-    ],
-    "/simulators/equity-urban/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/simulators/equity-urban/page.css",
-      "static/chunks/app/simulators/equity-urban/page.js"
+    "/api/admin/create-user/route": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/chunks/app/api/admin/create-user/route-656b2eff76012f23.js"
     ],
     "/api/auth/login/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/auth/login/route.js"
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/chunks/app/api/auth/login/route-656b2eff76012f23.js"
+    ],
+    "/api/calculators/income-tax-with-points/route": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/chunks/app/api/calculators/income-tax-with-points/route-656b2eff76012f23.js"
+    ],
+    "/api/calculators/employee-cost-with-pension/route": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/chunks/app/api/calculators/employee-cost-with-pension/route-656b2eff76012f23.js"
+    ],
+    "/api/calculators/employee-cost-no-pension/route": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/chunks/app/api/calculators/employee-cost-no-pension/route-656b2eff76012f23.js"
+    ],
+    "/api/calculators/micro-self-employed-salaried/atsmaee-and-sakher/route": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/chunks/app/api/calculators/micro-self-employed-salaried/atsmaee-and-sakher/route-656b2eff76012f23.js"
+    ],
+    "/api/calculators/micro-self-employed/route": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/chunks/app/api/calculators/micro-self-employed/route-656b2eff76012f23.js"
+    ],
+    "/api/calculators/micro-self-employed-salaried/route": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/chunks/app/api/calculators/micro-self-employed-salaried/route-656b2eff76012f23.js"
+    ],
+    "/api/calculators/self-employed/route": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/chunks/app/api/calculators/self-employed/route-656b2eff76012f23.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/a5875803df588ccd.css",
+      "static/chunks/7840-7baa9a2a5758f65c.js",
+      "static/chunks/app/layout-b52fed3fda12d527.js"
+    ],
+    "/AboutUs/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/2ee36c52f81da89e.css",
+      "static/chunks/app/AboutUs/page-641a5b5954132b3e.js"
+    ],
+    "/SigninForm/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/409a4fb00892b3a4.css",
+      "static/chunks/app/SigninForm/page-51bd361b45cba5db.js"
+    ],
+    "/AdminPage/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/d42d0d4166a96572.css",
+      "static/chunks/530-5e177af369b5c101.js",
+      "static/chunks/app/AdminPage/page-5bfc43a9ffb0f791.js"
+    ],
+    "/articles/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/3855dec0da8c1599.css",
+      "static/chunks/app/articles/page-2c565c039d3148ce.js"
+    ],
+    "/courses/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/c09e8bb1722cb24f.css",
+      "static/chunks/2119-ffeaed57ce0466fb.js",
+      "static/chunks/app/courses/page-783024b14fc25e39.js"
+    ],
+    "/course/[id]/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/2d38ab52ad93575c.css",
+      "static/chunks/2119-ffeaed57ce0466fb.js",
+      "static/chunks/app/course/[id]/page-d9de8fa17684332b.js"
+    ],
+    "/article/[id]/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/6a43b3bee99906c0.css",
+      "static/chunks/app/article/[id]/page-27b90c2ff6b11b83.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/632c227ebb8a4518.css",
+      "static/css/7cb3539097b7f63c.css",
+      "static/chunks/2119-ffeaed57ce0466fb.js",
+      "static/chunks/app/page-d6c3e89b5d36f189.js"
+    ],
+    "/privacy-policy/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/9ab3b75efb10ae92.css",
+      "static/chunks/app/privacy-policy/page-252c64a938dc7e22.js"
+    ],
+    "/simulators/equity-urban/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/2b93aeaf4d4a8971.css",
+      "static/css/3e8f9b0a7842e4cd.css",
+      "static/chunks/app/simulators/equity-urban/page-47c2b7b59e41401d.js"
+    ],
+    "/simulators/IncomeTaxWithPoints/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/4223ae66a9b12e61.css",
+      "static/chunks/app/simulators/IncomeTaxWithPoints/page-bca85f679f9b15ef.js"
+    ],
+    "/simulators/employee-cost-no-pension/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/94c76f3ac775e5e6.css",
+      "static/chunks/app/simulators/employee-cost-no-pension/page-8cf80746c23bdabc.js"
+    ],
+    "/simulators/employee-cost-with-pension/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/b7208be1316a069f.css",
+      "static/chunks/app/simulators/employee-cost-with-pension/page-cffd8def8138c63c.js"
+    ],
+    "/simulators/micro-self-employed-salaried/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/709d7cdbc3104553.css",
+      "static/chunks/app/simulators/micro-self-employed-salaried/page-395ac5e67a2d769a.js"
+    ],
+    "/simulators/micro-self-employed/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/5e99556f631f722e.css",
+      "static/chunks/app/simulators/micro-self-employed/page-f3bb5d38bb8a780c.js"
+    ],
+    "/simulators/self-employed/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/5977113efedbfcf9.css",
+      "static/chunks/app/simulators/self-employed/page-9978cc9d2b392fdb.js"
     ],
     "/simulators/new-journal-entries/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/simulators/new-journal-entries/page.css",
-      "static/chunks/app/simulators/new-journal-entries/page.js"
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/99bf20a2d3f24f1c.css",
+      "static/chunks/app/simulators/new-journal-entries/page-20d2ce55a9ff7397.js"
+    ],
+    "/terms-of-service/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/9ab3b75efb10ae92.css",
+      "static/chunks/app/terms-of-service/page-9cfc1b9ac6a425a8.js"
+    ],
+    "/CalculatorsPage/page": [
+      "static/chunks/webpack-eea8f4cc95f65711.js",
+      "static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "static/chunks/1255-26f05d8bf86e016d.js",
+      "static/chunks/main-app-c96d3d903edaa3cb.js",
+      "static/css/fe8e8126fef4dcc4.css",
+      "static/css/2b93aeaf4d4a8971.css",
+      "static/css/0a95b4a6202d3d90.css",
+      "static/chunks/app/CalculatorsPage/page-328b8909984ca47d.js"
     ]
   }
 }

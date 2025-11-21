@@ -1,1 +1,177 @@
-{"version":3,"caseSensitive":false,"basePath":"","rewrites":{"beforeFiles":[],"afterFiles":[],"fallback":[]},"redirects":[{"source":"/:path+/","destination":"/:path+","permanent":true,"internal":true,"regex":"^(?:\\/((?:[^\\/]+?)(?:\\/(?:[^\\/]+?))*))\\/$"}],"headers":[{"source":"/:path*","headers":[{"key":"Access-Control-Allow-Origin","value":"*"}],"regex":"^(?:\\/((?:[^\\/]+?)(?:\\/(?:[^\\/]+?))*))?(?:\\/)?$"}]}
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/:path*",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ],
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
+    }
+  ],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/article/[id]",
+      "regex": "^/article/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/article/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/course/[id]",
+      "regex": "^/course/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/course/(?<nxtPid>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/AboutUs",
+      "regex": "^/AboutUs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/AboutUs(?:/)?$"
+    },
+    {
+      "page": "/AdminPage",
+      "regex": "^/AdminPage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/AdminPage(?:/)?$"
+    },
+    {
+      "page": "/articles",
+      "regex": "^/articles(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/articles(?:/)?$"
+    },
+    {
+      "page": "/CalculatorsPage",
+      "regex": "^/CalculatorsPage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/CalculatorsPage(?:/)?$"
+    },
+    {
+      "page": "/courses",
+      "regex": "^/courses(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/courses(?:/)?$"
+    },
+    {
+      "page": "/privacy-policy",
+      "regex": "^/privacy\\-policy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/privacy\\-policy(?:/)?$"
+    },
+    {
+      "page": "/SigninForm",
+      "regex": "^/SigninForm(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/SigninForm(?:/)?$"
+    },
+    {
+      "page": "/simulators/employee-cost-no-pension",
+      "regex": "^/simulators/employee\\-cost\\-no\\-pension(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/simulators/employee\\-cost\\-no\\-pension(?:/)?$"
+    },
+    {
+      "page": "/simulators/employee-cost-with-pension",
+      "regex": "^/simulators/employee\\-cost\\-with\\-pension(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/simulators/employee\\-cost\\-with\\-pension(?:/)?$"
+    },
+    {
+      "page": "/simulators/equity-urban",
+      "regex": "^/simulators/equity\\-urban(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/simulators/equity\\-urban(?:/)?$"
+    },
+    {
+      "page": "/simulators/IncomeTaxWithPoints",
+      "regex": "^/simulators/IncomeTaxWithPoints(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/simulators/IncomeTaxWithPoints(?:/)?$"
+    },
+    {
+      "page": "/simulators/micro-self-employed",
+      "regex": "^/simulators/micro\\-self\\-employed(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/simulators/micro\\-self\\-employed(?:/)?$"
+    },
+    {
+      "page": "/simulators/micro-self-employed-salaried",
+      "regex": "^/simulators/micro\\-self\\-employed\\-salaried(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/simulators/micro\\-self\\-employed\\-salaried(?:/)?$"
+    },
+    {
+      "page": "/simulators/new-journal-entries",
+      "regex": "^/simulators/new\\-journal\\-entries(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/simulators/new\\-journal\\-entries(?:/)?$"
+    },
+    {
+      "page": "/simulators/self-employed",
+      "regex": "^/simulators/self\\-employed(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/simulators/self\\-employed(?:/)?$"
+    },
+    {
+      "page": "/terms-of-service",
+      "regex": "^/terms\\-of\\-service(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/terms\\-of\\-service(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

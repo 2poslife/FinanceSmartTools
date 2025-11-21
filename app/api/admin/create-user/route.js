@@ -2,12 +2,22 @@ import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import { createClient } from '@supabase/supabase-js';
 import { requireAdmin } from '../../../../lib/auth';
+import dotenv from 'dotenv';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+// Load environment variables from .env file
+dotenv.config({ path: '.env' });
 
-// Create Supabase client
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Helper function to get Supabase client
+function getSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error('Supabase configuration is missing. Please set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY environment variables.');
+  }
+
+  return createClient(supabaseUrl, supabaseKey);
+}
 
 export async function POST(request) {
   try {
@@ -38,6 +48,9 @@ export async function POST(request) {
         { status: 400 }
       );
     }
+
+    // Get Supabase client
+    const supabase = getSupabaseClient();
 
     // Check if username already exists
     const { data: existingUser, error: checkError } = await supabase

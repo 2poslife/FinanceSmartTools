@@ -2,14 +2,25 @@ import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { createClient } from '@supabase/supabase-js';
+import dotenv from 'dotenv';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+// Load environment variables from .env file
+dotenv.config({ path: '.env' });
+
 const jwtSecret = process.env.JWT_SECRET || 'your-secret-key-change-in-production';
 const jwtExpiresIn = process.env.JWT_EXPIRES_IN || '7d';
 
-// Create Supabase client
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Helper function to get Supabase client
+function getSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error('Supabase configuration is missing. Please set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY environment variables.');
+  }
+
+  return createClient(supabaseUrl, supabaseKey);
+}
 
 export async function POST(request) {
   try {
@@ -23,6 +34,9 @@ export async function POST(request) {
         { status: 400 }
       );
     }
+
+    // Get Supabase client
+    const supabase = getSupabaseClient();
 
     // Find user in database
     const { data: user, error: userError } = await supabase
