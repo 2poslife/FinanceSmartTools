@@ -6,18 +6,7 @@ import "../../styles/ArticleDetailPage/ArticleHeader.css";
 function ArticleHeader({ article }) {
   const router = useRouter();
 
-  const handleShare = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: article.title,
-        text: article.description,
-        url: window.location.href
-      });
-    } else {
-      navigator.clipboard.writeText(window.location.href);
-      alert('تم نسخ الرابط!');
-    }
-  };
+  // Removed unused handleShare function
 
   return (
     <div className="article-detail-header">

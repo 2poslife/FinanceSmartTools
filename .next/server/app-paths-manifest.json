@@ -1,1 +1,8 @@
-{}
+{
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/api/calculators/micro-self-employed-salaried/route": "app/api/calculators/micro-self-employed-salaried/route.js",
+  "/CalculatorsPage/page": "app/CalculatorsPage/page.js",
+  "/SigninForm/page": "app/SigninForm/page.js",
+  "/simulators/micro-self-employed-salaried/page": "app/simulators/micro-self-employed-salaried/page.js",
+  "/page": "app/page.js"
+}

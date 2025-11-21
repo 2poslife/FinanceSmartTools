@@ -47,19 +47,7 @@ const AdminPage = () => {
         totalCalculations: 0
     });
 
-    // Mock data for demonstration
-    const pieData = [
-        { name: 'مستخدمين عاديين', value: 85, color: '#3B82F6' },
-        { name: 'مدراء', value: 15, color: '#10B981' }
-    ];
-
-    const recentActivity = [
-        { id: 1, action: 'مستخدم جديد', user: 'أحمد محمد', time: 'منذ 5 دقائق', type: 'user' },
-        { id: 2, action: 'حساب ضريبي', user: 'فاطمة علي', time: 'منذ 12 دقيقة', type: 'calculation' },
-        { id: 3, action: 'تسجيل دخول', user: 'محمد حسن', time: 'منذ 25 دقيقة', type: 'login' },
-        { id: 4, action: 'مستخدم جديد', user: 'سارة أحمد', time: 'منذ ساعة', type: 'user' },
-        { id: 5, action: 'حساب راتب', user: 'علي محمود', time: 'منذ ساعتين', type: 'calculation' }
-    ];
+    // Removed unused mock data
 
     // ✅ Check token on load
     useEffect(() => {

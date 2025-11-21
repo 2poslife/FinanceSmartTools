@@ -1,3 +1,44 @@
 {
-  "pages": {}
+  "pages": {
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/CalculatorsPage/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/CalculatorsPage/page.css",
+      "static/chunks/app/CalculatorsPage/page.js"
+    ],
+    "/SigninForm/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/SigninForm/page.css",
+      "static/chunks/app/SigninForm/page.js"
+    ],
+    "/api/auth/login/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/auth/login/route.js"
+    ],
+    "/simulators/micro-self-employed-salaried/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/simulators/micro-self-employed-salaried/page.css",
+      "static/chunks/app/simulators/micro-self-employed-salaried/page.js"
+    ],
+    "/api/calculators/micro-self-employed-salaried/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/calculators/micro-self-employed-salaried/route.js"
+    ],
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
+    ]
+  }
 }
