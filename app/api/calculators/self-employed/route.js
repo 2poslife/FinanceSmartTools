@@ -5,7 +5,7 @@ import { requireAuth } from '../../../../lib/auth';
 import { NextResponse } from 'next/server';
 
 // ========= Constants =========
-const SELF_EMPLOYED_NI_MIN_MONTHLY = 241.0;
+const SELF_EMPLOYED_NI_MIN_MONTHLY = 241.32;
 const SELF_EMPLOYED_NI_LOW_RATE = 0.077;
 const SELF_EMPLOYED_NI_HIGH_RATE = 0.18;
 const SELF_EMPLOYED_NI_THRESHOLD = 37608.0;
@@ -17,7 +17,7 @@ const FIXED_AMOUNT_90264 = 6950;
 const ADDITIONAL_NI_LOW_RATE = 0.1209;
 const ADDITIONAL_NI_HIGH_RATE = 0.1217;
 const FIXED_ADDITIONAL_AMOUNT = 10912.9176;
-const MIN_YEARLY_PAYMENT = 2892;  // 241 * 12
+const MIN_YEARLY_PAYMENT = 241.32 * 12;  // 2895.84
 
 export async function POST(request) {
     try {
@@ -110,14 +110,19 @@ export async function POST(request) {
         let final_ni_low = ni_low;
         let final_ni_high = ni_high;
         
-        if (yearly_income < INCOME_THRESHOLD_75216 && yearly_income >= SELF_EMPLOYED_NI_THRESHOLD) {
+        // If income < 37608, use minimum payment and set breakdown accordingly
+        if (yearly_income < SELF_EMPLOYED_NI_THRESHOLD) {
+            // For minimum payment, all goes to low rate part
+            final_ni_low = MIN_YEARLY_PAYMENT;
+            final_ni_high = 0;
+        } else if (yearly_income < INCOME_THRESHOLD_75216 && yearly_income >= SELF_EMPLOYED_NI_THRESHOLD) {
             yearly_total = additional_ni;
             // Update breakdown for additional NI calculation
             final_ni_low = additional_ni_low;
             final_ni_high = additional_ni_high;
         }
 
-        // H10 = IF(H8>2892,(H8/12),241)
+        // H10 = IF(H8>2895.84,(H8/12),241.32)
         let monthly_prepayment;
         if (yearly_total > MIN_YEARLY_PAYMENT) {
             monthly_prepayment = yearly_total / 12;
@@ -125,8 +130,14 @@ export async function POST(request) {
             monthly_prepayment = SELF_EMPLOYED_NI_MIN_MONTHLY;
         }
 
-        // Recalculate yearly_total from monthly_prepayment
+        // Recalculate yearly_total from monthly_prepayment (before rounding)
         yearly_total = monthly_prepayment * 12;
+
+        // Update final_ni_low if using minimum payment (income < 37608)
+        if (yearly_income < SELF_EMPLOYED_NI_THRESHOLD) {
+            final_ni_low = yearly_total;  // Use the recalculated yearly_total
+            final_ni_high = 0;
+        }
 
         // G9 = IF(G8=241,("לא עונה להגדרה"),(H9))
         // H9 = IF(H8=F20,("לא עונה להגדרה"),("עונה להגדרה"))
@@ -137,21 +148,28 @@ export async function POST(request) {
             definition = "עונה להגדרה";
         }
 
+        // Round all values after calculations
+        const rounded_monthly_prepayment = Math.round(monthly_prepayment);
+        const rounded_yearly_total = Math.round(yearly_total);
+        const rounded_ni_low = Math.round(final_ni_low);
+        const rounded_ni_high = Math.round(final_ni_high);
+        const rounded_net_after_ni = Math.round(yearly_income - yearly_total);
+
         return Response.json({
             inputs: {
                 yearly_income: yearly_income
             },
             national_insurance: {
                 definition: definition,
-                monthly_prepayment: Math.round(monthly_prepayment),
-                yearly_total: Math.round(yearly_total),
+                monthly_prepayment: rounded_monthly_prepayment,
+                yearly_total: rounded_yearly_total,
                 breakdown: {
-                    low_rate_part: Math.round(final_ni_low),
-                    high_rate_part: Math.round(final_ni_high)
+                    low_rate_part: rounded_ni_low,
+                    high_rate_part: rounded_ni_high
                 }
             },
             summary: {
-                net_after_ni: Math.round(yearly_income - yearly_total)
+                net_after_ni: rounded_net_after_ni
             }
         });
 

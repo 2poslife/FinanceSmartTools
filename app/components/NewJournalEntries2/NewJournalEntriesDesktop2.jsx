@@ -16,6 +16,9 @@ function NewJournalEntriesDesktop2() {
         <div className="nje-hero-card">
           <span className="nje-hero-badge">פקודות יומן מלאות</span>
           <h1 className="nje-hero-title">סקירת הפקודות לפי קטגוריות</h1>
+          <p className="nje-hero-subtitle" style={{ fontSize: '1.1rem', fontWeight: '600', color: '#1f1a17', marginBottom: '1rem', marginTop: '-0.5rem' }}>
+            הכלי הפשוט והמדויק לרישום פקודות יומן — בלחיצה אחת!
+          </p>
           <p className="nje-hero-description">
             כל הטבלה שלפניכם מרכזת את הפקודות המרכזיות לפי קטגוריות.
             הסכומים הם ערכי ברירת מחדל, יחד עם פיצול חובה/זכות כדי לאפשר בדיקה מהירה.
@@ -66,7 +69,7 @@ function NewJournalEntriesDesktop2() {
               <span className="nje-section-icon nje-section-icon-dividend" aria-hidden="true">💰</span>
               <h2>דיבידנד</h2>
             </div>
-            <p>ניהול רישום דיבידנד לפי סוג בעל מניות</p>
+            <p>רישום חלוקת ותשלום דיבידנד</p>
           </div>
           <span className="nje-dot nje-dot-orange" />
         </header>
@@ -96,9 +99,9 @@ function NewJournalEntriesDesktop2() {
           <div className="nje-section-header-text">
             <div className="nje-section-title">
               <span className="nje-section-icon nje-section-icon-inventory" aria-hidden="true">📦</span>
-              <h2>מלאי וסיכומים</h2>
+              <h2>מלאי</h2>
             </div>
-            <p>פירוט רישומי רכישת מלאי והוצאות נלוות</p>
+            <p>רישום תנועות יומן עבור מלאי</p>
           </div>
           <span className="nje-dot nje-dot-brown" />
         </header>

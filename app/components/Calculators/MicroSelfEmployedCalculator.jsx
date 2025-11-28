@@ -20,6 +20,7 @@ export default function MicroSelfEmployedCalculator() {
     const [loading, setLoading] = useState(false);
     const [expanded, setExpanded] = useState(false);
     const [authError, setAuthError] = useState(false);
+    const [incomeError, setIncomeError] = useState("");
 
     // Removed unused handleLogout function
 
@@ -33,6 +34,13 @@ export default function MicroSelfEmployedCalculator() {
         // ✅ validate input
         if (!yearlyIncome || isNaN(yearlyIncome) || parseFloat(yearlyIncome) <= 0) {
             alert("אנא הזן הכנסה שנתית תקינה");
+            return;
+        }
+
+        const incomeValue = parseFloat(yearlyIncome);
+        if (incomeValue > 120000) {
+            alert("עצמאי זעיר מוגבל להכנסה של עד 120,000 ₪ בלבד. אנא הזן ערך נמוך יותר.");
+            setIncomeError("עצמאי זעיר מוגבל להכנסה של עד 120,000 ₪ בלבד");
             return;
         }
 
@@ -63,7 +71,10 @@ export default function MicroSelfEmployedCalculator() {
 
             if (!res.ok) {
                 const errorData = await res.json().catch(() => ({}));
-                throw new Error(errorData.error || 'API calculation failed');
+                const errorMessage = errorData.error || 'API calculation failed';
+                setIncomeError(errorMessage);
+                alert(errorMessage);
+                return;
             }
 
             const data = await res.json();
@@ -105,11 +116,42 @@ export default function MicroSelfEmployedCalculator() {
                         <input
                             type="number"
                             min="0"
+                            max="120000"
                             value={yearlyIncome}
-                            onChange={(e) => setYearlyIncome(e.target.value)}
+                            onChange={(e) => {
+                                const value = e.target.value;
+                                const numValue = parseFloat(value);
+                                
+                                if (value === "") {
+                                    setYearlyIncome("");
+                                    setIncomeError("");
+                                    return;
+                                }
+                                
+                                if (isNaN(numValue) || numValue < 0) {
+                                    setIncomeError("אנא הזן מספר חיובי");
+                                    return;
+                                }
+                                
+                                if (numValue > 120000) {
+                                    setIncomeError("עצמאי זעיר מוגבל להכנסה של עד 120,000 ₪ בלבד");
+                                    setYearlyIncome("120000");
+                                } else {
+                                    setYearlyIncome(value);
+                                    setIncomeError("");
+                                }
+                            }}
                             placeholder="לדוגמה: 120000"
                             required
                         />
+                        {incomeError && (
+                            <div className="input-error" style={{ color: '#ff4444', fontSize: '0.9rem', marginTop: '0.5rem' }}>
+                                {incomeError}
+                            </div>
+                        )}
+                        <div style={{ fontSize: '0.85rem', color: '#666', marginTop: '0.25rem' }}>
+                            מקסימום: 120,000 ₪ (עצמאי זעיר)
+                        </div>
                     </div>
                 </div>
 

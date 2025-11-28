@@ -33,6 +33,15 @@ export async function POST(request) {
             );
         }
 
+        // Validate maximum income for micro self-employed (עצמאי זעיר)
+        const MAX_MICRO_SELF_EMPLOYED_INCOME = 120000;
+        if (yearly_income > MAX_MICRO_SELF_EMPLOYED_INCOME) {
+            return Response.json(
+                { error: `עצמאי זעיר מוגבל להכנסה של עד ${MAX_MICRO_SELF_EMPLOYED_INCOME.toLocaleString('he-IL')} ₪ בלבד` },
+                { status: 400 }
+            );
+        }
+
         // ההכנסה החייבת = 70% מהברוטו
         const taxable_income = yearly_income * MICRO_SELF_EMPLOYED_TAXABLE_FACTOR;
         

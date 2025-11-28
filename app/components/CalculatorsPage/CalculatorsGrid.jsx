@@ -121,9 +121,9 @@ const CalculatorsGrid = () => {
                 >
                     <div className="calculators-desktop-card-header">
                         <FileSpreadsheet className="calculators-desktop-sim-icon" />
-                        <h3>פקודות יומן לדוגמה</h3>
+                        <h3>פקודות יומן</h3>
                     </div>
-                    <p>פקודות יומן לדוחות כספיים</p>
+                    <p>כלי עזר לרישום פקודות יומן.</p>
                 </div>
             </div>
 
@@ -144,14 +144,17 @@ const CalculatorsGrid = () => {
                         <Building2 className="calculators-desktop-sim-icon" />
                         <h3>עירוני</h3>
                     </div>
-                    <p>השוואת הון - מגזר עירוני</p>
+                    <p>השוואת הון לתושבי ערים</p>
                 </div>
-                <div className="calculators-desktop-card info-card">
+                <div
+                    className="calculators-desktop-card info-card"
+                    onClick={() => handleSimulatorClick("/simulators/equity-rural")}
+                >
                     <div className="calculators-desktop-card-header">
                         <HomeIcon className="calculators-desktop-sim-icon" />
                         <h3>כפרי</h3>
                     </div>
-                    <p>השוואת הון - מגזר כפרי</p>
+                    <p>השוואת הון לתושבי כפרים</p>
                 </div>
             </div>
 

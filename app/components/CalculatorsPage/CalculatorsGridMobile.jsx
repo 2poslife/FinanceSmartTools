@@ -9,6 +9,8 @@ import {
     ShieldCheck,
     FileSpreadsheet,
     CreditCard,
+    Building2,
+    Home as HomeIcon,
 } from "lucide-react";
 import "../../styles/CalculatorsPage/CalculatorsGridMobile.css";
 
@@ -84,10 +86,29 @@ const CalculatorsGridMobile = () => {
             icon: "📘",
             simulators: [
                 {
-                    title: "פקודות יומן ",
-                    desc: "פקודות יומן לדוחות כספיים",
+                    title: "פקודות יומן",
+                    desc: "כלי עזר לרישום פקודות יומן.",
                     link: "/simulators/new-journal-entries",
                     icon: <FileSpreadsheet className="calculators-sim-icon" />,
+                },
+            ]
+        },
+        {
+            id: "equity-comparison",
+            title: "השוואת הון",
+            icon: "🏘️",
+            simulators: [
+                {
+                    title: "עירוני",
+                    desc: "השוואת הון לתושבי ערים",
+                    link: "/simulators/equity-urban",
+                    icon: <Building2 className="calculators-sim-icon" />,
+                },
+                {
+                    title: "כפרי",
+                    desc: "השוואת הון לתושבי כפרים",
+                    link: "/simulators/equity-rural",
+                    icon: <HomeIcon className="calculators-sim-icon" />,
                 },
             ]
         },

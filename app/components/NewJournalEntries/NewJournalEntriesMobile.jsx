@@ -27,7 +27,7 @@ const sections = [
     {
         id: "dividend",
         title: "דיבידנד",
-        subtitle: "ניהול רישום דיבידנד לפי סוג בעל מניות",
+        subtitle: "רישום חלוקת ותשלום דיבידנד",
         icon: "💰",
         component: NewJournalEntriesTable3,
         dotClass: "orange",
@@ -42,8 +42,8 @@ const sections = [
     },
     {
         id: "inventory",
-        title: "מלאי וסיכומים",
-        subtitle: "פירוט רישומי רכישת מלאי והוצאות נלוות",
+        title: "מלאי",
+        subtitle: "רישום תנועות יומן עבור מלאי",
         icon: "📦",
         component: NewJournalEntriesTable5,
         dotClass: "brown",
@@ -65,6 +65,9 @@ const NewJournalEntriesMobile = () => {
                 <div className="nje-mobile-hero-card">
                     <span className="nje-mobile-hero-badge">פקודות יומן מלאות</span>
                     <h1 className="nje-mobile-hero-title">סקירת הפקודות לפי קטגוריות</h1>
+                    <p className="nje-mobile-hero-subtitle" style={{ fontSize: '1rem', fontWeight: '600', color: '#1f1a17', marginBottom: '0.8rem', marginTop: '-0.3rem' }}>
+                        הכלי הפשוט והמדויק לרישום פקודות יומן — בלחיצה אחת!
+                    </p>
                     <p className="nje-mobile-hero-description">
                         גללו בין הקטגוריות כדי למצוא במהירות את הפקודות הרלוונטיות.
                         ניתן לעדכן את הערכים בהתאם לתרחישים השונים שלכם.
